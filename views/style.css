@@ -1,3 +1,31 @@
-span.msg {
+body {
+    background-image: url('url_gambar_buram.jpg'); /* Ganti 'url_gambar_buram.jpg' dengan URL atau path gambar buram Anda */
+    background-size: cover;
+    background-blur: 10px; /* Ganti nilai blur sesuai keinginan Anda */
+    font-family: 'Arial', sans-serif;
+    color: #ffffff; /* Warna teks */
+    margin: 0;
+    padding: 0;
 }
 
+.changelogs-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Warna latar belakang container dengan opasitas */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Efek bayangan untuk memberikan kedalaman */
+}
+
+h1, h2, p {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
