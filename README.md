@@ -44,7 +44,8 @@
 [![Xnuvers007](https://github.com/Xnuvers007.png?size=100)](https://github.com/Xnuvers007)
 [![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
 #### Contributor
-[![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
+[![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/NeastooID)
+[![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/HindiaFtNpc)
 [![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
 
 Sorry Jika Sc Cacad Recorder Sc Ini Cuman Gw  [`Npnpicy`](https://github.com/NpnpicyAvailable) 1 Orang
