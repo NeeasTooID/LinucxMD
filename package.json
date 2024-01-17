@@ -1,7 +1,7 @@
 {
-    "name": "ShirokamiRyzen",
-    "version": "5.5.0",
-    "description": "Nao-MD By Ryzen",
+    "name": "LinucxMD",
+    "version": "1.0",
+    "description": "Script Recode Cacad! By YusupKakauu",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -22,20 +22,20 @@
         "whatsapp",
         "wabot-aq"
     ],
-    "homepage": "https://github.com/ShirokamiRyzen",
+    "homepage": "https://github.com/NeeasTooID",
     "author": {
-        "name": "ShirokamiRyzen"
+        "name": "SiapaSangka"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ShirokamiRyzen"
+        "url": "git+https://github.com/NeeasTooID"
     },
     "bugs": {
-        "url": "https://github.com/ShirokamiRyzen"
+        "url": "https://github.com/NeeasTooID/LinucxMD.git"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "npm:@whiskeysockets/baileys@6.4.0",
+        "@adiwajshing/baileys": "npm:@whiskeysockets/baileys@*",
         "@arugaz/ai2d": "^1.0.1-z.8",
         "@bochilteam/scraper": "^4.2.4",
         "@distube/ytdl-core": "4.13.3",
