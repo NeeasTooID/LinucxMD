@@ -1,8 +1,96 @@
 {
-  "users": {},
-  "chats": {},
+  "users": {
+    "6283897390164@s.whatsapp.net": {
+      "exp": 4,
+      "limit": 4000,
+      "lastclaim": 0,
+      "registered": false,
+      "name": "Npc",
+      "age": -1,
+      "regTime": -1,
+      "afk": -1,
+      "afkReason": "",
+      "banned": false,
+      "banReason": "",
+      "warn": 0,
+      "level": 0,
+      "role": "Free user",
+      "autolevelup": true,
+      "pc": 1705610854717
+    },
+    "6283895099347@s.whatsapp.net": {
+      "exp": 0,
+      "limit": 4000,
+      "lastclaim": 0,
+      "registered": false,
+      "name": "LinuxMD",
+      "age": -1,
+      "regTime": -1,
+      "afk": -1,
+      "afkReason": "",
+      "banned": false,
+      "banReason": "",
+      "warn": 0,
+      "level": 0,
+      "role": "Free user",
+      "autolevelup": true
+    }
+  },
+  "chats": {
+    "6283897390164@s.whatsapp.net": {
+      "isBanned": false,
+      "welcome": true,
+      "detect": false,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "delete": true,
+      "antiLink": false,
+      "viewonce": false,
+      "simi": false,
+      "autogpt": false,
+      "gempa": false,
+      "expired": 0,
+      "autoSticker": false,
+      "premium": false,
+      "premiumTime": false,
+      "nsfw": false,
+      "menu": true,
+      "antiToxic": false
+    },
+    "6285174269046@s.whatsapp.net": {
+      "isBanned": false,
+      "welcome": true,
+      "detect": false,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "delete": true,
+      "antiLink": false,
+      "viewonce": false,
+      "simi": false,
+      "autogpt": false,
+      "gempa": false,
+      "expired": 0,
+      "autoSticker": false,
+      "premium": false,
+      "premiumTime": false,
+      "nsfw": false,
+      "menu": true
+    }
+  },
   "stats": {},
   "msgs": {},
   "sticker": {},
-  "settings": {}
+  "settings": {
+    "6283895099347@s.whatsapp.net": {
+      "self": false,
+      "autoread": false,
+      "anticall": true,
+      "restartDB": 0,
+      "restrict": false
+    }
+  }
 }
