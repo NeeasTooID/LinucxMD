@@ -39,7 +39,7 @@ handler.all = async function (m) {
                     mediaUrl: sgh,
                     description: namebot,
                     previewType: "PHOTO",
-                    thumbnail: fs.readFileSync('./thumbnail.jpg'),
+                    thumbnail: fs.readFileSync('./media/thumbnail.jpg'),
                     //thumbnail: await (await fetch(pp)).buffer(),
                     sourceUrl: sgh,
                 }
@@ -95,7 +95,7 @@ handler.all = async function (m) {
                 "extendedTextMessage": {
                     "text": wm,
                     "title": wm,
-                    'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')
+                    'jpegThumbnail': fs.readFileSync('./media/thumbnail.jpg')
                 }
             }
         }
@@ -107,7 +107,7 @@ handler.all = async function (m) {
                 participant: `0@s.whatsapp.net`, ...(m.chat ?
                     { remoteJid: "status@broadcast" } : {})
             },
-            message: { "liveLocationMessage": { "caption": "by : WH MODS DEV", "h": `${wm}`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg') } }
+            message: { "liveLocationMessage": { "caption": "by : LinucxMD", "h": `${wm}`, 'jpegThumbnail': fs.readFileSync('./media/thumbnail.jpg') } }
         }
 
         global.fliveLoc2 = {
@@ -117,7 +117,7 @@ handler.all = async function (m) {
                 participant: `0@s.whatsapp.net`, ...(m.chat ?
                     { remoteJid: "status@broadcast" } : {})
             },
-            message: { "liveLocationMessage": { "title": "WH MODS DEV", "h": wm, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg') } }
+            message: { "liveLocationMessage": { "title": "LinucxMD", "h": wm, 'jpegThumbnail': fs.readFileSync('./media/thumbnail.jpg') } }
         }
 
         global.ftoko = {
@@ -130,10 +130,10 @@ handler.all = async function (m) {
                     "product": {
                         "productImage": {
                             "mimetype": "image/jpeg",
-                            "jpegThumbnail": fs.readFileSync('./thumbnail.jpg') //Gambarnye
+                            "jpegThumbnail": fs.readFileSync('./media/thumbnail.jpg') //Gambarnye
                         },
                         "title": wm, //Kasih namalu 
-                        "description": "Simple Bot Esm",
+                        "description": "Simple LinucxMD",
                         "currencyCode": "USD",
                         "priceAmount1000": "20000000",
                         "retailerId": "Ghost",
@@ -151,7 +151,7 @@ handler.all = async function (m) {
             message: {
                 documentMessage: {
                     title: wm,
-                    jpegThumbnail: fs.readFileSync('./thumbnail.jpg')
+                    jpegThumbnail: fs.readFileSync('./media/thumbnail.jpg')
                 }
             }
         }
@@ -166,9 +166,9 @@ handler.all = async function (m) {
                 "groupInviteMessage": {
                     "groupJid": "6282127487538-1625305606@g.us",
                     "inviteCode": "null",
-                    "groupName": "Kawan WH MODS DEV",
+                    "groupName": "Unemployment S9",
                     "caption": wm,
-                    'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')
+                    'jpegThumbnail': fs.readFileSync('./media/thumbnail.jpg')
                 }
             }
         }
@@ -186,7 +186,7 @@ handler.all = async function (m) {
                     'seconds': '999999999',
                     'gifPlayback': 'true',
                     'caption': wm,
-                    'jpegThumbnail': fs.readFileSync('./thumbnail.jpg')
+                    'jpegThumbnail': fs.readFileSync('./media/thumbnail.jpg')
                 }
             }
         }
