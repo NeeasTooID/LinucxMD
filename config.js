@@ -41,26 +41,26 @@ global.wm = '© LinucxMD By YusupKakuu'
 global.watermark = wm
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
-global.stickpack = `Sticker Dibuat dengan ${namebot}\ngithub.com/ShirokamiRyzen\n\nNao-MD ESM\n+6285864034767`
-global.stickauth = `© Nao-MD By Shirokami Ryzen`
+global.stickpack = `Sticker Dibuat dengan ${namebot}\nLinucxMD\n+6283895099347`
+global.stickauth = `© LinucxMD Unemployment`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
 /*============= OWNER INFO =============*/
-global.nameown1= 'Ryzn'
-global.nameown2 = 'Ryzn'
+global.nameown1= 'Npnpcy'
+global.nameown2 = 'CupMenolakMcy'
 /*============= MEDIA LINK =============*/
 global.Linkgc = 'Bentar'
 global.lynk = ''
 
 
 //*============= SOSMED =============*/
-global.sig = 'https://www.instagram.com/ryzen_vermillion'
-global.sgh = 'https://github.com/ShirokamiRyzen' //github
+global.sig = 'https://www.instagram.com/yusupk._'
+global.sgh = 'https://github.com/NeeasTooID' //github
 global.sgc = '-' //group whatsapp
 global.sdc = '-' //discord
 global.sfb = 'https://www.facebook.com/Nao.Tomori.UwU'
-global.snh = 'https://www.instagram.com/ryzen_vermillion'
+global.snh = 'https://s.id/yusupkakuu'
 
 /*============= DONASI =============*/
 global.pdana = '085174269046'
