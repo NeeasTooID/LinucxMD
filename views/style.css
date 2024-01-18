@@ -37,4 +37,10 @@ h2 {
     margin-top: 20px;
 }
 
-/* Add more styles as needed */
+/* Responsive adjustments */
+@media only screen and (max-width: 600px) {
+    .changelogs-container {
+        margin: 20px;
+        padding: 15px;
+    }
+}
