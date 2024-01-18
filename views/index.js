@@ -9,10 +9,23 @@ const platform = os.platform();
 const arch = os.arch();
 const cpus = os.cpus();
 
-// Mengirimkan detail hosting ke Discord Webhook
-axios.post(discordWebhookUrl, {
-    content: `***Server is running!***\n\nHostname: ||${hostname}||\nPlatform: ${platform}\nArchitecture: ${arch}\nCPUs: ${cpus.length} cores\n@LinucxMD`,
-})
+// Membuat pesan dengan embed
+const embedMessage = {
+    embeds: [{
+        title: 'Server Information',
+        description: 'Website is Update!',
+        fields: [
+            { name: 'Hostname', value: `||${hostname}||`, inline: true },
+            { name: 'Platform', value: platform, inline: true },
+            { name: 'Architecture', value: arch, inline: true },
+            { name: 'CPUs', value: `${cpus.length} cores`, inline: true },
+        ],
+        color: 0x00FF00, // Warna hijau (Anda dapat mengganti sesuai keinginan)
+    }],
+};
+
+// Mengirimkan detail hosting ke Discord Webhook dengan pesan embed
+axios.post(discordWebhookUrl, embedMessage)
     .then(response => {
         console.log('Webhook request sent successfully:', response.data);
     })
