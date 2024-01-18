@@ -1,12 +1,2 @@
 node_modules
 package-lock.json
-sessions
-tmp/*
-enc/*
-*.bak
-main.js.bak
-plugins_bak/
-handlerr.js
-
-plugins/_monitor-mc.js
-Nao-MD.zip
