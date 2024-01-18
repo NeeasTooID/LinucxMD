@@ -126,7 +126,7 @@ global.APIKeys = { // APIKey Here
 
   'https://skizo.tech/' : '',
   'https://api.itsrose.site/': 'Rs-Zeltoria',
-  'https://api.ryzendesu.vip/': ''
+  'https://api.ryzendesu.vip/': '84295850'
 }
 
 /*============= OTHER =============*/
