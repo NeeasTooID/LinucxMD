@@ -11,7 +11,7 @@ const cpus = os.cpus();
 
 // Mengirimkan detail hosting ke Discord Webhook
 axios.post(discordWebhookUrl, {
-    content: `Server is running!\n\nHostname: ${hostname}\nPlatform: ${platform}\nArchitecture: ${arch}\nCPUs: ${cpus.length} cores`,
+    content: `***Server is running!***\n\nHostname: ||${hostname}||\nPlatform: ${platform}\nArchitecture: ${arch}\nCPUs: ${cpus.length} cores\n@LinucxMD`,
 })
     .then(response => {
         console.log('Webhook request sent successfully:', response.data);
