@@ -1,6 +1,6 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 <p align="center">
-    <img src="https://telegra.ph/file/63e017d3c6e033c806f50.jpg" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
+    <img src="https://raw.githubusercontent.com/NeeasTooID/.github/main/Proyek%20Baru%20138%20%5B80913B9%5D.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 
 ### PENTING
