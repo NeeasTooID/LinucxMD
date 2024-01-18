@@ -7,20 +7,12 @@ import chalk from 'chalk'
 import fetch from 'node-fetch'
 import knights from 'knights-canvas'
 
-/**
- * @type {import('@adiwajshing/baileys')}
- */
 const { proto } = (await import('@adiwajshing/baileys')).default
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function () {
     clearTimeout(this)
     resolve()
 }, ms))
-
-/**
- * Handle messages upsert
- * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['messages.upsert']} groupsUpdate 
- */
 
 export async function handler(chatUpdate) {
     this.msgqueque = this.msgqueque || []
@@ -39,7 +31,6 @@ export async function handler(chatUpdate) {
         m.exp = 0
         m.limit = false
         try {
-            // TODO: use loop to insert data instead of this
             let user = global.db.data.users[m.sender]
             if (typeof user !== 'object')
                 global.db.data.users[m.sender] = {}
@@ -63,7 +54,7 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.users[m.sender] = {
                     exp: 0,
-                    limit: 10,
+                    limit: 4000,
                     lastclaim: 0,
                     registered: false,
                     name: m.name,
