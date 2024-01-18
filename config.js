@@ -59,23 +59,23 @@ global.sig = 'https://www.instagram.com/yusupk._'
 global.sgh = 'https://github.com/NeeasTooID' //github
 global.sgc = 'https://whatsapp.com/channel/0029VaEK2Vc9mrGbK9s0Iv3p' //group whatsapp
 global.sdc = 'https://discord.com/invite/JkMqE7tHKT' //discord
-global.sfb = 'https://www.facebook.com/Nao.Tomori.UwU'
+global.sfb = 'https://www.facebook.com/yusuf.venezzuellaa?mibextid=ZbWKwL'
 global.snh = 'https://s.id/yusupkakuu'
 
 /*============= DONASI =============*/
-global.pdana = '085174269046'
-global.povo = '-'
-global.pgopay = '085174269046'
+global.pdana = '083897390164'
+global.povo = '083897390164'
+global.pgopay = '083897390164'
 global.plinkaja = '-' //link aja
-global.ppulsa = '085174269046'
-global.ppulsa2 = '085174269046'
-global.psaweria = 'https://saweria.co/shirokamiryzen'
-global.bank1 = '109901209640'
+global.ppulsa = '083897390164'
+global.ppulsa2 = '083895099347'
+global.psaweria = 'https://saweria.co/YUSUP909'
+global.bank1 = '-'
 global.bank2 = '-'
 
 
 /*============= TAMPILAN =============*/
-global.ListHargaSewa = '├ 5 Hari IDR 3.000\n├ 7 Hari IDR 5.000\n├ 15+5 Hari IDR 10.000\n├ 30 Hari IDR 15.000'
+global.ListHargaSewa = '├ Permanen 10k'
 global.LyAtas1 = '☰ ━━━ ❨'
 global.LyAtas2 = '❩ ━━┄┈ •⟅'
 global.Ly = '┃'
@@ -170,9 +170,9 @@ global.thumblvlup = [
 ]
 
 global.dtu = 'INSTAGRAM'
-global.urlnya = "https://www.instagram.com/ryzen_vermillion"
+global.urlnya = "https://www.instagram.com/yusupk._"
 global.dtc = 'CALL OWNER'
-global.phn = '0813 8730 7198'
+global.phn = '0838 9739 0164'
 
 
 /*============= JANGAN DIUBAH =============*/
