@@ -1,9 +1,6 @@
 body {
-    background-image: url('url_gambar_buram.jpg'); /* Ganti 'url_gambar_buram.jpg' dengan URL atau path gambar buram Anda */
-    background-size: cover;
-    background-blur: 10px; /* Ganti nilai blur sesuai keinginan Anda */
     font-family: 'Arial', sans-serif;
-    color: #ffffff; /* Warna teks */
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
@@ -12,20 +9,32 @@ body {
     max-width: 800px;
     margin: 50px auto;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7); /* Warna latar belakang container dengan opasitas */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Efek bayangan untuk memberikan kedalaman */
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 
-h1, h2, p {
-    text-align: center;
+h1, h2 {
+    color: #333;
 }
 
 ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
 }
 
 li {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+/* Add more styles as needed */
