@@ -57,8 +57,8 @@ global.lynk = ''
 //*============= SOSMED =============*/
 global.sig = 'https://www.instagram.com/yusupk._'
 global.sgh = 'https://github.com/NeeasTooID' //github
-global.sgc = '-' //group whatsapp
-global.sdc = '-' //discord
+global.sgc = 'https://whatsapp.com/channel/0029VaEK2Vc9mrGbK9s0Iv3p' //group whatsapp
+global.sdc = 'https://discord.com/invite/JkMqE7tHKT' //discord
 global.sfb = 'https://www.facebook.com/Nao.Tomori.UwU'
 global.snh = 'https://s.id/yusupkakuu'
 
