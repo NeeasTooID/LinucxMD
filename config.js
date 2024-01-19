@@ -105,9 +105,9 @@ global.wait = 'Please Wait...'
 global.eror = 'Error!'
 
 /*============= WEB API KEY =============*/
-global.deepai = 'YOUR_APIKEY_HERE'
-global.openai = 'YOUR_APIKEY_HERE'  //api key bisa didapatkan dari https://openai.com/api/
-global.org = 'YOUR_APIKEY_HERE'  //openAI Organization name
+global.deepai = 'YOUR_APIKEY_HERE' //
+global.openai = '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'  //api key bisa didapatkan dari https://openai.com/api/
+global.org = 'org-lOgBXMHcj0ntOQKVF0vvdDIH'  //openAI Organization name
 global.rose = 'Rs-Zeltoria'
 global.ryzen = '84295850' //daftar di api.ryzendesu.vip/
 global.xzn = 'npnpicyy' // NPNPCY
