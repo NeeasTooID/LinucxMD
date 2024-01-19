@@ -38,6 +38,7 @@
 [![ImYanXiao](https://github.com/ImYanXiao.png?size=100)](https://github.com/ImYanXiao)
 [![Xnuvers007](https://github.com/Xnuvers007.png?size=100)](https://github.com/Xnuvers007)
 [![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
+[![ShirokamiRyzen](https://github.com/Zeltoria.png?size=100)](https://github.com/Zeltoria)
 #### Recoder
 [![ShirokamiRyzen](https://github.com/NeastooID.png?size=100)](https://github.com/NeastooID)
 [![ShirokamiRyzen](https://github.com/HindiaFtNpc.png?size=100)](https://github.com/HindiaFtNpc)
