@@ -2,14 +2,6 @@ import uploadFile from '../lib/uploadFile.js'
 import uploadImage from '../lib/uploadImage.js'
 
 let handler = async (m, { conn, usedPrefix, command }) => {
-let loadd = [
- '> ■ □ □ □ □ □ □ □ □ □ □ 10%',
- '> ■ ■ ■ □ □ □ □ □ □ □ □ 40%',
- '> ■ ■ ■ ■ ■ ■ □ □ □ □ □ 60%',
- '> ■ ■ ■ ■ ■ ■ ■ ■ ■ □ □ 80%',
- '> ■ ■ ■ ■ ■ ■ ■ ■ ■ ■ ■100%',
- 'Loading Complate!...'
- ]
  
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''

@@ -16,7 +16,7 @@ Berdonasi minimal 5k kamu akan mendapat akses *Premium*
 
 Ketik *.donasi* untuk info lebih lengkap
 
-https://saweria.co/shirokamiryzen`)
+https://saweria.co/YUSUP909`)
     user.pc = new Date * 1
 }
 

@@ -19,16 +19,14 @@ const defaultMenu = {
 ● *Level:* %level
 ● *Xp:* %exp / %maxexp
 ● *Total Xp:* %totalexp
+● *Platform:* %platform
+● *Type:* Node.JS
 
 *${ucapan()} %name!*
 ● *Tanggal:* %week %weton
 ● *Date:* %date
 ● *Tanggal Islam:* %dateIslamic
 ● *Waktu:* %time
-
-● *Platform:* %platform
-● *Type:* Node.JS
-● *Uptime:* %muptime
 %readmore
 `.trimStart(),
   header: '╭─────『 %category 』',
@@ -44,17 +42,16 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
 
   let tags = {
     'main': 'Main',
-    'stress': 'Stress',
     'ai': 'Ai feature',
-    'memfess': 'Memfess',
+    'stress': 'Stress',
     'downloader': 'Downloader',
     'internet': 'Internet',
+    'game' : 'Games',
     'anime': 'Anime',
-    'sticker': 'Sticker',
     'tools': 'Tools',
+    'sticker': 'Sticker',
     'group': 'Group',
     'quotes': 'Quotes',
-    'maker': 'Maker Text Logo',
     'nulis': 'Nulis',
     'info': 'Info',
     'owner': 'Owner',
@@ -233,7 +230,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
             mediaType: 1,
             previewType: 0,
             renderLargerThumbnail: true,
-            thumbnailUrl: 'https://telegra.ph/file/14a7745f434cd21e900d6.jpg',
+            thumbnailUrl: 'https://telegra.ph/file/cf565c37ffe331fb0c826.jpg',
             sourceUrl: 'https://www.instagram.com/yusupk._',
           }
         }, mentions: [m.sender]
