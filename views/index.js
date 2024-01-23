@@ -11,7 +11,7 @@ const arch = os.arch();
 const cpus = os.cpus();
 
 // Membuat pesan dengan embed
-const createEmbedMessage = () => {
+const createEmbedMessage = (changes) => {
     return {
         embeds: [{
             title: 'Server Information',
@@ -21,6 +21,7 @@ const createEmbedMessage = () => {
                 { name: 'Platform', value: platform, inline: true },
                 { name: 'Architecture', value: arch, inline: true },
                 { name: 'CPUs', value: `${cpus.length} cores`, inline: true },
+                { name: 'File Changes', value: changes.join('\n') || 'No changes detected', inline: false },
             ],
             color: 0x00FF00, // Warna hijau (Anda dapat mengganti sesuai keinginan)
         }],
@@ -39,6 +40,8 @@ const sendWebhook = (message) => {
 };
 
 // Memonitor perubahan file dengan chokidar
+const changedFiles = [];
+
 const watcher = chokidar.watch('/vercel/path0', {
     ignored: /(^|[\/\\])\../, // ignore dotfiles
     persistent: true,
@@ -47,18 +50,19 @@ const watcher = chokidar.watch('/vercel/path0', {
 watcher
     .on('add', path => {
         console.log(`File ${path} has been added`);
-        const embedMessage = createEmbedMessage();
-        sendWebhook(embedMessage);
+        changedFiles.push(`Added: ${path}`);
     })
     .on('change', path => {
         console.log(`File ${path} has been changed`);
-        const embedMessage = createEmbedMessage();
-        sendWebhook(embedMessage);
+        changedFiles.push(`Changed: ${path}`);
     })
     .on('unlink', path => {
         console.log(`File ${path} has been removed`);
-        const embedMessage = createEmbedMessage();
+        changedFiles.push(`Removed: ${path}`);
+    })
+    .on('ready', () => {
+        // Send the webhook message once all initial files have been scanned
+        const embedMessage = createEmbedMessage(changedFiles);
         sendWebhook(embedMessage);
+        console.log('Watching for file changes...');
     });
-
-console.log('Watching for file changes...');
