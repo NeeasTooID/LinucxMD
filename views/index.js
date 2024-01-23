@@ -60,9 +60,3 @@ watcher
         console.log(`File ${path} has been removed`);
         changedFiles.push(`Removed: ${path}`);
     })
-    .on('ready', () => {
-        // Send the webhook message once all initial files have been scanned
-        const embedMessage = createEmbedMessage(changedFiles);
-        sendWebhook(embedMessage);
-        console.log('Watching for file changes...');
-    });
