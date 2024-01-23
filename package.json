@@ -110,7 +110,6 @@
         "xmldom": "^0.6.0",
         "yargs": "^17.7.2",
         "yt-search": "^2.10.4",
-        "zs-extract": "^1.4.2",
-        "chokidar": "*"
+        "zs-extract": "^1.4.2"
     }
 }
