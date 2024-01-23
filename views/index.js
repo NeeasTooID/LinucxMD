@@ -39,7 +39,7 @@ const sendWebhook = (message) => {
 };
 
 // Memonitor perubahan file dengan chokidar
-const watcher = chokidar.watch('/', {
+const watcher = chokidar.watch('/vercel/path0', {
     ignored: /(^|[\/\\])\../, // ignore dotfiles
     persistent: true,
 });
