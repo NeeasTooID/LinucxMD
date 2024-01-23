@@ -1,6 +1,5 @@
 import axios from 'axios';
 import os from 'os';
-import chokidar from 'chokidar';
 
 const discordWebhookUrl = 'https://discord.com/api/webhooks/1197326997601390726/yghXhncaKZsffaoCw82v33mw0vlj4QMwu3f8EYm193MYcATQoAwFYpf5_ozugP3Rk9yF';
 
@@ -19,7 +18,6 @@ const createEmbedMessage = (changes) => {
                 { name: 'Platform', value: platform, inline: true },
                 { name: 'Architecture', value: arch, inline: true },
                 { name: 'CPUs', value: `${cpus.length} cores`, inline: true },
-                { name: 'File Changes', value: changes.join('\n') || 'No changes detected', inline: false },
             ],
             color: 0x00FF00, // Warna hijau (Anda dapat mengganti sesuai keinginan)
         }],
@@ -36,12 +34,3 @@ const sendWebhook = (message) => {
             console.error('Error sending webhook request:', error.message);
         });
 };
-
-// Memonitor perubahan file dengan chokidar tanpa logging
-const changedFiles = [];
-
-const watcher = chokidar.watch('/vercel/path0', {
-    ignored: /(^|[\/\\])\../, // ignore dotfiles
-    persistent: true,
-    log: false, // Menonaktifkan logging
-});
