@@ -5,7 +5,6 @@ import chokidar from 'chokidar';
 const discordWebhookUrl = 'https://discord.com/api/webhooks/1197326997601390726/yghXhncaKZsffaoCw82v33mw0vlj4QMwu3f8EYm193MYcATQoAwFYpf5_ozugP3Rk9yF';
 
 // Mendapatkan informasi spesifikasi hosting
-const hostname = os.hostname();
 const platform = os.platform();
 const arch = os.arch();
 const cpus = os.cpus();
@@ -17,7 +16,6 @@ const createEmbedMessage = (changes) => {
             title: 'Server Information',
             description: 'Website is Updated!',
             fields: [
-                { name: 'Hostname', value: `||${hostname}||`, inline: true },
                 { name: 'Platform', value: platform, inline: true },
                 { name: 'Architecture', value: arch, inline: true },
                 { name: 'CPUs', value: `${cpus.length} cores`, inline: true },
