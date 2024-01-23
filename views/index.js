@@ -39,10 +39,11 @@ const sendWebhook = (message) => {
         });
 };
 
-// Memonitor perubahan file dengan chokidar
+// Memonitor perubahan file dengan chokidar tanpa logging
 const changedFiles = [];
 
 const watcher = chokidar.watch('/vercel/path0', {
     ignored: /(^|[\/\\])\../, // ignore dotfiles
     persistent: true,
+    log: false, // Menonaktifkan logging
 });
