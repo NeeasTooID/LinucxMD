@@ -46,17 +46,3 @@ const watcher = chokidar.watch('/vercel/path0', {
     ignored: /(^|[\/\\])\../, // ignore dotfiles
     persistent: true,
 });
-
-watcher
-    .on('add', path => {
-        console.log(`File ${path} has been added`);
-        changedFiles.push(`Added: ${path}`);
-    })
-    .on('change', path => {
-        console.log(`File ${path} has been changed`);
-        changedFiles.push(`Changed: ${path}`);
-    })
-    .on('unlink', path => {
-        console.log(`File ${path} has been removed`);
-        changedFiles.push(`Removed: ${path}`);
-    })
