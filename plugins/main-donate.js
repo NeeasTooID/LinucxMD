@@ -16,7 +16,8 @@ Kalian bisa mendukung saya agar bot ini tetap up to date dengan:
 ├ Gopay : ${gopay}
 └────
 Kamu akan mendapat akses *Premium* jika berdonasi:
-5k = Premium 60 Hari
+5k = Premium 7 Hari
+10k = Premium 30 Hari
 50k = Premium 365 Hari
 
 Berapapun donasi kalian akan sangat berarti 👍
