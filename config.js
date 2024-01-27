@@ -50,9 +50,8 @@ global.wibb = `${wktuwib}`
 global.nameown1= 'Npnpcy'
 global.nameown2 = 'CupMenolakMcy'
 /*============= MEDIA LINK =============*/
-global.Linkgc = 'Bentar'
-global.lynk = ''
-
+global.Linkgc = 'https://chat.whatsapp.com/CjgkxnajTPXAivDPUZgzjy'
+global.lynk = 'htpps://saweria.co/YUSUP909'
 
 //*============= SOSMED =============*/
 global.sig = 'https://www.instagram.com/yusupk._'
@@ -66,13 +65,9 @@ global.snh = 'https://s.id/yusupkakuu'
 global.pdana = '083897390164'
 global.povo = '083897390164'
 global.pgopay = '083897390164'
-global.plinkaja = '-' //link aja
 global.ppulsa = '083897390164'
 global.ppulsa2 = '083895099347'
 global.psaweria = 'https://saweria.co/YUSUP909'
-global.bank1 = '-'
-global.bank2 = '-'
-
 
 /*============= TAMPILAN =============*/
 global.ListHargaSewa = '├ Permanen 10k'
@@ -137,51 +132,18 @@ global.ddocx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.d
 global.dxlsx = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
 global.dpdf = 'application/pdf'
 global.drtf = 'text/rtf'
-//OPTIONS
 global.optsnsfw = true // Untuk mematikan Dan Menyalakan Nsfw
 global.premnsfw = true // Nsfw Mode Premium?
-global.thumb = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg' //Main Thumbnail
-global.imagebot = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
-global.giflogo = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
-global.thumbs = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
-global.thumbnailUrl = [
-  'https://telegra.ph/file/ef4b742d47e6a9115e2ff.jpg'
-]
-global.fotonya1 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ganti jadi foto bot mu
-global.fotonya2 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ini juga ganti 
-global.flaaa2 = [
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=",
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=",
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=amped-logo&doScale=true&scaleWidth=800&scaleHeight=500&text=",
- "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=",
- "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text="
-]
-global.fla = [
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=",
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=",
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=amped-logo&doScale=true&scaleWidth=800&scaleHeight=500&text=",
- "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=",
- "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text="
-]
-global.hwaifu = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
+global.thumb = 'https://telegra.ph/file/9822dac1c196097de953b.jpg' //Main Thumbnail
+global.fotonya1 = 'https://telegra.ph/file/52ea9e08940b847d58a2a.jpg' //ganti jadi foto bot mu
 global.thumblvlup = [
-  'https://i.pinimg.com/originals/a0/34/8a/a0348ae908d8ac4ced76df289eb41e1a.jpg',
-  'https://i.pinimg.com/originals/be/3b/47/be3b477371cc249e49fd0bb3284de7d7.jpg',
-  'https://i.pinimg.com/originals/63/c3/37/63c337596b3391df0e72a9729ceca7b6.jpg',
-  'https://i.pinimg.com/originals/db/ed/5a/dbed5afac55d266602d0ca0c67622bb9.jpg'
+  'https://telegra.ph/file/6c8024f4b2243f63ba7d2.jpg',
+  'https://telegra.ph/file/bbe43eb2cd4228fee5955.jpg',
+  'https://telegra.ph/file/fb4a2bdf046e8e8ff98d7.jpg',
+  'https://telegra.ph/file/be01e6e8ed782de254871.jpg'
 ]
-
-global.dtu = 'INSTAGRAM'
-global.urlnya = "https://www.instagram.com/yusupk._"
-global.dtc = 'CALL OWNER'
-global.phn = '0838 9739 0164'
-
 
 /*============= JANGAN DIUBAH =============*/
-global.fsizedoc = '99999999999999'
-global.fpagedoc = '999'
-global.thumbdoc = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg'
-
 let file = fileURLToPath(import.meta.url)
 watchFile(file, () => {
   unwatchFile(file)
@@ -193,77 +155,3 @@ watchFile(file, () => {
 global.benar = 'Good Job! ◕◡◕'
 global.salah = 'Not Bad! ◕◠◕'
 global.dikit = "Dikit Lagi, Semangat!!"
-
-
-/*============= RPG GAME =============*/
-global.multiplier = 69 // The higher, The harder levelup
-global.rpg = {
-  emoticon(string) {
-    string = string.toLowerCase()
-    let emot = {
-      agility: '🤸‍♂️',
-      arc: '🏹',
-      armor: '🥼',
-      bank: '🏦',
-      bibitanggur: '🍇',
-      bibitapel: '🍎',
-      bibitjeruk: '🍊',
-      bibitmangga: '🥭',
-      bibitpisang: '🍌',
-      bow: '🏹',
-      bull: '🐃',
-      cat: '🐈',
-      chicken: '🐓',
-      common: '📦',
-      cow: '🐄',
-      crystal: '🔮',
-      darkcrystal: '♠️',
-      diamond: '💎',
-      dog: '🐕',
-      dragon: '🐉',
-      elephant: '🐘',
-      emerald: '💚',
-      exp: '✉️',
-      fishingrod: '🎣',
-      fox: '🦊',
-      gems: '🍀',
-      giraffe: '🦒',
-      gold: '👑',
-      health: '❤️',
-      horse: '🐎',
-      intelligence: '🧠',
-      iron: '⛓️',
-      keygold: '🔑',
-      keyiron: '🗝️',
-      knife: '🔪',
-      legendary: '🗃️',
-      level: '🧬',
-      limit: '🌌',
-      lion: '🦁',
-      magicwand: '⚕️',
-      mana: '🪄',
-      money: '💵',
-      mythic: '🗳️',
-      pet: '🎁',
-      petFood: '🍖',
-      pickaxe: '⛏️',
-      pointxp: '📧',
-      potion: '🥤',
-      rock: '🪨',
-      snake: '🐍',
-      stamina: '⚡',
-      strength: '🦹‍♀️',
-      string: '🕸️',
-      superior: '💼',
-      sword: '⚔️',
-      tiger: '🐅',
-      trash: '🗑',
-      uncommon: '🎁',
-      upgrader: '🧰',
-      wood: '🪵'
-    }
-    let results = Object.keys(emot).map(v => [v, new RegExp(v, 'gi')]).filter(v => v[1].test(string))
-    if (!results.length) return ''
-    else return emot[results[0][0]]
-  }
-}

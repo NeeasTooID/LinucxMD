@@ -1,7 +1,7 @@
 {
     "name": "LinucxMD",
     "version": "1.0",
-    "description": "Script Recode Cacad! By YusupKakauu",
+    "description": "LinucxMD By YusupKakuu",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -11,8 +11,7 @@
     },
     "scripts": {
         "start": "node index.js --autocleartmp --autoread",
-        "test": "node test.js",
-        "test2": "nodemon index.js --server --autocleartmp --autoread"
+        "test": "nodemon index.js --server --autocleartmp --autoread"
     },
     "keywords": [
         "termux-whatsapp-bot",
@@ -24,19 +23,18 @@
     ],
     "homepage": "https://github.com/NeeasTooID",
     "author": {
-        "name": "SiapaSangka"
+        "name": "NeeasTooID"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/NeeasTooID"
     },
     "bugs": {
-        "url": "https://github.com/NeeasTooID/LinucxMD.git"
+        "url": "https://github.com/NeeasTooID"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "npm:@whiskeysockets/baileys@*",
-        "@arugaz/ai2d": "^1.0.1-z.8",
+        "@adiwajshing/baileys": "npm:@whiskeysockets/baileys@latest",
         "@bochilteam/scraper": "^4.2.4",
         "@distube/ytdl-core": "4.13.3",
         "@ibaraki-douji/pixivts": "*",
@@ -84,6 +82,7 @@
         "node-os-utils": "^1.3.6",
         "node-webpmux": "^3.1.9",
         "ocr-space-api-wrapper": "^2.3.0",
+        "openai": "^4.24.0",
         "pdfkit": "^0.13.0",
         "perf_hooks": "^0.0.1",
         "pino": "^8.11.0",
@@ -97,7 +96,7 @@
         "readable-stream": "^4.4.2",
         "remove.bg": "^1.3.0",
         "request": "^2.88.2",
-        "sharp": "^0.30.7",
+        "sharp": "^0.32.2",
         "similarity": "^1.2.1",
         "socket.io": "^4.6.1",
         "steno": "^3.0.0",
@@ -110,6 +109,7 @@
         "xmldom": "^0.6.0",
         "yargs": "^17.7.2",
         "yt-search": "^2.10.4",
+        "ytdl-core": "^4.11.5",
         "zs-extract": "^1.4.2"
     }
 }
