@@ -24,12 +24,17 @@ body {
     margin-top: -5px; /* Move the title upward slightly */
 }
 
-.main-container .changelogs-container, .main-container .repo-stats {
+.main-container .repo-stats {
     border: 2px solid #61dafb; /* GitHub blue border color */
     padding: 15px;
     margin-bottom: 20px;
-    width: 100%; /* Make these sections take full width */
+    width: 100%; /* Make this section take full width */
     box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.repo-stats img {
+    display: block; /* Center-align image */
+    margin: 0 auto; /* Center horizontally */
 }
 
 .main-container h2 {
