@@ -5,7 +5,7 @@ body {
     background-color: #f8f8f8;
 }
 
-.changelogs-container {
+.container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -24,4 +24,12 @@ body {
 .saweria-leaderboard {
     max-width: 100%;
     overflow: hidden;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container, .repo-stats, .saweria-leaderboard {
+        width: 90%;
+        margin: 10px auto;
+    }
 }
