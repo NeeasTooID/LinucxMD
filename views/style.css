@@ -17,6 +17,13 @@ body {
     align-items: center; /* Center the content horizontally */
 }
 
+.main-container h1 {
+    color: #61dafb; /* GitHub blue header color */
+    margin: 0; /* Remove default margin */
+    text-align: center; /* Center-align text */
+    margin-top: -10px; /* Move the title upward slightly */
+}
+
 .main-container .changelogs-container, .main-container .repo-stats {
     border: 2px solid #61dafb; /* GitHub blue border color */
     padding: 15px;
@@ -25,7 +32,7 @@ body {
     box-sizing: border-box; /* Include padding and border in the width calculation */
 }
 
-.main-container h1, .main-container h2 {
+.main-container h2 {
     color: #61dafb; /* GitHub blue header color */
 }
 
