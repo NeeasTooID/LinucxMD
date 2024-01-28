@@ -6,30 +6,36 @@ body {
     color: #fff; /* Light text color */
 }
 
-.container {
+.main-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 20px;
     background-color: #2d2d2d; /* Darker container background color */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.container h1, .container h2 {
+.main-container .changelogs-container, .main-container .repo-stats {
+    border: 2px solid #61dafb; /* GitHub blue border color */
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.main-container h1, .main-container h2 {
     color: #61dafb; /* GitHub blue header color */
 }
 
-.container ul {
+.main-container ul {
     list-style-type: none;
     padding: 0;
 }
 
-.container ul li {
+.main-container ul li {
     margin-bottom: 8px;
 }
 
 /* Responsive styles */
 @media (max-width: 600px) {
-    .container {
+    .main-container {
         width: 90%;
         margin: 10px auto;
     }
