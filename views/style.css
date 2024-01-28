@@ -21,7 +21,7 @@ body {
     color: #61dafb; /* GitHub blue header color */
     margin: 0; /* Remove default margin */
     text-align: center; /* Center-align text */
-    margin-top: -10px; /* Move the title upward slightly */
+    margin-top: -5px; /* Move the title upward slightly */
 }
 
 .main-container .changelogs-container, .main-container .repo-stats {
