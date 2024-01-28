@@ -24,8 +24,21 @@ body {
     margin-top: -5px; /* Move the title upward slightly */
 }
 
+.changelogs-container {
+    border: 2px solid #61dafb; /* GitHub blue border color for changelogs */
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 100%; /* Make this section take full width */
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+}
+
+.changelogs-container h2 {
+    color: #61dafb; /* GitHub blue header color */
+    text-align: center; /* Center-align text */
+}
+
 .main-container .repo-stats {
-    border: 2px solid #61dafb; /* GitHub blue border color */
+    border: 2px solid #61dafb; /* GitHub blue border color for repo-stats */
     padding: 15px;
     margin-bottom: 20px;
     width: 100%; /* Make this section take full width */
@@ -35,10 +48,6 @@ body {
 .repo-stats img {
     display: block; /* Center-align image */
     margin: 0 auto; /* Center horizontally */
-}
-
-.main-container h2 {
-    color: #61dafb; /* GitHub blue header color */
 }
 
 .main-container ul {
