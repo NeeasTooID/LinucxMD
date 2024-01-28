@@ -2,33 +2,34 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f8f8;
+    background-color: #1e1e1e; /* Dark moon background color */
+    color: #fff; /* Light text color */
 }
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: #2d2d2d; /* Darker container background color */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.repo-stats {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.container h1, .container h2 {
+    color: #61dafb; /* GitHub blue header color */
 }
 
-.saweria-leaderboard {
-    max-width: 100%;
-    overflow: hidden;
+.container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.container ul li {
+    margin-bottom: 8px;
 }
 
 /* Responsive styles */
 @media (max-width: 600px) {
-    .container, .repo-stats, .saweria-leaderboard {
+    .container {
         width: 90%;
         margin: 10px auto;
     }
