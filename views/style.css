@@ -37,16 +37,24 @@ body {
     text-align: center; /* Center-align text */
 }
 
-.main-container .repo-stats {
+.repo-stats {
     border: 2px solid #61dafb; /* GitHub blue border color for repo-stats */
     padding: 15px;
     margin-bottom: 20px;
     width: 100%; /* Make this section take full width */
     box-sizing: border-box; /* Include padding and border in the width calculation */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
 }
 
 .repo-stats img {
     display: block; /* Center-align image */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.repo-stats iframe {
+    display: block; /* Center-align iframe */
     margin: 0 auto; /* Center horizontally */
 }
 
