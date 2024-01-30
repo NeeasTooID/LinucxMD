@@ -10,10 +10,10 @@
 <h1 align="center">Npnpicy - MD</h1>
 
 <p align="center">
- <a href="#"><img title="NpnpicyMD" src="https://img.shields.io/badge/NpnpicyMD-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
+ <a href="#"><img title="Linucx-MD" src="https://img.shields.io/badge/LinucxMD-green?colorA=%23ff0000&colorB=%23017e40&style=for-the-badge"></a>
 </p>
 <p align="center">
-<a href="https://github.com/NpnpicyAvailable"><img title="Author" src="https://img.shields.io/badge/AUTHOR-NpnpicyMD-green.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/LinucxMD"><img title="Author" src="https://img.shields.io/badge/AUTHOR-YUSUPKAKUU-green.svg?style=for-the-badge&logo=github"></a>
 
 ### FOR VPS USER
 * apt update && apt upgrade -y
