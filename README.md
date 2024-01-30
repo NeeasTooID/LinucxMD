@@ -41,6 +41,7 @@
 [![zeeoneofficial](https://github.com/zeeoneofficial.png?size=100)](https://github.com/zeeoneofficial)
 [![Zeltoria](https://github.com/Zeltoria.png?size=100)](https://github.com/Zeltoria)
 [![github](https://github.com/github.png?size=100)](https://github.com/github)
+[![nodejs](https://github.com/nodejs.png?size=100)](https://github.com/nodejs)
 
 #### Recoder
 [![NeastooID](https://github.com/NeastooID.png?size=100)](https://github.com/NeastooID)
