@@ -40,6 +40,8 @@
 [![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
 [![zeeoneofficial](https://github.com/zeeoneofficial.png?size=100)](https://github.com/zeeoneofficial)
 [![Zeltoria](https://github.com/Zeltoria.png?size=100)](https://github.com/Zeltoria)
+[![github](https://github.com/github.png?size=100)](https://github.com/github)
+
 #### Recoder
 [![NeastooID](https://github.com/NeastooID.png?size=100)](https://github.com/NeastooID)
 [![HindiaFtNpc](https://github.com/HindiaFtNpc.png?size=100)](https://github.com/HindiaFtNpc)
