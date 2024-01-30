@@ -42,6 +42,7 @@
 [![Zeltoria](https://github.com/Zeltoria.png?size=100)](https://github.com/Zeltoria)
 [![github](https://github.com/github.png?size=100)](https://github.com/github)
 [![nodejs](https://github.com/nodejs.png?size=100)](https://github.com/nodejs)
+[![amiruldev20](https://github.com/amiruldev20.png?size=100)](https://github.com/amiruldev20)
 
 #### Recoder
 [![NeastooID](https://github.com/NeastooID.png?size=100)](https://github.com/NeastooID)
