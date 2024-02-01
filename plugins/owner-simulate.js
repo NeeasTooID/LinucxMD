@@ -1,9 +1,9 @@
 let handler = async (m, { conn, usedPrefix, command, args: [event], text }) => {
-    if (!event) return await conn.sendButton(m.chat, `contoh:
+    if (!event) return await conn.reply(m.chat, `contoh:
 ${usedPrefix + command} welcome @user
 ${usedPrefix + command} bye @user
 ${usedPrefix + command} promote @user
-${usedPrefix + command} demote @user`.trim(), wm, null, [['Welcome', '#simulate welcome'], ['Bye', '#simulate bye']])
+${usedPrefix + command} demote @user`.trim(), m, null, [['Welcome', '#simulate welcome'], ['Bye', '#simulate bye']])
     let mentions = text.replace(event, '').trimStart()
     let who = mentions ? conn.parseMention(mentions) : []
     let part = who.length ? who : [m.sender]
@@ -27,10 +27,6 @@ ${usedPrefix + command} demote @user`.trim(), wm, null, [['Welcome', '#simulate 
         case 'demote':
             act = 'demote'
             break
-/*        case 'delete':
-            deleted = m
-            break
-*/
         default:
             throw eror
     }
@@ -39,10 +35,10 @@ ${usedPrefix + command} demote @user`.trim(), wm, null, [['Welcome', '#simulate 
         participants: part,
         action: act
     })
-//    return conn.onDelete(m)
 }
-handler.help = ['simulate']
+handler.help = ['simulate <event> [@mention]']
 handler.tags = ['owner']
+handler.rowner = true
 
-handler.command = /^simulate$/i
+handler.command = /^(simulate|simulasi)$/i
 export default handler

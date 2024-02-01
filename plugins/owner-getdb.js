@@ -8,6 +8,6 @@ handler.help = ['getdb']
 handler.tags = ['owner']
 handler.command = /^(getdb)$/i
 
-handler.owner = true
+handler.rowner = true
 
 export default handler

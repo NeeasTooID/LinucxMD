@@ -2,7 +2,7 @@ import cp from 'child_process'
 import { promisify } from 'util'
 let exec = promisify(cp.exec).bind(cp)
 let handler = async (m, { conn, isROwner, usedPrefix, command, text }) => {
-    if (!text) throw `Nama Filenya?`
+    if (!text) throw `uhm.. teksnya mana?\n\ncontoh\n${usedPrefix + command} main`
     m.reply('Executing...')
     let o
     try {
@@ -16,7 +16,7 @@ let handler = async (m, { conn, isROwner, usedPrefix, command, text }) => {
     }
 }
 
-handler.help = ['getfile']
+handler.help = ['getfile'].map(v => v + ' <text>')
 handler.tags = ['owner']
 handler.command = /^(getfile|gf)$/i
 

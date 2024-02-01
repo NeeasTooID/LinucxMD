@@ -1,49 +1,66 @@
+//Thanks Papah-Chan https://github.com/FahriAdison
+let { generateWAMessageFromContent } = (await import("@adiwajshing/baileys")).default 
+import { performance } from 'perf_hooks'
 import fs from 'fs'
-import fetch from 'node-fetch'
-import moment from 'moment-timezone'
-let handler = async (m, { conn, args, command }) => {
-	let _muptime
-    if (process.send) {
-      process.send('uptime')
-      _muptime = await new Promise(resolve => {
-        process.once('message', resolve)
-        setTimeout(resolve, 1000)
-      }) * 1000
-    }
-    let muptime = clockString(_muptime)
-   let tag = `@${m.sender.replace(/@.+/, '')}`
-  let mentionedJid = [m.sender]
-    
-m.reply(`Aktif Selama ${muptime}`)
+let handler  = async (m, { conn, usedPrefix: _p }) => {
+
+function kyun(seconds){
+  function pad(s){
+    return (s < 10 ? '0' : '') + s;
+  }
+  var days = Math.floor(seconds / (60 * 60 * 24));
+  var hours = Math.floor(seconds / (60*60));
+  var minutes = Math.floor(seconds % (60*60) / 60);
+  var seconds = Math.floor(seconds % 60);
+
+  //return pad(hours) + ':' + pad(minutes) + ':' + pad(seconds)
+  return `\n\t\t*⏰ʀᴜɴᴛɪᴍᴇ「 \t${pad(days)}D\t ${pad(hours)}H ${pad(minutes)}M ${pad(seconds)}S \t」*\n`
 }
+					const runtime = process.uptime()
+		            const teks = `${kyun(runtime)}`
+					const itsme = `0@s.whatsapp.net`
+					const split = `uwu >//<`
+					const rtimebro = {
+					contextInfo: {
+					participant: itsme,
+					quotedMessage: {
+					extendedTextMessage: {
+				    text: split
+									}
+								}
+							}
+					}
+						    
+						  let prep = generateWAMessageFromContent(m.chat, { orderMessage: { 
+itemCount: -10062007, status: 500,
+surface: 999,
+message: teks,
+description: '^^',
+orderTitle: 'Haii Kak',
+token: '9',
+curreyCode: 'IDR',
+totalCurrencyCode: '>〰<',
+totalAmount1000: '1000000',
+sellerJid: '6285736178354@s.whatsapp.net',
+thumbnail: fs.readFileSync('./thumbnail.jpg')
+}}, {contextInfo: null, quoted: m})
+conn.relayWAMessage(prep)
+				/*	conn.sendMessage(m.chat, `${teks}`, MessageType.text, rtimebro)*/
+}
+
 handler.help = ['runtime']
-handler.tags = ['main']
-handler.command = ['runtime', 'rt']
+handler.tags = ['info']
+handler.command = /^(up|run)time$/i
+handler.owner = false
+handler.mods = false
+handler.premium = false
+handler.group = false
+handler.private = false
+
+handler.admin = false
+handler.botAdmin = false
+
+handler.fail = null
+
 
 export default handler
-
-
-function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  let res = "Sudah Dini Hari Kok Belum Tidur Kak? 🥱"
-  if (time >= 4) {
-    res = "Pagi Kak 🌄"
-  }
-  if (time >= 10) {
-    res = "Selamat Siang Kak ☀️"
-  }
-  if (time >= 15) {
-    res = "Selamat Sore Kak 🌇"
-  }
-  if (time >= 18) {
-    res = "Malam Kak 🌙"
-  }
-  return res
-}
-function clockString(ms) {
-  let d = isNaN(ms) ? '--' : Math.floor(ms / 86400000)
-  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
-  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [d, ' *Hari* \n', h, ' *Jam*\n', m, ' *Menit*\n', s, ' *Detik*'].map(v => v.toString().padStart(2, 0)).join('')
-}

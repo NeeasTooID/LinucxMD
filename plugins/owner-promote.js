@@ -10,7 +10,7 @@ let handler = async (m, { conn, participants }) => {
     m.reply('Succes')
 
 }
-handler.help = ['opromote']
+handler.help = ['opromote @tag']
 handler.tags = ['owner']
 handler.command = /^(opromote)$/i
 

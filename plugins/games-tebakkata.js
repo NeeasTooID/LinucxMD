@@ -1,6 +1,6 @@
 import { tebakkata } from '@bochilteam/scraper'
 
-let timeout = 60000
+let timeout = 120000
 let poin = 4999
 let handler = async (m, { conn, usedPrefix }) => {
     conn.tebakkata = conn.tebakkata ? conn.tebakkata : {}
@@ -17,7 +17,7 @@ Ketik ${usedPrefix}teka untuk bantuan
 Bonus: ${poin} XP
 `.trim()
     conn.tebakkata[id] = [
-        await conn.reply(m.chat, caption, m),
+        await conn.sendFile(m.chat, fla + 'Tebak Kata', '', caption, m),
         json, poin,
         setTimeout(() => {
             if (conn.tebakkata[id]) conn.reply(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, conn.tebakkata[id][0])

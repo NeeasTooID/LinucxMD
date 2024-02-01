@@ -1,17 +1,19 @@
-import fetch from 'node-fetch'
-let handler = async (m, { conn, args }) => {
-	if (!args[0]) throw 'Masukan Link\nExample: *.mf https://www.mediafire.com/file/pwxob70rpgma9lz/GBWhatsApp_v8.75%2528Tutorial_Yud%2529.apk/file*' 
-	if (!/https?:\/\/(www\.)?mediafire\.com/.test(args[0])) throw 'Linknya?' 
-	m.reply(wait)
-	let res = await fetch(`https://api.xyroinee.xyz/api/downloader/mediafire?url=${args[0]}&apikey=${global.xyro}`)
-	let data = await res.json()
-let json = data.data
-	conn.sendFile(m.chat, json.url, json.title, '', m, null, { mimetype: json.url, asDocument: true })
+import { mediafiredl } from '@bochilteam/scraper'
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+    if (!args[0]) throw `Use example ${usedPrefix}${command} https://www.mediafire.com/file/941xczxhn27qbby/GBWA_V12.25FF-By.SamMods-.apk/file`
+    let res = await mediafiredl(args[0])
+    let { url, url2, filename, ext, aploud, filesize, filesizeH } = res
+    let caption = `
+*💌 Name:* ${filename}
+*📊 Size:* ${filesizeH}
+*🗂️ Extension:* ${ext}
+*📨 Uploaded:* ${aploud}
+`.trim()
+    m.reply(caption)
+    await conn.sendFile(m.chat, url, filename, '', m, null, { mimetype: ext, asDocument: true })
 }
-handler.help = ['mediafire']
+handler.help = ['mediafire'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^(mediafire|mf)$/i
-
-handler.limit = true
 
 export default handler

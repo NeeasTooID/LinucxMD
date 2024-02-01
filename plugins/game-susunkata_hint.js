@@ -3,10 +3,10 @@ let handler = async (m, { conn }) => {
     let id = m.chat
     if (!(id in conn.susunkata)) throw false
     let json = conn.susunkata[id][1]
-    let ans = json.jawaban.trim()
-    let clue = ans.replace(/[AIUEOaiueo]/g, '_')
-    conn.reply(m.chat, '```' + clue + '```\nBalas soalnya, bukan pesan ini', conn.susunkata[id][0])
+    conn.reply(m.chat, '```' + json.jawaban.replace(/[AIUEOaiueo]/ig, '_') + '```', m)
 }
-handler.command = /^suska$/i
+handler.command = /^suka$/i
+
 handler.limit = true
+
 export default handler

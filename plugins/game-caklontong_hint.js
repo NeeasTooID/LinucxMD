@@ -9,6 +9,6 @@ let handler = async (m, { conn }) => {
 }
 handler.command = /^calo$/i
 
-handler.limit = true
+// handler.limit = true
 
 export default handler

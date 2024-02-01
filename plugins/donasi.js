@@ -1,17 +1,29 @@
-let handler = async (m, { conn }) => {
-let sewa = `
-❏──「 *Sewa* 」
-│ • *1 Minggu:* 5K
-│ • *1 Bulan:* 15K
-│ • *Permanen:* 50K
-┠──「 *Pembayaran* 」
-│ • *Ovo:* [${global.povo}]
-❏──────────────๑
-`
-conn.reply(m.chat, sewa, m)
-}
-handler.help = ['sewa']
-handler.tags = ['main']
-handler.command = /^(donasi|sewa|prem|premium)$/i
+let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
+    let teks = `
+︵‿︵‿︵‿︵ *DONASI BOT* ︵‿︵‿︵‿︵
+┌─「 Donasi • Pulsa 」
+│ • *Indosat:* [${global.ppulsa}]
+❏────
 
-export default handler
+┌─「 Donasi • Non Pulsa 」
+│ • *Dana:* [${global.pdana}]
+│ • *Saweria:* [${global.psaweria}]
+❏────
+
+*ʙᴀᴄᴋ ᴛᴏ ᴀʟʟ ᴍᴇɴᴜ*: .?
+*ᴘɪɴɢ*: .ping
+*ᴄʀᴇᴀᴛᴏʀ*: .creator
+︵‿︵‿︵‿︵︵‿︵‿︵‿︵︵‿︵‿︵‿
+Created by ${global.namebot} 
+`
+
+    let you = flaaa.getRandom()
+
+    await conn.sendFile(m.chat, you + 'Donasi', 'donasi.jpg', m); 
+};
+
+handler.help = ['donasi'];
+handler.tags = ['info'];
+handler.command = /^dona(te|si)$/i;
+
+export default handler;

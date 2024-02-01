@@ -1,4 +1,5 @@
 let handler = m => m
+
 handler.before = async function (m) {
     if (!/^-?[0-9]+(\.[0-9]+)?$/.test(m.text)) return !0
     let id = m.chat
@@ -12,12 +13,14 @@ handler.before = async function (m) {
             clearTimeout(this.math[id][3])
             delete this.math[id]
             conn.reply(m.chat, `*Jawaban Benar!*\n+${math.bonus} XP`, m)
+            conn.sendFile(m.chat, 'https://cdn.pnghd.pics/data/904/simbol-ceklis-png-22.jpg', 'jawaban_benar.jpg', 'Selamat, jawaban kamu benar!', m)
         } else {
             if (--this.math[id][2] == 0) {
                 clearTimeout(this.math[id][3])
                 delete this.math[id]
                 conn.reply(m.chat, `*Kesempatan habis!*\nJawaban: *${math.result}*`, m)
-            } else m.reply(`*Jawaban Salah!*\nMasih ada ${this.math[id][2]} kesempatan`)
+            } else conn.reply(m.chat, `*Jawaban Salah!*\nMasih ada ${this.math[id][2]} kesempatan`, m)
+          conn.sendFile(m.chat, 'https://cdn.pnghd.pics/data/559/gambar-tanda-silang-0.jpg', 'jawaban_salah.jpg', 'Sayang sekali, jawaban kamu salah!', m)
         }
     }
     return !0

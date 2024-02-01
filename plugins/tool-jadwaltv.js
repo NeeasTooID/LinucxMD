@@ -9,7 +9,7 @@ let handler = async (m, { text }) => {
 	m.reply(`Jadwal TV ${res.channel}\n\n${txt}`)
 }
 handler.help = ['jadwaltv']
-handler.tags = ['internet']
+handler.tags = ['tools']
 handler.command = /^jadwaltv$/i
 
 export default handler

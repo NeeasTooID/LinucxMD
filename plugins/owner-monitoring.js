@@ -1,10 +1,10 @@
 import fetch from 'node-fetch';
 
 // const MONITOR_API_KEY = process.env['MONITOR'];
-const MONITOR_API_KEY = `${global.uptime}`
+const MONITOR_API_KEY = '' // Masukin APIKEY uptimerobot kamu disini ===== https://uptimerobot.com/dashboard?ref=website-header#mySettings
 
 var handler = async (m, { conn }) => {
-  conn.reply(m.chat, 'Sedang Memuat Informasi Monitor... Silahkan Tunggu', m);
+  conn.reply(m.chat, 'Sedang memuat informasi monitor... Silahkan tunggu', m);
 
   try {
     const [monitorResponse, accountResponse] = await Promise.all([
@@ -48,9 +48,9 @@ var handler = async (m, { conn }) => {
   }
 };
 
-handler.help = ['monitor']
-handler.tags = ['internet', 'tools']
-handler.owner = true
-handler.command = /^(monitor)$/i
+handler.help = ['monitor'];
+handler.tags = ['internet', 'tools'];
+handler.owner = true;
+handler.command = /^(monitor|monitors|moni)$/i;
 
-export default handler
+export default handler;

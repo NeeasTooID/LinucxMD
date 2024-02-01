@@ -8,7 +8,7 @@ let handler = async (m, { conn, text }) => {
     let [packname, ...author] = text.split('|')
     author = (author || []).join('|')
     let mime = m.quoted.mimetype || ''
-    if (!/webp/.test(mime)) throw 'Reply Sticker!'
+    if (!/webp/.test(mime)) throw 'Reply sticker!'
     let img = await m.quoted.download()
     if (!img) throw 'Reply a sticker!'
     stiker = await addExif(img, packname || '', author || '')
@@ -20,8 +20,8 @@ let handler = async (m, { conn, text }) => {
     else throw 'Conversion failed'
   }
 }
-handler.help = ['wm']
+handler.help = ['wm <packname>|<author>']
 handler.tags = ['sticker']
-handler.command = /^(wm|colong|take)$/i
+handler.command = /^wm$/i
 
 export default handler

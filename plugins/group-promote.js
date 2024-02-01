@@ -10,7 +10,7 @@ let handler = async (m, { conn, participants }) => {
     m.reply('Succes')
 
 }
-handler.help = ['promote']
+handler.help = ['promote @tag']
 handler.tags = ['group']
 handler.command = /^(promote)$/i
 

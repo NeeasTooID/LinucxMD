@@ -1,17 +1,11 @@
-import fetch from "node-fetch"
-let handler = async (m, { conn }) => {
-  let data = await (await fetch('https://raw.githubusercontent.com/ShirokamiRyzen/WAbot-DB/main/fitur_db/ppcp.json')).json()
-  let cita = data[Math.floor(Math.random() * data.length)]
-  
-  let cowi = await(await fetch(cita.cowo)).buffer()
-  await conn.sendFile(m.chat, cowi, '', 'Cowo', m)
-  let ciwi = await(await fetch(cita.cewe)).buffer()
-  await conn.sendFile(m.chat, ciwi, '', 'Cewe', m)
+import { Couples } from 'dhn-api'
+var handler = async (m, { conn, command }) => {
+
+const res = await Couples() 
+await conn.sendFile(m.chat, res.male, 'ppcp.jpg', 'Male', m) 
+return conn.sendFile(m.chat, res.female, 'ppcp.jpg', 'Female', m)
 }
-
-handler.help = ['ppcp']
-handler.tags = ['anime']
-handler.command = /^ppcp$/i
-handler.limit = true
-
+handler.help = ['ppcouple']
+handler.tags = ['internet']
+handler.command = /^(ppcp|ppcouple)$/i
 export default handler
