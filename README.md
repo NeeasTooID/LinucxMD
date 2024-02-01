@@ -40,6 +40,8 @@
 [![github](https://github.com/github.png?size=100)](https://github.com/github)
 [![nodejs](https://github.com/nodejs.png?size=100)](https://github.com/nodejs)
 [![amiruldev20](https://github.com/amiruldev20.png?size=100)](https://github.com/amiruldev20)
+[![npm](https://github.com/npm.png?size=100)](https://github.com/npm)
+[![nodejs](https://github.com/DjDeveloperr.png?size=100)](https://github.com/DjDeveloperr)
 
 #### Recoder
 [![NeastooID](https://github.com/NeastooID.png?size=100)](https://github.com/NeastooID)
