@@ -1,13 +1,3 @@
-/* If You Copy, Don`t Delete This Credit!!! 
-  Don`t Sell This Script Or I Take Immediately 
-  Yang Jual Script Ini Report/Hangusin Aja Akunnya Atau Pukulin ae orangnya
-  Move To Pairing Code
-  Buat Yg Nggk muncul Codenya Itu Disebabkan Oleh Banyaknya Plugins
-  Jika Ingin Mengambil Sesi, Backup Semua File Plugins & Hapus Semua File Plugins
-  Setelah Sudah Kalian Bisa Mengembalikan Semua File Pluginsnya Agar Bisa Dipakai
-  Regards from YanXiao ♡
-*/
-
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 import './config.js'
 
@@ -57,7 +47,6 @@ protoType()
 serialize()
 
 global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
-// global.Fn = function functionCallBack(fn, ...args) { return fn.call(global.conn, ...args) }
 global.timestamp = {
   start: new Date
 }
@@ -110,10 +99,10 @@ const rl = readline.createInterface({ input: process.stdin, output: process.stdo
 
 const store = useStore ? makeInMemoryStore({ level: 'silent' }) : undefined
 
-store?.readFromFile('./elaina_store.json')
+store?.readFromFile('./linucx_store.json')
 // save every 10s
 setInterval(() => {
-	store?.writeToFile('./elaina_store.json')
+	store?.writeToFile('./linucx_store.json')
 }, 10_000)
 
 const { version, isLatest} = await fetchLatestBaileysVersion()
@@ -362,8 +351,6 @@ global.reload = async (_ev, filename) => {
 Object.freeze(global.reload)
 watch(pluginFolder, global.reload)
 await global.reloadHandler()
-
-// Quick Test
 
 async function _quickTest() {
     let test = await Promise.all([
