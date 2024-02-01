@@ -1,6 +1,6 @@
 {
-    "name": "Elaina-BOT",
-    "version": "7.25.1",
+    "name": "Linucx-BOT",
+    "version": "1.2.0",
     "description": "BOT Whatsapp",
     "main": "index.js",
     "type": "module",
@@ -13,29 +13,6 @@
         "start": "node index.js",
         "test": "node test.js",
         "test2": "nodemon index.js"
-    },
-    "keywords": [
-        "termux-whatsapp-bot",
-        "whatsapp-bot",
-        "whatsapp",
-        "js-whatsapp",
-        "whatsapp",
-        "Games-wabot",
-        "wabot-aq",
-        "multi-device",
-        "MD",
-        "baileys-md"
-    ],
-    "homepage": "https://github.com/ImYanXiao/Elaina-MultiDevice",
-    "author": {
-        "name": "ImYanXiao"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ImYanXiao/Elaina-MultiDevice.git"
-    },
-    "bugs": {
-        "url": "https://github.com/ImYanXiao/Elaina-MultiDevice/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
