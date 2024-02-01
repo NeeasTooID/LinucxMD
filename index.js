@@ -9,7 +9,6 @@ import { createInterface } from 'readline'
 import { setupMaster, fork } from 'cluster'
 import { watchFile, unwatchFile } from 'fs'
 
-// https://stackoverflow.com/a/50052194
 const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -20,10 +19,6 @@ say('Lightweight\nWhatsApp Bot', { font: 'chrome', align: 'center', gradient: ['
 say(`'${name}' By @${author.name || author}`, { font: 'console', align: 'center', gradient: ['red', 'magenta'] })
 
 var isRunning = false
-/**
- * Start a js file
- * @param {String} file `path/to/file`
- */
 function start(file) {
   if (isRunning) return
   isRunning = true
@@ -58,7 +53,6 @@ function start(file) {
     if (!rl.listenerCount()) rl.on('line', line => {
       p.emit('message', line.trim())
     })
-  // console.log(p)
 }
 
 start('main.js')
