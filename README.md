@@ -42,6 +42,8 @@
 [![amiruldev20](https://github.com/amiruldev20.png?size=100)](https://github.com/amiruldev20)
 [![npm](https://github.com/npm.png?size=100)](https://github.com/npm)
 [![nodejs](https://github.com/DjDeveloperr.png?size=100)](https://github.com/DjDeveloperr)
+[![puppeteer](https://github.com/puppeteer.png?size=100)](https://github.com/puppeteer)
+[![pterodactyl](https://github.com/pterodactyl.png?size=100)](https://github.com/pterodactyl)
 
 #### Recoder
 [![NeastooID](https://github.com/NeastooID.png?size=100)](https://github.com/NeastooID)
