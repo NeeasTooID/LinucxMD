@@ -16,8 +16,8 @@
 * apt update && apt upgrade -y
 * apt install nodejs imagemagick ffmpeg -y
 * node -v 
-* if the version is still under 17, use this step
-* curl -s https://deb.nodesource.com/setup_19.x | sudo bash
+* if the version is still under 20, use this step
+* curl -s https://deb.nodesource.com/setup_20.x | sudo bash
 * apt-get install -y nodejs
 
 ### 📮 S&K
