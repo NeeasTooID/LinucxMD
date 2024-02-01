@@ -5,7 +5,7 @@
 
 ### PENTING
 
-> **Warning**: Jangan Memperjual Belikan Script Ini.
+> **Warning** : Jangan Memperjual Belikan Script Ini!.
 
 <h1 align="center">Npnpicy - MD</h1>
 
