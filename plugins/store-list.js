@@ -7,7 +7,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 	else throw `Belum Ada List Store.\nKetik *${usedPrefix + command} <teks>* Untuk Menambahkan Daftar Store.\n`
 }
 handler.help = ['store']
-handler.tags = ['main']
+handler.tags = ['store']
 handler.command = /^list(store|shop)?$/i
 
 export default handler
