@@ -31,7 +31,6 @@ const defaultMenu = {
 ⬡│☂︎ *Mode:* %mode
 ⬡│☂︎ *Prefix:* [ *%_p* ]
 ⬡│☂︎ *Baileys:* Multi Device
-⬡│☂︎ *Battery:* ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? '🔌 pengisian' : ''}` : 'tidak diketahui'}
 ⬡│☂︎ *Platform:* %platform
 ⬡│☂︎ *Type:* Node.Js
 ⬡│☂︎ *Uptime:* %muptime
