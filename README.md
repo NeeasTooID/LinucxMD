@@ -28,6 +28,15 @@
 
 ---------
 
+### a little about this bot
+- ✔️ | Sticker 
+- ✔️ | Rpg Game
+- ✔️ | Hd Picture
+- ✔️ | Ai ChatGPT
+- ✔️ | Store Tools
+
+---------
+
 ### Thanks To ( ideas and sources )
 [![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo)
 [![WhiskeySockets](https://github.com/WhiskeySockets.png?size=100)](https://github.com/WhiskeySockets/Baileys)
