@@ -28,7 +28,7 @@
 
 ---------
 
-### a little about this bot
+### Features currently available 
 - ✔️ | Sticker 
 - ✔️ | Rpg Game
 - ✔️ | Hd Picture
