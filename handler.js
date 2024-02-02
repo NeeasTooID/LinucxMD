@@ -8,20 +8,12 @@ import fs from 'fs'
 import fetch from 'node-fetch'
 import moment from 'moment-timezone'
 
-/**
- * @type {import('@adiwajshing/baileys')}
- */
 const { proto } = (await import('@adiwajshing/baileys')).default
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function () {
     clearTimeout(this)
     resolve()
 }, ms))
-
-/**
- * Handle messages upsert
- * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['messages.upsert']} groupsUpdate 
- */
  
 export async function handler(chatUpdate) {
     this.msgqueque = this.msgqueque || []
@@ -29,8 +21,6 @@ export async function handler(chatUpdate) {
         return
     this.pushMessage(chatUpdate.messages).catch(console.error)
     let m = chatUpdate.messages[chatUpdate.messages.length - 1]
-    
-    global.img = 'https://telegra.ph/file/e4a2f4339da8a32ad20a1.jpg' 
     
     if (!m)
         return
@@ -43,7 +33,6 @@ export async function handler(chatUpdate) {
         m.exp = 0
         m.limit = false
         try {
-            // TODO: use loop to insert data instead of this
             let user = global.db.data.users[m.sender]
             if (typeof user !== 'object')
                 global.db.data.users[m.sender] = {}
@@ -1284,10 +1273,6 @@ export async function handler(chatUpdate) {
     }
 }
 
-/**
- * Handle groups participants update
- * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate 
- */
 export async function participantsUpdate({ id, participants, action }) {
     if (opts['self'])
         return
@@ -1310,8 +1295,8 @@ export async function participantsUpdate({ id, participants, action }) {
                     } finally {
                         text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
                             (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
-let wel = 'https://telegra.ph/file/61a04a443f2b9fc3e34bc.jpg'
 
+ let wel = 'https://telegra.ph/file/61a04a443f2b9fc3e34bc.jpg'
  let lea = 'https://telegra.ph/file/cadce7b456c2b36564737.jpg'
  
                         this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
@@ -1330,10 +1315,6 @@ let wel = 'https://telegra.ph/file/61a04a443f2b9fc3e34bc.jpg'
             break
     }
 }
-/**
- * Handle groups update
- * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['groups.update']} groupsUpdate 
- */
 export async function groupsUpdate(groupsUpdate) {
     if (opts['self'])
         return
