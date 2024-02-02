@@ -13,7 +13,7 @@ const createEmbedMessage = (changes) => {
     return {
         embeds: [{
             title: 'Server Information',
-            description: 'Website is Updated!',
+            description: 'Repository Website is Updated!',
             fields: [
                 { name: 'Platform', value: platform, inline: true },
                 { name: 'Architecture', value: arch, inline: true },
