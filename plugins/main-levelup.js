@@ -37,7 +37,7 @@ let handler = async (m, { conn, usedPrefix }) => {
 }
 
 handler.help = ['levelup'];
-handler.tags = ['xp'];
+handler.tags = ['main'];
 handler.command = /^levelup$/i;
 
 export default handler;
