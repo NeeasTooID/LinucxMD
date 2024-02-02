@@ -1,7 +1,3 @@
-// Made By Aguz Familia/@FokusDotId (Fokus ID)
-// Github: https://github.com/fokusdotid
-// Recode By ImYanXiao
-
 import fs from 'fs'
 import fetch from 'node-fetch'
 import axios from 'axios'
