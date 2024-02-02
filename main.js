@@ -1,3 +1,13 @@
+/* If You Copy, Don`t Delete This Credit!!! 
+  Don`t Sell This Script Or I Take Immediately 
+  Yang Jual Script Ini Report/Hangusin Aja Akunnya Atau Pukulin ae orangnya
+  Move To Pairing Code
+  Buat Yg Nggk muncul Codenya Itu Disebabkan Oleh Banyaknya Plugins
+  Jika Ingin Mengambil Sesi, Backup Semua File Plugins & Hapus Semua File Plugins
+  Setelah Sudah Kalian Bisa Mengembalikan Semua File Pluginsnya Agar Bisa Dipakai
+  Regards from YanXiao ♡
+*/
+
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 import './config.js'
 
@@ -7,12 +17,12 @@ import { fileURLToPath, pathToFileURL } from 'url'
 import { createRequire } from 'module' // Bring in the ability to create the 'require' method
 global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') { return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString() }; global.__dirname = function dirname(pathURL) { return path.dirname(global.__filename(pathURL, true)) }; global.__require = function require(dir = import.meta.url) { return createRequire(dir) }
 import {
-    readdirSync,
-    statSync,
-    unlinkSync,
-    existsSync,
-    readFileSync,
-    watch
+  readdirSync,
+  statSync,
+  unlinkSync,
+  existsSync,
+  readFileSync,
+  watch
 } from 'fs'
 import yargs from 'yargs'
 import { spawn } from 'child_process'
@@ -25,18 +35,18 @@ import { format } from 'util'
 import pino from 'pino'
 import ws from 'ws'
 import {
-    useMultiFileAuthState,
-    DisconnectReason,
-    fetchLatestBaileysVersion, 
-    makeInMemoryStore, 
-    makeCacheableSignalKeyStore, 
-    PHONENUMBER_MCC
-    } from '@adiwajshing/baileys'
+  useMultiFileAuthState,
+  DisconnectReason,
+  fetchLatestBaileysVersion,
+  makeInMemoryStore,
+  makeCacheableSignalKeyStore,
+  PHONENUMBER_MCC
+} from '@adiwajshing/baileys'
 import { Low, JSONFile } from 'lowdb'
 import { makeWASocket, protoType, serialize } from './lib/simple.js'
 import {
-    mongoDB,
-    mongoDBV2
+  mongoDB,
+  mongoDBV2
 } from './lib/mongoDB.js'
 
 const { CONNECTING } = ws
@@ -47,6 +57,7 @@ protoType()
 serialize()
 
 global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
+// global.Fn = function functionCallBack(fn, ...args) { return fn.call(global.conn, ...args) }
 global.timestamp = {
   start: new Date
 }
@@ -64,118 +75,118 @@ global.db = new Low(
 )
 global.DATABASE = global.db // Backwards Compatibility
 global.loadDatabase = async function loadDatabase() {
-    if (db.READ) return new Promise((resolve) => setInterval(async function () {
-        if (!db.READ) {
-            clearInterval(this)
-            resolve(db.data == null ? global.loadDatabase() : db.data)
-        }
-    }, 1 * 1000))
-    if (db.data !== null) return
-    db.READ = true
-    await db.read().catch(console.error)
-    db.READ = null
-    db.data = {
-        users: {},
-        chats: {},
-        stats: {},
-        msgs: {},
-        sticker: {},
-        settings: {},
-        ...(db.data || {})
+  if (db.READ) return new Promise((resolve) => setInterval(async function () {
+    if (!db.READ) {
+      clearInterval(this)
+      resolve(db.data == null ? global.loadDatabase() : db.data)
     }
-    global.db.chain = chain(db.data)
+  }, 1 * 1000))
+  if (db.data !== null) return
+  db.READ = true
+  await db.read().catch(console.error)
+  db.READ = null
+  db.data = {
+    users: {},
+    chats: {},
+    stats: {},
+    msgs: {},
+    sticker: {},
+    settings: {},
+    ...(db.data || {})
+  }
+  global.db.chain = chain(db.data)
 }
 loadDatabase()
 const useStore = !process.argv.includes('--use-store')
 const usePairingCode = !process.argv.includes('--use-pairing-code')
 const useMobile = process.argv.includes('--mobile')
 
-var question = function(text) {
-            return new Promise(function(resolve) {
-                rl.question(text, resolve);
-            });
-        };
+var question = function (text) {
+  return new Promise(function (resolve) {
+    rl.question(text, resolve);
+  });
+};
 const rl = readline.createInterface({ input: process.stdin, output: process.stdout })
 
 const store = useStore ? makeInMemoryStore({ level: 'silent' }) : undefined
 
-store?.readFromFile('./linucx_store.json')
+store?.readFromFile('./nao_store.json')
 // save every 10s
 setInterval(() => {
-	store?.writeToFile('./linucx_store.json')
+  store?.writeToFile('./nao_store.json')
 }, 10_000)
 
-const { version, isLatest} = await fetchLatestBaileysVersion()
+const { version, isLatest } = await fetchLatestBaileysVersion()
 const { state, saveCreds } = await useMultiFileAuthState('./sessions')
 const connectionOptions = {
-        version,
-        logger: pino({ level: 'silent' }), 
-        printQRInTerminal: !usePairingCode, 
-        browser: ['Mac OS', 'safari', '5.1.10'],
-        auth: { 
-         creds: state.creds, 
-         keys: makeCacheableSignalKeyStore(state.keys, pino().child({ 
-             level: 'silent', 
-             stream: 'store' 
-         })), 
-     },
-     getMessage: async key => {
-    		const messageData = await store.loadMessage(key.remoteJid, key.id);
-    		return messageData?.message || undefined;
-	},
-  generateHighQualityLinkPreview: true, 
-	      patchMessageBeforeSending: (message) => {
-                const requiresPatch = !!(
-                    message.buttonsMessage 
-                    || message.templateMessage
-                    || message.listMessage
-                );
-                if (requiresPatch) {
-                    message = {
-                        viewOnceMessage: {
-                            message: {
-                                messageContextInfo: {
-                                    deviceListMetadataVersion: 2,
-                                    deviceListMetadata: {},
-                                },
-                                ...message,
-                            },
-                        },
-                    };
-                }
+  version,
+  logger: pino({ level: 'silent' }),
+  printQRInTerminal: !usePairingCode,
+  browser: ['Ubuntu', 'Chrome', '20.0.04'],
+  auth: {
+    creds: state.creds,
+    keys: makeCacheableSignalKeyStore(state.keys, pino().child({
+      level: 'silent',
+      stream: 'store'
+    })),
+  },
+  getMessage: async key => {
+    const messageData = await store.loadMessage(key.remoteJid, key.id);
+    return messageData?.message || undefined;
+  },
+  generateHighQualityLinkPreview: true,
+  patchMessageBeforeSending: (message) => {
+    const requiresPatch = !!(
+      message.buttonsMessage
+      || message.templateMessage
+      || message.listMessage
+    );
+    if (requiresPatch) {
+      message = {
+        viewOnceMessage: {
+          message: {
+            messageContextInfo: {
+              deviceListMetadataVersion: 2,
+              deviceListMetadata: {},
+            },
+            ...message,
+          },
+        },
+      };
+    }
 
-                return message;
-            }, 
-	connectTimeoutMs: 60000, defaultQueryTimeoutMs: 0, generateHighQualityLinkPreview: true, syncFullHistory: true, markOnlineOnConnect: true
+    return message;
+  },
+  connectTimeoutMs: 60000, defaultQueryTimeoutMs: 0, generateHighQualityLinkPreview: true, syncFullHistory: true, markOnlineOnConnect: true
 }
 
 global.conn = makeWASocket(connectionOptions)
 conn.isInit = false
 
-if(usePairingCode && !conn.authState.creds.registered) {
-		if(useMobile) throw new Error('Cannot use pairing code with mobile api')
-		const { registration } = { registration: {} }
-		let phoneNumber = ''
-		do {
-			phoneNumber = await question(chalk.blueBright('Input a Valid number start with region code. Example : 62xxx:\n'))
-		} while (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v)))
-		rl.close()
-		phoneNumber = phoneNumber.replace(/\D/g,'')
-		console.log(chalk.bgWhite(chalk.blue('Generating code...')))
-		setTimeout(async () => {
-			let code = await conn.requestPairingCode(phoneNumber)
-			code = code?.match(/.{1,4}/g)?.join('-') || code
-			console.log(chalk.black(chalk.bgGreen(`Your Pairing Code : `)), chalk.black(chalk.white(code)))
-		}, 3000)
-	}
+if (usePairingCode && !conn.authState.creds.registered) {
+  if (useMobile) throw new Error('Cannot use pairing code with mobile api')
+  const { registration } = { registration: {} }
+  let phoneNumber = ''
+  do {
+    phoneNumber = await question(chalk.blueBright('Input a Valid number start with region code. Example : 62xxx:\n'))
+  } while (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v)))
+  rl.close()
+  phoneNumber = phoneNumber.replace(/\D/g, '')
+  console.log(chalk.bgWhite(chalk.blue('Generating code...')))
+  setTimeout(async () => {
+    let code = await conn.requestPairingCode(phoneNumber)
+    code = code?.match(/.{1,4}/g)?.join('-') || code
+    console.log(chalk.black(chalk.bgGreen(`Your Pairing Code : `)), chalk.black(chalk.white(code)))
+  }, 3000)
+}
 
 if (!opts['test']) {
   (await import('./server.js')).default(PORT)
   setInterval(async () => {
     if (global.db.data) await global.db.write().catch(console.error)
-   // if (opts['autocleartmp']) try {
-      clearTmp()
-  //  } catch (e) { console.error(e) }
+    // if (opts['autocleartmp']) try {
+    clearTmp()
+    //  } catch (e) { console.error(e) }
   }, 60 * 1000)
 }
 
@@ -191,54 +202,54 @@ function clearTmp() {
 }
 
 function clearSessions(folder = 'sessions') {
-	let filename = []
-	readdirSync(folder).forEach(file => filename.push(join(folder, file)))
-	return filename.map(file => {
-		let stats = statSync(file)
-		if (stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 120)) { // 1 hours
-			console.log('Deleted sessions', file)
-			return unlinkSync(file)
-		}
-		return false
-	})
+  let filename = []
+  readdirSync(folder).forEach(file => filename.push(join(folder, file)))
+  return filename.map(file => {
+    let stats = statSync(file)
+    if (stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 120)) { // 1 hours
+      console.log('Deleted sessions', file)
+      return unlinkSync(file)
+    }
+    return false
+  })
 }
 
 async function connectionUpdate(update) {
-    const { receivedPendingNotifications, connection, lastDisconnect, isOnline, isNewLogin } = update;
+  const { receivedPendingNotifications, connection, lastDisconnect, isOnline, isNewLogin } = update;
 
-    if (isNewLogin) {
-        conn.isInit = true;
-    }
+  if (isNewLogin) {
+    conn.isInit = true;
+  }
 
-    if (connection == 'connecting') {
-        console.log(chalk.redBright('⚡ Mengaktifkan Bot, Mohon tunggu sebentar...'));
-    } else if (connection == 'open') {
-        console.log(chalk.green('✅ Tersambung'));
-    }
+  if (connection == 'connecting') {
+    console.log(chalk.redBright('⚡ Mengaktifkan Bot, Mohon tunggu sebentar...'));
+  } else if (connection == 'open') {
+    console.log(chalk.green('✅ Tersambung'));
+  }
 
-    if (isOnline == true) {
-        console.log(chalk.green('Status Aktif'));
-    } else if (isOnline == false) {
-        console.log(chalk.red('Status Mati'));
-    }
+  if (isOnline == true) {
+    console.log(chalk.green('Status Aktif'));
+  } else if (isOnline == false) {
+    console.log(chalk.red('Status Mati'));
+  }
 
-    if (receivedPendingNotifications) {
-        console.log(chalk.yellow('Menunggu Pesan Baru'));
-    }
+  if (receivedPendingNotifications) {
+    console.log(chalk.yellow('Menunggu Pesan Baru'));
+  }
 
-    if (connection == 'close') {
-        console.log(chalk.red('⏱️ koneksi terputus & mencoba menyambung ulang...'));
-    }
+  if (connection == 'close') {
+    console.log(chalk.red('⏱️ koneksi terputus & mencoba menyambung ulang...'));
+  }
 
-    global.timestamp.connect = new Date;
+  global.timestamp.connect = new Date;
 
-    if (lastDisconnect && lastDisconnect.error && lastDisconnect.error.output && lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut && conn.ws.readyState !== CONNECTING) {
-        console.log(await global.reloadHandler(true));
-    }
+  if (lastDisconnect && lastDisconnect.error && lastDisconnect.error.output && lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut && conn.ws.readyState !== CONNECTING) {
+    console.log(await global.reloadHandler(true));
+  }
 
-    if (global.db.data == null) {
-        await global.loadDatabase();
-    }
+  if (global.db.data == null) {
+    await global.loadDatabase();
+  }
 }
 
 process.on('uncaughtException', console.error)
@@ -247,25 +258,25 @@ process.on('uncaughtException', console.error)
 let isInit = true
 let handler = await import('./handler.js')
 global.reloadHandler = async function (restatConn) {
-    /*try {
-        const Handler = await import(`./handler.js?update=${Date.now()}`).catch(console.error)*/
-    try {
-	// Jika anda menggunakan replit, gunakan yang sevenHoursLater dan tambahkan // pada const Handler
-	// Default: server/vps/panel, replit + 7 jam buat jam indonesia
-        // const sevenHoursLater = Date.now() + 7 * 60 * 60 * 1000;
-        const Handler = await import(`./handler.js?update=${Date.now()}`).catch(console.error)
-      // const Handler = await import(`./handler.js?update=${sevenHoursLater}`).catch(console.error)
-        if (Object.keys(Handler || {}).length) handler = Handler
-    } catch (e) {
-        console.error(e)
-    }
-    if (restatConn) {
-        const oldChats = global.conn.chats
-        try { global.conn.ws.close() } catch { }
-        conn.ev.removeAllListeners()
-        global.conn = makeWASocket(connectionOptions, { chats: oldChats })
-        isInit = true
-    }    
+  /*try {
+      const Handler = await import(`./handler.js?update=${Date.now()}`).catch(console.error)*/
+  try {
+    // Jika anda menggunakan replit, gunakan yang sevenHoursLater dan tambahkan // pada const Handler
+    // Default: server/vps/panel, replit + 7 jam buat jam indonesia
+    // const sevenHoursLater = Date.now() + 7 * 60 * 60 * 1000;
+    const Handler = await import(`./handler.js?update=${Date.now()}`).catch(console.error)
+    // const Handler = await import(`./handler.js?update=${sevenHoursLater}`).catch(console.error)
+    if (Object.keys(Handler || {}).length) handler = Handler
+  } catch (e) {
+    console.error(e)
+  }
+  if (restatConn) {
+    const oldChats = global.conn.chats
+    try { global.conn.ws.close() } catch { }
+    conn.ev.removeAllListeners()
+    global.conn = makeWASocket(connectionOptions, { chats: oldChats })
+    isInit = true
+  }
   if (!isInit) {
     conn.ev.off('messages.upsert', conn.handler)
     conn.ev.off('group-participants.update', conn.participantsUpdate)
@@ -275,8 +286,8 @@ global.reloadHandler = async function (restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate)
   }
 
-  conn.welcome = '❖━━━━━━[ ᴡᴇʟᴄᴏᴍᴇ ]━━━━━━❖\n\n┏––––––━━━━━━━━•\n│☘︎ @subject\n┣━━━━━━━━┅┅┅\n│( 👋 Hallo @user)\n├[ ɪɴᴛʀᴏ ]—\n│ ɴᴀᴍᴀ: \n│ ᴜᴍᴜʀ: \n│ ɢᴇɴᴅᴇʀ:\n┗––––––━━┅┅┅\n\n––––––┅┅ ᴅᴇsᴄʀɪᴘᴛɪᴏɴ ┅┅––––––\n@desc'
-  conn.bye = '❖━━━━━━[ ʟᴇᴀᴠɪɴɢ ]━━━━━━❖\n𝚂𝚊𝚢𝚘𝚗𝚊𝚛𝚊𝚊 @user 👋😃'
+  conn.welcome = '❖━━━━━━[ WELCOME ]━━━━━━❖\n\n┏------━━━━━━━━•\n│☘︎ @subject\n┣━━━━━━━━┅┅┅\n│( 👋 Hallo @user)\n├[ Intro ]—\n│ Nama: \n│ Umur: \n│ Gender:\n┗------━━┅┅┅\n\n------┅┅ DESCRIPTION ┅┅––––––\n@desc'
+  conn.bye = '❖━━━━━━[ LEAVING ]━━━━━━❖\nSayonara @user 👋😃'
   conn.spromote = '@user Sekarang jadi admin!'
   conn.sdemote = '@user Sekarang bukan lagi admin!'
   conn.sDesc = 'Deskripsi telah diubah menjadi \n@desc'
@@ -352,54 +363,56 @@ Object.freeze(global.reload)
 watch(pluginFolder, global.reload)
 await global.reloadHandler()
 
+// Quick Test
+
 async function _quickTest() {
-    let test = await Promise.all([
-        spawn('ffmpeg'),
-        spawn('ffprobe'),
-        spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-filter_complex', 'color', '-frames:v', '1', '-f', 'webp', '-']),
-        spawn('convert'),
-        spawn('magick'),
-        spawn('gm'),
-        spawn('find', ['--version'])
-    ].map(p => {
-        return Promise.race([
-            new Promise(resolve => {
-                p.on('close', code => {
-                    resolve(code !== 127)
-                })
-            }),
-            new Promise(resolve => {
-                p.on('error', _ => resolve(false))
-            })
-        ])
-    }))
-    let [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find] = test
-    console.log(test)
-    let s = global.support = {
-        ffmpeg,
-        ffprobe,
-        ffmpegWebp,
-        convert,
-        magick,
-        gm,
-        find
-    }
-    // require('./lib/sticker').support = s
-    Object.freeze(global.support)
+  let test = await Promise.all([
+    spawn('ffmpeg'),
+    spawn('ffprobe'),
+    spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-filter_complex', 'color', '-frames:v', '1', '-f', 'webp', '-']),
+    spawn('convert'),
+    spawn('magick'),
+    spawn('gm'),
+    spawn('find', ['--version'])
+  ].map(p => {
+    return Promise.race([
+      new Promise(resolve => {
+        p.on('close', code => {
+          resolve(code !== 127)
+        })
+      }),
+      new Promise(resolve => {
+        p.on('error', _ => resolve(false))
+      })
+    ])
+  }))
+  let [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find] = test
+  console.log(test)
+  let s = global.support = {
+    ffmpeg,
+    ffprobe,
+    ffmpegWebp,
+    convert,
+    magick,
+    gm,
+    find
+  }
+  // require('./lib/sticker').support = s
+  Object.freeze(global.support)
 
-    if (!s.ffmpeg) {
-        conn.logger.warn(`Silahkan install ffmpeg terlebih dahulu agar bisa mengirim video`)
-    }
+  if (!s.ffmpeg) {
+    conn.logger.warn(`Silahkan install ffmpeg terlebih dahulu agar bisa mengirim video`)
+  }
 
-    if (s.ffmpeg && !s.ffmpegWebp) {
-        conn.logger.warn('Sticker Mungkin Tidak Beranimasi tanpa libwebp di ffmpeg (--enable-ibwebp while compiling ffmpeg)')
-    }
+  if (s.ffmpeg && !s.ffmpegWebp) {
+    conn.logger.warn('Sticker Mungkin Tidak Beranimasi tanpa libwebp di ffmpeg (--enable-ibwebp while compiling ffmpeg)')
+  }
 
-    if (!s.convert && !s.magick && !s.gm) {
-        conn.logger.warn('Fitur Stiker Mungkin Tidak Bekerja Tanpa imagemagick dan libwebp di ffmpeg belum terinstall (pkg install imagemagick)')
-    }
+  if (!s.convert && !s.magick && !s.gm) {
+    conn.logger.warn('Fitur Stiker Mungkin Tidak Bekerja Tanpa imagemagick dan libwebp di ffmpeg belum terinstall (pkg install imagemagick)')
+  }
 
 }
 _quickTest()
-    .then(() => conn.logger.info('☑️ Quick Test Done , nama file session ~> creds.json'))
-    .catch(console.error)
+  .then(() => conn.logger.info('☑️ Quick Test Done , nama file session ~> creds.json'))
+  .catch(console.error)
