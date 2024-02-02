@@ -471,30 +471,3 @@ function ucapan() {
   }
   return res
 }
-function timeimg() {
-    let imgloc = ''
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  imgloc = ('./media/elaina8.png')
-  if (time >= 0) {
-    imgloc = ('./media/elaina.png')
-  }
-  if (time >= 4) {
-    imgloc = ('./media/elaina2.png')
-  }
-  if (time >= 8) {
-    imgloc = ('./media/elaina3.png')
-  }
-  if (time >= 12) {
-    imgloc = ('./media/elaina4.png')
-  }
-  if (time >= 16) {
-    imgloc = ('./media/elaina5.png')
-  }
-  if (time >= 20) {
-    imgloc = ('./media/elaina6.png')
-  }
-  if (time >= 24) {
-    imgloc = ('./media/elaina7.png')
-  }
-  return imgloc
-}
