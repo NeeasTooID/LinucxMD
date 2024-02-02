@@ -1,6 +1,6 @@
 {
     "name": "Linucx-BOT",
-    "version": "1.2.0",
+    "version": "1.2.1",
     "description": "BOT Whatsapp",
     "main": "index.js",
     "type": "module",
