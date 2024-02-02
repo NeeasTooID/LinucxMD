@@ -1,6 +1,3 @@
-// Script Ori By BochilGaming
-// Ditulis Ulang Oleh ImYanXiao
-
 import { promises } from 'fs'
 import { join } from 'path'
 import { xpRange } from '../lib/levelling.js'
