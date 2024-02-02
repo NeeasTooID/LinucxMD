@@ -56,31 +56,13 @@ const defaultMenu = {
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
 let tags = {
   'main': 'Main',
-  'game': 'Game',
+  'downloader': 'Downloader',
   'rpg': 'RPG Games',
-  'xp': 'Exp & Limit',
   'sticker': 'Sticker',
-  'kerang': 'Kerang Ajaib',
-  'quotes': 'Quotes',
-  'fun': 'Fun',
-  'anime': 'Anime',
   'admin': 'Admin',
   'group': 'Group',
-  'vote': 'Voting',
-  'absen': 'Absen',
-  'premium': 'Premium',
-  'anonymous': 'Anonymous Chat',
-  'internet': 'Internet',
-  'downloader': 'Downloader',
   'tools': 'Tools',
-  'nulis': 'MagerNulis & Logo',
-  'audio': 'Audio',
-  'maker': 'Maker',
-  'database': 'Database',
-  'quran': 'Al Qur\'an',
   'owner': 'Owner',
-  'host': 'Host',
-  'advanced': 'Advanced',
   'info': 'Info',
   '': 'No Category',
 }
@@ -442,7 +424,7 @@ return conn.relayMessage(m.chat, pre.message, { messageId: pre.key.id })*/
     throw e
   }
 }
-handler.help = ['menu','allmenu', 'help', '?']
+handler.help = ['menu','allmenu', 'help', '?', 'cmd']
 handler.tags = ['main']
 handler.command = /^(menu|allmenu|help|\?)$/i
 
