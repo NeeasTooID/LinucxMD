@@ -1,7 +1,7 @@
 import axios from 'axios';
 import os from 'os';
 
-const discordWebhookUrl = 'https://discord.com/api/webhooks/1197326997601390726/yghXhncaKZsffaoCw82v33mw0vlj4QMwu3f8EYm193MYcATQoAwFYpf5_ozugP3Rk9yF';
+const discordWebhookUrl = 'https://discord.com/api/webhooks/1156469297003110470/oLAK50KoPtAhvWQz9KgDplSFHbVOiFXLL8Fp8rDhrjP6eSid_x4t4-fE6i5yNy9CS5gM';
 
 // Mendapatkan informasi spesifikasi hosting
 const hostname = os.hostname();
