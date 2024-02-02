@@ -46,24 +46,18 @@ global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
 //*============= SOSMED =============*/
-global.sig = 'https://www.instagram.com/ryzen_vermillion'
-global.sgh = 'https://github.com/ShirokamiRyzen'
-global.sgc = 'https://whatsapp.com/channel/0029VaGoqK589indDi4Am40J'
-global.sdc = '-'
-global.sfb = 'https://www.facebook.com/Nao.Tomori.UwU'
-global.snh = 'https://www.instagram.com/ryzen_vermillion'
+global.sig = ' - '
+global.sgh = ' - '
+global.sgc = ' - '
+global.sdc = ' - '
+global.sfb = ' - '
 
 /*============= DONASI =============*/
-global.pdana = '085174269046'
-global.povo = '-'
-global.pgopay = '085174269046'
-global.plinkaja = '-'
-global.ppulsa = '085174269046'
-global.ppulsa2 = '085174269046'
-global.psaweria = 'https://saweria.co/shirokamiryzen'
-global.bank1 = '109901209640'
-global.bank2 = '-'
-
+global.pdana = ' - '
+global.povo = ' - 
+global.pgopay = ' - '
+global.ppulsa = ' - '
+global.psaweria = ' - '
 
 /*============= TAMPILAN =============*/
 global.dmenut = 'ଓ═┅═━–〈' //top
