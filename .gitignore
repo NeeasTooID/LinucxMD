@@ -1,2 +1,5 @@
 node_modules
 package_lock.json
+sessions/*.json
+package_lock.json
+tmp/*
