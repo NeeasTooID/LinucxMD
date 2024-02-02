@@ -1,3 +1,4 @@
+/*============= Module =============*/
 import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
@@ -5,7 +6,7 @@ import moment from 'moment-timezone'
 import { group } from 'console'
 import PhoneNumber from 'awesome-phonenumber'
 
-/*============= WAKTU =============*/
+/*============= Waktu =============*/
 let wibh = moment.tz('Asia/Jakarta').format('HH')
     let wibm = moment.tz('Asia/Jakarta').format('mm')
     let wibs = moment.tz('Asia/Jakarta').format('ss')
@@ -24,23 +25,23 @@ let wibh = moment.tz('Asia/Jakarta').format('HH')
     const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 
-/*============= MAIN INFO =============*/
-global.owner = [['6285174269046', 'ShirokamiRyzen', true]]
+/*============= Information =============*/
+global.owner = [['6283897390164', 'YusupKakuu', true]]
 global.mods = []
 global.prems = []
-global.nomorbot = '6285864034767'
-global.nomorown = '6285174269046'
+global.nomorbot = '6283895099347'
+global.nomorown = '6283897390164'
 
-/*============= WATERMARK =============*/
+/*============= Watermark =============*/
 global.readMore = readMore
-global.author = 'Shirokami Ryzen'
-global.namebot = 'Nao-MD ESM'
-global.wm = '© Nao-MD By Shirokami Ryzen'
+global.author = 'Unemployment'
+global.namebot = 'LinucxMD'
+global.wm = '©LinucxMD 2024'
 global.watermark = wm
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
-global.stickpack = `Sticker Dibuat dengan ${namebot}\ngithub.com/ShirokamiRyzen\n\nNao-MD ESM\n+6285864034767`
-global.stickauth = `© Nao-MD By Shirokami Ryzen`
+global.stickpack = `Sticker Dibuat dengan ${namebot}\nSewa Botz LinucxMD Hubungi Owner Di Bawah\n+6283897390164`
+global.stickauth = `©LinucxMD`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
