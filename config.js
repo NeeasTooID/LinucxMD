@@ -108,6 +108,7 @@ global.drtf = 'text/rtf'
 global.thumb = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg' //Main Thumbnail
 global.imagebot = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
 global.giflogo = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
+global.img = 'https://telegra.ph/file/e4a2f4339da8a32ad20a1.jpg'
 global.thumbs = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
 global.thumbnailUrl = [
   'https://telegra.ph/file/ef4b742d47e6a9115e2ff.jpg'
