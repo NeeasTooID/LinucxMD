@@ -10,7 +10,7 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
 	return m.reply("Berhasil Menambahkan " + text + " Ke List Store.\n\nAkses Dengan Mengetik Namanya")
 }
 handler.help = ["addstore"]
-handler.tags = ["owner"]
+handler.tags = ["store"]
 handler.command = ["addstore"]
 handler.owner = true
 export default handler
