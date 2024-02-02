@@ -89,9 +89,6 @@ global.wait = 'Please Wait...'
 global.eror = 'Error!'
 
 /*============= WEB API KEY =============*/
-global.deepai = 'YOUR_APIKEY_HERE'
-global.openai = 'YOUR_APIKEY_HERE'  //api key bisa didapatkan dari https://openai.com/api/
-global.org = 'YOUR_APIKEY_HERE'  //openAI Organization name
 global.xzn = 'YOUR_APIKEY_HERE'
 global.ryzen = 'YOUR_APIKEY_HERE' //daftar di api.ryzendesu.vip/
 
@@ -103,7 +100,6 @@ global.APIs = {
 
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-
   'https://skizo.tech/' : '',
   'https://api.ryzendesu.vip/': ''
 }
@@ -157,7 +153,6 @@ watchFile(file, () => {
 global.benar = 'Good Job! ◕◡◕'
 global.salah = 'Not Bad! ◕◠◕'
 global.dikit = "Dikit Lagi, Semangat!!"
-
 
 /*============= RPG GAME =============*/
 global.multiplier = 69 // The higher, The harder levelup
