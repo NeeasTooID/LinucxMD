@@ -1,7 +1,7 @@
 {
-    "name": "shirokami-ryzen",
-    "version": "8.0.0",
-    "description": "Nao-MD By Ryzen",
+    "name": "LinucxMD",
+    "version": "1.2.2",
+    "description": "LinucxMD Whatsappp Botz",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -21,16 +21,9 @@
         "whatsapp",
         "wabot-aq"
     ],
-    "homepage": "https://github.com/ShirokamiRyzen",
+    "homepage": "https://github.com/NeeasTooID",
     "author": {
-        "name": "ShirokamiRyzen"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ShirokamiRyzen"
-    },
-    "bugs": {
-        "url": "https://github.com/ShirokamiRyzen"
+        "name": "NeeasTooID"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
