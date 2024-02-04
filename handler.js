@@ -1280,10 +1280,6 @@ export async function handler(chatUpdate) {
     }
 }
 
-/**
- * Handle groups participants update
- * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate 
- */
 export async function participantsUpdate({ id, participants, action }) {
     if (opts['self'])
         return
