@@ -84,7 +84,6 @@ export async function handler(chatUpdate) {
                     if (!isNumber(user.stroberi)) user.stroberi = 0
                 }
 
-
                 if (!isNumber(user.afk)) user.afk = -1
                 if (!isNumber(user.agility)) user.agility = 0
                 if (!isNumber(user.anakanjing)) user.anakanjing = 0
