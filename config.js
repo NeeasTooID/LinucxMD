@@ -27,23 +27,23 @@ const readMore = more.repeat(4001)
 
 /*============= MAIN INFO =============*/
 
-global.owner = [['6285174269046', 'ShirokamiRyzen', true]]
+global.owner = [['6283897390164', 'YusupKakuu', true]]
 global.mods = []
 global.prems = []
-global.nomorbot = '6285864034767'
-global.nomorown = '6285174269046'
+global.nomorbot = '6283895099347'
+global.nomorown = '6283897390164'
 
 /*============= WATERMARK =============*/
 
 global.readMore = readMore
-global.author = 'Shirokami Ryzen'
-global.namebot = 'Nao-MD ESM'
-global.wm = '© Nao-MD By Shirokami Ryzen'
+global.author = 'Someone'
+global.namebot = 'LinucxMD ESM'
+global.wm = '©Unemployment'
 global.watermark = wm
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
-global.stickpack = `Sticker Dibuat dengan ${namebot}\ngithub.com/ShirokamiRyzen\n\nNao-MD ESM\n+6285864034767`
-global.stickauth = `© Nao-MD By Shirokami Ryzen`
+global.stickpack = `Sticker Dibuat dengan ${namebot}\nLinucxMD ESM\nHubungi Owner Jika Ingin Sewabot +6283897390164`
+global.stickauth = `©LinucxMD 2024`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
@@ -59,15 +59,11 @@ global.snh = 'https://www.instagram.com/ryzen_vermillion'
 
 /*============= DONASI =============*/
 
-global.pdana = '085174269046'
-global.povo = '-'
-global.pgopay = '085174269046'
-global.plinkaja = '-'
-global.ppulsa = '085174269046'
-global.ppulsa2 = '085174269046'
-global.psaweria = 'https://saweria.co/shirokamiryzen'
-global.bank1 = '109901209640'
-global.bank2 = '-'
+global.pdana = '083897390164'
+global.povo = '083897390164'
+global.pgopay = '083897390164'
+global.ppulsa = '083897390164'
+global.psaweria = 'https://saweria.co/YUSUP909'
 
 /*============= TAMPILAN =============*/
 
@@ -96,10 +92,6 @@ global.eror = 'Error!'
 
 /*============= WEB API KEY =============*/
 
-global.openai = 'YOUR_APIKEY_HERE'  //api key bisa didapatkan dari https://openai.com/api/
-global.org = 'YOUR_APIKEY_HERE'  //openAI Organization name
-global.xzn = 'YOUR_APIKEY_HERE'
-global.ryzen = 'YOUR_APIKEY_HERE' //daftar di api.ryzendesu.vip/
 global.APIs = {
   // name: 'https://website'
   xzn : 'https://skizo.tech/',
@@ -111,22 +103,16 @@ global.APIKeys = { // APIKey Here
   'https://api.ryzendesu.vip/': ''
 }
 
+global.openai = 'YOUR_APIKEY_HERE'  //api key bisa didapatkan dari https://openai.com/api/
+global.org = 'YOUR_APIKEY_HERE'  //openAI Organization name
+global.xzn = 'YOUR_APIKEY_HERE'
+global.ryzen = 'YOUR_APIKEY_HERE' //daftar di api.ryzendesu.vip/
+
 /*============= OTHER =============*/
 
-global.dpptx = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
-global.ddocx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-global.dxlsx = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-global.dpdf = 'application/pdf'
-global.drtf = 'text/rtf'
-global.thumb = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg' //Main Thumbnail
-global.imagebot = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
-global.giflogo = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
-global.thumbs = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
 global.thumbnailUrl = [
   'https://telegra.ph/file/ef4b742d47e6a9115e2ff.jpg'
 ]
-global.fotonya1 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ganti jadi foto bot mu
-global.fotonya2 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ini juga ganti 
 global.flaaa2 = [
  "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=",
  "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=",
@@ -141,13 +127,25 @@ global.fla = [
  "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=",
  "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text="
 ]
-global.hwaifu = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
 global.thumblvlup = [
   'https://i.pinimg.com/originals/a0/34/8a/a0348ae908d8ac4ced76df289eb41e1a.jpg',
   'https://i.pinimg.com/originals/be/3b/47/be3b477371cc249e49fd0bb3284de7d7.jpg',
   'https://i.pinimg.com/originals/63/c3/37/63c337596b3391df0e72a9729ceca7b6.jpg',
   'https://i.pinimg.com/originals/db/ed/5a/dbed5afac55d266602d0ca0c67622bb9.jpg'
 ]
+
+global.dpptx = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+global.ddocx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+global.dxlsx = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+global.dpdf = 'application/pdf'
+global.drtf = 'text/rtf'
+global.thumb = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg' //Main Thumbnail
+global.imagebot = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
+global.giflogo = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
+global.thumbs = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
+global.fotonya1 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ganti jadi foto bot mu
+global.fotonya2 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ini juga ganti 
+global.hwaifu = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
 
 let file = fileURLToPath(import.meta.url)
 watchFile(file, () => {
