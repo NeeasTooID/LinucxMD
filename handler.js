@@ -1310,9 +1310,9 @@ export async function participantsUpdate({ id, participants, action }) {
                     } finally {
                         text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
                             (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
-let wel = 'https://telegra.ph/file/61a04a443f2b9fc3e34bc.jpg'
 
- let lea = 'https://telegra.ph/file/cadce7b456c2b36564737.jpg'
+let wel = 'https://telegra.ph/file/61a04a443f2b9fc3e34bc.jpg'
+let lea = 'https://telegra.ph/file/cadce7b456c2b36564737.jpg'
  
                         this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
                     }
