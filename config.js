@@ -1,10 +1,3 @@
-/*
-𝐀𝐮𝐭𝐡𝐨𝐫 : Shirokami Ryzen 
-𝐖𝐚 : +6281387307198
-𝐛𝐚𝐬𝐞 : Narutomo & Elaina
-𝐌𝐲 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 : 22 Nov 2022
-*/
-
 import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
@@ -13,6 +6,7 @@ import { group } from 'console'
 import PhoneNumber from 'awesome-phonenumber'
 
 /*============= WAKTU =============*/
+
 let wibh = moment.tz('Asia/Jakarta').format('HH')
     let wibm = moment.tz('Asia/Jakarta').format('mm')
     let wibs = moment.tz('Asia/Jakarta').format('ss')
@@ -32,6 +26,7 @@ let wibh = moment.tz('Asia/Jakarta').format('HH')
 const readMore = more.repeat(4001)
 
 /*============= MAIN INFO =============*/
+
 global.owner = [['6285174269046', 'ShirokamiRyzen', true]]
 global.mods = []
 global.prems = []
@@ -39,6 +34,7 @@ global.nomorbot = '6285864034767'
 global.nomorown = '6285174269046'
 
 /*============= WATERMARK =============*/
+
 global.readMore = readMore
 global.author = 'Shirokami Ryzen'
 global.namebot = 'Nao-MD ESM'
@@ -52,6 +48,7 @@ global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
 //*============= SOSMED =============*/
+
 global.sig = 'https://www.instagram.com/ryzen_vermillion'
 global.sgh = 'https://github.com/ShirokamiRyzen'
 global.sgc = 'https://whatsapp.com/channel/0029VaGoqK589indDi4Am40J'
@@ -61,6 +58,7 @@ global.sfb = 'https://www.facebook.com/Nao.Tomori.UwU'
 global.snh = 'https://www.instagram.com/ryzen_vermillion'
 
 /*============= DONASI =============*/
+
 global.pdana = '085174269046'
 global.povo = '-'
 global.pgopay = '085174269046'
@@ -71,8 +69,8 @@ global.psaweria = 'https://saweria.co/shirokamiryzen'
 global.bank1 = '109901209640'
 global.bank2 = '-'
 
-
 /*============= TAMPILAN =============*/
+
 global.dmenut = 'ଓ═┅═━–〈' //top
 global.dmenub = '┊↬' //body
 global.dmenub2 = '┊' //body for info cmd on Default menu
@@ -92,35 +90,34 @@ global.htjava = '⫹⫺'    //hiasan Doang :v
 global.hsquere = ['⛶','❏','⫹⫺']
 
 /*============= RESPON =============*/
+
 global.wait = 'Please Wait...'
 global.eror = 'Error!'
 
 /*============= WEB API KEY =============*/
+
 global.openai = 'YOUR_APIKEY_HERE'  //api key bisa didapatkan dari https://openai.com/api/
 global.org = 'YOUR_APIKEY_HERE'  //openAI Organization name
 global.xzn = 'YOUR_APIKEY_HERE'
 global.ryzen = 'YOUR_APIKEY_HERE' //daftar di api.ryzendesu.vip/
-
 global.APIs = {
   // name: 'https://website'
   xzn : 'https://skizo.tech/',
   ryzen : 'https://api.ryzendesu.vip/'
 }
-
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-
   'https://skizo.tech/' : '',
   'https://api.ryzendesu.vip/': ''
 }
 
 /*============= OTHER =============*/
+
 global.dpptx = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
 global.ddocx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 global.dxlsx = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
 global.dpdf = 'application/pdf'
 global.drtf = 'text/rtf'
-
 global.thumb = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg' //Main Thumbnail
 global.imagebot = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
 global.giflogo = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
@@ -160,12 +157,13 @@ watchFile(file, () => {
 })
 
 /*============= RESPON GAME =============*/
+
 global.benar = 'Good Job! ◕◡◕'
 global.salah = 'Not Bad! ◕◠◕'
 global.dikit = "Dikit Lagi, Semangat!!"
 
-
 /*============= RPG GAME =============*/
+
 global.multiplier = 69 // The higher, The harder levelup
 global.rpg = {
   emoticon(string) {
