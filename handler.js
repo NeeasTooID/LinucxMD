@@ -1232,37 +1232,34 @@ export async function handler(chatUpdate) {
             if (quequeIndex !== -1)
                 this.msgqueque.splice(quequeIndex, 1)
         }
-        //console.log(global.db.data.users[m.sender])
-        let user, stats = global.db.data.stats
+        
+let user, stats = global.db.data.stats
         if (m) {
             if (m.sender && (user = global.db.data.users[m.sender])) {
                 user.exp += m.exp
                 user.limit -= m.limit * 1
             }
-
             let stat
             if (m.plugin) {
-              let rn = ['recording','composing']
-              let jd = rn[Math.floor(Math.random() * rn.length)]
-              await this.sendPresenceUpdate(jd,m.chat)
                 let now = +new Date
                 if (m.plugin in stats) {
                     stat = stats[m.plugin]
-                    if (!isNumber(stat.total)) stat.total = 1
-                    if (!isNumber(stat.success)) stat.success = m.error != null ? 0 : 1
-                    if (!isNumber(stat.last)) stat.last = now
-                    if (!isNumber(stat.lastSuccess)) stat.lastSuccess = m.error != null ? 0 : now
-                } else stat = stats[m.plugin] = {
-                    total: 1,
-                    success: m.error != null ? 0 : 1,
-                    last: now,
-                    lastSuccess: m.error != null ? 0 : now
-                }
+                    if (!isNumber(stat.total))
+                        stat.total = 1
+                    if (!isNumber(stat.success))
+                        stat.success = m.error != null ? 0 : 1
+                    if (!isNumber(stat.last))
+                        stat.last = now
+                    if (!isNumber(stat.lastSuccess))
+                        stat.lastSuccess = m.error != null ? 0 : now
+                } else
+                    stat = stats[m.plugin] = {
+                        total: 1,
+                        success: m.error != null ? 0 : 1,
+                        last: now,
+                        lastSuccess: m.error != null ? 0 : now
+                    }
                 stat.total += 1
-                
-                if (m.isGroup) global.db.data.chats[m.chat].delay = now
-                else global.db.data.users[m.sender].delay = now
-
                 stat.last = now
                 if (m.error == null) {
                     stat.success += 1
@@ -1270,13 +1267,13 @@ export async function handler(chatUpdate) {
                 }
             }
         }
-
         try {
             if (!opts['noprint']) await (await import(`./lib/print.js`)).default(m, this)
         } catch (e) {
             console.log(m, m.quoted, e)
         }
-        if (opts['autoread']) await this.readMessages([m.key])
+        if (opts['autoread'])
+            await conn.readMessages([m.key])
     }
 }
 
