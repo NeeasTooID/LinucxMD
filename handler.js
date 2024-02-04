@@ -876,7 +876,7 @@ export async function handler(chatUpdate) {
                 if (!('isBanned' in chat))
                     chat.isBanned = false
                 if (!('welcome' in chat))
-                    chat.welcome = true
+                    chat.welcome = false
                 if (!('detect' in chat))
                     chat.detect = false
                 if (!('sWelcome' in chat))
@@ -893,14 +893,22 @@ export async function handler(chatUpdate) {
                     chat.antiLink = false
                 if (!('viewonce' in chat))
                     chat.viewonce = false
-                if (!('antiBadword' in chat)) 
-                    chat.antiBadword = false
+                if (!('antiToxic' in chat))
+                    chat.antiToxic = false
                 if (!('simi' in chat))
                     chat.simi = false
+                if (!('autogpt' in chat))
+                    chat.chatgpt = false
+                if (!('autoSticker' in chat))
+                    chat.autoSticker = false
+                if (!('premium' in chat))
+                    chat.premium = false
+                if (!('premiumTime' in chat))
+                    chat.premiumTime = false
                 if (!('nsfw' in chat))
                     chat.nsfw = false
-                if (!('premnsfw' in chat))
-                    chat.premnsfw = false
+                if (!('menu' in chat))
+                    chat.menu = false
                 if (!isNumber(chat.expired))
                     chat.expired = 0
             } else
@@ -912,65 +920,32 @@ export async function handler(chatUpdate) {
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
-                    delete: false,
+                    delete: true,
                     antiLink: false,
                     viewonce: false,
-                    antiBadword: false,
                     simi: false,
+                    autogpt: false,
                     expired: 0,
+                    autoSticker: false,
+                    premium: false,
+                    premiumTime: false,
                     nsfw: false,
-                    premnsfw: false,
+                    menu: true,
                 }
-            let akinator = global.db.data.users[m.sender].akinator
-			if (typeof akinator !== 'object')
-				global.db.data.users[m.sender].akinator = {}
-			if (akinator) {
-				if (!('sesi' in akinator))
-					akinator.sesi = false
-				if (!('server' in akinator))
-					akinator.server = null
-				if (!('frontaddr' in akinator))
-					akinator.frontaddr = null
-				if (!('session' in akinator))
-					akinator.session = null
-				if (!('signature' in akinator))
-					akinator.signature = null
-				if (!('question' in akinator))
-					akinator.question = null
-				if (!('progression' in akinator))
-					akinator.progression = null
-				if (!('step' in akinator))
-					akinator.step = null
-				if (!('soal' in akinator))
-					akinator.soal = null
-			} else
-				global.db.data.users[m.sender].akinator = {
-					sesi: false,
-					server: null,
-					frontaddr: null,
-					session: null,
-					signature: null,
-					question: null,
-					progression: null,
-					step: null, 
-					soal: null
-				}
             let settings = global.db.data.settings[this.user.jid]
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
             if (settings) {
                 if (!('self' in settings)) settings.self = false
                 if (!('autoread' in settings)) settings.autoread = false
-                if (!('restrict' in settings)) settings.restrict = true
-                if (!('jadibot' in settings)) settings.jadibot = false
-                if (!('autorestart' in settings)) settings.autorestart = true
+                if (!('restrict' in settings)) settings.restrict = false
+                if (!('anticall' in settings)) settings.anticall = true
                 if (!('restartDB' in settings)) settings.restartDB = 0
             } else global.db.data.settings[this.user.jid] = {
                 self: false,
                 autoread: false,
-                jadibot: false,
-                restrict: true,
-                autorestart: true,
-                restartDB: 0
+                anticall: true,
+                restartDB: 0,
+                restrict: false
             }
         } catch (e) {
             console.error(e)
@@ -987,12 +962,11 @@ export async function handler(chatUpdate) {
             return
         if (typeof m.text !== 'string')
             m.text = ''
-
         const isROwner = [conn.decodeJid(global.conn.user.id), ...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const isOwner = isROwner || m.fromMe
         const isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const isPrems = isROwner || db.data.users[m.sender].premiumTime > 0
-
+        if (!isOwner && !m.fromMe && opts['self']) return;
         if (opts['queque'] && m.text && !(isMods || isPrems)) {
             let queque = this.msgqueque, time = 1000 * 5
             const previousID = queque[queque.length - 1]
