@@ -1,5 +1,4 @@
 node_modules
-package_lock.json
+package-lock.json
 sessions/*.json
-package_lock.json
 tmp/*
