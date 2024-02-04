@@ -20,11 +20,11 @@ say('Nao-MD ESM', { font: 'chrome', align: 'center', gradient: ['blue', 'green']
 say(`Whatsapp Bot esm by Shirokami Ryzen`, { font: 'console', align: 'center', gradient: ['blue', 'green'] })
 
 console.log(`
-Nao MD ESM
-Author: Shirokami Ryzen
-WA    : +6285174269046
+LinucxMD
+Author: YusupKakuu
+WA    : +6283897390164
 
-github.com/ShirokamiRyzen/Nao-MD
+Terimakasih Telah Memakai Sc Ini!
 `)
 
 var isRunning = false
