@@ -1358,13 +1358,13 @@ export async function deleteUpdate(message) {
         let chat = global.db.data.chats[msg.chat] || {}
         if (chat.delete)
             return
-        await this.reply(msg.chat, `
-Terdeteksi @${participant.split`@`[0]} telah menghapus pesan
+        this.reply(msg.chat, `
+Terdeteksi @${participant.split`@`[0]} telah menghapus pesan. 
 Untuk mematikan fitur ini, ketik
 *.enable delete*
-`.trim(), msg, {
-            mentions: [participant]
-        })
+          
+Untuk menghapus pesan yang dikirim oleh Bot, reply pesan dengan perintah
+*.delete*`, msg)
         this.copyNForward(msg.chat, msg).catch(e => console.log(e, msg))
     } catch (e) {
         console.error(e)
