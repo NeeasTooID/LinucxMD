@@ -183,7 +183,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.gardenboxs)) user.gardenboxs = 0
                 if (!isNumber(user.gems)) user.gems = 0
                 if (!isNumber(user.glass)) user.glass = 0
-                if (!isNumber(user.glimit)) user.glimit = 20
+                if (!isNumber(user.glimit)) user.glimit = 100
                 if (!isNumber(user.glory)) user.glory = 0
                 if (!isNumber(user.gold)) user.gold = 0
                 if (!isNumber(user.griffin)) user.griffin = 0
@@ -211,7 +211,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.jagung)) user.jagung = 0
                 if (!isNumber(user.jagungbakar)) user.jagungbakar = 0
                 if (!isNumber(user.jeruk)) user.jeruk = 0
-                if (!isNumber(user.joinlimit)) user.joinlimit = 1
+                if (!isNumber(user.joinlimit)) user.joinlimit = 100
                 if (!isNumber(user.judilast)) user.judilast = 0
                 if (!isNumber(user.kaleng)) user.kaleng = 0
                 if (!isNumber(user.kambing)) user.kambing = 0
@@ -333,8 +333,8 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.lelebakar)) user.lelebakar = 0
                 if (!isNumber(user.leleg)) user.leleg = 0
                 if (!isNumber(user.level)) user.level = 0
-                if (!isNumber(user.limit)) user.limit = 10
-                if (!isNumber(user.limitjoinfree)) user.limitjoinfree = 1
+                if (!isNumber(user.limit)) user.limit = 100
+                if (!isNumber(user.limitjoinfree)) user.limitjoinfree = 100
                 if (!isNumber(user.lion)) user.lion = 0
                 if (!isNumber(user.lionexp)) user.lionexp = 0
                 if (!isNumber(user.lionlastfeed)) user.lionlastfeed = 0
@@ -609,7 +609,7 @@ export async function handler(chatUpdate) {
                     jagungbakar: 0,
                     jeruk: 0,
                     job: "Pengangguran",
-                    joinlimit: 1,
+                    joinlimit: 100,
                     judilast: 0,
                     kaleng: 0,
                     kambing: 0,
@@ -724,8 +724,8 @@ export async function handler(chatUpdate) {
                     lelebakar: 0,
                     leleg: 0,
                     level: 0,
-                    limit: 25,
-                    limitjoinfree: 1,
+                    limit: 100,
+                    limitjoinfree: 100,
                     lion: 0,
                     lionexp: 0,
                     lionlastfeed: 0,
