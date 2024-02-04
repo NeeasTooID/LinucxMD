@@ -44,20 +44,15 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
 
   let tags = {
     'main': 'Main',
-    'stress': 'Stress',
-    'ai': 'Ai feature',
-    'memfess': 'Memfess',
     'downloader': 'Downloader',
+    'ai': 'Ai feature',
+    'owner': 'Owner',
+    'group': 'Group',
+    'info': 'Info',
     'internet': 'Internet',
-    'anime': 'Anime',
     'sticker': 'Sticker',
     'tools': 'Tools',
-    'group': 'Group',
-    'quotes': 'Quotes',
-    'maker': 'Maker Text Logo',
-    'nulis': 'Nulis',
-    'info': 'Info',
-    'owner': 'Owner',
+    
   }
 
   try {
@@ -233,7 +228,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
             mediaType: 1,
             previewType: 0,
             renderLargerThumbnail: true,
-            thumbnailUrl: 'https://telegra.ph/file/14a7745f434cd21e900d6.jpg',
+            thumbnailUrl: 'https://telegra.ph/file/373282a131e00397a69dc.jpg',
             sourceUrl: sgc,
           }
         }, mentions: [m.sender]
@@ -294,43 +289,3 @@ function ucapan() {
   }
   return res
 }
-
-/*async function genProfile(conn, m) {
-  let font = await jimp.loadFont('./names.fnt'),
-    mask = await jimp.read('https://i.imgur.com/552kzaW.png'),
-    border = await jimp.read('https://telegra.ph/file/a81aa1b95381c68bc9932.png'),
-    welcome = await jimp.read(thumbnailUrl.getRandom()),
-    avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')),
-    status = (await conn.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected',
-    premiumUnixTime = global.db.data.users[m.sender].premiumTime,
-    prems = `${premiumUnixTime > 0 ? 'Premium User' : 'Free User'}`;
-
-  const gmtPlus7Time = premiumUnixTime * 1000 + 7 * 60 * 60 * 1000;
-
-
-  await avatar.resize(460, 460)
-  await mask.resize(460, 460)
-  await avatar.mask(mask)
-
-  await welcome.resize(welcome.getWidth(), welcome.getHeight())
-
-  await welcome.print(font, 550, 150, 'Name:')
-  await welcome.print(font, 800, 150, m.pushName.slice(0, 25))
-  await welcome.print(font, 550, 215, 'About:')
-  await welcome.print(font, 800, 215, status)
-  await welcome.print(font, 550, 280, 'Number:')
-  await welcome.print(font, 800, 280, PhoneNumber('+' + m.sender.split('@')[0]).getNumber('international'))
-  await welcome.print(font, 550, 400, 'Status:')
-  await welcome.print(font, 800, 400, prems)
-
-  if (premiumUnixTime > 0) {
-    const gmtPlus7DateString = new Date(gmtPlus7Time).toLocaleString('id-ID', { timeZone: 'Asia/Jakarta' });
-    await border.resize(460, 460)
-    await welcome.print(font, 550, 460, 'Until:');
-    await welcome.print(font, 800, 460, gmtPlus7DateString);
-    await welcome.composite(border, 50, 170);
-  }
-
-  return await welcome.composite(avatar, 50, 170).getBufferAsync('image/png')
-}
-*/

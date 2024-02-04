@@ -52,7 +52,7 @@ handler.all = async function (m) {
                     title: global.ucapan,
                     body: wm,
                     thumbnailUrl: pp,
-                    sourceUrl: sig
+                    sourceUrl: sgc
                 }
             }
         }
@@ -63,7 +63,7 @@ handler.all = async function (m) {
                     title: global.ucapan,
                     body: wm,
                     thumbnailUrl: pp,
-                    sourceUrl: sfb
+                    sourceUrl: sgc
                 }
             }
         }

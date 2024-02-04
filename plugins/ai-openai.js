@@ -14,6 +14,6 @@ const handler = async (m, { text, usedPrefix, command }) => {
 };
 
 handler.command = handler.help = ['ai', 'openai', 'chatgpt'];
-handler.tags = ['tools'];
+handler.tags = ['ai'];
 handler.premium = false;
 export default handler;

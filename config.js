@@ -52,6 +52,7 @@ global.wibb = `${wktuwib}`
 global.sig = 'https://www.instagram.com/yusupk._'
 global.sgh = 'https://github.com/NeeasTooID/'
 global.sgc = 'https://whatsapp.com/channel/0029VaEK2Vc9mrGbK9s0Iv3p'
+global.sgw = 'https://chat.whatsapp.com/CjgkxnajTPXAivDPUZgzjy'
 global.sdc = 'https://discord.com/invite/JkMqE7tHKT'
 
 /*============= DONASI =============*/
