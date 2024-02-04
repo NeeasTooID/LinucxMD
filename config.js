@@ -100,8 +100,7 @@ global.APIKeys = { // APIKey Here
   'https://api.ryzendesu.vip/': ''
 }
 
-global.openai = 'YOUR_APIKEY_HERE'  //api key bisa didapatkan dari https://openai.com/api/
-global.org = 'YOUR_APIKEY_HERE'  //openAI Organization name
+global.btc = 'TukangM' // Thanks Furry!
 global.xzn = 'YOUR_APIKEY_HERE'
 global.ryzen = 'YOUR_APIKEY_HERE' //daftar di api.ryzendesu.vip/
 
