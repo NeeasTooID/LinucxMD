@@ -1,3 +1,13 @@
+/* If You Copy, Don`t Delete This Credit!!! 
+  Don`t Sell This Script Or I Take Immediately 
+  Yang Jual Script Ini Report/Hangusin Aja Akunnya Atau Pukulin ae orangnya
+  Move To Pairing Code
+  Buat Yg Nggk muncul Codenya Itu Disebabkan Oleh Banyaknya Plugins
+  Jika Ingin Mengambil Sesi, Backup Semua File Plugins & Hapus Semua File Plugins
+  Setelah Sudah Kalian Bisa Mengembalikan Semua File Pluginsnya Agar Bisa Dipakai
+  Regards from YanXiao ♡
+*/
+
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 import './config.js'
 
@@ -100,10 +110,10 @@ const rl = readline.createInterface({ input: process.stdin, output: process.stdo
 
 const store = useStore ? makeInMemoryStore({ level: 'silent' }) : undefined
 
-store?.readFromFile('./data_store.json')
+store?.readFromFile('./nao_store.json')
 // save every 10s
 setInterval(() => {
-  store?.writeToFile('./data_store.json')
+  store?.writeToFile('./nao_store.json')
 }, 10_000)
 
 const { version, isLatest } = await fetchLatestBaileysVersion()
@@ -187,7 +197,7 @@ function clearTmp() {
   return filename.map(file => {
     const stats = statSync(file)
     if (stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 3)) return unlinkSync(file) // 3 minutes
-    return true
+    return false
   })
 }
 
@@ -304,6 +314,7 @@ global.reloadHandler = async function (restatConn) {
   conn.ev.on('creds.update', conn.credsUpdate)
   isInit = false
   return true
+
 }
 
 const pluginFolder = global.__dirname(join(__dirname, './plugins/index'))
@@ -353,6 +364,7 @@ watch(pluginFolder, global.reload)
 await global.reloadHandler()
 
 // Quick Test
+
 async function _quickTest() {
   let test = await Promise.all([
     spawn('ffmpeg'),
@@ -385,7 +397,6 @@ async function _quickTest() {
     gm,
     find
   }
-  
   // require('./lib/sticker').support = s
   Object.freeze(global.support)
 
@@ -400,8 +411,8 @@ async function _quickTest() {
   if (!s.convert && !s.magick && !s.gm) {
     conn.logger.warn('Fitur Stiker Mungkin Tidak Bekerja Tanpa imagemagick dan libwebp di ffmpeg belum terinstall (pkg install imagemagick)')
   }
-}
 
+}
 _quickTest()
   .then(() => conn.logger.info('☑️ Quick Test Done , nama file session ~> creds.json'))
   .catch(console.error)

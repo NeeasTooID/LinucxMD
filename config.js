@@ -1,4 +1,10 @@
-/*============= Module =============*/
+/*
+𝐀𝐮𝐭𝐡𝐨𝐫 : Shirokami Ryzen 
+𝐖𝐚 : +6281387307198
+𝐛𝐚𝐬𝐞 : Narutomo & Elaina
+𝐌𝐲 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 : 22 Nov 2022
+*/
+
 import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
@@ -6,7 +12,7 @@ import moment from 'moment-timezone'
 import { group } from 'console'
 import PhoneNumber from 'awesome-phonenumber'
 
-/*============= Waktu =============*/
+/*============= WAKTU =============*/
 let wibh = moment.tz('Asia/Jakarta').format('HH')
     let wibm = moment.tz('Asia/Jakarta').format('mm')
     let wibs = moment.tz('Asia/Jakarta').format('ss')
@@ -25,39 +31,46 @@ let wibh = moment.tz('Asia/Jakarta').format('HH')
     const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
 
-/*============= Information =============*/
-global.owner = [['6283897390164', 'YusupKakuu', true]]
+/*============= MAIN INFO =============*/
+global.owner = [['6285174269046', 'ShirokamiRyzen', true]]
 global.mods = []
 global.prems = []
-global.nomorbot = '6283895099347'
-global.nomorown = '6283897390164'
+global.nomorbot = '6285864034767'
+global.nomorown = '6285174269046'
 
-/*============= Watermark =============*/
+/*============= WATERMARK =============*/
 global.readMore = readMore
-global.author = 'Unemployment'
-global.namebot = 'LinucxMD'
-global.wm = '©LinucxMD 2024'
+global.author = 'Shirokami Ryzen'
+global.namebot = 'Nao-MD ESM'
+global.wm = '© Nao-MD By Shirokami Ryzen'
 global.watermark = wm
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
-global.stickpack = `Sticker Dibuat dengan ${namebot}\nSewa Botz LinucxMD Hubungi Owner Di Bawah\n+6283897390164`
-global.stickauth = `©LinucxMD`
+global.stickpack = `Sticker Dibuat dengan ${namebot}\ngithub.com/ShirokamiRyzen\n\nNao-MD ESM\n+6285864034767`
+global.stickauth = `© Nao-MD By Shirokami Ryzen`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
 //*============= SOSMED =============*/
-global.sig = ' - '
-global.sgh = ' - '
-global.sgc = ' - '
-global.sdc = ' - '
-global.sfb = ' - '
+global.sig = 'https://www.instagram.com/ryzen_vermillion'
+global.sgh = 'https://github.com/ShirokamiRyzen'
+global.sgc = 'https://whatsapp.com/channel/0029VaGoqK589indDi4Am40J'
+global.sgw = 'https://ryzendesu.vip'
+global.sdc = '-'
+global.sfb = 'https://www.facebook.com/Nao.Tomori.UwU'
+global.snh = 'https://www.instagram.com/ryzen_vermillion'
 
 /*============= DONASI =============*/
-global.pdana = ' - '
-global.povo = ' - 
-global.pgopay = ' - '
-global.ppulsa = ' - '
-global.psaweria = ' - '
+global.pdana = '085174269046'
+global.povo = '-'
+global.pgopay = '085174269046'
+global.plinkaja = '-'
+global.ppulsa = '085174269046'
+global.ppulsa2 = '085174269046'
+global.psaweria = 'https://saweria.co/shirokamiryzen'
+global.bank1 = '109901209640'
+global.bank2 = '-'
+
 
 /*============= TAMPILAN =============*/
 global.dmenut = 'ଓ═┅═━–〈' //top
@@ -83,6 +96,8 @@ global.wait = 'Please Wait...'
 global.eror = 'Error!'
 
 /*============= WEB API KEY =============*/
+global.openai = 'YOUR_APIKEY_HERE'  //api key bisa didapatkan dari https://openai.com/api/
+global.org = 'YOUR_APIKEY_HERE'  //openAI Organization name
 global.xzn = 'YOUR_APIKEY_HERE'
 global.ryzen = 'YOUR_APIKEY_HERE' //daftar di api.ryzendesu.vip/
 
@@ -94,6 +109,7 @@ global.APIs = {
 
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
+
   'https://skizo.tech/' : '',
   'https://api.ryzendesu.vip/': ''
 }
@@ -108,7 +124,6 @@ global.drtf = 'text/rtf'
 global.thumb = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg' //Main Thumbnail
 global.imagebot = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
 global.giflogo = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
-global.img = 'https://telegra.ph/file/e4a2f4339da8a32ad20a1.jpg'
 global.thumbs = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
 global.thumbnailUrl = [
   'https://telegra.ph/file/ef4b742d47e6a9115e2ff.jpg'
@@ -148,6 +163,7 @@ watchFile(file, () => {
 global.benar = 'Good Job! ◕◡◕'
 global.salah = 'Not Bad! ◕◠◕'
 global.dikit = "Dikit Lagi, Semangat!!"
+
 
 /*============= RPG GAME =============*/
 global.multiplier = 69 // The higher, The harder levelup
