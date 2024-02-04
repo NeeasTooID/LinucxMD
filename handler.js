@@ -1372,49 +1372,22 @@ Untuk mematikan fitur ini, ketik
 }
 
 global.dfail = (type, m, conn) => {
-let tag = `@${m.sender.replace(/@.+/, '')}`
-  let mentionedJid = [m.sender]
-let name = conn.getName(m.sender)
-let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
-let vn = "https://bucin-livid.vercel.app/audio/lusiapa.mp3"
-let mssg = {
-        rowner: 'Maaf, Fitur Ini Hanya Bisa Di Pakai Oleh Ownerku',
-        owner: 'Maaf, Fitur Ini Hanya Bisa Di Pakai Oleh Ownerku',
-        mods: 'Fitur Ini Khusus Moderator'}[type]
-        if (mssg) return conn.sendFile(m.chat, vn, "owner.mp3", null, m, true, {
-		type: "audioMessage",
-		ptt: true,
-	})
-let msg = {
-        premium: 'Maaf Kak, Tapi Fitur Ini Hanya Bisa Di Gunakan Oleh User Premium',
-        group: 'Fitur Ini Hanya Bisa Digunakan Di Dalam Grup',       
-        botAdmin: 'Jadikan Clara Sebagai Admin Terlebih Dahulu Agar Bisa Menggunakan Fitur Ini',
-        restrict: 'Restict Belum Di Nyalakan Untuk Chat Ini'}[type]
-  if (msg) return conn.reply(m.chat, msg, fkon)
-  let daftar = {
-  unreg: 'Hai Kak, Sebelum Menggunakan Fiturku, Kamu Harus Daftar Ke Database Terlebih Dahulu\nCaranya Ketik .daftar namakamu.umurkamu\nContoh : .daftar Clara.18'}[type]
-  if (daftar) return conn.reply(m.chat, msg, fkon)
-        }
-function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  let res = "Sudah Dini Hari Kok Belum Tidur Kak? 🥱"
-  if (time >= 4) {
-    res = "Pagi Kak 🌄"
-  }
-  if (time >= 10) {
-    res = "Selamat Siang Kak ☀️"
-  }
-  if (time >= 15) {
-    res = "Selamat Sore Kak 🌇"
-  }
-  if (time >= 18) {
-    res = "Malam Kak 🌙"
-  }
-  return res
+    let msg = {
+        rowner: '*DEVELOPER ONLY* • COMMAND INI HANYA UNTUK DEVELOPER BOT',
+        disable: '*DISABLED* • COMMAND INI TELAH DIMATIKAN OLEH OWNER',
+        owner: '*OWNER ONLY* • COMMAND INI HANYA UNTUK OWNER BOT',
+        mods: '*MODERATOR ONLY* • COMMAND INI HANYA UNTUK MODERATOR',
+        premium: '*PREMIUM ONLY* • COMMAND INI HANYA UNTUK PREMIUM USER',
+        group: '*GROUP CHAT* • COMMAND INI HANYA BISA DIGUNAKAN DIDALAM GRUP',
+        private: '*PRIVATE CHAT* • COMMAND INI HANYA BISA DIGUNAKAN DI PRIVATE CHAT',
+        admin: '*ADMIN ONLY* • COMMAND INI HANYA UNTUK ADMIN GRUP',
+        botAdmin: '*BOT ADMIN ONLY* • COMMAND INI HANYA UNTUK ADMIN BOT',
+        unreg: 'Halo Kak 👋\nAnda harus mendaftar ke database dulu sebelum menggunakan fitur ini\n\n➞ Ketik .register untuk mendaftar',
+        restrict: '*RESTRICT* • RESTRICT BELUM DINYALAKAN DI GRUP INI',
+    }[type]
+    if (msg) return conn.reply(m.chat, msg)
 }
-function pickRandom(list) {
-     return list[Math.floor(Math.random() * list.length)]
-     }
+
 let file = global.__filename(import.meta.url, true)
 watchFile(file, async () => {
     unwatchFile(file)
