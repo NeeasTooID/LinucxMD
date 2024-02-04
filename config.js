@@ -96,13 +96,13 @@ global.APIs = {
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://skizo.tech/' : '',
-  'https://api.ryzendesu.vip/': ''
+  'https://skizo.tech/' : 'npnpicyy',
+  'https://api.ryzendesu.vip/': '84295850'
 }
 
 global.btc = 'TukangM' // Thanks Furry!
-global.xzn = 'YOUR_APIKEY_HERE'
-global.ryzen = 'YOUR_APIKEY_HERE' //daftar di api.ryzendesu.vip/
+global.xzn = 'npnpicyy'
+global.ryzen = '84295850' //daftar di api.ryzendesu.vip/
 
 /*============= OTHER =============*/
 
