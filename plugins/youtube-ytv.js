@@ -66,7 +66,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
 };
 
 handler.help = ['ytmp4'].map((v) => v + ' <URL>')
-handler.tags = ['downloader']
+handler.tags = ['ytdl']
 handler.command = /^(ytmp4)$/i
 
 handler.limit = true

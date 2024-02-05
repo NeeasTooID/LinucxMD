@@ -13,27 +13,17 @@ let handler = async (m, { conn, args, participants }) => {
   console.log(participants)
   let len = args[0] && args[0].length > 0 ? Math.min(10, Math.max(parseInt(args[0]), 10)) : Math.min(10, sortedExp.length)
   let text = `
-• *XP Leaderboard Top ${len}* •
-Kamu: *${usersExp.indexOf(m.sender) + 1}* dari *${usersExp.length}*
-
-${sortedExp.slice(0, len).map(({ jid, exp }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${exp} Exp*`).join`\n`}
-
-• *Limit Leaderboard Top ${len}* •
-Kamu: *${usersLim.indexOf(m.sender) + 1}* dari *${usersLim.length}*
-
-${sortedLim.slice(0, len).map(({ jid, limit }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *${limit} Limit*`).join`\n`}
+• *Money Leaderboard Top ${len}* •
+Kamu: *${usersMoney.indexOf(m.sender) + 1}* dari *${usersMoney.length}*
+${sortedMoney.slice(0, len).map(({ jid, money }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Money ${money}*`).join`\n`}
 
 • *Level Leaderboard Top ${len}* •
 Kamu: *${usersLevel.indexOf(m.sender) + 1}* dari *${usersLevel.length}*
-
 ${sortedLevel.slice(0, len).map(({ jid, level }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Level ${level}*`).join`\n`}
 
-• *Money Leaderboard Top ${len}* •
-Kamu: *${usersMoney.indexOf(m.sender) + 1}* dari *${usersMoney.length}*
-
-${sortedMoney.slice(0, len).map(({ jid, money }, i) => `${i + 1}. ${participants.some(p => jid === p.jid) ? `(${conn.getName(jid)}) wa.me/` : '@'}${jid.split`@`[0]} *Money ${money}*`).join`\n`}
+</> _*LinucxMD 2024*_
 `.trim()
-let lbnya = 'https://files.cults3d.com/uploaders/21646250/illustration-file/4fcb5125-8c8b-40b1-ae64-62feea6cb2a2/ousamaall.png'
+let lbnya = 'https://telegra.ph/file/bc76606143581eff37ab4.jpg'
   conn.sendFile(m.chat, lbnya, '', text, m, {
     contextInfo: {
       mentionedJid: [...usersExp.slice(0, len), ...usersLim.slice(0, len), ...usersLevel.slice(0, len), ...usersMoney.slice(0, len)].filter(v => !participants.some(p => v === p.jid))

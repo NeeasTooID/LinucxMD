@@ -18,9 +18,9 @@ let handler = async (m, {conn, text }) => {
 }
 
 handler.help = ['yts <query>']
-handler.tags = ['tools']
+handler.tags = ['ytdl']
 handler.command = /^yts(earch)?$/i
-
 handler.register = true
+handler.limit = true
 
 export default handler

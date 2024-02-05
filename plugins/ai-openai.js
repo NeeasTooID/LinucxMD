@@ -13,7 +13,8 @@ const handler = async (m, { text, usedPrefix, command }) => {
   }
 };
 
-handler.command = handler.help = ['ai', 'openai', 'chatgpt'];
+handler.command = handler.help = ['ai', 'openai'];
 handler.tags = ['ai'];
 handler.premium = false;
+handler.limit = true;
 export default handler;

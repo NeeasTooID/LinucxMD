@@ -1,46 +1,30 @@
-import { instagramdl } from '@bochilteam/scraper'
-import fetch from 'node-fetch'
+import fetch from 'node-fetch';
 
-var handler = async (m, { args, conn, usedPrefix, command }) => {
-    if (!args[0]) throw `Ex:\n${usedPrefix}${command} https://www.instagram.com/reel/C0EEgMNSSHw/?igshid=MzY1NDJmNzMyNQ==`;
+const handler = async (m, { conn, args, usedPrefix, command }) => {
+    if (!args[0]) throw `*Contoh:* ${usedPrefix}${command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`;
+
     try {
-        let res = await bochil.snapsave(args[0]);
-        let media = await res[0].url;
-      
-        const sender = m.sender.split(`@`)[0];
+        const api = await fetch(`https://api.botcahx.eu.org/api/dowloader/igdowloader?url=${args[0]}&apikey=${btc}`);
+        const res = await api.json();
 
-        conn.reply(m.chat, 'Sedang mengunduh video...', m);
+        const limitnya = 10; // ini jumlah foto yang ingin di kirim ke user (default 10 foto)
 
-        if (!res) throw 'Can\'t download the post';
-      
-        await conn.sendMessage(m.chat, { video: { url: media }, caption: `ini kak videonya @${sender}`, mentions: [m.sender]}, m);
-
+        for (let i = 0; i < Math.min(limitnya, res.result.length); i++) {
+            await sleep(3000);
+            conn.sendFile(m.chat, res.result[i].url, null, `*Instagram Downloader*`, m);
+        }
     } catch (e) {
-      try {
-          let response = await fetch(`https://tr.deployers.repl.co/instagramdl?url=${encodeURIComponent(args[0])}`);
-          let data = await response.json();
-
-          if (data.image && data.video) {
-              const sender = m.sender.split(`@`)[0];
-
-              conn.reply(m.chat, 'Sedang mengunduh video...', m);
-
-            await conn.sendMessage(m.chat, { video: data.video, caption: `ini kak videonya @${sender}`, mentions: [m.sender] }, m);
-            
-          } else {
-              throw 'Gagal mengunduh video';
-          }
-      } catch (error) {
-          conn.reply(m.chat, 'Gagal mengunduh video', m);
-      }
+        throw `*Server Down!*`;
     }
+};
+
+handler.help = ['instagram'].map(v => v + ' <url>');
+handler.tags = ['downloader'];
+handler.command = /^(ig|instagram|igdl|instagramdl|igstroy)$/i;
+handler.limit = true;
+
+export default handler;
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
 }
-
-handler.help = ['ig'].map(v => v + ' <url>')
-handler.tags = ['downloader']
-
-handler.command = /^(ig(dl)?)$/i
-handler.limit = true
-handler.register = true
-
-export default handler

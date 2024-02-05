@@ -20,16 +20,15 @@ const defaultMenu = {
 ● *Xp:* %exp / %maxexp
 ● *Total Xp:* %totalexp
 
-*${ucapan()} %name!*
+</> *${ucapan()} %name!*
 ● *Tanggal:* %week %weton
 ● *Date:* %date
 ● *Tanggal Islam:* %dateIslamic
 ● *Waktu:* %time
 
 ● *Platform:* %platform
-● *Type:* Node.JS
-● *Uptime:* %muptime
-%readmore
+● *Type:* Node.JS Puppeter V20
+● *Uptime:* %muptime %readmore
 `.trimStart(),
   header: '╭─────『 %category 』',
   body: '  ⫸ %cmd %isPremium %islimit',
@@ -44,13 +43,14 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
 
   let tags = {
     'main': 'Main',
-    'downloader': 'Downloader',
     'ai': 'Ai feature',
-    'owner': 'Owner',
+    'downloader': 'Sosial Downloader',
+    'ytdl': 'Youtube Downloader',
     'group': 'Group',
-    'info': 'Info',
-    'internet': 'Internet',
     'sticker': 'Sticker',
+    'owner': 'Owner',
+    'internet': 'Internet',
+    'info': 'Info',
     'tools': 'Tools',
     
   }
@@ -228,7 +228,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
             mediaType: 1,
             previewType: 0,
             renderLargerThumbnail: true,
-            thumbnailUrl: 'https://telegra.ph/file/373282a131e00397a69dc.jpg',
+            thumbnailUrl: 'https://telegra.ph/file/86f501937945a2136f3d4.jpg',
             sourceUrl: sgc,
           }
         }, mentions: [m.sender]

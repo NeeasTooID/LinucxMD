@@ -26,7 +26,7 @@ Daftar berhasil!
 Serial Number: 
 ${sn}
 
-Ketik *.rules* untuk melihat ketentuan penggunaan
+Ketik *.menu* untuk melihat menu atau fitur bot!
 
 Mendaftar berarti setuju dengan ketentuan
 `.trim())
