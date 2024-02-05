@@ -54,6 +54,13 @@
 [![nodejs](https://github.com/DjDeveloperr.png?size=100)](https://github.com/DjDeveloperr)
 [![puppeteer](https://github.com/puppeteer.png?size=100)](https://github.com/puppeteer)
 [![pterodactyl](https://github.com/pterodactyl.png?size=100)](https://github.com/pterodactyl)
+[![KurukuuMD](https://github.com/KurukuuMD.png?size=100)](https://github.com/KurukuuMD)
+[![Azizsapu](https://github.com/Azizsapu.png?size=100)](https://github.com/Azizsapu)
+[![Kanata-chan](https://github.com/Kanata-chan.png?size=100)](https://github.com/Kanata-chan)
+[![cakrayp](https://github.com/cakrayp.png?size=100)](https://github.com/cakrayp)
+[![ERLANRAHMAT](https://github.com/ERLANRAHMAT.png?size=100)](https://github.com/ERLANRAHMAT)
+[![AyGemuy](https://github.com/AyGemuy.png?size=100)](https://github.com/AyGemuy)
+[![BOTCAHX](https://github.com/BOTCAHX.png?size=100)](https://github.com/BOTCAHX)
 
 #### Recoder
 [![NeastooID](https://github.com/NeastooID.png?size=100)](https://github.com/NeastooID)
