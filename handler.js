@@ -39,7 +39,6 @@ export async function handler(chatUpdate) {
         m.exp = 0
         m.limit = false
         try {
-            // TODO: use loop to insert data instead of this
             let user = global.db.data.users[m.sender]
             if (typeof user !== 'object')
                 global.db.data.users[m.sender] = {}
@@ -47,7 +46,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.exp))
                     user.exp = 0
                 if (!isNumber(user.limit))
-                    user.limit = 10
+                    user.limit = 1000
                 if (!isNumber(user.afk))
                     user.afk = -1
                 if (!('afkReason' in user))
@@ -130,15 +129,10 @@ export async function handler(chatUpdate) {
                     sPromote: '',
                     sDemote: '',
                     delete: true,
-                    antiLink: false,
-                    viewonce: false,
-                    simi: false,
-                    autogpt: false,
                     expired: 0,
                     autoSticker: false,
                     premium: false,
                     premiumTime: false,
-                    nsfw: false,
                     menu: true,
                 }
             let settings = global.db.data.settings[this.user.jid]
@@ -484,45 +478,18 @@ export async function participantsUpdate({ id, participants, action }) {
             if (chat.welcome) {
                 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) {
-                    let nickgc = await conn.getName(id)
-                    let pp = 'https://telegra.ph/file/24fa902ead26340f3df2c.png'
-                    let ppgc = 'https://telegra.ph/file/24fa902ead26340f3df2c.png'
-                    let userName = user.split('@')[0];
+                    let pp = './src/avatar_contact.png'
                     try {
                         pp = await this.profilePictureUrl(user, 'image')
-                        ppgc = await this.profilePictureUrl(id, 'image')
-                        const userData = global.db.data.users[user.split('@')[0]];
-                        if (userData && userData.name) {
-                            userName = userData.name;
-                        }
-
                     } catch (e) {
                     } finally {
-                        text = (action === 'add' ?
-                            (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknown') :
-                            (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', `@${userName}`);
-                        let wel = await new knights.Welcome2()
-                            .setAvatar(pp)
-                            .setUsername(this.getName(user))
-                            .setBg("https://telegra.ph/file/666ccbfc3201704454ba5.jpg")
-                            .setGroupname(groupMetadata.subject)
-                            .setMember(groupMetadata.participants.length)
-                            .toAttachment()
+                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
+                            (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
+let wel = 'https://telegra.ph/file/caead5d833651946ae53f.jpg'
 
-                        let lea = await new knights.Goodbye()
-                            .setUsername(this.getName(user))
-                            .setGuildName(groupMetadata.subject)
-                            .setGuildIcon(ppgc)
-                            .setMemberCount(groupMetadata.participants.length)
-                            .setAvatar(pp)
-                            .setBackground("https://telegra.ph/file/0db212539fe8a014017e3.jpg")
-                            .toAttachment()
-
-                        //this.sendFile(id, action === 'add' ? wel : lea, pp, 'pp.jpg', text, null, false, { mentions: [user] })
-                        /*await this.sendHydrated(id, global.ucapan, text, action === 'add' ? wel.toBuffer() : lea.toBuffer(), sgc, (action == 'add' ? '💌 WELCOME' : '🐾 BYE'), user.split`@`[0], 'ɴᴜᴍʙᴇʀ ᴘᴀʀᴛɪᴄɪᴘᴀɴᴛ', [
-       [action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'bilek']], null, fkontak, { mentions: [user] })*/
-
-                        this.sendFile(id, action === 'add' ? wel.toBuffer() : lea.toBuffer(), 'pp.jpg', text, null, false, { mentions: [user] })
+ let lea = 'https://telegra.ph/file/f50df2d5c51158345be9d.jpg'
+ 
+                        this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
                     }
                 }
             }
