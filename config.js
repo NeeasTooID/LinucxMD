@@ -36,7 +36,7 @@ global.nomorown = '6283897390164'
 /*============= WATERMARK =============*/
 
 global.readMore = readMore
-global.author = 'Someone'
+global.author = 'LinucxMD'
 global.namebot = 'LinucxMD ESM'
 global.wm = '©Unemployment'
 global.watermark = wm

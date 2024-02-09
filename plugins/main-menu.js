@@ -48,6 +48,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
     'ytdl': 'Youtube Downloader',
     'group': 'Group',
     'sticker': 'Sticker',
+    'rpg': 'Rpg Game',
     'owner': 'Owner',
     'internet': 'Internet',
     'info': 'Info',

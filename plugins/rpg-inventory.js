@@ -93,7 +93,7 @@ let health = global.db.data.users[m.sender].health
     let usersmythic = sortedmythic.map(v => v[0])
     let userslegendary = sortedlegendary.map(v => v[0])
     let str = `
-Inventory *${await conn.getName(name)}*
+</> Inventory *${await conn.getName(name)}*
 
 Health: *${health}*
 Armor: *${armor == 0 ? 'Tidak Punya' : '' || armor == 1 ? 'Leather Armor' : '' || armor == 2 ? 'Iron Armor' : '' || armor == 3 ? 'Gold Armor' : '' || armor == 4 ? 'Diamond Armor' : '' || armor == 5 ? 'Netherite Armor' : ''}*
@@ -177,7 +177,7 @@ handler.help = ['inv']
 handler.tags = ['rpg']
 handler.command = /^(inv|inventory)$/i
 handler.limit = true
-handler.group = false
+handler.group = true
 export default handler
 
 const more = String.fromCharCode(8206)
