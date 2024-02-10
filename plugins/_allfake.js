@@ -6,7 +6,7 @@ let handler = m => m
 handler.all = async function (m) {
     let name = await conn.getName(m.sender) 
 	let pp = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-	let fotonyu = 'https://telegra.ph/file/9dd7a83500f01d3441449.jpg'
+	let fotonyu = 'https://telegra.ph/file/0ab3bde4e959cbbc03be6.jpg'
 	try {
 		pp = await this.profilePictureUrl(m.sender, 'image')
 	} catch (e) {
@@ -26,7 +26,7 @@ handler.all = async function (m) {
 				externalAdReply: {
                     showAdAttribution: true,
 					title: "LinucxMD - MD",
-					body: "Unemployment 2024",
+					body: "Unemployment 2024 - "+ global.ucapan,
 					mediaUrl: sgc,
 					description: '',
 					previewType: "PHOTO",
@@ -37,7 +37,7 @@ handler.all = async function (m) {
 		}
 		global.sig = {
          contextInfo: { externalAdReply: { showAdAttribution: true,
-            title: 'Yaemiko MD',
+            title: 'Linucx - MD',
             body: wm,
             thumbnailUrl: pp,
             sourceUrl: sig

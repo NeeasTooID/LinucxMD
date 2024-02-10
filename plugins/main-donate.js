@@ -4,27 +4,25 @@ let handler = async (m, { conn }) => {
 let teks = 'donasi'
 let dana = global.pdana
 let saweria = global.psaweria
-let bank1 = global.bank1
+let ovo = global.povo
 let gopay = global.pgopay
 let numberowner = global.nomorown
 let anu = `Hai 👋
 Kalian bisa mendukung saya agar bot ini tetap up to date dengan:
 ┌〔 Donasi • Emoney 〕
 ├ Saweria : ${saweria}
-├ Jago : ${bank1}
+├ Ovo : ${ovo}
 ├ Dana : ${dana}
 ├ Gopay : ${gopay}
 └────
-Kamu akan mendapat akses *Premium* jika berdonasi:
-5k = Premium 30 Hari
-10k = Premium 60 Hari
-20k = Premium 90 Hari
+</> Kamu akan mendapat akses *Premium* jika berdonasi
+10k = Premium 30 Hari
+20k = Premium 60 Hari
 50k = Premium 365 Hari
-
 Berapapun donasi kalian akan sangat berarti 👍
+Donasi Akan Muncul Di History Discord!
 
 Terimakasih :D
-
 Contact Owner:
 wa.me/${numberowner} (Owner)
 `

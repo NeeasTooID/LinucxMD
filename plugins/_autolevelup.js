@@ -12,7 +12,6 @@ handler.all = async function (m) {
         let pp = './src/avatar_contact.png'
         let who = m.sender
         let exp = global.db.data.users[m.sender].exp
-        let logo = await (await fetch(thumblvlup.getRandom())).buffer()
         let wm = global.author
         let discriminator = who.substring(9, 13)
         let sortedLevel = users.map(toNumber('level')).sort(sort('level'))
@@ -20,7 +19,7 @@ handler.all = async function (m) {
         let { min, xp, max } = xpRange(user.level, global.multiplier)
         let username = conn.getName(who)
         try {
-                pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')
+                pp = await conn.profilePictureUrl(conn.user.jid).catch(_ => 'https://telegra.ph/file/f93b3be2e392470cf1bcb.jpg')
         } catch (e) {
         } finally {
                 if (!user.autolevelup) return !0

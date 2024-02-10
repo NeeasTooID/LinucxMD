@@ -566,7 +566,7 @@ global.dfail = (type, m, conn) => {
         private: '*PRIVATE CHAT* • COMMAND INI HANYA BISA DIGUNAKAN DI PRIVATE CHAT',
         admin: '*ADMIN ONLY* • COMMAND INI HANYA UNTUK ADMIN GRUP',
         botAdmin: '*BOT ADMIN ONLY* • COMMAND INI HANYA UNTUK ADMIN BOT',
-        unreg: 'Halo Kak 👋\nAnda harus mendaftar ke database dulu sebelum menggunakan fitur ini\n\n➞ Ketik .register untuk mendaftar',
+        unreg: 'Halo Kak 👋\nAnda harus mendaftar ke database dulu sebelum menggunakan fitur ini\n\n➞ Ketik .register nama.umur \nuntuk mendaftar 😁🙏🏼',
         restrict: '*RESTRICT* • RESTRICT BELUM DINYALAKAN DI GRUP INI',
     }[type]
     if (msg) return conn.reply(m.chat, msg)

@@ -23,6 +23,6 @@ let handler = async (m, { conn, text }) => {
 handler.help = ['wm <packname>|<author>']
 handler.tags = ['sticker']
 handler.command = /^wm$/i
-handler.limit = 5
+handler.limit = 15
 
 export default handler
