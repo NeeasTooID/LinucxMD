@@ -101,9 +101,9 @@ global.APIKeys = { // APIKey Here
   'https://api.ryzendesu.vip/': '84295850'
 }
 
-global.btc = 'TukangM' // Thanks Furry!
+global.btc = 'tMNbXw3t' // By YusupKakuu
 global.xzn = 'npnpicyy' // By YusupKakuu
-global.ryzen = '84295850' //daftar di api.ryzendesu.vip/
+global.ryzen = '84295850' // daftar di api.ryzendesu.vip/
 global.lol = 'e4ea69cba864dfa7d4968fdb' // SGWN
 global.rose = 'Rs-putangina' // Free
 
