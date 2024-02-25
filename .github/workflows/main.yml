@@ -1,4 +1,4 @@
-name: LinucxMD Action
+name: LinucxMD
 
 on:
   push:
