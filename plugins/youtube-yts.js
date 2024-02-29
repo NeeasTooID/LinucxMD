@@ -1,4 +1,4 @@
-import yts from 'yt-search'
+import yts from 'ytsearch.js'
 import fs from 'fs'
 
 let handler = async (m, {conn, text }) => {
