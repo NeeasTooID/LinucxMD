@@ -31,7 +31,6 @@
         "@bochilteam/scraper": "^4.2.4",
         "@bochilteam/scraper-sosmed": "^1.0.5",
         "@ibaraki-douji/pixivts": "*",
-        "neoxr-core": "ytdl-core-new@*",
         "@vitalets/google-translate-api": "^9.2.0",
         "awesome-phonenumber": "^2.68.0",
         "axios": "^1.3.4",
@@ -99,7 +98,6 @@
         "wa-sticker-formatter": "^4.4.4",
         "xmldom": "^0.6.0",
         "yargs": "^17.7.2",
-        "ytsearch.js": "^1.1.0",
         "zs-extract": "^1.4.2"
     }
 }
