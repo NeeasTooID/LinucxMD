@@ -1,4 +1,4 @@
-import ytdl from 'ytdl-core'
+import ytdl from '@neoxr/ytdl-core'
 import fs from 'fs'
 import { pipeline } from 'stream'
 import { promisify } from 'util'
