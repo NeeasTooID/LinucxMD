@@ -1,5 +1,5 @@
-import ytdl from 'ytdl-core';
-import yts from 'yt-search';
+import ytdl from '@neoxr/ytdl-core';
+import yts from 'ytsearch.js';
 import fs from 'fs';
 import { pipeline } from 'stream';
 import { promisify } from 'util';
