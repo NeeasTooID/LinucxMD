@@ -248,8 +248,8 @@ handler.help = ['menu']
 handler.tags = ['main']
 handler.command = /^(allmenu|menu|help|\?)$/i
 
-handler.register = true
-handler.exp = 3
+handler.register = false
+handler.exp = 100
 
 export default handler
 
