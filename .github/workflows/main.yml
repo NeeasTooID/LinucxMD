@@ -1,4 +1,4 @@
-name: LinucxMD
+name: Update Discord Status
 
 on:
   push:
