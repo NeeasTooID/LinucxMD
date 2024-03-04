@@ -46,8 +46,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
   let tags = {
     'main': 'Main',
     'ai': 'Ai feature',
-    'waifu': 'Random Anime',
-    'anime': 'Anime Menu',
+    'random': 'Random Anime Lagi Di Bikin',
     'downloader': 'Sosial Downloader',
     'ytdl': 'Youtube Downloader',
     'group': 'Group',
