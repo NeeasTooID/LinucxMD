@@ -1,3 +1,4 @@
 package-lock.json
 sessio7ns/*.json
 node_modules
+sessions/*
