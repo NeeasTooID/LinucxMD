@@ -1,25 +1,53 @@
 const linkRegex = /chat.whatsapp.com\/(?:invite\/)?([0-9A-Za-z]{20,24})/i
-
+const WaLinkRegex = /wa.me\/([0-9])/i
 export async function before(m, { isAdmin, isBotAdmin }) {
-    if (m.isBaileys && m.fromMe)
-        return !0
-    if (!m.isGroup) return !1
+    if (m.isBaileys && m.fromMe) return 
     let chat = global.db.data.chats[m.chat]
-    let bot = global.db.data.settings[this.user.jid] || {}
-    const isGroupLink = linkRegex.exec(m.text)
-    let hapus = m.key.participant
-    let bang = m.key.id
-    let warn = global.db.data.users[m.sender].warn
-    if (chat.antiLink && isGroupLink && !isAdmin) {
-       global.db.data.users[m.sender].warn += 1
-        if (isBotAdmin && warn === 5) {
-            const linkThisGroup = `https://chat.whatsapp.com/${await this.groupInviteCode(m.chat)}`
-            if (m.text.includes(linkThisGroup)) return !0
+    let isGroupLink = linkRegex.exec(m.text)
+    let isLinkWa = WaLinkRegex.exec(m.text)
+    if (chat.antiLinkkick && m.isGroup) {
+        if (isGroupLink && !isAdmin) {
+            if (isBotAdmin) {
+                const linkThisGroup = `https://chat.whatsapp.com/${await this.groupInviteCode(m.chat)}`
+                if (m.text.includes(linkThisGroup)) return !0
+            }
+            if (chat.teks) { 
+                m.reply(`_*‼️Link Group Terdeteksi!*_ ${chat.pembatasan ? '\n_pesan kamu akan di hapus! ❌_': '\n_pesan kamu akan dihapus dan kamu akan dikick! ❌_'} ${isBotAdmin ? '': '\n\n_❬Bot Bukan Admin❭_'}`)
+            }
+            if (isBotAdmin && !chat.pembatasan) {
+                await conn.sendMessage(m.chat, { delete: m.key })
+                conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+            } else if (chat.pembatasan && isBotAdmin) {
+                conn.sendMessage(m.chat, { delete: m.key })
+            }
         }
-        await m.reply(`*⚠️Link Terdeteksi⚠️*\n\nPesanmu akan di hapus!!`)
-       if (isBotAdmin && bot.restrict) {
-    return this.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: hapus }})
+    } else if (chat.antiLinkWa && m.isGroup) {
+        if (isLinkWa && !isAdmin) {
+            if (chat.teks) {
+                m.reply(`_*‼️ Link Whatsapp Terdeteksi!*_ ${chat.pembatasan ? '\n_pesan kamu akan di hapus! ❌_': '\n_pesan kamu akan dihapus dan kamu akan dikick! ❌_'} ${isBotAdmin ? '': '\n\n_❬Bot Bukan Admin❭_'}`)
+            }
+            if (isBotAdmin && !chat.pembatasan) {
+                await conn.sendMessage(m.chat, { delete: m.key })
+                conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
+            } else if (chat.pembatasan && isBotAdmin) {
+                conn.sendMessage(m.chat, { delete: m.key })
+            }
+        }
+    } else if (chat.antiLinkdelete && m.isGroup) {
+        if (isGroupLink && !isAdmin) {
+            if (isBotAdmin) {
+                const linkThisGroup = `https://chat.whatsapp.com/${await this.groupInviteCode(m.chat)}`
+                if (m.text.includes(linkThisGroup)) return !0
+            }
+            if (chat.teks) { 
+                m.reply(`_*‼️Link Group Terdeteksi!*_ ${chat.pembatasan ? '\n_pesan kamu akan di hapus! ❌_': '\n_pesan kamu akan dihapus! ❌_'} ${isBotAdmin ? '': '\n\n_❬Bot Bukan Admin❭_'}`)
+            }
+            if (isBotAdmin && !chat.pembatasan) {
+                await conn.sendMessage(m.chat, { delete: m.key })
+            } else if (chat.pembatasan && isBotAdmin) {
+                conn.sendMessage(m.chat, { delete: m.key })
+            }
         }
     }
-    return !0
+    return 
 }

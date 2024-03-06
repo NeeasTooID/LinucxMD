@@ -1,21 +1,21 @@
-import fetch from 'node-fetch';
+ import fetch from 'node-fetch';
 import cheerio from 'cheerio';
 
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     try {
         let imageUrl;
-        if (command == 'phentai') {
-            let response = await fetch('https://linucxapi.zanixon.xyz/nsfw-ass'); // Ganti <URL_Router> dengan URL router Anda
+        if (command == 'waifu') {
+            let response = await fetch('https://linucxapi.zanixon.xyz/anime-waifu'); // Ganti <URL_Router> dengan URL router Anda
             let body = await response.text();
             let $ = cheerio.load(body);
             imageUrl = $('img').attr('src'); // Mengambil atribut src dari tag img
-        } else if (command == 'pass') {
-            let response = await fetch('https://linucxapi.zanixon.xyz/nsfw-ass'); // Ganti <URL_Router> dengan URL router Anda
+        } else if (command == 'waifuv2') {
+            let response = await fetch('https://linucxapi.zanixon.xyz/anime-waifuv2'); // Ganti <URL_Router> dengan URL router Anda
             let body = await response.text();
             let $ = cheerio.load(body);
             imageUrl = $('img').attr('src'); // Mengambil atribut src dari tag img
         } else if (command == 'pero') {
-            let response = await fetch('https://linucxapi.zanixon.xyz/nsfw-ero'); // Ganti <URL_Router> dengan URL router Anda
+            let response = await fetch(' '); // Ganti <URL_Router> dengan URL router Anda
             let body = await response.text();
             let $ = cheerio.load(body);
             imageUrl = $('img').attr('src'); // Mengambil atribut src dari tag img
@@ -34,10 +34,10 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
     }
 }
 
-handler.help = ['phentai', 'pass', 'pero'];
-handler.tags = ['nsfw'];
-handler.command = /^(phentai|pass|pero)$/i;
-handler.limit = 100;
+handler.help = ['waifu', 'waifuv2'];
+handler.tags = ['random'];
+handler.command = /^(waifu|waifuv2)$/i;
+handler.limit = 10;
 handler.premium = false;
 
 export default handler;

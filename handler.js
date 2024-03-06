@@ -7,20 +7,12 @@ import chalk from 'chalk'
 import fetch from 'node-fetch'
 import knights from 'knights-canvas'
 
-/**
- * @type {import('@adiwajshing/baileys')}
- */
 const { proto } = (await import('@adiwajshing/baileys')).default
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function () {
     clearTimeout(this)
     resolve()
 }, ms))
-
-/**
- * Handle messages upsert
- * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['messages.upsert']} groupsUpdate 
- */
 
 export async function handler(chatUpdate) {
     this.msgqueque = this.msgqueque || []
@@ -43,41 +35,161 @@ export async function handler(chatUpdate) {
             if (typeof user !== 'object')
                 global.db.data.users[m.sender] = {}
             if (user) {
-                if (!isNumber(user.exp))
-                    user.exp = 0
-                if (!isNumber(user.limit))
-                    user.limit = 1000
-                if (!isNumber(user.afk))
-                    user.afk = -1
-                if (!('afkReason' in user))
-                    user.afkReason = ''
-                if (!('banned' in user))
-                    user.banned = false
-                if (!('banReason' in user))
-                    user.banReason = ''
-                if (!('role' in user))
-                    user.role = 'Free user'
-                if (!('autolevelup' in user))
-                    user.autolevelup = true
+            	// Bagian User
+                if (!isNumber(user.money)) user.money = 1000
+                if (!isNumber(user.health)) user.health = 100
+                if (!isNumber(user.exp)) user.exp = 0
+                if (!isNumber(user.limit)) user.limit = 1000
+                if (!('registered' in user)) user.registered = false
+                if (!user.registered) {
+                if (!('name' in user)) user.name = m.name
+                if (!isNumber(user.age)) user.age = -1
+                if (!isNumber(user.regTime)) user.regTime = -1
+                }
+                
+                // Bagian Profile Stats
+                if (!isNumber(user.afk)) user.afk = -1
+                if (!('unreg' in user)) user.unreg = false
+                if (!('afkReason' in user)) user.afkReason = ''
+                if (!('banned' in user)) user.banned = false
+                if (!('lastBanned' in user)) user.lastBanned = 0
+                if (!'BannedReason' in user) user.BannedReason = ''
+                if (!'WarnReason' in user) user.WarnReason = ''
+                if (!isNumber(user.warning)) user.warning = 0
+                if (!isNumber(user.level)) user.level = 0
+                if (!('role' in user)) user.role = 'Beginner'
+                    
+                // Bagian Economy Rpg
+                if (!isNumber(user.potion)) user.potion = 0
+                if (!isNumber(user.trash)) user.trash = 0
+                if (!isNumber(user.string)) user.string = 0
+                if (!isNumber(user.emerald)) user.emerald = 0
+                if (!isNumber(user.diamond)) user.diamond = 0
+                if (!isNumber(user.gold)) user.gold = 0
+                if (!isNumber(user.botol)) user.botol = 0
+                if (!isNumber(user.kardus)) user.kardus = 0
+                if (!isNumber(user.kaleng)) user.kaleng = 0
+                if (!isNumber(user.plastik)) user.plastik = 0
+                if (!isNumber(user.iron)) user.iron = 0
+                 if (!isNumber(user.batu)) user.batu = 0
+                 if (!isNumber(user.kayu)) user.kayu = 0
+                 if (!isNumber(user.sampah)) user.sampah = 0
+
+                // Bagian Rpg Boxs
+                if (!isNumber(user.common)) user.common = 0
+                if (!isNumber(user.uncommon)) user.uncommon = 0
+                if (!isNumber(user.mythic)) user.mythic = 0
+                if (!isNumber(user.legendary)) user.legendary = 0
+                if (!isNumber(user.gardenboxs)) user.gardenboxs = 0
+                if (!isNumber(user.lastmonthly)) user.lastmonthly = 0
+                if (!isNumber(user.lastopen)) user.lastopen = 0
+                if (!isNumber(user.lastopen)) user.lastrob = 0
+
+                // Bagian Rpg Mancing
+                if (!isNumber(user.paus)) user.paus = 0
+                if (!isNumber(user.kepiting)) user.kepiting = 0
+                if (!isNumber(user.gurita)) user.gurita = 0
+                if (!isNumber(user.cumi)) user.cumi = 0
+                if (!isNumber(user.buntal)) user.buntal = 0
+                if (!isNumber(user.dory)) user.dory = 0
+                if (!isNumber(user.lumba)) user.lumba = 0
+                if (!isNumber(user.lobster)) user.lobster = 0
+                if (!isNumber(user.hiu)) user.hiu = 0
+                if (!isNumber(user.udang)) user.udang = 0
+                if (!isNumber(user.orca)) user.orca = 0
+                if (!isNumber(user.pancing)) user.pancing = 0
+
+                // Bagian Last Rpg
+                if (!isNumber(user.lastadventure)) user.lastadventure = 0
+                if (!isNumber(user.lastdungeon)) user.lastdungeon = 0
+                if (!isNumber(user.lastmining)) user.lastmining = 0
+                if (!isNumber(user.lasthourly)) user.lasthourly = 0
+                if (!isNumber(user.lastclaim)) user.lastclaim = 0
+                if (!isNumber(user.lastnebang)) user.lastnebang = 0
+                if (!isNumber(user.lastnebang)) user.lastnambang = 0
+                if (!isNumber(user.lastnebang)) user.lastmulung = 0
+                if (!isNumber(user.lastweekly)) user.lastweekly = 0
+                if (!isNumber(user.lastpancing)) user.lastpancing = 0
+                if (!isNumber(user.pancingdurability)) user.pancingdurability = 0
+
+                // Bagian Prem Limits
+                if (!isNumber(user.premium)) user.premium = false
+                if (!isNumber(user.premiumTime)) user.premiumTime = 0
+                if (!isNumber(user.joinlimit)) user.joinlimit = 0
             } else
                 global.db.data.users[m.sender] = {
-                    exp: 0,
-                    limit: 1000,
-                    lastclaim: 0,
-                    registered: false,
-                    name: m.name,
-                    age: -1,
-                    regTime: -1,
-                    afk: -1,
-                    afkReason: '',
-                    banned: false,
-                    banReason: '',
-                    warn: 0,
-                    level: 0,
-                    role: 'Free user',
-                    autolevelup: true,
-                }
-            let chat = global.db.data.chats[m.chat]
+                money: 1000,
+                exp: 0,
+                limit: 1000,
+                lastclaim: 0,
+                registered: false,
+                name: m.name,
+                age: -1,
+                regTime: -1,
+                unreg: false,
+                afk: -1,
+                afkReason: '',
+                banned: false,
+                warning: 0,
+                level: 0,
+                role: 'Beginner',
+                BannedReason: '',
+                WarnReason: '',
+
+                // Bagian Rpg User
+                health: 100,
+                potion: 10,
+                sampah: 0,
+                string: 0,
+                emerald: 0,
+                diamond: 0,
+                gold: 0,
+                iron: 0,
+                batu: 0,
+                kayu: 0,
+                common: 0,
+                uncommon: 0,
+                mythic: 0,
+                legendary: 0,
+                gardenboxs: 0,
+
+                // Bagian Rpg Mancing
+                paus: 0,
+                kepiting: 0,
+                gurita: 0,
+                cumi: 0,
+                buntal: 0,
+                dory: 0,
+                lumba: 0,
+                lobster: 0,
+                hiu: 0,
+                udang: 0,
+                ikan: 0,
+                orca: 0,
+                pancing: 0,
+                pancingdurability: 0,
+
+                lastadventure: 0,
+                lastkill: 0,
+                lastdungeon: 0,
+                lastmining: 0,
+                lasthunt: 0,
+                lasthourly: 0,
+                lastbansos: 0,
+                lastrampok: 0,
+                lastclaim: 0,
+                lastnebang: 0,
+                lastmulung: 0,
+                lastnambang: 0,
+                lastweekly: 0,
+                lastopen: 0,
+                lastrob: 0,
+
+                premium: false,
+                premiumTime: 0,
+            }
+            
+let chat = global.db.data.chats[m.chat]
             if (typeof chat !== 'object')
                 global.db.data.chats[m.chat] = {}
             if (chat) {
@@ -114,9 +226,11 @@ export async function handler(chatUpdate) {
                 if (!('premiumTime' in chat))
                     chat.premiumTime = false
                 if (!('nsfw' in chat))
-                    chat.nsfw = false
+                    chat.nsfw = true
                 if (!('menu' in chat))
                     chat.menu = false
+                if (!('gconly' in chat))
+                    chat.gconly = true
                 if (!isNumber(chat.expired))
                     chat.expired = 0
             } else
@@ -153,6 +267,7 @@ export async function handler(chatUpdate) {
         } catch (e) {
             console.error(e)
         }
+        
         if (opts['nyimak'])
             return
         if (!m.fromMe && opts['self'])
@@ -458,14 +573,10 @@ export async function handler(chatUpdate) {
             await conn.readMessages([m.key])
     }
 }
-/**
- * Handle groups participants update
- * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate 
- */
+
 export async function participantsUpdate({ id, participants, action }) {
     if (opts['self'])
         return
-    // if (id in conn.chats) return // First login will spam
     if (this.isInit)
         return
     if (global.db.data == null)
@@ -485,9 +596,9 @@ export async function participantsUpdate({ id, participants, action }) {
                     } finally {
                         text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
                             (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
+                            
 let wel = 'https://telegra.ph/file/caead5d833651946ae53f.jpg'
-
- let lea = 'https://telegra.ph/file/f50df2d5c51158345be9d.jpg'
+let lea = 'https://telegra.ph/file/f50df2d5c51158345be9d.jpg'
  
                         this.sendFile(id, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, { mentions: [user] })
                     }
@@ -506,10 +617,6 @@ let wel = 'https://telegra.ph/file/caead5d833651946ae53f.jpg'
     }
 }
 
-/**
- * Handler groups update
- * @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['groups.update']} groupsUpdate 
- */
 export async function groupsUpdate(groupsUpdate) {
     if (opts['self'])
         return
