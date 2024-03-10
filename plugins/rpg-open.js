@@ -15,7 +15,7 @@ const rewards = {
         diamond: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         common: [0, 1, 0, 0, 0, 0, 0, 0],
         uncommon: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-        mythic: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        mythic: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         wood: [0, 1, 0, 0, 0, 0],
         rock: [0, 1, 0, 0, 0, 0],
         string: [0, 1, 0, 0, 0, 0]
@@ -26,8 +26,8 @@ const rewards = {
         trash: 61,
         potion: [0, 1, 0, 0, 0, 0],
         emerald: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        diamond: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
-        gold: [0, 1, 0, 0, 0, 0, 0, 0, 0],
+        diamond: [0, 1, 0, 0, 0, 0, 0, 0, 0],
+        gold: [0, 1, 0, 0, 0, 0, 0, 0],
         iron: [0, 1, 0, 0, 0, 0, 0, 0],
         common: [0, 1, 0, 0, 0, 0],
         uncommon: [0, 1, 0, 0, 0, 0, 0, 0],
@@ -43,7 +43,7 @@ const rewards = {
         exp: 601,
         trash: 101,
         potion: [0, 1, 0, 0, 0],
-        emerald: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        emerald: [0, 1, 0, 0, 0, 0, 0, 0, 0],
         diamond: [0, 1, 0, 0, 0, 0, 0, 0, 0],
         gold: [0, 1, 0, 0, 0, 0, 0, 0],
         iron: [0, 1, 0, 0, 0, 0, 0],
@@ -61,7 +61,7 @@ const rewards = {
         exp: 6001,
         trash: 1001,
         potion: [0, 4, 0, 0, 0],
-        emerald: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0],
+        emerald: [0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         diamond: [0, 5, 0, 0, 0, 0, 0, 0, 0],
         gold: [0, 1, 0, 0, 0, 0, 0, 0],
         iron: [0, 1, 0, 0, 0, 0, 0],
@@ -100,8 +100,6 @@ ${Object.keys(listCrate).map((v) => `
 Crates* Nggak Ada, Kamu Hanya Punya ${user[type]} *${type} Crate*
 Ketik *${usedPrefix}buy ${type} ${count - user[type]}* Untuk Membeli
 `.trim())
-    // TODO: add pet crate
-    // if (type !== 'pet')
     let crateReward = {}
     for (let i = 0; i < count; i++)
         for (let [reward, value] of Object.entries(listCrate[type]))
@@ -127,9 +125,10 @@ Selamat Kamu Mendapatkan ${diamond ? `*${diamond} Diamond*` : ''}${diamond && my
 Selamat Kamu Mendapatkan ${legendary && emerald ? ', ' : (legendary || legendary && emerald || emerald) ? 'Dan ' : ''}${legendary ? `*${legendary}* Legendary` : ''}${legendary && emerald ? 'Dan ' : ''}${emerald ? `*${emerald}* Emerald` : ''}
 `.trim())
 }
-handler.help = ['open', 'gacha']
+
+handler.help = ['open']
 handler.tags = ['rpg']
-handler.command = /^(open|buka|gacha)$/i
+handler.command = /^(open)$/i
 
 export default handler
 

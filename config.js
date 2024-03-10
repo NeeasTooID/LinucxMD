@@ -31,6 +31,7 @@ global.owner = [['6283897390164', 'YusupKakuu', true]]
 global.mods = []
 global.prems = []
 global.nomorbot = '6283895099347'
+global.nomorwa = '6283897390164'
 global.nomorown = '6283897390164'
 
 /*============= WATERMARK =============*/

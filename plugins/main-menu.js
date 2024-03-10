@@ -44,6 +44,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
   }
 
   let tags = {
+    'panel': 'Lagi Ngetst',
     'main': 'Main',
     'ai': 'Ai feature',
     'random': 'Random Anime Lagi Di Bikin',
