@@ -33,7 +33,6 @@
 - ✔️ | Rpg Game
 - ✔️ | Hd Picture
 - ✔️ | Ai ChatGPT
-- ✔️ | Store Tools
 - ✔️ | Group Menu
 
 ---------
