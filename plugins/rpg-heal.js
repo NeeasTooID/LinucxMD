@@ -1,28 +1,28 @@
-let handler = async (m, { args, usedPrefix }) => {
+import { join } from 'path'
+import { promises } from 'fs'
+
+let handler = async (m, { args, usedPrefix, __dirname }) => {
+    let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
     let user = global.db.data.users[m.sender]
-    if (user.health >= 100) return m.reply(`Kamu Sudah Sehat
+    let imgr = flaaa.getRandom()
+    if (user.health >= 100) return m.reply(`
+Your ❤️health is full!
 `.trim())
-let buf = user.cat
-let buff = (buf == 0 ? '5' : '' || buf == 1 ? '10' : '' || buf == 2 ? '15' : '' || buf == 3 ? '20' : '' || buf == 4 ? '25' : '' || buf == 5 ? '30' : '' || buf == 6 ? '35' : '' || buf == 7 ? '40' : '' || buf == 8 ? '45' : '' || buf == 9 ? '50' : '' || buf == 10 ? '100' : '' || buf == 11 ? '100' : '') 
-    const heal = 15 + (buff * 4)
+    const heal = 40 + (user.cat * 4)
     let count = Math.max(1, Math.min(Number.MAX_SAFE_INTEGER, (isNumber(args[0]) && parseInt(args[0]) || Math.round((100 - user.health) / heal)))) * 1
-    if (user.potion < count) return m.reply(`
-❗Potion Kamu Ga Ada Kak, Potion Kamu *${user.potion}*
-Ketik *${usedPrefix}beli potion ${count - user.potion}* Untuk Membelinya
-`.trim())
+    if (user.potion < count) return m.reply(`ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ʙᴜʏ ${count - user.potion} ᴍᴏʀᴇ 🥤ᴩᴏᴛɪᴏɴ ᴛᴏ ʜᴇᴀʟ.
+ʏᴏᴜ'ᴠᴇ ${user.potion} 🥤ᴩᴏᴛɪᴏɴ ɪɴ ʙᴀɢ.`.trim())
     user.potion -= count * 1
     user.health += heal * count
-    m.reply(`
-✅Sukses Menggunakan Potion, Kamu Sehat WalAfiat Sekarang
-`.trim())
+    m.reply(`sᴜᴄᴄᴇssғᴜʟʟʏ ${count} 🥤ᴩᴏᴛɪᴏɴ ᴜsᴇ ᴛᴏ ʀᴇᴄᴏᴠᴇʀ ʜᴇᴀʟᴛʜ.`)
 }
 
 handler.help = ['heal']
 handler.tags = ['rpg']
-handler.command = /^(heal|recal|Lh)$/i
-
+handler.command = /^(heal)$/i
+handler.register = true
 handler.group = true
-
+handler.rpg = true
 export default handler
 
 function isNumber(number) {

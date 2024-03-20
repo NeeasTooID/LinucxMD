@@ -11,7 +11,7 @@ let handler = async (m, { conn, args }) => {
 	try {
 		let res = await GDriveDl(args[0])
 		if (res.fileSize.slice(-2) == "GB") return m.reply(`Ngotak dong.\nMana bisa ngirim video ${res.fileSize}`)
-		if (!someincludes(['kB','KB'], res.fileSize.slice(-2)) && parseInt(res.fileSize) > 1000) return m.reply(`Filesize: ${res.fileSize}\nTidak dapat mengirim, maksimal file 1000 MB`)
+		if (!someincludes(['kB','KB'], res.fileSize.slice(-2)) && parseInt(res.fileSize) > 500) return m.reply(`Filesize: ${res.fileSize}\nTidak dapat mengirim, maksimal file 500 MB`)
 		let txt = `*[ Downloading file ]*\n\n`
 		txt += `*Name :* ${res.fileName}\n`
 		txt += `*Size :* ${res.fileSize}\n`

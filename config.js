@@ -1,3 +1,10 @@
+/*
+𝐀𝐮𝐭𝐡𝐨𝐫 : Shirokami Ryzen 
+𝐖𝐚 : +6281387307198
+𝐛𝐚𝐬𝐞 : Narutomo & Elaina
+𝐌𝐲 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 : 22 Nov 2022
+*/
+
 import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
@@ -6,7 +13,6 @@ import { group } from 'console'
 import PhoneNumber from 'awesome-phonenumber'
 
 /*============= WAKTU =============*/
-
 let wibh = moment.tz('Asia/Jakarta').format('HH')
     let wibm = moment.tz('Asia/Jakarta').format('mm')
     let wibs = moment.tz('Asia/Jakarta').format('ss')
@@ -26,46 +32,47 @@ let wibh = moment.tz('Asia/Jakarta').format('HH')
 const readMore = more.repeat(4001)
 
 /*============= MAIN INFO =============*/
-
-global.owner = [['6283897390164', 'YusupKakuu', true]]
+global.owner = [['6283897390164', 'Npc', true]]
 global.mods = []
 global.prems = []
 global.nomorbot = '6283895099347'
-global.nomorwa = '6283897390164'
 global.nomorown = '6283897390164'
 
 /*============= WATERMARK =============*/
-
 global.readMore = readMore
-global.author = 'LinucxMD'
-global.namebot = 'LinucxMD ESM'
-global.wm = '©Unemployment'
+global.author = 'Npc'
+global.namebot = 'LinucxMD'
+global.wm = '©LinucxMD'
 global.watermark = wm
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
-global.stickpack = `Sticker Dibuat dengan ${namebot}\nHubungi Owner Jika Ingin Sewabot\n+6283897390164`
-global.stickauth = `©LinucxMD 2024`
+global.stickpack = `Sticker Dibuat dengan ${namebot}\n\nUnemployment S9\n+${nomorbot}`
+global.stickauth = `© Nao-MD By Shirokami Ryzen`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
 //*============= SOSMED =============*/
-
-global.sig = 'https://www.instagram.com/yusupk._'
-global.sgh = 'https://github.com/NeeasTooID/'
-global.sgc = 'https://whatsapp.com/channel/0029VaEK2Vc9mrGbK9s0Iv3p'
-global.sgw = 'https://chat.whatsapp.com/CjgkxnajTPXAivDPUZgzjy'
-global.sdc = 'https://discord.com/invite/JkMqE7tHKT'
+global.sig = 'https://www.instagram.com/'
+global.sgh = 'https://github.com/'
+global.sgc = 'https://chat.whatsapp.com/CjgkxnajTPXAivDPUZgzjy'
+global.sgw = 'https://whatsapp.com/channel/0029VaEK2Vc9mrGbK9s0Iv3p'
+global.sdc = 'https://discord.com/invite/2ZFJGSAZPW'
+global.sfb = 'https://www.facebook.com/'
+global.snh = 'https://www.instagram.com/'
 
 /*============= DONASI =============*/
-
 global.pdana = '083897390164'
 global.povo = '083897390164'
 global.pgopay = '083897390164'
+global.plinkaja = '-'
 global.ppulsa = '083897390164'
+global.ppulsa2 = '083895099347'
 global.psaweria = 'https://saweria.co/YUSUP909'
+global.bank1 = '-'
+global.bank2 = '-'
+
 
 /*============= TAMPILAN =============*/
-
 global.dmenut = 'ଓ═┅═━–〈' //top
 global.dmenub = '┊↬' //body
 global.dmenub2 = '┊' //body for info cmd on Default menu
@@ -83,35 +90,61 @@ global.lopr = 'Ⓟ' //LOGO PREMIUM ON MENU.JS
 global.lolm = 'Ⓛ' //LOGO LIMIT/FREE ON MENU.JS
 global.htjava = '⫹⫺'    //hiasan Doang :v
 global.hsquere = ['⛶','❏','⫹⫺']
+global.decor = {
+	menut: '❏═┅═━–〈',
+	menub: '┊•',
+	menub2: '┊',
+	menuf: '┗––––––––––✦',
+	hiasan: '꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷',
+
+	menut: '––––––『',
+    menuh: '』––––––',
+    menub: '┊☃︎ ',
+    menuf: '┗━═┅═━––––––๑\n',
+	menua: '',
+	menus: '☃︎',
+
+	htki: '––––––『',
+	htka: '』––––––',
+	haki: '┅━━━═┅═❏',
+	haka: '❏═┅═━━━┅',
+	lopr: 'Ⓟ',
+	lolm: 'Ⓛ',
+	htjava: '❃'
+}
 
 /*============= RESPON =============*/
-
 global.wait = 'Please Wait...'
 global.eror = 'Error!'
 
 /*============= WEB API KEY =============*/
-
+global.xzn = 'npnpicyy'
 global.APIs = {
   // name: 'https://website'
   xzn : 'https://skizo.tech/',
-  ryzen : 'https://api.ryzendesu.vip/'
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
+
   'https://skizo.tech/' : 'npnpicyy',
-  'https://api.ryzendesu.vip/': '84295850'
 }
 
-global.btc = 'tMNbXw3t' // By YusupKakuu
-global.xzn = 'npnpicyy' // By YusupKakuu
-global.ryzen = '84295850' // daftar di api.ryzendesu.vip/
-global.lol = 'e4ea69cba864dfa7d4968fdb' // SGWN
-
 /*============= OTHER =============*/
+global.dpptx = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
+global.ddocx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+global.dxlsx = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+global.dpdf = 'application/pdf'
+global.drtf = 'text/rtf'
 
+global.thumb = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg' //Main Thumbnail
+global.imagebot = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
+global.giflogo = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
+global.thumbs = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
 global.thumbnailUrl = [
   'https://telegra.ph/file/ef4b742d47e6a9115e2ff.jpg'
 ]
+global.fotonya1 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ganti jadi foto bot mu
+global.fotonya2 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ini juga ganti 
 global.flaaa2 = [
  "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=",
  "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=",
@@ -126,7 +159,6 @@ global.fla = [
  "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=",
  "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text="
 ]
-
 global.flaaa = [
     //'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=',
     //'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=',
@@ -134,19 +166,34 @@ global.flaaa = [
     'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=',
     'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text='
 ]
-
-global.dpptx = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
-global.ddocx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-global.dxlsx = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-global.dpdf = 'application/pdf'
-global.drtf = 'text/rtf'
-global.thumb = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg' //Main Thumbnail
-global.imagebot = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
-global.giflogo = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
-global.thumbs = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
-global.fotonya1 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ganti jadi foto bot mu
-global.fotonya2 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ini juga ganti 
+global.elainajpg = [
+    'https://telegra.ph/file/3e43fcfaea6dc1ba95617.jpg',
+    'https://telegra.ph/file/c738a9fc0722a59825cbb.mp4',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg'
+]
 global.hwaifu = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
+global.thumblvlup = [
+  'https://i.pinimg.com/originals/a0/34/8a/a0348ae908d8ac4ced76df289eb41e1a.jpg',
+  'https://i.pinimg.com/originals/be/3b/47/be3b477371cc249e49fd0bb3284de7d7.jpg',
+  'https://i.pinimg.com/originals/63/c3/37/63c337596b3391df0e72a9729ceca7b6.jpg',
+  'https://i.pinimg.com/originals/db/ed/5a/dbed5afac55d266602d0ca0c67622bb9.jpg'
+]
 
 let file = fileURLToPath(import.meta.url)
 watchFile(file, () => {
@@ -156,13 +203,12 @@ watchFile(file, () => {
 })
 
 /*============= RESPON GAME =============*/
-
 global.benar = 'Good Job! ◕◡◕'
 global.salah = 'Not Bad! ◕◠◕'
 global.dikit = "Dikit Lagi, Semangat!!"
 
-/*============= RPG GAME =============*/
 
+/*============= RPG GAME =============*/
 global.multiplier = 69 // The higher, The harder levelup
 global.rpg = {
   emoticon(string) {

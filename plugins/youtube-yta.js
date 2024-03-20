@@ -43,12 +43,11 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 };
 
 handler.help = ['ytmp3'].map((v) => v + ' <URL>')
-handler.tags = ['ytdl']
+handler.tags = ['downloader']
 handler.command = /^(ytmp3)$/i
 
-handler.limit = true
+handler.limit = 2
 handler.register = true
-handler.error = null
-handler.exp = 0
+handler.disable = false
 
 export default handler

@@ -20,7 +20,7 @@ ${prem ? `${clockString (premiumTime - new Date() * 1)}` : '┊• *PremiumTime:
 ┗━═┅═━––––––๑
 
 •·–––––––––––––––––––––·•
-${sortedP.slice(0, len).map(({ jid, name, premiumTime, registered }, i) => `\n┌✦ ${registered ? name : conn.getName(jid)}\n┊• wa.me/${jid.split`@`[0]}\n${premiumTime > 0 ? `${clockString (premiumTime - new Date() * 1)}` : '┊ *Expired*'}`).join`\n┗━═┅═━––––––๑`}
+${sortedP.slice(0, len).map(({ jid, name, premiumTime, registered }, i) => `\n\n┌✦ ${registered ? name : conn.getName(jid)}\n┊• wa.me/${jid.split`@`[0]}\n${premiumTime > 0 ? `${clockString (premiumTime - new Date() * 1)}` : '┊ *Expired*'}`).join`\n┗━═┅═━––––––๑`}
 ┗━═┅═━––––––๑`.trim(), fkon)
 }
 

@@ -12,11 +12,11 @@ ${user.banned ? '📮Maaf, kamu dibanned & Tidak bisa menggunakan bot ini lagi' 
 ⏩Ketik *.menu* untuk menampilkan menu
 
 📝Ingin menghilangkan *limit*?
-Berdonasi minimal 10k kamu akan mendapat akses *Premium*
+Berdonasi minimal 5k kamu akan mendapat akses *Premium*
 
 Ketik *.donasi* untuk info lebih lengkap
 
-https://saweria.co/YUSUP909`)
+https://saweria.co/shirokamiryzen`)
     user.pc = new Date * 1
 }
 

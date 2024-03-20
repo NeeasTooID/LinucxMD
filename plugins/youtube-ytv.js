@@ -2,7 +2,6 @@ import ytdl from 'ytdl-core'
 import fs from 'fs'
 import { pipeline } from 'stream'
 import { promisify } from 'util'
-import os from 'os'
 
 const streamPipeline = promisify(pipeline);
 
@@ -10,7 +9,7 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
 
     if (!text) throw `Usage: ${usedPrefix}${command} <YouTube Video URL>`;
 
-    const videoUrl = text; // Gunakan URL video YouTube yang diberikan sebagai input
+    const videoUrl = text;
 
     // Dapatkan informasi video dari URL
     const videoInfo = await ytdl.getInfo(videoUrl);
@@ -26,8 +25,6 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
         filter: 'audioandvideo',
         quality: 'highest',
     });
-
-    // Dapatkan path ke direktori sementara sistem
 
     // Buat writable stream dalam direktori sementara
     const writableStream = fs.createWriteStream(`tmp/${title}.mp4`);
@@ -66,11 +63,11 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
 };
 
 handler.help = ['ytmp4'].map((v) => v + ' <URL>')
-handler.tags = ['ytdl']
+handler.tags = ['downloader']
 handler.command = /^(ytmp4)$/i
 
-handler.limit = true
+handler.limit = 2
 handler.register = true
-handler.error = null
+handler.disable = false
 
 export default handler

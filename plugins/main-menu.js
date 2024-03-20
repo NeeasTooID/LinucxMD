@@ -44,20 +44,17 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command }) => {
   }
 
   let tags = {
-    'panel': 'Lagi Ngetst',
+    'panel': 'Free Panel ( Join Group Lpanel )',
     'main': 'Main',
     'ai': 'Ai feature',
-    'random': 'Random Anime Lagi Di Bikin',
     'downloader': 'Sosial Downloader',
-    'ytdl': 'Youtube Downloader',
-    'rpg': 'RPG MENU',
     'group': 'Group',
     'sticker': 'Sticker',
     'owner': 'Owner',
+    'rpg': 'RPG MENU',
     'internet': 'Internet',
     'info': 'Info',
-    'tools': 'Tools',
-    'nsfw': 'Nsfw Area',
+    'tools': 'Tools'
   }
 
   try {

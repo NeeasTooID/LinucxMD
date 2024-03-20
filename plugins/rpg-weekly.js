@@ -1,38 +1,28 @@
-const prem = 15000
-const limitprem = 30
-const moneyprem = 15000
-const free = 5000 // tambahkan nilai hadiah dasar
-const limitfree = 20 // tambahkan nilai hadiah dasar
-
-let handler = async (m, { isPrems, conn }) => { // tambahkan conn di parameter
-    let time = global.db.data.users[m.sender].lastweekly + 300000
-    if (new Date - global.db.data.users[m.sender].lastweekly < 300000) throw `Kamu Sudah Mengambilnya Minggu Ini\nTunggu Selama ${msToTime(time - new Date())} Lagi`
-    global.db.data.users[m.sender].exp += isPrems ? prem : free
-    global.db.data.users[m.sender].money += isPrems ? moneyprem : free // ganti moneyfree dengan free
-    global.db.data.users[m.sender].limit += isPrems ? limitprem : limitfree
-    conn.reply(m.chat, `Selamat Kamu Mendapatkan:\n\n+${isPrems ? prem : free} Exp\n+${isPrems ? limitprem : limitfree} Limit`, m)
-    global.db.data.users[m.sender].lastweekly = new Date * 1
+const rewards = {
+  exp: 15000,
+  money: 35999,
+  potion: 9,
+}
+const cooldown = 604800000
+let handler = async (m, { usedPrefix }) => {
+  
+  let user = global.db.data.users[m.sender]
+  let imgr = flaaa.getRandom()
+  if (new Date - user.lastweekly < cooldown) return m.reply(`ʏᴏᴜ'ᴠᴇ ᴀʟʀᴇᴀᴅʏ ᴄʟᴀɪᴍᴇᴅ *ᴡᴇᴇᴋʟʏ ʀᴇᴡᴀʀᴅꜱ*, ᴘʟᴇᴀꜱᴇ ᴡᴀɪᴛ ᴛɪʟʟ ᴄᴏᴏʟᴅᴏᴡɴ ꜰɪɴɪꜱʜ.\n\n${((user.lastweekly + cooldown) - new Date()).toTimeString()}`)
+  let text = ''
+  for (let reward of Object.keys(rewards)) {
+    if (!(reward in user)) continue
+    user[reward] += rewards[reward]
+    text += `*+${rewards[reward]}* ${global.rpg.emoticon(reward)}${reward}\n`
+  }
+  m.reply(text.trim())
+  user.lastweekly = new Date * 1
 }
 handler.help = ['weekly']
 handler.tags = ['rpg']
-handler.command = /^(weekly|wl)$/i
-
-handler.fail = null
+handler.command = /^(weekly)$/i
+handler.register = true
 handler.group = true
-
+handler.cooldown = cooldown
+handler.rpg = true
 export default handler
-
-function msToTime(duration) {
-    var milliseconds = parseInt((duration % 1000) / 100),
-        seconds = Math.floor((duration / 1000) % 60),
-        minutes = Math.floor((duration / (1000 * 60)) % 60),
-        hours = Math.floor((duration / (1000 * 60 * 60)) % 24),
-        monthly = Math.floor((duration / (1000 * 60 * 60 * 24)) % 720)
-
-    monthly = (monthly < 10) ? "0" + monthly : monthly
-    hours = (hours < 10) ? "0" + hours : hours
-    minutes = (minutes < 10) ? "0" + minutes : minutes
-    seconds = (seconds < 10) ? "0" + seconds : seconds
-
-    return monthly + " Hari " + hours + " Jam " + minutes + " Menit"
-}

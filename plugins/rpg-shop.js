@@ -1,234 +1,263 @@
-const limit = 10000
-const potion = 20000
-const sampah = 5000
-const kayu = 10000
-const batu = 1000
-const string = 40000
-const iron = 50000
-const gold = 25000
-const diamond = 100000
-const emerald = 5000
-const pickaxe = 1700
-const kardus = 5000
-const botol = 5000
-const kaleng = 5000
-
-const spotion = 10000
-const ssampah = 4000
-const skayu = 5000
-const sstring = 30000
-const sbatu = 2000
-const siron = 40000
-const sgold = 50000
-const sdiamond = 50000
-const semerald = 2000
-const sbotol = 100000
-const skaleng = 1000000
-const skardus = 10000000
-
-let handler = async (m, { conn, command, args, usedPrefix, owner }) => {
-    const _pickaxe = global.db.data.users[m.sender].pickaxe
-    const pickaxe = (_pickaxe == 0 ? 1700 : '' || _pickaxe == 1 ? 3000 : '' || _pickaxe == 2 ? 5500 : '' || _pickaxe == 3 ? 10500 : '' || _pickaxe == 4 ? 27000 : '')
-    const uppickaxe = (_pickaxe == 0 ? 0 : '' || _pickaxe == 1 ? 25 : '' || _pickaxe == 2 ? 55 : '' || _pickaxe == 3 ? 75 : '' || _pickaxe == 4 ? 120 : '')
-    const durpickaxe = (_pickaxe == 0 ? 0 : '' || _pickaxe == 1 ? 40 : '' || _pickaxe == 2 ? 60 : '' || _pickaxe == 3 ? 80 : '' || _pickaxe == 4 ? 100 : '')
-    const repickaxe = (_pickaxe == 0 ? 0 : '' || _pickaxe == 1 ? 10 : '' || _pickaxe == 2 ? 35 : '' || _pickaxe == 3 ? 65 : '' || _pickaxe == 4 ? 100 : '')
-    const drepickaxe = (_pickaxe == 0 ? 0 : '' || _pickaxe == 1 ? 10 : '' || _pickaxe == 2 ? 25 : '' || _pickaxe == 3 ? 40 : '' || _pickaxe == 4 ? 60 : '')
-    const _armor = global.db.data.users[m.sender].armor
-    const armor = (_armor == 0 ? 20000 : '' || _armor == 1 ? 49999 : '' || _armor == 2 ? 99999 : '' || _armor == 3 ? 149999 : '' || _armor == 4 ? 299999 : '')
-
-    let type = (args[0] || '').toLowerCase()
-    let _type = (args[1] || '').toLowerCase()
-    let jualbeli = (args[0] || '').toLowerCase()
-    let nomors = m.sender
-
-    const Kchat = `*List Barang RPG*\n
-- Limit [ 🎟 ] > Rp.${limit}
-- Potion [ 🍷 ] > Rp.${potion}
-- Sampah [ 🗑] > Rp.${sampah}
-- Kayu [ 🪵 ] > Rp.${kayu}
-- String [ 🕸 ] > Rp.${string}
-- Iron [ ⛓️ ] > Rp.${iron}
-- Diamond [ 💎 ] > Rp.${diamond}
-- Emerald [ 🟢 ] > Rp.${emerald} 
-- Gold [ 🪙 ] > Rp.${gold}
-- Batu [ 🪨 ] > Rp.${batu}
-- Pickaxe [ ⛏️ ] > Rp.${pickaxe}
-- Kardus [ 📁 ] Rp.${kardus}
-- Kaleng [ 🥃 ] > Rp.${kaleng}
-- Botol [ 🍶 ] > Rp.${botol}
-\n Exemple : .beli Emerald 1 | .jual Emerald 1
-`.trim()
-
-    try {
-        if (/beli/i.test(command)) {
-            const count = args[1] && args[1].length > 0 ? Math.min(999999999999999, Math.max(parseInt(args[1]), 1)) : !args[1] || args.length < 3 ? 1 : Math.min(1, count)
-
-            switch (type) {
-                case 'emerald':
-                    if (global.db.data.users[m.sender].money >= emerald * count) {
-                        global.db.data.users[m.sender].money -= emerald * count
-                        global.db.data.users[m.sender].emerald += count * 1
-                        conn.reply(m.chat, `Sukses Membeli ${count} Emerald Dengan Harga Rp.${emerald * count}`, m)
-                    } else conn.reply(m.chat, `Uang Kamu Tidak Cukup Untuk Membeli ${count} Emerald Dengan Harga Rp.${emerald * count}`,m)
-                    break
-                case 'diamond':
-                    if (global.db.data.users[m.sender].money >= diamond * count) {
-                        global.db.data.users[m.sender].money -= diamond * count
-                        global.db.data.users[m.sender].diamond += count * 1
-                        conn.reply(m.chat, `Sukses Membeli ${count} Diamond Dengan Harga Rp.${diamond * count}`, m)
-                    } else conn.reply(m.chat, `Uang Kamu Tidak Cukup Untuk Membeli ${count} Diamond Dengan Harga Rp.${diamond * count}`,m)
-                    break
-                case 'iron':
-                    if (global.db.data.users[m.sender].money >= iron * count) {
-                        global.db.data.users[m.sender].money -= iron * count
-                        global.db.data.users[m.sender].iron += count * 1
-                        conn.reply(m.chat, `Sukses Membeli ${count} Iron Dengan Harga Rp.${iron * count}`, m)
-                    } else conn.reply(m.chat, `Uang Kamu Tidak Cukup Untuk Membeli ${count} Iron Dengan Harga Rp.${iron * count}`,m)
-                    break
-                case 'string':
-                    if (global.db.data.users[m.sender].money >= string * count) {
-                        global.db.data.users[m.sender].money -= string * count
-                        global.db.data.users[m.sender].string += count * 1
-                        conn.reply(m.chat, `Sukses Membeli ${count} String Dengan Harga Rp.${string * count}`, m)
-                    } else conn.reply(m.chat, `Uang Kamu Tidak Cukup Untuk Membeli ${count} String Dengan Harga Rp.${string * count}`,m)
-                    break
-                case 'potion':
-                    if (global.db.data.users[m.sender].money >= potion * count) {
-                        global.db.data.users[m.sender].money -= potion * count
-                        global.db.data.users[m.sender].potion += count * 1
-                        conn.reply(m.chat, `Sukses Membeli ${count} Potion Dengan Harga Rp.${potion * count}`, m)
-                    } else conn.reply(m.chat, `Uang Tiidak Cukup Untuk Membeli ${count} Potion Dengan Harga Rp.${potion * count}`,m)
-                    break
-                case 'limit':
-                    if (global.db.data.users[m.sender].money >= limit * count) {
-                        global.db.data.users[m.sender].money -= limit * count
-                        global.db.data.users[m.sender].limit += count * 1
-                        conn.reply(m.chat, `Sukses Membeli ${count} Limit Dengan Harga Rp.${limit * count}`, m)
-                    } else conn.reply(m.chat, `Uang Kamu Tidak Cukup Untuk Membeli ${count} Limit Dengan Harga Rp.${limit * count}`,m)
-                    break
-                case 'kayu':
-                    if (global.db.data.users[m.sender].money >= kayu * count) {
-                        global.db.data.users[m.sender].money -= kayu * count
-                        global.db.data.users[m.sender].kayu += count * 1
-                        conn.reply(m.chat, `Sukses Membeli ${count} Kayu Dengan Harga Rp.${kayu * count}`, m)
-                    } else conn.reply(m.chat, `Uang Kamu Tidak Cukup Untuk Membeli ${count} Kayu Dengan Harga Rp.${kayu * count}`,m)
-                    break
-                case 'sampah':
-                    if (global.db.data.users[m.sender].money >= sampah * count) {
-                        global.db.data.users[m.sender].money -= sampah * count
-                        global.db.data.users[m.sender].sampah += count * 1
-                        conn.reply(m.chat, `Sukses Membeli ${count} Trash Dengan Harga Rp.${sampah * count}`, m)
-                    } else conn.reply(m.chat, `Uang Kamu Tidak Cukup Untuk Membeli ${count} Trash Dengan Harga Rp.${sampah * count}`,m)
-                    break
-                case 'pickaxe':
-                    if (global.db.data.users[m.sender].money >= pickaxe * count) {
-                        global.db.data.users[m.sender].money -= pickaxe * count
-                        global.db.data.users[m.sender].sampah += count * 1
-                        conn.reply(m.chat, `Sukses Membeli ${count} Packaxe Dengan Harga Rp.${pickaxe * count}`, m)
-                    } else conn.reply(m.chat, `Uang Kamu Tidak Cukup Untuk Membeli ${count} Trash Dengan Harga Rp.${pickaxe * count}`,m)
-                    break
-                default:
-                    return conn.reply(m.chat, Kchat, m)
-            }
-        } else if (/jual|/i.test(command)) {
-            const count = args[1] && args[1].length > 0 ? Math.min(999999999999999, Math.max(parseInt(args[1]), 1)) : !args[1] || args.length < 3 ? 1 : Math.min(1, count)
-            switch (type) {
-                case 'diamond':
-                    if (global.db.data.users[m.sender].diamond >= count * 1) {
-                        global.db.data.users[m.sender].money += diamond * count
-                        global.db.data.users[m.sender].diamond -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} Diamond Dengan Harga Rp.${sdiamond * count}`.trim(), m)
-                    } else conn.reply(m.chat, `Diamond Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                case 'emerald':
-                    if (global.db.data.users[m.sender].emerald >= count * 1) {
-                        global.db.data.users[m.sender].money += semerald * count
-                        global.db.data.users[m.sender].emerald -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} Emerald Dengan Harga Rp.${semerald * count}`.trim(), m)
-                    } else conn.reply(m.chat, `Emerald Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                case 'iron':
-                    if (global.db.data.users[m.sender].iron >= count * 1) {
-                        global.db.data.users[m.sender].money += siron * count
-                        global.db.data.users[m.sender].iron -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} Iron Dengan Harga Rp.${siron * count}`.trim(), m)
-                    } else conn.reply(m.chat, `Iron Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                case 'string':
-                    if (global.db.data.users[m.sender].string >= count * 1) {
-                        global.db.data.users[m.sender].money += sstring * count
-                        global.db.data.users[m.sender].string -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} String Dengan Harga Rp.${sstring * count}`.trim(), m)
-                    } else conn.reply(m.chat, `String Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                case 'kayu':
-                    if (global.db.data.users[m.sender].kayu >= count * 1) {
-                        global.db.data.users[m.sender].money += skayu * count
-                        global.db.data.users[m.sender].kayu -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} Kayu Dengan Harga Rp.${skayu * count}`.trim(), m)
-                    } else conn.reply(m.chat, `Kayu Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                case 'sampah':
-                    if (global.db.data.users[m.sender].sampah >= count * 1) {
-                        global.db.data.users[m.sender].money += ssampah * count
-                        global.db.data.users[m.sender].sampah -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} Trash Dengan Harga Rp.${ssampah * count}`.trim(), m)
-                    } else conn.reply(m.chat, `Trash Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                case 'potion':
-                    if (global.db.data.users[m.sender].potion >= count * 1) {
-                        global.db.data.users[m.sender].money += spotion * count
-                        global.db.data.users[m.sender].potion -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} Potion Dengan Harga Rp.${spotion * count}`.trim(), m)
-                    } else conn.reply(m.chat, `Potion Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                case 'gold':
-                    if (global.db.data.users[m.sender].gold >= count * 1) {
-                        global.db.data.users[m.sender].money += sgold * count
-                        global.db.data.users[m.sender].gold -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} Gold Dengan Harga Rp.${sgold * count}`.trim(), m)
-                    } else conn.reply(m.chat, `Gold Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                case 'batu':
-                    if (global.db.data.users[m.sender].batu >= count * 1) {
-                        global.db.data.users[m.sender].money += sbatu * count
-                        global.db.data.users[m.sender].batu -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} Batu Dengan Harga Rp.${sbatu * count}`.trim(), m)
-                    } else conn.reply(m.chat, `Batu Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                case 'kardus':
-                    if (global.db.data.users[m.sender].kardus >= count * 1) {
-                        global.db.data.users[m.sender].money += skardus * count
-                        global.db.data.users[m.sender].kardus -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} Kardus Dengan Harga Rp.${skardus * count}`.trim(), m)
-                    } else conn.reply(m.chat, `Batu Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                case 'botol':
-                    if (global.db.data.users[m.sender].botol >= count * 1) {
-                        global.db.data.users[m.sender].money += sbotol * count
-                        global.db.data.users[m.sender].botol -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} Botol Dengan Harga Rp.${sbotol * count}`.trim(), m)
-                    } else conn.reply(m.chat, `Batu Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                case 'kaleng':
-                    if (global.db.data.users[m.sender].kaleng >= count * 1) {
-                        global.db.data.users[m.sender].money += skaleng * count
-                        global.db.data.users[m.sender].kaleng -= count * 1
-                        conn.reply(m.chat, `Sukses Menjual ${count} Kaleng Dengan Harga Rp.${skaleng * count}`.trim(), m)
-                    } else conn.reply(m.chat, `Batu Kamu Tidak Cukup Untuk Di Jual`.trim(), m)
-                    break
-                default:
-                    return conn.reply(m.chat, Kchat, m)
-            }
+import fs from "fs"
+const items = {
+    buy: {
+        limit: {
+            exp: 9999
+        },
+        chip: {
+        	money: 1000000
+        },
+        exp: {
+        	money: 1000
+        },
+        potion: {
+            money: 1250
+        },
+        trash: {
+            money: 40
+        },
+        wood: {
+            money: 700
+        },
+        rock: {
+            money: 850
+        },
+        string: {
+            money: 400
+        },
+        iron: { 
+        	money: 3000
+        },
+        diamond: {
+            money: 500000
+        },
+        emerald: {
+            money: 100000
+        },
+        gold: {
+            money: 100000
+        },
+        common: {
+            money: 2000
+        },
+        uncommon: {
+            money: 20000
+        },
+        mythic: {
+            money: 75000
+        },
+        legendary: {
+            money: 200000
+        },
+        petfood: {
+            money: 3500
+        },
+        pet: {
+            money: 120000
+        },
+        anggur: {
+            money: 2000
+        },
+        apel: {
+            money: 2000
+        },
+        jeruk: {
+            money: 2000
+        },
+        mangga: {
+            money: 2000
+        },
+        pisang: {
+        	money: 2000
+        },
+        bibitanggur: {
+            money: 2000
+        },
+        bibitapel: {
+            money: 2000
+        },
+        bibitjeruk: {
+            money: 2000
+        },
+        bibitmangga: {
+            money: 2000
+        },
+        bibitpisang: {
+            money: 2000
+        },
+        umpan: {
+        	money: 5000
+        }     
+    },
+    sell: {
+        limit: {
+            exp: 999
+        },
+        exp: {
+        	money: 1
+        },
+        chip: {
+        	money: 1000000
+        },
+        potion: {
+            money: 625
+        },
+        trash: {
+            money: 20
+        },
+        wood: {
+            money: 350
+        },
+        rock: {
+            money: 425
+        },
+        string: {
+            money: 200
+        },
+        iron: { 
+        	money: 1500
+        },
+        diamond: {
+            money: 250000
+        },
+        emerald: {
+            money: 50000
+        },
+        gold: {
+            money: 50000
+        },
+        common: {
+            money: 1000
+        },
+        uncommon: {
+            money: 10000
+        },
+        mythic: {
+            money: 37500
+        },
+        legendary: {
+            money: 100000
+        },
+        petfood: {
+            money: 1750
+        },
+        pet: {
+            money: 60000
+        },
+        anggur: {
+            money: 1000
+        },
+        apel: {
+            money: 1000
+        },
+        jeruk: {
+            money: 1000
+        },
+        mangga: {
+            money: 1000
+        },
+        pisang: {
+        	money: 1000
+        },
+        bibitanggur: {
+            money: 1000
+        },
+        bibitapel: {
+            money: 1000
+        },
+        bibitjeruk: {
+            money: 1000
+        },
+        bibitmangga: {
+            money: 1000
+        },
+        bibitpisang: {
+            money: 1000
+        },
+        umpan: {
+        	money: 2500
         }
-    } catch (e) {
-        console.log(e)
     }
 }
 
-handler.help = ['beli', 'jual']
+let handler = async (m, { command, usedPrefix, args }) => {
+    const item = (args[0] || '').toLowerCase()
+    if (!item.match('limit') && db.data.chats[m.chat].rpg == false && m.isGroup) return dfail('rpg', m, conn)
+    let user = db.data.users[m.sender]
+    const listItems = Object.fromEntries(Object.entries(items[command.toLowerCase()]).filter(([v]) => v && v in user))
+    let text = ''
+    let footer = ''
+    let image = ''
+    let buttons = ''
+    text = (command.toLowerCase() == 'buy' ?
+(`
+*${decor.htki} 𝙱𝚄𝚈𝙸𝙽𝙶 ${decor.htka}*
+`.trim()) : 
+(`
+*${decor.htki} 𝚂𝙴𝙻𝙻𝙸𝙽𝙶 ${decor.htka}*
+`.trim())
+)
+    footer = (command.toLowerCase() == 'buy' ?
+(`
+🛒 List Items :
+${Object.keys(listItems).map((v) => {
+        let paymentMethod = Object.keys(listItems[v]).find(v => v in user)
+        return `➠ 1 ${rpg.emoticon(v)} ${capitalize(v)} ﹫ ${listItems[v][paymentMethod]} ${rpg.emoticon(paymentMethod)}${capitalize(paymentMethod)}`.trim()
+    }).join('\n')}
+–––––––––––––––––––––––––
+💁🏻‍♂ ᴛɪᴩ :
+➠ ᴛᴏ ʙᴜʏ ɪᴛᴇᴍs:
+${usedPrefix}${command} [item] [quantity]
+▧ ᴇxᴀᴍᴩʟᴇ:
+${usedPrefix}${command} potion 10
+`.trim()) : 
+(`
+🛒 List Items :
+${Object.keys(listItems).map((v) => {
+        let paymentMethod = Object.keys(listItems[v]).find(v => v in user)
+        return `➠ 1 ${rpg.emoticon(v)} ${capitalize(v)} ﹫ ${listItems[v][paymentMethod]} ${rpg.emoticon(paymentMethod)}${capitalize(paymentMethod)}`.trim()
+    }).join('\n')}
+–––––––––––––––––––––––––
+💁🏻‍♂ ᴛɪᴩ :
+➠ ᴛᴏ sᴇʟʟ ɪᴛᴇᴍs:
+${usedPrefix}${command} [item] [quantity]
+▧ ᴇxᴀᴍᴩʟᴇ:
+${usedPrefix}${command} potion 10
+`.trim())
+)
+    
+    const total = Math.floor(isNumber(args[1]) ? Math.min(Math.max(parseInt(args[1]), 1), Number.MAX_SAFE_INTEGER) : 1) * 1
+    if (!listItems[item]) return m.reply(footer)
+    if (command.toLowerCase() == 'buy') {
+        let paymentMethod = Object.keys(listItems[item]).find(v => v in user)
+        if (user[paymentMethod] < listItems[item][paymentMethod] * total) return m.reply(`Kamu membutuhkan *${(listItems[item][paymentMethod] * total) - user[paymentMethod]}* ${capitalize(paymentMethod)} ${rpg.emoticon(paymentMethod)} Lagi, Untuk Membeli *${total}* ${capitalize(item)} ${rpg.emoticon(item)}. Kamu hanya memiliki *${user[paymentMethod]}* ${capitalize(paymentMethod)} ${rpg.emoticon(paymentMethod)}.`)
+        user[paymentMethod] -= listItems[item][paymentMethod] * total
+        user[item] += total
+        return conn.reply(m.chat, `Sukses Membeli *${total} ${capitalize(item)} ${rpg.emoticon(item)}*, Seharga *${listItems[item][paymentMethod] * total} ${capitalize(paymentMethod)} ${rpg.emoticon(paymentMethod)}*`, m)
+    } else {
+    	let paymentMethot = Object.keys(listItems[item]).find(v => v in user)
+        if (user[item] < total) return m.reply(`You don't have enough *${capitalize(item)} ${rpg.emoticon(item)}* to sell, you only have ${user[item]} items`)
+        user[item] -= total
+        user[paymentMethot] += listItems[item][paymentMethot] * total
+        return conn.reply(m.chat,`Sukses Menjual *${total} ${capitalize(item)} ${rpg.emoticon(item)}*, Seharga *${listItems[item][paymentMethot] * total} ${capitalize(paymentMethot)} ${rpg.emoticon(paymentMethot)}*`, m)
+    }
+}
+
+handler.help = ['buy', 'sell'].map(v => v + ' <item> <count>')
 handler.tags = ['rpg']
-handler.command = /^(beli|jual)$/i
+handler.command = /^(buy|sell)$/i
+handler.register = true
 handler.group = true
+handler.disabled = false
 
 export default handler
+
+function isNumber(number) {
+    if (!number) return number
+    number = parseInt(number)
+    return typeof number == 'number' && !isNaN(number)
+}
+
+function capitalize(word) {
+  return word.charAt(0).toUpperCase() + word.substr(1)
+}
