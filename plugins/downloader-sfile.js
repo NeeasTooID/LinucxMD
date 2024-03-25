@@ -1,46 +1,51 @@
 import cheerio from 'cheerio'
 import fetch from 'node-fetch'
 
-let handler = async (m, { conn, text }) => {
-	if (text.match(/(https:\/\/sfile.mobi\/)/gi)) {
-		let res = await sfileDl(text)
-		if (!res) throw 'Error :/'
+let handler = async (m, { conn, args, usedPrefix: _p, command: cmd }) => {
+	if (args[0] && args[0].match(/(https:\/\/sfile.mobi\/)/gi)) {
+		let res = await sfile.download(args[0])
+		if (!res) throw 'Error'
 		await m.reply(Object.keys(res).map(v => `*• ${v.capitalize()}:* ${res[v]}`).join('\n') + '\n\n_Sending file..._')
-		conn.sendMessage(m.chat, { document: { url: res.download }, fileName: res.filename, mimetype: res.mimetype }, { quoted: m })
-	} else if (text) {
-		let [query, page] = text.split`|`
-		let res = await sfileSearch(query, page)
-		if (!res.length) throw `Query "${text}" not found :/`
-		res = res.map((v) => `*Title:* ${v.title}\n*Size:* ${v.size}\n*Link:* ${v.link}`).join`\n\n`
-		m.reply(res)
-	} else throw 'Input Query / Sfile Url!'
+		await conn.sendFile(m.chat, res.download, res.filename, '', m, false, { mimetype: res.mimetype, asDocument: true })
+	} else if (args[0]) {
+		let query = args.join` `.split`|`[0], page = parseInt(args.join` `.split`|`[1]) || 1,
+			res = await sfile.search(query, page)
+		if (!res.length) throw `Query "${query}" not found`
+		res = res.map(v => `*Title:* ${v.title}\n*Size:* ${v.size}\n*Link:* ${v.link}`).join`\n\n`
+		await conn.reply(m.chat, res + `\nPage: ${page}`, m)
+	} else return m.reply(`Masukan Query Atau Link!\n\nContoh:\n${_p + cmd} growtopia\n${_p + cmd} https://sfile.mobi/1BnLYfsHEcO7`)
 }
-handler.help = handler.alias = ['sfile']
+handler.help = ['sfile'].map(v => v + ' <query/url>')
 handler.tags = ['downloader']
 handler.command = /^(sfile)$/i
 handler.limit = true
-handler.register = true
 export default handler
 
-async function sfileSearch(query, page = 1) {
-	let res = await fetch(`https://sfile.mobi/search.php?q=${query}&page=${page}`)
-	let $ = cheerio.load(await res.text())
-	let result = []
-	$('div.list').each(function () {
-		let title = $(this).find('a').text()
-		let size = $(this).text().trim().split('(')[1]
-		let link = $(this).find('a').attr('href')
-		if (link) result.push({ title, size: size.replace(')', ''), link })
-	})
-	return result
+export const sfile = {
+	search: async (query, page = 1) => {
+		let res = await fetch(`https://sfile.mobi/search.php?q=${query}&page=${page}`)
+		let $ = cheerio.load(await res.text()), arr = []
+		$('div.list').each((idx, el) => {
+			let title = $(el).find('a').text(),
+				size = $(el).text().trim().split(' (')[1],
+				link = $(el).find('a').attr('href')
+			if (link) arr.push({ title, size: size.replace(')', ''), link })
+		})
+		return arr
+	},
+	download: async url => {
+		let res = await fetch(url)
+		let $ = cheerio.load(await res.text()), obj = {}
+		obj.filename = $('div.w3-row-padding').find('img').attr('alt')
+		obj.mimetype = $('div.list').text().split(' - ')[1].split('\n')[0]
+		obj.filesize = $('#download').text().replace(/Download File/g, '').replace(/\(|\)/g, '').trim()
+		obj.download = await getLink(url)
+		return obj
+	}
 }
 
-async function sfileDl(url) {
-	let res = await fetch(url)
-	let $ = cheerio.load(await res.text())
-	let filename = $('div.w3-row-padding').find('img').attr('alt')
-	let mimetype = $('div.list').text().split(' - ')[1].split('\n')[0]
-	let filesize = $('#download').text().replace(/Download File/g, '').replace(/\(|\)/g, '').trim()
-	let download = $('#download').attr('href') + '&k=' + Math.floor(Math.random() * (15 - 10 + 1) + 10)
-	return { filename, filesize, mimetype, download }
+async function getLink(url) {
+	url = 'https://sfile.mobi/download' + (new URL(url)).pathname
+	let html = await (await fetch(url)).text()
+	return html.split('" rel="nofollow"')[0].split('start, <a href="')[1]
 }

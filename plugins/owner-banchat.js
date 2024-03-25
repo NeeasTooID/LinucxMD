@@ -8,6 +8,6 @@ handler.help = ['banchat']
 handler.tags = ['owner']
 handler.command = /^(banchat|bnc)$/i
 
-handler.owner = true
+handler.rowner = true
 
 export default handler

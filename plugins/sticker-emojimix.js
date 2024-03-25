@@ -1,28 +1,38 @@
-import MessageType from '@adiwajshing/baileys'
+import { Sticker } from 'wa-sticker-formatter'
+import fs from 'fs'
 import fetch from 'node-fetch'
-import { sticker } from '../lib/sticker.js'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-  if (!text) throw `*⛌ Masukan Emoji Yg ingin kamu gabungkan*\n\n*• Example:*\n- ${usedPrefix + command} 😂+😂\n- ${usedPrefix + command} 😂 😂\n\n[ minimal 2 emoji ]`;
-
-  let emojis = text.split(/[\+\s]/).filter(Boolean); // Memisahkan emoji berdasarkan '+' atau spasi
-  if (emojis.length < 2) throw 'Masukkan minimal 2 emoji untuk di-mix';
-
-  if (emojis.length > 2) throw 'Max 2 emoji untuk di-mix';
-
-  const anu = await (await fetch(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(emojis.join('_'))}`)).json();
-
-  if (anu.results[0] == undefined) throw 'Kombinasi Emojimix Tidak Ditemukan';
-
-  let emix = anu.results[0].media_formats.png_transparent.url;
-  let stiker = await sticker(false, emix, global.stickpack, global.stickauth);
-  conn.sendFile(m.chat, stiker, null, { asSticker: true }, m);
+    if (!text || !text.includes('+')) throw `Usage : ${usedPrefix + command} emoji1|emoji2\n\nExample: *${usedPrefix + command} 😅+🤔*`
+    let [l, r] = text.split`+`
+    if (!l) throw 'emoji1 tidak boleh kosong'
+    if (!r) throw 'emoji2 tidak boleh kosong'
+    const url = await fetch(`https://tenor.googleapis.com/v2/featured?key=AIzaSyAyimkuYQYF_FXVALexPuGQctUWRURdCYQ&contentfilter=high&media_filter=png_transparent&component=proactive&collection=emoji_kitchen_v5&q=${encodeURIComponent(l)}_${encodeURIComponent(r)}`)
+    if (!url.ok) throw await url.text()
+    let json = await url.json()
+    if (!json.results) throw 'Error!'
+    try {
+    	let res = json.results[0].url
+    	let stiker = await createSticker(res, false, stickpack, stickauth)
+        await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
+    } catch (e) {
+        console.log(e)
+        await conn.sendFile(m.chat, ztick, 'sticker.webp', '', m)
+    }
 }
 
-handler.help = ['emojimix']
-handler.tags = ['sticker']
-handler.command = /^(emojimix|emix)$/i
-
-handler.register = true
+handler.help = ['emojimix <1>|<2>']
+handler.tags = ['tools']
+handler.command = /^(emojimix)$/i
 
 export default handler
+
+async function createSticker(res, url, packName, authorName, quality) {
+	let stickerMetadata = {
+		type: 'full',
+		pack: stickpack,
+		author: stickauth,
+		quality
+	}
+	return (new Sticker(res ? res : url, stickerMetadata)).toBuffer()
+}

@@ -1,19 +1,17 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
     
     let who
-    if (m.isGroup) who = args[1] ? args[1] : m.chat
-    else who = args[1]
+    if (m.isGroup) who = args[0] ? args[0] : m.chat
+    else who = args[0]
 
     if (new Date() * 1 < global.db.data.chats[who].expired) global.db.data.chats[who].expired = false
     else global.db.data.chats[who].expired = false
     conn.reply(m.chat, `Berhasil menghapus hari kadaluarsa untuk Grup ini`, m)
 }
-handler.help = ['delexpired']
+handler.help = ['delesewa']
 handler.tags = ['owner']
 handler.command = /^(delexpired|delsewa)$/i
-handler.rowner = false
-handler.group = true
-handler.premium = true
+handler.rowner = true
 
 export default handler
 

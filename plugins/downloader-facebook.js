@@ -1,72 +1,26 @@
-//Dont delete this credit!!!
-//Script by ShirokamiRyzen
-
 import fetch from 'node-fetch'
-import { fbdown } from '../lib/scrape.js';
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-
-    if (!args[0]) throw 'Please provide a Facebook video URL';
-    const sender = m.sender.split(`@`)[0];
-
-    m.reply(wait)
-
+    if (!args[0]) throw `Linknya Mana?...\n*Contoh :* ${usedPrefix}${command} https://www.facebook.com/100034398106754/posts/pfbid02LRjmLBf4PfbUJ67TNWGY8oZwmPJg18BmBK3E9sZ6Hup6jhAZJoHVRWkRGdPUuPMUl/?app=fbl`
     try {
-        const url = args[0];
-        const result = await fbdown(url);
-
-        if (!result) {
-            throw 'Failed to fetch video details';
-        }
-
-        let videoLink;
-        let caption;
-
-        if (result.hdLink && result.sdLink) {
-            videoLink = result.hdLink;
-            caption = `
-*Title*: ${result.title}
-
-${result.description}
-
-*HD Link*: ${result.hdLink}
-*SD Link*: ${result.sdLink}
-`;
-        } else {
-            videoLink = result.sdLink;
-            caption = `
-*Title*: ${result.title}
-
-${result.description}
-
-*SD Link*: ${result.sdLink}
-`;
-        }
-
-        const videoBuffer = await fetch(videoLink).then(res => res.buffer());
-
-        await conn.sendMessage(
-            m.chat, {
-            video: videoBuffer,
-            mimetype: "video/mp4",
-            fileName: `video.mp4`,
-            caption: `Ini kak videonya @${sender} \n${caption}`,
-            mentions: [m.sender],
-        }, {
-            quoted: m
-        },
-        );
-    } catch (error) {
-        console.error('Handler Error:', error);
-        conn.reply(m.chat, `An error occurred: ${error}`, m);
-    }
-};
-
-handler.help = ['fb <url>']
+    var data = await( await fetch(`https://api.betabotz.eu.org/api/download/fbdown?url=${args[0]}&apikey=${args[0]}`)).json()
+    conn.sendMessage(m.chat, {
+		react: {
+			text: '⏳',
+			key: m.key,
+		}
+	})
+conn.sendFile(m.chat, data.result.Normal_video, 't.mp4', '*FACEBOOK DOWNLOADER*\n\n_Reso : SD_', m)
+conn.sendFile(m.chat, data.result.HD, 't.mp4', '*FACEBOOK DOWNLOADER*\n\n_Reso : HD_', m)
+  } catch (e) {
+		console.log(e)
+		m.reply(`*Server YuLa Down*`)
+	}
+}
+handler.help = ['facebook'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(fbdownload|fb(dl)?)$/i
 
+handler.command = /^(fb|facebook|fbdl?)$/i
 handler.limit = true
-handler.register = true
 
 export default handler

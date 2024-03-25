@@ -1,31 +1,23 @@
-import { instagramdl } from '@bochilteam/scraper'
-import fetch from 'node-fetch'
+import { instagram } from 'betabotz-tools';
 
-var handler = async (m, { args, conn, usedPrefix, command }) => {
-    if (!args[0]) throw `Ex:\n${usedPrefix}${command} https://www.instagram.com/reel/C0EEgMNSSHw/?igshid=MzY1NDJmNzMyNQ==`;
-
-    m.reply('Sedang mengunduh video...')
-    
-    try {
-        let res = await bochil.snapsave(args[0]);
-        let media = await res[0].url;
-      
-        const sender = m.sender.split(`@`)[0];
-
-        if (!res) throw 'Can\'t download the post';
-      
-        await conn.sendMessage(m.chat, { video: { url: media }, caption: `ini kak videonya @${sender}`, mentions: [m.sender]}, m);
-
-    } catch (e) {
-      conn.reply(m.chat, 'Gagal mengunduh video', m);
-    }
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+    if (!args[0]) throw `Linknya Mana?...\n*Contoh :* ${usedPrefix}${command} https://www.instagram.com/reel/CvYLRDVx9cY/?igshid=NTc4MTIwNjQ2YQ==`
+       try {
+    var api = await instagram(args[0])
+    m.reply(wait)
+for (var array of api.result) {
+conn.sendFile(m.chat, array._url, 't.mp4', '*(IGTV, POST, VIDEO, REEL, ETC)*', m)
 }
-
-handler.help = ['ig'].map(v => v + ' <url>')
+  } catch (e) {
+		console.log(e)
+		m.reply(eror)
+	}
+}
+handler.help = ['instagram'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
-handler.command = /^(ig(dl)?)$/i
+handler.command = /^(ig|instagram(dl)?)$/i
+handler.register = false
 handler.limit = true
-handler.register = true
 
 export default handler
