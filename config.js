@@ -2,7 +2,6 @@ import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 
-
 /*========= GLOBAL APIKEY ==========*/
 global.btc = 'tMNbXw3t'
 global.lolkey = 'e4ea69cba864dfa7d4968fdb'
