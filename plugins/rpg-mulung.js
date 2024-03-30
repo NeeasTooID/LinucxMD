@@ -1,7 +1,7 @@
 let handler = async (m, { conn, usedPrefix, text }) => {
 	    let user = global.db.data.users[m.sender]
-	    let time = user.lastmulung + 1800000
-        if (new Date - user.lastmulung < 1800000) throw `Anda sudah lelah untuk mulung\nTunggu selama ${msToTime(time - new Date())} lagi`
+	    let time = user.lastmulung + 5000
+        if (new Date - user.lastmulung < 5000) throw `Anda sudah lelah untuk mulung\nTunggu selama ${msToTime(time - new Date())} lagi`
 	    let botol = `${Math.floor(Math.random() * 1000)}`.trim()
 	    let kaleng = `${Math.floor(Math.random() * 1000)}`.trim()
 	    let kardus = `${Math.floor(Math.random() * 1000)}`.trim()

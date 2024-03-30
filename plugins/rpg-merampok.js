@@ -8,10 +8,10 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!who) return m.reply('Tag salah satu lah')
     if (typeof db.data.users[who] == 'undefined') return m.reply('Pengguna tidak ada didalam data base')
     let __timers = (new Date - global.db.data.users[m.sender].lastrampok)
-    let _timers = (3600000 - __timers)
+    let _timers = (5000 - __timers)
     let timers = clockString(_timers)
     let users = global.db.data.users
-    if (new Date - global.db.data.users[m.sender].lastrampok > 3600000) {
+    if (new Date - global.db.data.users[m.sender].lastrampok > 5000) {
         if (10000 > users[who].money) return m.reply('ᴛᴀʀɢᴇᴛ ɢᴀᴀᴅᴀ 💰ᴜᴀɴɢ ʙᴏᴅᴏʜ, ᴋɪꜱᴍɪɴ ᴅɪᴀ')
         users[who].money -= dapat * 1
         users[m.sender].money += dapat * 1
