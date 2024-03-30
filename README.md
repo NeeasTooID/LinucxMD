@@ -61,6 +61,8 @@
 [![AyGemuy](https://github.com/AyGemuy.png?size=100)](https://github.com/AyGemuy)
 [![BOTCAHX](https://github.com/BOTCAHX.png?size=100)](https://github.com/BOTCAHX)
 [![Zenn](https://github.com/zevanoo.png?size=100)](https://github.com/zevanoo)
+[![Sevuh](https://github.com/ZTRdiamond.png?size=100)](https://github.com/ZTRdiamond)
+[![BOTCAHX](https://github.com/XM4ZE.png?size=100)](https://github.com/XM4ZE)
 
 #### Recoder
 [![NeastooID](https://github.com/NeastooID.png?size=100)](https://github.com/NeastooID)
