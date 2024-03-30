@@ -60,6 +60,7 @@
 [![ERLANRAHMAT](https://github.com/ERLANRAHMAT.png?size=100)](https://github.com/ERLANRAHMAT)
 [![AyGemuy](https://github.com/AyGemuy.png?size=100)](https://github.com/AyGemuy)
 [![BOTCAHX](https://github.com/BOTCAHX.png?size=100)](https://github.com/BOTCAHX)
+[![Zenn](https://github.com/zevanoo.png?size=100)](https://github.com/zevanoo)
 
 #### Recoder
 [![NeastooID](https://github.com/NeastooID.png?size=100)](https://github.com/NeastooID)
