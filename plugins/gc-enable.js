@@ -20,7 +20,6 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 *• antiviewonce* 
 *• antisticker* 
 *• antivirtex*
-*• simi*
 *• text* 
 *• restrict* 
 *• game*
@@ -203,13 +202,6 @@ case 'antifoto':
                 }
             }
             chat.antiVirtex = isEnable
-            break
-        case 'simi':
-            if (!(isAdmin || isOwner)) {
-                global.dfail('admin', m, conn)
-                throw false
-            }
-            chat.simi = isEnable
             break
         case 'composing':
             if (!isROwner) {
