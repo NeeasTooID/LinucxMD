@@ -31,4 +31,3 @@ handler.group = true
 handler.cooldown = cooldown
 handler.rpg = true
 export default handler
-

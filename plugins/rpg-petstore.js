@@ -33,7 +33,9 @@ let caption = `
 🤖 *Robo:* ${hrobo} 🔖
 
 〉 *ABILITY*
-Cooming soon...`
+Cooming soon...
+
+> *Contoh : .petshop namapet jumlah*`
 const sections = [
    {
 	title: "Buy A Pet",

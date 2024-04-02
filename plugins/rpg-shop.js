@@ -105,6 +105,21 @@ const items = {
         trash: {
             money: 20
         },
+        botol: {
+            money: 20000
+        },
+        kardus: {
+            money: 100000
+        },
+        kaleng: {
+            money: 50000
+        },
+        gelas: {
+            money: 500000
+        },
+        plastik: {
+            money: 20
+        },
         wood: {
             money: 350
         },

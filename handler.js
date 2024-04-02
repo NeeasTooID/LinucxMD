@@ -8,6 +8,9 @@ import fs from 'fs'
 import fetch from 'node-fetch'
 import moment from 'moment-timezone'
 const printMessage = (await import('./lib/print.js')).default
+/**
+* @type {import('@adiwajshing/baileys')}
+*/
 const { proto } = (await import('@adiwajshing/baileys')).default
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function () {
@@ -32,6 +35,7 @@ export async function handler(chatUpdate) {
         m.exp = 0
         m.limit = false
         try {
+            // TODO: use loop to insert data instead of this
             let user = global.db.data.users[m.sender]
             if (typeof user !== 'object')
                 global.db.data.users[m.sender] = {}
@@ -105,7 +109,7 @@ export async function handler(chatUpdate) {
                     user.string = 0
                 if (!isNumber(user.petfood))
                     user.petfood = 0
-
+                    
 
                 if (!isNumber(user.emerald))
                     user.emerald = 0
@@ -225,6 +229,8 @@ export async function handler(chatUpdate) {
                     user.lastweekly = 0
                 if (!isNumber(user.lastmonthly))
                     user.lastmonthly = 0
+                if (!isNumber(user.lastlinux))
+                    user.lastlinux = 0
 
                 if (!isNumber(user.apel))
                     user.apel = 0
@@ -314,7 +320,6 @@ export async function handler(chatUpdate) {
                 exp: 0,
                 limit: 100,
                 freelimit: 0,
-                lastclaim: 0,
                 skata: 0,
                 registered: false,
                 name: m.name,
@@ -428,6 +433,7 @@ export async function handler(chatUpdate) {
                 lastnebang: 0,
                 lastweekly: 0,
                 lastmonthly: 0,
+                lastlinux: 0,
 
                 premium: false,
                 premiumTime: 0,
@@ -472,6 +478,8 @@ export async function handler(chatUpdate) {
                     chat.antiToxic = false
                 if (!('antiBadword' in chat))
                     chat.antiBadword = false
+                if (!('simi' in chat))
+                    chat.simi = false
                 if (!('nsfw' in chat))
                     chat.nsfw = false
                 if (!('rpg' in chat))
@@ -504,6 +512,7 @@ export async function handler(chatUpdate) {
                 antiToxic: false,
                 antiVirtex: false,
                 antiBadword: false,
+                simi: false,
                 nsfw: false,
                 rpg: false,
                 game: false,
@@ -522,7 +531,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(settings.restartDB)) settings.restartDB = 0
                 if (!('backup' in settings)) settings.backup = false
                 if (!isNumber(settings.backupDB)) settings.backupDB = 0
-                if (!('cleartmp' in settings)) settings.cleartmp = true
+                if (!('cleartmp' in settings)) settings.cleartmp = false
                 if (!isNumber(settings.lastcleartmp)) settings.lastcleartmp = 0
                 if (!isNumber(settings.status)) settings.status = 0
                 if (!('anticall' in settings)) settings.anticall = true
@@ -535,7 +544,7 @@ export async function handler(chatUpdate) {
                 restartDB: 0,
                 backup: false,
                 backupDB: 0,
-                cleartmp: true,
+                cleartmp: false,
                 lastcleartmp: 0,
                 status: 0,
                 anticall: true,
@@ -789,6 +798,7 @@ export async function handler(chatUpdate) {
                     if (!isPrems)
                         m.limit = m.limit || plugin.limit || false
                 } catch (e) {
+                    // Error occured
                     m.error = e
                     console.error(e)
                     if (e) {
@@ -804,6 +814,7 @@ export async function handler(chatUpdate) {
                         m.reply(text)
                     }
                 } finally {
+                    // m.reply(util.format(_user))
                     if (typeof plugin.after === 'function') {
                         try {
                             await plugin.after.call(this, m, extra)
@@ -811,6 +822,8 @@ export async function handler(chatUpdate) {
                             console.error(e)
                         }
                     }
+                    /*if (m.limit)
+                       await m.reply('Kamu menggunakan fitur limit\n╰► - 1 Limit')*/// lain kali jangan lupa tanda kurung nya ya! ... fixed by Fokusdotid (Fokus ID)
                 }
                 break
             }
@@ -823,6 +836,7 @@ export async function handler(chatUpdate) {
             if (quequeIndex !== -1)
                 this.msgqueque.splice(quequeIndex, 1)
         }
+        //console.log(global.db.data.users[m.sender])
         let user,
         stats = global.db.data.stats
         if (m) {
@@ -873,7 +887,15 @@ export async function handler(chatUpdate) {
     }
 }
 
+/**
+* Handle groups participants update
+* @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['group-participants.update']} groupsUpdate
+*/
 function _0x4ced(_0x19ad75,_0x808e8d){const _0xf00ab5=_0xf00a();return _0x4ced=function(_0x4cede1,_0x4e7cec){_0x4cede1=_0x4cede1-0x6c;let _0x327a2f=_0xf00ab5[_0x4cede1];return _0x327a2f;},_0x4ced(_0x19ad75,_0x808e8d);}function _0xf00a(){const _0x4f2ab5=['bye','8265618KJDqQg','add','@subject','readFileSync','getName','𝙶𝚛𝚘𝚞𝚙\x20𝙽𝚘𝚝𝚒𝚏𝚒𝚌𝚊𝚝𝚒𝚘𝚗','@desc','@user\x20```is\x20now\x20Admin```','sDemote','split','sPromote','sBye','desc','https://telegra.ph/file/15216d659ba3b0bd5645c.jpg','remove','sWelcome','Bye,\x20@user!','1933036iskEvB','./src/avatar_contact.png','3sfankE','18008020Lvjvek','profilePictureUrl','5BPQpbv','sdemote','fromCharCode','repeat','demote','sendMessage','102877oUqiGS','88DBQwNL','6529698ayrxSS','promote','https://telegra.ph/file/27af7cd34b16276e304a9.jpg','@user','spromote','replace','data','groupMetadata','metadata','295786mHQyoZ','623588DPbiCQ','welcome','image','chats','@user\x20```is\x20no\x20longer\x20Admin```'];_0xf00a=function(){return _0x4f2ab5;};return _0xf00a();}(function(_0x2328bc,_0xa36189){const _0x5bd0b1=_0x4ced,_0x48fae8=_0x2328bc();while(!![]){try{const _0x566951=parseInt(_0x5bd0b1(0x80))/0x1+-parseInt(_0x5bd0b1(0x8b))/0x2*(parseInt(_0x5bd0b1(0x77))/0x3)+parseInt(_0x5bd0b1(0x75))/0x4*(-parseInt(_0x5bd0b1(0x7a))/0x5)+parseInt(_0x5bd0b1(0x92))/0x6+-parseInt(_0x5bd0b1(0x8c))/0x7*(-parseInt(_0x5bd0b1(0x81))/0x8)+parseInt(_0x5bd0b1(0x82))/0x9+-parseInt(_0x5bd0b1(0x78))/0xa;if(_0x566951===_0xa36189)break;else _0x48fae8['push'](_0x48fae8['shift']());}catch(_0x574646){_0x48fae8['push'](_0x48fae8['shift']());}}}(_0xf00a,0xb8134));export async function participantsUpdate({id:_0x4e9dc1,participants:_0x576501,action:_0x2c8055}){const _0x5150b3=_0x4ced;if(opts['self'])return;if(this['isInit'])return;let _0x15ba20=global['db'][_0x5150b3(0x88)][_0x5150b3(0x8f)][_0x4e9dc1]||{},_0x206164='';switch(_0x2c8055){case _0x5150b3(0x93):case _0x5150b3(0x72):if(_0x15ba20[_0x5150b3(0x8d)]){let _0x29d480=await this[_0x5150b3(0x89)](_0x4e9dc1)||(conn[_0x5150b3(0x8f)][_0x4e9dc1]||{})[_0x5150b3(0x8a)];for(let _0x5eb666 of _0x576501){let _0x45fce0=fs[_0x5150b3(0x95)](_0x5150b3(0x76));try{_0x45fce0=await this[_0x5150b3(0x79)](_0x5eb666,_0x5150b3(0x8e));}catch(_0x53de13){}finally{_0x206164=(_0x2c8055==='add'?(_0x15ba20[_0x5150b3(0x73)]||this[_0x5150b3(0x8d)]||conn[_0x5150b3(0x8d)]||'Welcome,\x20@user!')['replace'](_0x5150b3(0x94),await this[_0x5150b3(0x96)](_0x4e9dc1))[_0x5150b3(0x87)](_0x5150b3(0x98),_0x29d480[_0x5150b3(0x70)]?String[_0x5150b3(0x7c)](0x200e)[_0x5150b3(0x7d)](0xfa1)+_0x29d480[_0x5150b3(0x70)]:''):_0x15ba20[_0x5150b3(0x6f)]||this[_0x5150b3(0x91)]||conn[_0x5150b3(0x91)]||_0x5150b3(0x74))['replace']('@user','@'+_0x5eb666[_0x5150b3(0x6d)]('@')[0x0]);let _0x4cb6db=_0x5150b3(0x71),_0x4421d6=_0x5150b3(0x84);await this[_0x5150b3(0x7f)](_0x4e9dc1,{'text':_0x206164,'contextInfo':{'mentionedJid':[_0x5eb666],'externalAdReply':{'title':await this['getName'](_0x4e9dc1),'body':_0x5150b3(0x97),'thumbnailUrl':_0x2c8055===_0x5150b3(0x93)?_0x4cb6db:_0x4421d6,'sourceUrl':'','mediaType':0x1,'renderLargerThumbnail':!![]}}},{'quoted':null});}}}break;case _0x5150b3(0x83):_0x206164=_0x15ba20[_0x5150b3(0x6e)]||this[_0x5150b3(0x86)]||conn[_0x5150b3(0x86)]||_0x5150b3(0x99);case _0x5150b3(0x7e):if(!_0x206164)_0x206164=_0x15ba20[_0x5150b3(0x6c)]||this[_0x5150b3(0x7b)]||conn[_0x5150b3(0x7b)]||_0x5150b3(0x90);_0x206164=_0x206164[_0x5150b3(0x87)](_0x5150b3(0x85),'@'+_0x576501[0x0][_0x5150b3(0x6d)]('@')[0x0]);if(_0x15ba20['detect'])this[_0x5150b3(0x7f)](_0x4e9dc1,{'text':_0x206164,'mentions':this['parseMention'](_0x206164)});break;}}
+/**
+* Handle groups update
+* @param {import('@adiwajshing/baileys').BaileysEventMap<unknown>['groups.update']} groupsUpdate
+*/
 export async function groupsUpdate(groupsUpdate) {
     if (opts['self'])
         return

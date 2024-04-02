@@ -19,8 +19,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 *• antidelete*
 *• antiviewonce* 
 *• antisticker* 
-*• antivirtex*
-*• text* 
+*• antivirtex* 
 *• restrict* 
 *• game*
 *• rpg* 
@@ -130,15 +129,6 @@ case 'antifoto':
                 }
             }
             chat.antispam = isEnable
-            break
-        case 'text':
-            if (m.isGroup) {
-                if (!(isAdmin || isOwner)) {
-                    global.dfail('admin', m, conn)
-                    throw false
-                }
-            }
-            chat.teks = isEnable
             break
         case 'public':
         case 'self':
