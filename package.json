@@ -26,16 +26,16 @@
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/NeeasTooID/LinucxMDv4",
+    "homepage": "https://github.com/NeeasTooID/LinucxMD",
     "author": {
         "name": "NeeasTooID"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/NeeasTooID/LinucxMDv4.git"
+        "url": "git+https://github.com/NeeasTooID/LinucxMD.git"
     },
     "bugs": {
-        "url": "https://github.com/NeeasTooID/LinucxMDv4/issues"
+        "url": "https://github.com/NeeasTooID/LinucxMD/issues"
     },
     "license": "MIT",
     "dependencies": {
