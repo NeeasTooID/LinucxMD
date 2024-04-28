@@ -27,10 +27,7 @@ const defaultMenu = {
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
 let tags = {
 'maximus': '𝚂𝙸𝙼𝙿𝙻𝙴 𝙼𝙴𝙽𝚄',
-'genshin': '𝙶𝙴𝙽𝚂𝙷𝙸𝙽 𝙼𝙴𝙽𝚄',
-'hsr': '𝙷𝚂𝚁 𝙼𝙴𝙽𝚄',
 'adminry': '𝙰𝙳𝙼𝙸𝙽 𝙼𝙴𝙽𝚄',
-'store': '𝚂𝚃𝙾𝚁𝙴 𝙼𝙴𝙽𝚄',
 }
  
   try {

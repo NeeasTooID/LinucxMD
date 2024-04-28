@@ -15,7 +15,19 @@ let handler = async (m, { conn }) => {
 │ 📑 Registered: ${user.registered ? 'Yes': 'No'}
 └────···
 `.trim()
-    await conn.adReply(m.chat, caption, '', '', fs.readFileSync('./media/bank.jpg'), '', m)
+await conn.reply(m.chat, caption, m, {
+    contextInfo: {
+        externalAdReply : {
+      title: `LinucxMD © 2024`,
+      body: 'Powered By YusupKakuu',
+      thumbnailUrl: 'https://telegra.ph/file/fcf73d44f9b2ad4034df0.jpg',
+      sourceUrl: global.gcbot,
+      mediaType: 1,
+      showAdAttribution: true,
+      renderLargerThumbnail: true
+   	 }
+ 	}
+   })  
 }
 handler.help = ['bank']
 handler.tags = ['rpg']

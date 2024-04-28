@@ -3,7 +3,7 @@ const rewards = {
     money: 20999,
 }
 
-const cooldown = 2592000000
+const cooldown = 600000
 let handler = async (m) => {
     let user = global.db.data.users[m.sender]
     if (new Date - user.lastmonthly < cooldown) throw `You have already claimed this monthly claim, wait for *${((user.lastmonthly + cooldown) - new Date()).toTimeString()}*`

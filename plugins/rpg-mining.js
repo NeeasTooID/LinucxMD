@@ -1,4 +1,4 @@
-const cooldown = 300000
+const cooldown = 600000
 let handler = async (m, { usedPrefix }) => {
 	try {
     let user = global.db.data.users[m.sender]

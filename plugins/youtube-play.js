@@ -4,7 +4,7 @@ import ffmpeg from 'fluent-ffmpeg';
 import search from 'yt-search';
 
 let handler = async (m, { conn, text }) => {
-  if (!text) return m.reply('*example*: .play eula song');
+  if (!text) return m.reply('*example*: .play YUSUP909');
   try {
     let results = await search(text);
     let videoId = results.videos[0].videoId;

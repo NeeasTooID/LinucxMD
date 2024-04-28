@@ -189,14 +189,13 @@ ${cooldowns}` : ''}
 await conn.reply(m.chat, caption, m, {
     contextInfo: {
         externalAdReply : {
-            showAdAttribution: true,
-            mediaType: 1,
-            title: '',
-            thumbnail: await(await fetch(imgr + 'inventory')).buffer(),
-            renderLargerThumbnail: true,
-            mediaUrl: elainajpg.getRandom(),
-            sourceId: wm,
-            sourceUrl: ''
+      title: `LinucxMD © 2024`,
+      body: 'Powered By YusupKakuu',
+      thumbnailUrl: 'https://telegra.ph/file/cc0ed9db2c566a5d040af.jpg',
+      sourceUrl: global.gcbot,
+      mediaType: 1,
+      showAdAttribution: true,
+      renderLargerThumbnail: true
    	 }
  	}
    })  

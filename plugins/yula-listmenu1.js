@@ -10,8 +10,6 @@ let tags = {
   'maximus': '𝚂𝙸𝙼𝙿𝙻𝙴',
   'main': '𝙼𝙰𝙸𝙽',
   'ai': '𝙰𝙸',
-  'genshin': '𝙶𝙴𝙽𝚂𝙷𝙸𝙽',
-  'hsr': '𝙷𝙾𝙽𝙺𝙰𝙸 𝚂𝚁',
   'adminry': '𝙰𝙳𝙼𝙸𝙽',
   'group': '𝙶𝚁𝙾𝚄𝙿',
   'store': '𝚂𝚃𝙾𝚁𝙴',
@@ -22,8 +20,6 @@ let tags = {
   'kerang': '𝙺𝙴𝚁𝙰𝙽𝙶 𝙰𝙹𝙰𝙸𝙱',
   'fun': '𝙵𝚄𝙽',
   'anime': '𝙰𝙽𝙸𝙼𝙴 𝙰𝙽𝙳 𝙼𝙰𝙽𝙶𝙰',
-  'vote': '𝚅𝙾𝚃𝙸𝙽𝙶',
-  'absen': '𝙰𝙱𝚂𝙴𝙽',
   'premium': '𝙿𝚁𝙴𝙼𝙸𝚄𝙼',
   'nsfw': '𝙽𝚂𝙵𝚆',
   'internet': '𝙸𝙽𝚃𝙴𝚁𝙽𝙴𝚃',
@@ -31,10 +27,10 @@ let tags = {
   'search': '𝚂𝙴𝙰𝚁𝙲𝙷𝙸𝙽𝙶',
   'tools': '𝚃𝙾𝙾𝙻𝚂',
   'owner': '𝙾𝚆𝙽𝙴𝚁', 
-  'info': '𝙸𝙽𝙵𝙾',
+  'info': '𝙸𝙽𝙵𝙾'
 }
 const defaultMenu = {
-  before: `Hi %name.\nMy name is LinucxMD<3. I am the Assistant for this Group. I'm here to help you with tasks like searching for information online, retrieving data, etc. By utilizing innovative features, I will help you to move more quickly and productively in completing your work.
+  before: `Hi %name.\nMy name is LinucxMD. I am the Assistant for this Group. I'm here to help you with tasks like searching for information online, retrieving data, etc. By utilizing innovative features, I will help you to move more quickly and productively in completing your work.
 
 *「 I N F O  」*
  •  *Your Premium :* %prems
@@ -50,8 +46,6 @@ const defaultMenu = {
   footer: '*└* ',
   after: 'LinucxMD | Unemployment Comunity Group',
 }
-
-let vn = ""
 
 let handler = async (m, { conn, usedPrefix, __dirname }) => {
   try {
@@ -159,12 +153,20 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-conn.sendFile(m.chat, vn, "ehee.mp3", null, m, true, {
-type: "audioMessage",
-ptt: true,
-});
-conn.sendMessage(m.chat, { video: { url: "https://telegra.ph/file/32db99672293c0eff346b.mp4" }, gifPlayback: true, gifAttribution: ~~(Math.random() * 2), caption: text, contextInfo: { mentionedJid: [m.sender], externalAdReply: { showAdAttribution: false, title: 'LinucxMD', body: 'Jangan Lupa Sewa', thumbnailUrl: 'https://saweria.co/YUSUP909', mediaType: 1, sourceUrl: 'https://whatsapp.com/channel/0029VaEK2Vc9mrGbK9s0Iv3p', renderLargerThumbnail: false }}}, { quoted: m })
-          
+conn.sendMessage(m.chat, {
+      text: text,
+      contextInfo: {
+      mentionedJid: [m.sender],
+      externalAdReply: {
+      title: `LinucxMD © 2024`,
+      body: 'Powered By YusupKakuu',
+      thumbnailUrl: global.thum,
+      sourceUrl: global.gcbot,
+      mediaType: 1,
+      showAdAttribution: true,
+      renderLargerThumbnail: true
+      }}})
+
   } catch (e) {
     throw e
   }

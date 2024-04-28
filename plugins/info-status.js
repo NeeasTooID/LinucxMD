@@ -68,12 +68,13 @@ Ping : *${Math.round(neww - old)} ms*
 text: txt,
 contextInfo: {
 externalAdReply: {
-title: "",
-body: "",
-thumbnailUrl: "https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg",
-sourceUrl: "",
-mediaType: 1,
-renderLargerThumbnail: true
+title: `LinucxMD © 2024`,
+      body: 'Powered By YusupKakuu',
+      thumbnailUrl: global.thum,
+      sourceUrl: global.gcbot,
+      mediaType: 1,
+      showAdAttribution: true,
+      renderLargerThumbnail: true
 }}})
         console.log(OS)
     } catch (e) {
