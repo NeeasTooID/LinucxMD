@@ -42,15 +42,6 @@
 [![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
 [![zeeoneofficial](https://github.com/zeeoneofficial.png?size=100)](https://github.com/zeeoneofficial)
 [![Zeltoria](https://github.com/Zeltoria.png?size=100)](https://github.com/Zeltoria)
-[![Azizsapu](https://github.com/Azizsapu.png?size=100)](https://github.com/Azizsapu)
-[![Kanata-chan](https://github.com/Kanata-chan.png?size=100)](https://github.com/Kanata-chan)
-[![cakrayp](https://github.com/cakrayp.png?size=100)](https://github.com/cakrayp)
-[![ERLANRAHMAT](https://github.com/ERLANRAHMAT.png?size=100)](https://github.com/ERLANRAHMAT)
-[![AyGemuy](https://github.com/AyGemuy.png?size=100)](https://github.com/AyGemuy)
-[![BOTCAHX](https://github.com/BOTCAHX.png?size=100)](https://github.com/BOTCAHX)
-[![Zenn](https://github.com/zevanoo.png?size=100)](https://github.com/zevanoo)
-[![Sevuh](https://github.com/ZTRdiamond.png?size=100)](https://github.com/ZTRdiamond)
-[![BOTCAHX](https://github.com/XM4ZE.png?size=100)](https://github.com/XM4ZE)
 
 #### Recoder
 [![NeastooID](https://github.com/NeastooID.png?size=100)](https://github.com/NeastooID)
