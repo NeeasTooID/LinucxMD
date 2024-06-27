@@ -10,7 +10,7 @@
 <h1 align="center">Npnpicy - MD</h1>
 
 <p align="center">
-<a href="https://github.com/LinucxMD"><img title="Author" src="https://img.shields.io/badge/AUTHOR-YUSUPKAKUU-green.svg?style=for-the-badge&logo=github"></a>
+<a href="https://github.com/NeeasTooID"><img title="Author" src="https://img.shields.io/badge/AUTHOR-YUSUPKAKUU-green.svg?style=for-the-badge&logo=github"></a>
 
 ### FOR VPS USER
 * apt update && apt upgrade -y
@@ -28,15 +28,6 @@
 
 ---------
 
-### Features currently available 
-- ✔️ | Sticker 
-- ✔️ | Rpg Game
-- ✔️ | Hd Picture
-- ✔️ | Ai ChatGPT
-- ✔️ | Group Menu
-
----------
-
 ### Thanks To ( ideas and sources )
 [![WhiskeySockets](https://github.com/WhiskeySockets.png?size=100)](https://github.com/WhiskeySockets)
 [![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
@@ -44,7 +35,3 @@
 #### Recoder
 [![NeofetchNpc](https://github.com/NeofetchNpc.png?size=100)](https://github.com/NeofetchNpc)
 [![NeeasTooID](https://github.com/NeeasTooID.png?size=100)](https://github.com/NeeasTooID)
-
----------
-
-Sorry Jika Sc Cacad Recorder Sc Ini Cuman Gw  [`Npnpicy`](https://github.com/HindiaFtNpc) 1 Orang
