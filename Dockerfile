@@ -1,11 +1,7 @@
 FROM node:lts-buster
 
-RUN yarn
-
-COPY package.json .
+RUN npm i
 
 COPY . .
-
-EXPOSE 5100
 
 CMD ["node", "main.js"]
