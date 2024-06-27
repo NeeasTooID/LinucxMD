@@ -1,10 +1,3 @@
-/*
-𝐀𝐮𝐭𝐡𝐨𝐫 : Shirokami Ryzen 
-𝐖𝐚 : +6281387307198
-𝐛𝐚𝐬𝐞 : Narutomo & Elaina
-𝐌𝐲 𝐏𝐫𝐨𝐣𝐞𝐜𝐭 : 22 Nov 2022
-*/
-
 import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
@@ -32,45 +25,44 @@ let wibh = moment.tz('Asia/Jakarta').format('HH')
 const readMore = more.repeat(4001)
 
 /*============= MAIN INFO =============*/
-global.owner = [['6285174269046', 'ShirokamiRyzen', true]]
+global.owner = [['6283897390164', 'Npc', true]]
 global.mods = []
 global.prems = []
-global.nomorbot = '6285864034767'
-global.nomorown = '6285174269046'
+global.nomorbot = '6283895099347'
+global.nomorown = '6283897390164'
 
 /*============= WATERMARK =============*/
 global.readMore = readMore
-global.author = 'Shirokami Ryzen'
-global.namebot = 'Nao-MD ESM'
-global.wm = '© Nao-MD By Shirokami Ryzen'
+global.author = 'Npc'
+global.namebot = 'Linucx-MD ESM'
+global.wm = '© Linucx-MD By Npc'
 global.watermark = wm
 global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
 global.bottime = `T I M E : ${wktuwib}`
-global.stickpack = `Sticker Dibuat dengan ${namebot}\ngithub.com/ShirokamiRyzen\n\nNao-MD ESM\n+${nomorbot}`
-global.stickauth = `© Nao-MD By Shirokami Ryzen`
+global.stickpack = `Sticker Dibuat dengan ${namebot}\nNeastooID Industries Ltd\n+${nomorbot}`
+global.stickauth = `© Linucx-MD By Npc`
 global.week = `${week} ${date}`
 global.wibb = `${wktuwib}`
 
 //*============= SOSMED =============*/
-global.sig = 'https://www.instagram.com/ryzen_vermillion'
-global.sgh = 'https://github.com/ShirokamiRyzen'
-global.sgc = 'https://whatsapp.com/channel/0029VaGoqK589indDi4Am40J'
-global.sgw = 'https://ryzendesu.vip'
+global.sig = 'https://www.instagram.com/yusupk._'
+global.sgh = 'https://github.com/NeofetchNpc'
+global.sgc = 'https://whatsapp.com/channel/'
+global.sgw = 'https://saweria.co/YUSUP909'
 global.sdc = '-'
-global.sfb = 'https://www.facebook.com/Nao.Tomori.UwU'
-global.snh = 'https://www.instagram.com/ryzen_vermillion'
+global.sfb = 'https://www.facebook.com/'
+global.snh = 'https://www.instagram.com/yusupk._'
 
 /*============= DONASI =============*/
-global.pdana = '085174269046'
-global.povo = '-'
-global.pgopay = '085174269046'
-global.plinkaja = '-'
-global.ppulsa = '085174269046'
-global.ppulsa2 = '085174269046'
-global.psaweria = 'https://saweria.co/shirokamiryzen'
-global.bank1 = '109901209640'
+global.pdana = '083897390164'
+global.povo = '083897390164'
+global.pgopay = '083897390164'
+global.plinkaja = '083897390164'
+global.ppulsa = '083897390164'
+global.ppulsa2 = '083895099347'
+global.psaweria = 'https://saweria.co/YUSUP909'
+global.bank1 = '-'
 global.bank2 = '-'
-
 
 /*============= TAMPILAN =============*/
 global.dmenut = 'ଓ═┅═━–〈' //top
