@@ -88,9 +88,9 @@ global.wait = 'Please Wait...'
 global.eror = 'Error!'
 
 /*============= WEB API KEY =============*/
-global.openai = 'YOUR_APIKEY_HERE'  //api key bisa didapatkan dari https://openai.com/api/
-global.org = 'YOUR_APIKEY_HERE'  //openAI Organization name
-global.xzn = 'YOUR_APIKEY_HERE'
+global.openai = 'Npnpicyy'  //api key bisa didapatkan dari https://openai.com/api/
+global.org = 'Npnpicyy'  //openAI Organization name
+global.xzn = 'Npnpicyy'
 
 global.APIs = {
   // name: 'https://website'
