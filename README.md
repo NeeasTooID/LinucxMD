@@ -40,15 +40,10 @@
 ### Thanks To ( ideas and sources )
 [![WhiskeySockets](https://github.com/WhiskeySockets.png?size=100)](https://github.com/WhiskeySockets)
 [![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
-[![zeeoneofficial](https://github.com/zeeoneofficial.png?size=100)](https://github.com/zeeoneofficial)
-[![Zeltoria](https://github.com/Zeltoria.png?size=100)](https://github.com/Zeltoria)
-[![Imxio](https://github.com/ImYanXiao.png?size=100)](https://github.com/ImYanXiao)
 
 #### Recoder
-[![NeastooID](https://github.com/NeastooID.png?size=100)](https://github.com/NeastooID)
-[![HindiaFtNpc](https://github.com/HindiaFtNpc.png?size=100)](https://github.com/HindiaFtNpc)
+[![NeofetchNpc](https://github.com/NeofetchNpc.png?size=100)](https://github.com/NeofetchNpc)
 [![NeeasTooID](https://github.com/NeeasTooID.png?size=100)](https://github.com/NeeasTooID)
-[![LinucxMD](https://github.com/LinucxMD.png?size=100)](https://github.com/LinucxMD)
 
 ---------
 
