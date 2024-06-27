@@ -1,7 +1,7 @@
 {
-    "name": "shirokami-ryzen",
-    "version": "8.0.0",
-    "description": "Nao-MD By Ryzen",
+    "name": "LinucxMD",
+    "version": "6.0.0",
+    "description": "Wabot By Npc",
     "main": "index.js",
     "type": "module",
     "directories": {
@@ -22,16 +22,16 @@
         "whatsapp",
         "wabot-aq"
     ],
-    "homepage": "https://github.com/ShirokamiRyzen",
+    "homepage": "https://github.com/NeofetchNpc",
     "author": {
-        "name": "ShirokamiRyzen"
+        "name": "NeofetchNpc"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ShirokamiRyzen"
+        "url": "git+https://github.com/NeofetchNpc"
     },
     "bugs": {
-        "url": "https://github.com/ShirokamiRyzen"
+        "url": "https://github.com/NeofetchNpc"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
