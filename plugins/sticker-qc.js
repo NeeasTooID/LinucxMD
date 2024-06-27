@@ -1,1 +1,59 @@
-const _0x2eec03=_0x179a;(function(_0x33cfd5,_0x1facf0){const _0x575215=_0x179a,_0x1ac333=_0x33cfd5();while(!![]){try{const _0x3f73cd=parseInt(_0x575215(0x9d))/0x1*(parseInt(_0x575215(0x8b))/0x2)+-parseInt(_0x575215(0x98))/0x3*(parseInt(_0x575215(0x7d))/0x4)+parseInt(_0x575215(0x79))/0x5*(parseInt(_0x575215(0x72))/0x6)+parseInt(_0x575215(0x82))/0x7*(parseInt(_0x575215(0x77))/0x8)+-parseInt(_0x575215(0x73))/0x9*(-parseInt(_0x575215(0x88))/0xa)+-parseInt(_0x575215(0x92))/0xb+parseInt(_0x575215(0x9e))/0xc*(-parseInt(_0x575215(0x8a))/0xd);if(_0x3f73cd===_0x1facf0)break;else _0x1ac333['push'](_0x1ac333['shift']());}catch(_0x206ca2){_0x1ac333['push'](_0x1ac333['shift']());}}}(_0x4158,0xb4342));import{sticker}from'../lib/sticker.js';import _0x2347c1 from'axios';function _0x179a(_0x35227a,_0x5cd7db){const _0x41586e=_0x4158();return _0x179a=function(_0x179af0,_0x21d8e1){_0x179af0=_0x179af0-0x70;let _0x534b46=_0x41586e[_0x179af0];return _0x534b46;},_0x179a(_0x35227a,_0x5cd7db);}let handler=async(_0x27b4a8,{conn:_0x330e1f,args:_0x444270})=>{const _0xc288e9=_0x179a;let _0x5aca32;if(_0x27b4a8[_0xc288e9(0x9a)])_0x5aca32=_0x27b4a8[_0xc288e9(0x84)]?_0x27b4a8['quoted'][_0xc288e9(0x90)]:_0x27b4a8[_0xc288e9(0x7f)][0x0]?_0x27b4a8[_0xc288e9(0x7f)][0x0]:_0x27b4a8[_0xc288e9(0x90)];else _0x5aca32=_0x27b4a8[_0xc288e9(0x84)]?_0x27b4a8[_0xc288e9(0x84)]['sender']:_0x27b4a8['chat'];let _0x4da2f3;if(_0x444270[_0xc288e9(0x9c)]>=0x1)_0x4da2f3=_0x444270[_0xc288e9(0x86)](0x0)[_0xc288e9(0x85)]('\x20');else{if(_0x27b4a8[_0xc288e9(0x84)]&&_0x27b4a8[_0xc288e9(0x84)][_0xc288e9(0x71)])_0x4da2f3=_0x27b4a8[_0xc288e9(0x84)][_0xc288e9(0x71)];else throw _0xc288e9(0x8d);}if(!_0x4da2f3)return _0x27b4a8[_0xc288e9(0x87)](_0xc288e9(0x93));if(_0x4da2f3[_0xc288e9(0x9c)]>0x64)return _0x27b4a8[_0xc288e9(0x87)]('Maksimal\x20100\x20Teks!');let _0x50601e=_0x330e1f[_0xc288e9(0x76)](_0x5aca32),_0x54a3d8=await _0x330e1f[_0xc288e9(0x7c)](_0x5aca32,_0xc288e9(0x8f))[_0xc288e9(0x8e)](_0x44da11=>_0xc288e9(0x89));const _0x5729f6={'type':_0xc288e9(0x70),'format':_0xc288e9(0x7e),'backgroundColor':_0xc288e9(0x99),'width':0x200,'height':0x300,'scale':0x2,'messages':[{'entities':[],'avatar':!![],'from':{'id':0x1,'name':_0x50601e,'photo':{'url':_0x54a3d8}},'text':_0x4da2f3,'replyMessage':{}}]},_0x1d1e01=await _0x2347c1[_0xc288e9(0x96)](_0xc288e9(0x78),_0x5729f6,{'headers':{'Content-Type':'application/json'}}),_0x27c652=Buffer[_0xc288e9(0x7a)](_0x1d1e01['data'][_0xc288e9(0x81)][_0xc288e9(0x8f)],_0xc288e9(0x95));let _0x3f7340=await sticker(_0x27c652,![],global[_0xc288e9(0x83)],global[_0xc288e9(0x80)]);if(_0x3f7340)return _0x330e1f[_0xc288e9(0x7b)](_0x27b4a8[_0xc288e9(0x97)],_0x3f7340,_0xc288e9(0x9f),'',_0x27b4a8);};handler[_0x2eec03(0x9b)]=['qc'][_0x2eec03(0x91)](_0x379010=>_0x379010+'\x20<text\x20&\x20reply>'),handler['tags']=[_0x2eec03(0x8c)],handler[_0x2eec03(0x94)]=/^(qc|quotely)$/i,handler[_0x2eec03(0x74)]=![],handler[_0x2eec03(0x75)]=!![];export default handler;function _0x4158(){const _0x15bc7a=['from','sendFile','profilePictureUrl','116wmqdzl','png','mentionedJid','author','result','522543BNBwnn','packname','quoted','join','slice','reply','170WjcYrb','https://telegra.ph/file/320b066dc81928b782c7b.png','14147367YnUIQZ','2QBEEJA','sticker','Input\x20teks\x20atau\x20reply\x20teks\x20yang\x20ingin\x20di\x20jadikan\x20quote!','catch','image','sender','map','5280209uBkTSW','masukan\x20text','command','base64','post','chat','92574zrmsFq','#FFFFFF','isGroup','help','length','1174601xFvJbj','12apRobn','Quotly.webp','quote','text','66aAQtbt','37899yiWlPt','premium','limit','getName','120iZkeeO','https://quote.btch.bz/generate','379705IkqWSv'];_0x4158=function(){return _0x15bc7a;};return _0x4158();}
+import { sticker } from '../lib/sticker.js'
+import axios from 'axios'
+
+const handler = async (m, { conn, args }) => {
+    let text;
+    if (args.length >= 1) {
+        text = args.slice(0).join(" ");
+    } else if (m.quoted && m.quoted.text) {
+        text = m.quoted.text;
+    } else throw "Input teks atau reply teks yang ingin dijadikan quote!";
+    if (!text) return m.reply('masukan text');
+    if (text.length > 100) return m.reply('Maksimal 100 Teks!');
+
+    const randomColor = ['#000000'];
+
+    const apiColor = randomColor[Math.floor(Math.random() * randomColor.length)];
+
+    const pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/320b066dc81928b782c7b.png');
+
+    const obj = {
+        "type": "quote",
+        "format": "png",
+        "backgroundColor": apiColor,
+        "width": 512,
+        "height": 768,
+        "scale": 2,
+        "messages": [{
+            "entities": [],
+            "avatar": true,
+            "from": {
+                "id": 1,
+                "name": m.name,
+                "photo": {
+                    "url": pp
+                }
+            },
+            "text": text,
+            "replyMessage": {}
+        }]
+    };
+
+    const json = await axios.post('https://quote.btch.bz/generate', obj, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    });
+
+    const buffer = Buffer.from(json.data.result.image, 'base64');
+    const stiker = await sticker(buffer, false, global.stickpack, global.stickauth);
+    if (stiker) return conn.sendFile(m.chat, stiker, 'Quotely.webp', '', m);
+}
+
+handler.help = ['qc']
+handler.tags = ['sticker']
+handler.command = /^(qc)$/i
+
+handler.register = true
+
+export default handler

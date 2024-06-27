@@ -1,19 +1,27 @@
-let { MessageType } = (await import('@adiwajshing/baileys')).default
-let handler = async (m, { conn, text, usedPrefix }) => {
-  function no(number){
-    return number.replace(/\s/g,'').replace(/([@+-])/g,'')
-  }
-  
-  if (!text) return conn.reply(m.chat, `*『 F A I L E D 』*\n\n${usedPrefix}unprem @tag/nomor|days\n\n*Example:* ${usedPrefix}unprem 6289654360447|99`, m)
-  text = no(text) + "@s.whatsapp.net"
-  global.db.data.users[text].premium = false
-  global.db.data.users[text].premiumTime = 0
-  conn.reply(m.chat,`*Berhasil menghapus akses premium untuk @${text.split('@')[0]}.*`,m,{ contextInfo: { mentionedJid: [text] } })
-
+let handler = async (m, { conn, text }) => {
+    if (!text) throw 'Number?.'
+    let who
+    if (m.isGroup) {
+        if (!m.mentionedJid) throw 'No user mentioned to ban.'
+        who = m.mentionedJid[0]
+    } else {
+        // Check if the input is a valid phone number
+        let phoneNumber = text.replace(/[^0-9]/g, '') // Remove non-numeric characters
+        who = phoneNumber + '@s.whatsapp.net'
+    }
+    let users = global.db.data.users
+    if (users[who]) {
+        users[who].premium = false
+        users[who].premiumTime = 0
+        conn.reply(m.chat, 'Done!', m)
+    } else {
+        throw 'User not found.'
+    }
 }
-handler.help = ['unprem']
+
+handler.help = ['delprem']
 handler.tags = ['owner']
-handler.command = /^(unprem|delprem)$/i
-handler.owner = true
-handler.fail = null
+handler.command = /^delprem(user)?$/i
+handler.rowner = true
+
 export default handler

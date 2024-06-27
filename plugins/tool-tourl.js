@@ -4,33 +4,21 @@ import uploadImage from '../lib/uploadImage.js'
 let handler = async (m) => {
   let q = m.quoted ? m.quoted : m
   let mime = (q.msg || q).mimetype || ''
-  if (!mime) throw 'Tidak ada media yang ditemukan'
+  if (!mime) throw 'No media found'
   let media = await q.download()
-  let isTele = /image\/(png|jpe?g|gif)|video\/mp4\/mp3/.test(mime)
+  let isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
   let link = await (isTele ? uploadImage : uploadFile)(media)
-  let max = `${link}
-${media.length} Byte(s)
-${isTele ? '(Tidak Ada Tanggal Kedaluwarsa)' : '(Tidak diketahui)'}
-
-${global.wm}`
-         conn.sendMessage(m.chat, {
-                text: max,
-                contextInfo: {
-                    externalAdReply: {
-                        title: "File-Uploader",
-                        body: "",
-                        thumbnailUrl: global.thum,
-                        sourceUrl: link,
-                        mediaType: 1,
-                        showAdAttribution: true,
-                        renderLargerThumbnail: true
-                    }
-                }
-            })
+  m.reply(`📮 *L I N K :*
+${link}
+📊 *S I Z E :* ${media.length} Byte
+📛 *E x p i r e d :* ${isTele ? 'No Expiry Date' : 'Unknown'}`)
 }
-handler.help = ['tourl <reply image/video>']
+
+handler.help = ['upload (reply media)', 'tourl (reply media)']
 handler.tags = ['tools']
-handler.command = /^(tourl)$/i
-handler.limit = true
+handler.command = /^(tourl|upload)$/i
+
+handler.limit = false
+handler.register = true
 
 export default handler

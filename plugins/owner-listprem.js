@@ -1,25 +1,43 @@
 let handler = async (m, { conn, args }) => {
-  let user = Object.entries(global.db.data.users).filter(user => user[1].premiumTime >= 1).map(([key, value]) => {
+  let user = Object.entries(global.db.data.users).filter(user => user[1].premiumTime).map(([key, value]) => {
     return { ...value, jid: key }
   })
-  let ryhar = db.data.users[m.sender]
-  let name = '🌟 Premium'
-  let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
+  let name = 'Premium'
+  let fkon = {
+    key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16500000000@s.whatsapp.net' } : {}) }, message: {
+      contactMessage: {
+        displayName: `${name}`,
+        vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`,
+        verified: true
+      }
+    }
+  }
   let premTime = global.db.data.users[m.sender].premiumTime
   let prem = global.db.data.users[m.sender].premium
-  let waktu = clockString(`${premTime - new Date() * 1} `)
+  let waktu = clockString(`${global.db.data.users[m.sender].premiumTime - new Date() * 1} `)
   let sortedP = user.map(toNumber('premiumTime')).sort(sort('premiumTime'))
-  let len = args[0] && args[0].length > 0 ? Math.min(100, Math.max(parseInt(args[0]), 10)) : Math.min(10, sortedP.length)
-  await conn.reply(m.chat, `${decor.htki} *PREMIUM* ${decor.htka}\n\n┌✦ *My Premium Time:*
-┊• *Name:* ${ryhar.registered ? ryhar.name : conn.getName(m.sender)}
-${premTime > 0 ? `${clockString(ryhar.premiumTime - new Date() * 1)}` : '┊• *PremiumTime:* Expired 🚫'}
-╚┈┈┈┈┈┈┈┈┈✧
-${sortedP.slice(0, len).map(({ jid, name, premiumTime, registered }, i) => `\n\n┌✦ ${registered ? name : conn.getName(jid)}\n┊• wa.me/${jid.split`@`[0]}\n${premiumTime > 0 ? `${clockString (premiumTime - new Date() * 1)}` : '┊ *Expired ❌*'}`).join`\n╚┈┈┈┈┈┈┈┈┈✧`}`.trim(), fkon)
-setTimeout(() => {
-    if (db.data.chats[m.chat].deletemedia) conn.deleteMessage(m.chat, key)
-  }, db.data.chats[m.chat].deletemediaTime)
+  let page = args[0] && /^\d+$/.test(args[0]) ? parseInt(args[0]) : 1; // Check if page number is provided and is a number
+  let perPage = 10; // Number of users per page
+  let startIndex = (page - 1) * perPage;
+  let endIndex = startIndex + perPage;
+  let usersToShow = sortedP.slice(startIndex, endIndex);
+
+  // Calculate total number of pages
+  let totalPages = Math.ceil(sortedP.length / perPage);
+
+  await conn.reply(m.chat, `┌✦ *My Premium Time:*
+┊• *Name:* ${conn.getName(m.sender)}
+${prem ? `${clockString(global.db.data.users[m.sender].premiumTime - new Date() * 1)}` : '┊ *PremiumTime:* Expired'}
+┗━═┅═━––––––๑
+
+•·–––––––––––––––––––––·•
+${usersToShow.map(({ jid, name, premiumTime, registered }, i) => `\n\n┌✦ ${registered ? name : conn.getName(jid)}\n┊• wa.me/${jid.split`@`[0]}\n${premiumTime > 0 ? `${clockString(premiumTime - new Date() * 1)}` : '┊ *Expired*'}`).join`\n┗━═┅═━––––––๑`}
+┗━═┅═━––––––๑
+
+*Page ${page} of ${totalPages}*`.trim(), fkon)
 }
-handler.help = ['premlist [angka]']
+
+handler.help = ['premlist']
 handler.tags = ['info']
 handler.command = /^(listprem|premlist)$/i
 
@@ -32,7 +50,7 @@ function clockString(ms) {
   let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return ['┊ ', ye, ' *Years 🗓️*\n', '┊ ', mo, ' *Month 🌙*\n', '┊ ', d, ' *Days ☀️*\n', '┊ ', h, ' *Hours 🕐*\n', '┊ ', m, ' *Minute ⏰*\n', '┊ ', s, ' *Second ⏱️*'].map(v => v.toString().padStart(2, 0)).join('')
+  return ['┊ ', ye, ' *Tahun*\n', '┊ ', mo, ' *Bulan*\n', '┊ ', d, ' *Hari*\n', '┊ ', h, ' *Jam*\n', '┊ ', m, ' *Menit*\n', '┊ ', s, ' *Detik*'].map(v => v.toString().padStart(2, 0)).join('')
 }
 
 function sort(property, ascending = true) {

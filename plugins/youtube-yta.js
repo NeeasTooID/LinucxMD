@@ -1,37 +1,53 @@
-import api from 'api-dylux';
-import api2 from 'btch-downloader';
+import ytdl from 'ytdl-core'
+import fs from 'fs'
+import { pipeline } from 'stream'
+import { promisify } from 'util'
+import os from 'os'
 
-var handler = async (m, { conn, args }) => {
-  if (!args[0]) throw 'Urlnya Mana Banh? >:('
-  m.reply(wait)
-  let v = args[0]
-  
-  const yt = await api.ytmp3(v)
-  const data = await api2.youtube(v)
-  const info = `*F I L E  T Y P E*
+let streamPipeline = promisify(pipeline);
+let handler = async (m, { conn, command, text, usedPrefix }) => {
 
-• Judul: ${yt.title}
-• Views: ${yt.views}
-• Durasi: ${yt.duration}
-• Ukuran: ${yt.size} ( ${yt.sizeB} )
-• Kualitas: ${yt.quality}`
-  conn.sendMessage(m.chat, {
-    document: { url: yt.dl_url }, 
-    mimetype: 'audio/mpeg', 
-    fileName: yt.title + `.mp3`,
-    caption: info
-  }, {quoted: m})
-  if (yt.sizeB > 15000) return m.reply(`SizeFile: ${yt.size}\nTidak dapat mengirim Voice Note. Silahkan ambil music yang bertype File`)
-  conn.sendFile(m.chat, data.mp3, 'kasar.mp3', null, m, true, {
-type: 'audioMessage', 
-ptt: true 
-})
-}
-handler.help = ['ytmp3 <url>']
+  if (!text) throw `Usage: ${usedPrefix}${command} <YouTube Video URL>`;
+  let videoUrl = text;
+  let videoInfo = await ytdl.getInfo(videoUrl);
+  let { videoDetails } = videoInfo;
+  let { title, thumbnails, lengthSeconds, viewCount, uploadDate } = videoDetails;
+  let thumbnail = thumbnails[0].url;
+  let audioStream = ytdl(videoUrl, {
+    filter: 'audioonly',
+    quality: 'highestaudio',
+  });
+  let tmpDir = os.tmpdir();
+  let writableStream = fs.createWriteStream(`${tmpDir}/${title}.mp3`);
+  await streamPipeline(audioStream, writableStream);
+
+  let dl_url = `${tmpDir}/${title}.mp3`;
+  let info = `Title: ${title}\nLength: ${lengthSeconds}s\nViews: ${viewCount}\nUploaded: ${uploadDate}`;
+
+  await conn.sendMessage(m.chat, {
+    document: {
+      url: dl_url,
+    },
+    mimetype: 'audio/mpeg',
+    fileName: `${title}.mp3`,
+    caption: info,
+  }, { quoted: m });
+
+  fs.unlink(`${tmpDir}/${title}.mp3`, (err) => {
+    if (err) {
+      console.error(`Failed to delete audio file: ${err}`);
+    } else {
+      console.log(`Deleted audio file: ${tmpDir}/${title}.mp3`);
+    }
+  });
+};
+
+handler.help = ['ytmp3'].map((v) => v + ' <URL>')
 handler.tags = ['downloader']
-handler.command = /^(yt(a(udio)?|mp3))$/i
+handler.command = /^(ytmp3)$/i
 
-handler.premium = false
-handler.limit = true
+handler.limit = 2
+handler.register = true
+handler.disable = false
 
-export default handler;
+export default handler

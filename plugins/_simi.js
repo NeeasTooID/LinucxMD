@@ -1,29 +1,30 @@
-import axios from "axios"
-export async function before(m) {
-    if (m.isBaileys && m.fromMe) return
-    let chat = global.db.data.chats[m.chat]
-    if (m.text.startsWith('.') || m.text.startsWith('#') || m.text.startsWith('!') || m.text.startsWith('/') || m.text.startsWith('\/')) return
-    if (chat.simi && !chat.isBanned && m.isGroup && m.text) {
-        try {
-            let simi = await getMessage(m.text, 'id')
-            m.reply(simi)
-        } catch (e) {
-            throw 'Maaf aku tidak mengerti'
-        }
+import fetch from 'node-fetch'
+
+let handler = m => m
+
+handler.before = async (m) => {
+    let chat = global.db.data.chats[m.chat];
+    if (chat.simi && !chat.isBanned) {
+        if (/^.*false|disnable|(turn)?off|0/i.test(m.text)) return;
+        if (!m.text) return;
+
+        let lang = "id";
+        let res = await fetch('https://api.simsimi.vn/v1/simtalk', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: `text=${encodeURIComponent(m.text)}&lc=${lang}&key=`
+        });
+
+        if (!res.ok) throw new Error("Failed to fetch data from SimSimi API");
+
+        let json = await res.json();
+        if (json.status !== '200') return m.reply('Gagal mendapatkan respons dari Simi');
+
+        let simiMessage = json.message || 'Gagal mendapatkan pesan dari Simi';
+        await m.reply(simiMessage);
+        return true;
     }
-    return
-}
+    return true;
+};
 
-async function getMessage(yourMessage, langCode) {
-    const res = await axios.post('https://api.simsimi.vn/v2/simtalk',
-        new URLSearchParams({
-            'text': yourMessage,
-            'lc': langCode
-        })
-    )
-
-    if (res.status > 200)
-        throw new Error(res.data.success)
-
-    return res.data.message;
-}
+export default handler

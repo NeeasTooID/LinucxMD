@@ -1,16 +1,26 @@
 let handler = async (m, { conn, text }) => {
-    let mention = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : false
-    if (!mention) throw 'Tag salah satu lah'
-    if (!(mention in global.db.data.users)) throw 'User tidak terdaftar dalam DATABASE!!'
-    let user = global.db.data.users[mention]
-    if (!user.banned) throw 'User tidak Terbanned!!'
-    user.banned = false
-    user.BannedReason = ''
-    await m.reply('Berhasil Unbanned')
-    conn.reply(mention, 'Kamu telah di Unbanned!!', null)
+    if (!text) throw 'Who wants to be unbanned? Provide the user\'s phone number.'
+    let who
+    if (m.isGroup) {
+        if (!m.mentionedJid) throw 'No user mentioned to unban.'
+        who = m.mentionedJid[0]
+    } else {
+        // Check if the input is a valid phone number
+        let phoneNumber = text.replace(/[^0-9]/g, '') // Remove non-numeric characters
+        who = phoneNumber + '@s.whatsapp.net'
+    }
+    let users = global.db.data.users
+    if (users[who]) {
+        users[who].banned = false
+        users[who].banReason = ''
+        conn.reply(m.chat, 'Done!', m)
+    } else {
+        throw 'User not found.'
+    }
 }
-handler.help = ['ounban']
+handler.help = ['unban']
 handler.tags = ['owner']
-handler.command = /^ounban(user)?$/i
-handler.owner = true
+handler.command = /^unban(user)?$/i
+handler.rowner = true
+
 export default handler

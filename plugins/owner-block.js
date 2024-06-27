@@ -20,7 +20,7 @@ let handler = async (m, { text, conn, usedPrefix, command }) => {
 			else conn.reply(m.chat, why, m, { mentions: [m.sender] })
         break
 	}
-	if (res[0]) conn.reply(m.chat, `Sukses ${command} ${res ? `${res.map(v => '@' + v.split("@")[0])}` : ''}`, m, { mentions: res })
+	if (res[0]) conn.reply(m.chat, `\n   Sukses ${command} ${res ? `${res.map(v => '@' + v.split("@")[0])}` : ''}`, m, { mentions: res })
 }
 handler.help = ["block", "unblock"]
 handler.tags = ["owner"]
@@ -28,3 +28,14 @@ handler.command = /^(block|unblock)$/i
 handler.owner = true
 
 export default handler
+
+
+
+/*
+
+Jangan dihapus
+
+Buatan FokusDotId (Fokus ID)
+https://github.com/fokusdotid
+
+*/

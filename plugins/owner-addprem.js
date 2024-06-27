@@ -1,29 +1,41 @@
-let { MessageType } = (await import('@adiwajshing/baileys')).default
-let handler = async (m, { conn, text, usedPrefix }) => {
-  function no(number){
-    return number.replace(/\s/g,'').replace(/([@+-])/g,'')
-  }
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+    let user;
+    if (m.isGroup) {
+        user = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : false;
+    } else {
+        user = text.split(' ')[0];
+        user = user.replace('@', '') + '@s.whatsapp.net';
+    }
 
-  var hl = []
-  hl[0] = text.split('|')[0]
-  hl[0] = no(hl[0]) + "@s.whatsapp.net"
-  hl[1] = text.split('|')[1]
-  
-  if (!text) return conn.reply(m.chat, `*『 F A I L E D 』*\n\n• ${usedPrefix}prem @tag/nomor|days\n*Example:* ${usedPrefix}prem 6281283516246|60`, m)
-  if (typeof db.data.users[hl[0]] == 'undefined') throw 'Pengguna Belum Masuk DataBase'
-  var jumlahHari = 86400000 * hl[1]
-  // var jumlahHari = 1000 * text
-  var now = new Date() * 1
-  db.data.users[hl[0]].premium = true
-  if (now < db.data.users[hl[0]].premiumTime) db.data.users[hl[0]].premiumTime += jumlahHari
-  else db.data.users[hl[0]].premiumTime = now + jumlahHari
-  conn.reply(m.chat,`*『 S U K S E S 』*\n\nBerhasil menambahkan akses premium kepada *@${hl[0].split('@')[0]}* selama *${hl[1]} hari*.`,m,{ contextInfo: { mentionedJid: [hl[0]] } })
-  conn.reply(hl[0],`*『 I N F O  P R E M I U M 』*\n\nKamu berhasil menambahkan akses premium selama *${hl[1]} hari*.`,m,{ contextInfo: { mentionedJid: [hl[0]] } }) 
+    let userData = db.data.users[user];
+    if (!userData) throw `User not found!`;
 
-}
-handler.help = ['addprem *@tag|days*']
+    // Extract the user's phone number from the text
+    let phoneNumber = user.split('@')[0];
+
+    if (!phoneNumber) throw `where the number of days?`;
+    if (isNaN(phoneNumber)) return m.reply(`only number!\n\nexample:\n${usedPrefix + command} @${m.sender.split`@`[0]} 7`);
+
+    let txt = text.split(' ')[1]; // Extract the second part of the text (duration)
+
+    var jumlahHari = 86400000 * txt;
+    var now = new Date() * 1;
+
+    if (userData.role === 'Free user') userData.role = 'Premium user';
+    if (now < userData.premiumTime) userData.premiumTime += jumlahHari;
+    else userData.premiumTime = now + jumlahHari;
+    userData.premium = true;
+
+    m.reply(`✔️ Success
+📛 *Name:* ${userData.name}
+📆 *Days:* ${txt} days
+📉 *Countdown:* ${userData.premiumTime - now}`);
+};
+
+handler.help = ['addprem <phone number> <days>']
 handler.tags = ['owner']
-handler.command = /^(addprem|prem)$/i
-handler.owner = true
-handler.fail = null
+handler.command = /^addprem?$/i
+
+handler.rowner = true
+
 export default handler

@@ -1,18 +1,66 @@
-import fetch from 'node-fetch'
+import axios from 'axios'
 
-let handler = async (m, { conn, command, args }) => {
-   if (!args[0]) return conn.reply(m.chat, 'Linknya Mana Kak', m)
+let handler = async (m, { 
+conn, text, command, usedPrefix
+}) => {
+if (!text) return m.reply(`Gunakan format ${usedPrefix + command} <url>\n\n*Contoh :* ${usedPrefix + command} https://github.com/ShirokamiRyzen`)
 m.reply(wait)
-let api = await fetch(`https://api.lolhuman.xyz/api/ssweb?apikey=${global.lolkey}&url=${args[0]}`)
-let data = await api.buffer()
-
-   conn.sendMessage(m.chat, { image: data, caption: 'Here' }, { quoted: m })
+var phone = await ssweb(text, 'phone')
+var desktop = await ssweb(text, 'desktop')
+var tablet = await ssweb(text, 'tablet')
+var res = ``
+if (command === 'sshp') {
+await conn.sendFile(m.chat, phone.result, '',res, m, false)
 }
-handler.help = ['ssweb <url>']
+if (command === 'ssweb' || command === 'sstablet') {
+await conn.sendFile(m.chat, tablet.result, '',res, m, false)
+}
+if (command === 'sspc') {
+await conn.sendFile(m.chat, desktop.result, '',res, m, false)
+}
+}
+handler.help = ['ssweb','sspc','sshp','sstablet'].map(v => v + ' <url>')
 handler.tags = ['internet']
-handler.command = /^(ssweb|ss)$/i
+handler.command = /^(ssweb|sstablet|sspc|sshp)$/i
 
-handler.limit = true
-handler.fail = null
+handler.limit = false
+handler.register = true
 
 export default handler
+
+async function ssweb(url, device = 'desktop'){
+     return new Promise((resolve, reject) => {
+          const base = 'https://www.screenshotmachine.com'
+          const param = {
+            url: url,
+            device: device,
+            cacheLimit: 0
+          }
+          axios({url: base + '/capture.php',
+               method: 'POST',
+               data: new URLSearchParams(Object.entries(param)),
+               headers: {
+                    'content-type': 'application/x-www-form-urlencoded; charset=UTF-8'
+               }
+          }).then((data) => {
+               const cookies = data.headers['set-cookie']
+               if (data.data.status == 'success') {
+                    axios.get(base + '/' + data.data.link, {
+                         headers: {
+                              'cookie': cookies.join('')
+                         },
+                         responseType: 'arraybuffer'
+                    }).then(({ data }) => {
+                       let result = {
+                            status: 200,
+                            author: 'Ryzn',
+                            result: data
+                        }
+                         resolve(result)
+                    })
+               } else {
+                    reject({ status: 404, author: 'Ryzn', message: data.data })
+               }
+          }).catch(reject)
+     })
+}
