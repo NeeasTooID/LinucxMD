@@ -3,28 +3,11 @@ import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 
 
-/*========= GLOBAL APIKEY =========*/
-// ISI APIKEY KALIAN DI BAGIAN 'ENTER YOUR APIKEY' SIMBOL JANGAN DI HAPUS
-global.btc = 'Enter your apikey' // apikey Botchax
-global.rose = 'Enter your apikey' // apikey Rose
-global.lann = 'Enter your apikey' // apikey Beta
-
-
 /*============== API ==============*/
 // ISI APIKEY KALIAN DI BAGIAN 'ENTER YOUR APIKEY' SIMBOL JANGAN DI HAPUS
 global.APIs = {
-  rose: 'https://api.itsrose.rest',
-  TioXD: 'https://api.botcahx.eu.org',
-  lann: 'https://api.betabotz.org',
   ness: 'https://api.neastooid.xyz',
 } 
-
-global.APIKeys = {
-  'https://api.betabotz.eu.org': 'Enter your apikey',
-  'https://api.botcahx.eu.org': 'Enter your apikey',
-  'https://api.itsrose.rest': 'Enter your apikey',
-}
-
 
 /*============ NOMOR ============*/
 // BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
@@ -33,7 +16,7 @@ global.info = {
 	nomorown: '6283897390164',
 	namebot: 'LinucxMD',
 	nameown: 'Npc',
-	channel: '120363241570452835@newsletter',
+	channel: '120363202311864689@newsletter',
 	namechannel: 'LinucxMD - UNEMPLOYMENT BOTZ'
 }
 
@@ -65,12 +48,11 @@ global.mail = 'neastooid@gmail.com' // boleh taruh email kalian
 global.fb = 'https://facebook.com/' // boleh taruh link fb kalian
 global.ig = 'https://instagram.com/yusupk._' // boleh taruh link ig kalian
 global.gcbot = 'https://whatsapp.com/channel/0029VaEK2Vc9mrGbK9s0Iv3p' // boleh taruh link group kalian
-global.qris = 'https://telegra.ph/file/f11ccd2ca8a5136aacfb3.jpg' // Wajib isi untuk pembayaran. isi dengan qris
-global.welcome = 'https://telegra.ph/file/6922e4375c183c8d1cfcb.jpg' // Welcome Group 
-global.leave = 'https://telegra.ph/file/8c7792e78ed015a7d0a59.jpg' // Leave Group
-global.vn = 'https://github.com/XM4ZE/DATABASE/raw/master/wallpaper/KARA.mp3?raw=true' // Allmenu Voice
-global.thumvid = 'https://github.com/XM4ZE/DATABASE/raw/master/wallpaper/Vid_20240220_073653.mp4?raw=true' // Allmenu Video thumbnail
-global.maximus = '' // [OPSIONAL] isi dengan link thumbnail kalian. link ini akan muncul di semua menu dan taruh di tengah-tengah simbol itu
+global.qris = 'https://telegra.ph/file/3fb4f4761afbe86bd6096.jpg' // Wajib isi untuk pembayaran. isi dengan qris
+global.welcome = 'https://telegra.ph/file/1137b9d30efa85bcaf08c.jpg' // Welcome Group 
+global.leave = 'https://telegra.ph/file/60621687679589a5474e6.jpg' // Leave Group
+global.vn = '' // Allmenu Voice
+global.thumvid = 'https://telegra.ph/file/24284b3e71c4a818d42f2.mp4' // Allmenu Video thumbnail
 
 
 /*===================DO NOT EDIT=====================*/

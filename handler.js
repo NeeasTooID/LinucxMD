@@ -49,7 +49,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.exp))
                     user.exp = 0
                 if (!isNumber(user.limit))
-                    user.limit = 10
+                    user.limit = 10000
                 if (!isNumber(user.freelimit))
                     user.freelimit = 0
                 if (!isNumber(user.lastclaim))
@@ -447,7 +447,7 @@ export async function handler(chatUpdate) {
                 if (!('isBanned' in chat))
                     chat.isBanned = false
                 if (!('welcome' in chat))
-                    chat.welcome = false
+                    chat.welcome = true
                 if (!('detect' in chat))
                     chat.detect = false
                 if (!('sWelcome' in chat))
@@ -499,7 +499,7 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.chats[m.chat] = {
                 isBanned: false,
-                welcome: false,
+                welcome: true,
                 detect: false,
                 sWelcome: '',
                 sBye: '',
@@ -518,7 +518,7 @@ export async function handler(chatUpdate) {
                 antiBadword: false,
                 simi: false,
                 nsfw: false,
-                rpg: false,
+                rpg: true,
                 game: false,
                 xmaze: true,
                 teks: false,
@@ -529,27 +529,27 @@ export async function handler(chatUpdate) {
             if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
             if (settings) {
                 if (!('self' in settings)) settings.self = false
-                if (!('autoread' in settings)) settings.autoread = true
+                if (!('autoread' in settings)) settings.autoread = false
                 if (!('composing' in settings)) settings.composing = false
                 if (!('restrict' in settings)) settings.restrict = true
                 if (!('autorestart' in settings)) settings.autorestart = true
                 if (!isNumber(settings.restartDB)) settings.restartDB = 0
                 if (!('backup' in settings)) settings.backup = false
                 if (!isNumber(settings.backupDB)) settings.backupDB = 0
-                if (!('cleartmp' in settings)) settings.cleartmp = false
+                if (!('cleartmp' in settings)) settings.cleartmp = true
                 if (!isNumber(settings.lastcleartmp)) settings.lastcleartmp = 0
                 if (!isNumber(settings.status)) settings.status = 0
                 if (!('anticall' in settings)) settings.anticall = true
             } else global.db.data.settings[this.user.jid] = {
                 self: false,
-                autoread: true,
+                autoread: false,
                 composing: false,
                 restrict: true,
                 autorestart: true,
                 restartDB: 0,
                 backup: false,
                 backupDB: 0,
-                cleartmp: false,
+                cleartmp: true,
                 lastcleartmp: 0,
                 status: 0,
                 anticall: true,

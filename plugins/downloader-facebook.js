@@ -1,35 +1,84 @@
-import fetch from 'node-fetch';
+import fetch from 'node-fetch'
 
-let handler = async (m, { conn, args, usedPrefix, command }) => {  
-        if (!args[0]) throw `Gunakan contoh ${usedPrefix}${command} https://fb.watch/mcx9K6cb6t/?mibextid=8103lRmnirLUhozF`;
-        try {
-        const res = await fetch(`https://api.botcahx.eu.org/api/dowloader/fbdown?url=${args[0]}&apikey=${btc}`);
-        const json = await res.json();
-        let urls = json.result.url.urls;
-        if (!Array.isArray(urls)) {
-            throw `Tidak dapat mendapatkan URL video dari tautan yang diberikan`;
-        }
-        for (let url of urls) {
-            if (url.hd) {
-                conn.sendFile(m.chat, url.hd, 'fb.mp4', `*Facebook Downloader*`, m);
-                break;
+let handler = async (m, { conn, args }) => {
+
+    if (!args[0]) throw 'Please provide a Facebook video URL';
+    const sender = m.sender.split(`@`)[0];
+
+    m.reply('Please wait...');
+
+    try {
+        const url = args[0];
+        const apiUrl = `https://widipe.com/download/fbdl?url=${url}`;
+        let response = await fetch(apiUrl);
+        let result = await response.json();
+
+        if (!result || !result.status || !result.result || (!result.result.HD && !result.result.Normal_video)) {
+            // Try the second API if the first one fails
+            const backupApiUrl = `https://widipe.com/download/fbdown?url=${url}`;
+            response = await fetch(backupApiUrl);
+            result = await response.json();
+
+            if (!result || !result.status || !result.result || !result.result.url) {
+                throw 'Failed to fetch video details from both APIs';
             }
+
+            const videoLink = result.result.url.isHdAvailable ? result.result.url.urls[0].hd : result.result.url.urls[1].sd;
+            const caption = `
+*Title*: ${result.result.url.title || 'No title'}
+
+*HD Link*: ${result.result.url.isHdAvailable ? result.result.url.urls[0].hd : 'Not available'}
+*SD Link*: ${result.result.url.urls[1].sd}
+`;
+
+            const videoBuffer = await fetch(videoLink).then(res => res.buffer());
+
+            await conn.sendMessage(
+                m.chat, {
+                video: videoBuffer,
+                mimetype: "video/mp4",
+                fileName: `video.mp4`,
+                caption: `Ini kak videonya @${sender} \n${caption}`,
+                mentions: [m.sender],
+            }, {
+                quoted: m
+            });
+        } else {
+            // Handle the first API response
+            const videoLink = result.result.HD || result.result.Normal_video;
+            const caption = `
+*Title*: ${result.result.title || 'No title'}
+
+${result.result.description || 'No description'}
+
+*HD Link*: ${result.result.HD || 'Not available'}
+*Normal Video Link*: ${result.result.Normal_video || 'Not available'}
+`;
+
+            const videoBuffer = await fetch(videoLink).then(res => res.buffer());
+
+            await conn.sendMessage(
+                m.chat, {
+                video: videoBuffer,
+                mimetype: "video/mp4",
+                fileName: `video.mp4`,
+                caption: `Ini kak videonya @${sender} \n${caption}`,
+                mentions: [m.sender],
+            }, {
+                quoted: m
+            });
         }
     } catch (error) {
-        console.log(error);
-        throw `${global.eror}`;
+        console.error('Handler Error:', error);
+        conn.reply(m.chat, `An error occurred: ${error}`, m);
     }
-}
-handler.help = ['facebook'].map(v => v + ' <url>');
-handler.command = /^(fb|facebook|facebookdl|fbdl|fbdown|dlfb)$/i;
-handler.tags = ['downloader'];
-handler.limit = true;
-handler.group = false;
-handler.premium = false;
-handler.owner = false;
-handler.admin = false;
-handler.botAdmin = false;
-handler.fail = null;
-handler.private = false;
+};
+
+handler.help = ['fb <url>']
+handler.tags = ['downloader']
+handler.command = /^(fbdownload|facebook|fb(dl)?)$/i
+
+handler.limit = true
+handler.register = true
 
 export default handler

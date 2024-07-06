@@ -209,7 +209,7 @@ conn.sendMessage(m.chat, {
 }
 handler.help = ['ownermenu']
 handler.tags = ['maximus']
-handler.command = /^(ownermenu|ownerhelp)$/i
+handler.command = /^(ownermenu|ownerhelp|omenu)$/i
 
 handler.register = false
 handler.exp = 3

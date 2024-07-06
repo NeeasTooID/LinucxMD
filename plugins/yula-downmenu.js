@@ -209,7 +209,7 @@ conn.sendMessage(m.chat, {
 }
 handler.help = ['downloadmenu']
 handler.tags = ['maximus']
-handler.command = /^(downloadmenu|downloadhelp)$/i
+handler.command = /^(downloadmenu|downloadhelp|dmenu)$/i
 
 handler.register = false
 handler.exp = 3

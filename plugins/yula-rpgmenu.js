@@ -213,7 +213,7 @@ conn.sendMessage(m.chat, {
 }
 handler.help = ['rpgmenu']
 handler.tags = ['maximus']
-handler.command = /^(rpgmenu|rpghelp)$/i
+handler.command = /^(rpgmenu|rpghelp|rmenu)$/i
 
 handler.register = false
 handler.exp = 3
