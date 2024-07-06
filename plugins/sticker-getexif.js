@@ -14,6 +14,4 @@ handler.tags = ['sticker']
 
 handler.command = ['getexif']
 
-handler.register = true
-
 export default handler

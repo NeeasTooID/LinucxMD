@@ -4,11 +4,9 @@ let handler = async (m, { conn, text }) => {
     if (!r) r = ''
     conn.reply(m.chat, l + readMore + r, m)
 }
-handler.help = ['readmore'].map(v => v + ' <teks>|<teks>')
+handler.help = ['readmore', 'spoiler'].map(v => v + ' <teks>|<teks>')
 handler.tags = ['tools']
 handler.command = /^(spoiler|hidetext|readmore|selengkapnya)$/i
-
-handler.register = true
 
 export default handler
 

@@ -1,37 +1,48 @@
-[![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
-<p align="center">
-    <img src="https://raw.githubusercontent.com/NeeasTooID/.github/main/Proyek%20Baru%20138%20%5B80913B9%5D.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
-</p>
+## YULA-MD BOT SCRIPT INFORMATION
 
-### PENTING
+<div id="header" align="center">
+  <img src="https://github.com/XM4ZE/DATABASE/blob/master/wallpaper/3d2470d056100ddb151b3bb30f9ec277_2149578633960802861.gif?raw=true" width="200" height="200"/>
+</div>
 
-> **Warning** : Jangan Memperjual Belikan Script Ini!.
+**Update :**
+- Have used multi auth sessions 
+- Fix QR code in terminal & pairing code
+- Use Pairing Code: ```node . --pairing```
+- Use QR Code: ```node .```
+- Added Features ```Store, Giveaway, ButtonList, ButtonReply, ButtonSlide```
 
-<h1 align="center">Npnpicy - MD</h1>
+ ## SCRIPTS MUST USE THE WEB API BELOW
+  
+- BetaBotz API [`Website`](https://api.betabotz.eu.org) ```Must Use```
+  
+- Botcahx API [`Website`](https://api.botcahx.eu.org) ```Must Use```
 
-<p align="center">
-<a href="https://github.com/NeeasTooID"><img title="Author" src="https://img.shields.io/badge/AUTHOR-YUSUPKAKUU-green.svg?style=for-the-badge&logo=github"></a>
+- Itsrose API [`Website`](https://dash.itsrose.rest) ```Must Use```
 
-### FOR VPS USER
-* apt update && apt upgrade -y
-* apt install nodejs imagemagick ffmpeg -y
-* node -v 
-* if the version is still under 20, use this step
-* curl -s https://deb.nodesource.com/setup_20.x | sudo bash
-* apt-get install -y nodejs
+## MY GROUPS & NUMBERS
+- Report/Ask [`My Whatsapp`](https://wa.me/6281283516246)
 
-### 📮 S&K
-1. Not For Sale
-2. Don't forget give star this repo
-3. Don't use this repository wrong!
-4. If you have problem chat me in owner number
+- My Bot Group [`Whatsapp Groups`](https://chat.whatsapp.com/FJRtTzRKxP8A2wT6fcCW3s)
 
----------
+- My Genshin impact Group [`Whatsapp Groups`](https://chat.whatsapp.com/LZCnnSQFPkF3C6zrDcH5n8)
 
-### Thanks To ( ideas and sources )
-[![WhiskeySockets](https://github.com/WhiskeySockets.png?size=100)](https://github.com/WhiskeySockets)
-[![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
+## FOR WINDOWS/VPS/RDP USERS
 
-#### Recoder
-[![NeofetchNpc](https://github.com/NeofetchNpc.png?size=100)](https://github.com/NeofetchNpc)
-[![NeeasTooID](https://github.com/NeeasTooID.png?size=100)](https://github.com/NeeasTooID)
+* Unduh & Instal Git [`Click here`](https://git-scm.com/downloads)
+* Unduh & Instal NodeJS [`Click here`](https://nodejs.org/en/download)
+* Unduh & Instal FFmpeg [`Click here`](https://ffmpeg.org/download.html) (**Jangan Lupa Tambahkan FFmpeg ke variabel lingkungan PATH**)
+* Unduh & Instal ImageMagick [`Click here`](https://imagemagick.org/script/download.php)
+
+```bash
+git clone https://github.com/XM4ZE/XMYULA-MD
+cd MXYULA-MD
+npm install
+npm start
+```
+
+
+##### All Contributors
+<a href="https://github.com/BOTCAHX"><img src="https://github.com/BOTCAHX.png?size=100" width="100" height="100"></a> | [![Erlan](https://github.com/ERLANRAHMAT.png?size=100)](https://github.com/ERLANRAHMAT) 
+---|---
+[Botcahx](https://github.com/BOTCAHX)  | [Betabotz](https://github.com/ERLANRAHMAT)
+Contributor | Contributor |

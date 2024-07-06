@@ -5,7 +5,7 @@ let handler = async (m, {
     text,
     command
 }) => {
-if (!text && !m.quoted) return m.reply("Input text\nReply pesan")
+if (!text && !m.quoted) return m.reply("Pesannya Sayang?")
     let get = await groupMetadata.participants.filter(v => v.id.endsWith('.net')).map(v => v.id)
     let count = get.length;
     let sentCount = 0;
@@ -31,12 +31,8 @@ if (!text && !m.quoted) return m.reply("Input text\nReply pesan")
         }, i * 1000); // delay setiap pengiriman selama 1 detik
     }
 }
-
-handler.help = ['pushkontak']
-handler.tags = ['owner']
-handler.command = /^(pushkontak)$/i
-
+handler.command = handler.help = ["pushkontak"]
+handler.tags = ["main"]
 handler.owner = true
 handler.group = true
-
 export default handler

@@ -5,6 +5,7 @@ let handler = async (m) => {
 handler.help = ['unbanchat']
 handler.tags = ['owner']
 handler.command = /^(unbanchat|ubnc)$/i
-handler.owner = true
+
+handler.rowner = true
 
 export default handler

@@ -1,17 +1,18 @@
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (global.db.data.chats[m.chat].expired < 1) throw `Group ini tidak diatur untuk kedaluwarsa!`
-    let who;
-    if (m.isGroup) who = args[0] ? args[0] : m.chat;
-    else who = args[0];
+	if (db.data.chats[m.chat].expired < 1) throw `Group Ini Tidak DiSet Expired !`
+    let who
+    if (m.isGroup) who = args[1] ? args[1] : m.chat
+    else who = args[1]
 
-    var now = new Date() * 1;
-
-    conn.reply(m.chat, `*⌛️ ᴇxᴘɪʀᴇᴅ ⌛️*\n\n${msToDate(global.db.data.chats[who].expired - now)}`, m);
+    var jumlahHari = 86400000 * args[0]
+    var now = new Date() * 1
+    
+    conn.reply(m.chat, `*${decor.htki} ᴇxᴘɪʀᴇᴅ ${decor.htka}*
+${msToDate(global.db.data.chats[who].expired - now)}`, m)
 }
-
 handler.help = ['cekexpired']
 handler.tags = ['group']
-handler.command = /^(cekexpired|cekkadaluarsa|checkexpired|checkkadaluarsa)$/i
+handler.command = /^((cek)?expired)$/i
 handler.group = true
 
 export default handler
@@ -24,5 +25,7 @@ function msToDate(ms) {
     let hoursms = ms % (60 * 60 * 1000);
     let minutes = Math.floor((hoursms) / (60 * 1000));
     let minutesms = ms % (60 * 1000);
-    return `${days} hari ${hours} jam ${minutes} menit`;
+    let sec = Math.floor((minutesms) / (1000));
+    return days + " Days ☀️\n" + hours + " Hours 🕐\n" + minutes + " Minute ⏰";
+    // +minutes+":"+sec;
 }

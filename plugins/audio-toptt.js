@@ -13,7 +13,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 handler.help = ['tovn (reply)']
 handler.tags = ['audio']
 
+handler.limit = true
 handler.command = /^to(vn|(ptt)?)$/i
-handler.register = true
 
 export default handler

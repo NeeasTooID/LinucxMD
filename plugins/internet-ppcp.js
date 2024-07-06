@@ -1,19 +1,17 @@
 import fetch from "node-fetch"
 let handler = async (m, { conn }) => {
 
-  let data = await (await fetch('https://raw.githubusercontent.com/ShirokamiRyzen/WAbot-DB/main/fitur_db/ppcp.json')).json()
+  let data = await (await fetch('https://raw.githubusercontent.com/KazukoGans/database/main/anime/ppcouple.json')).json()
   let cita = data[Math.floor(Math.random() * data.length)]
   
   let cowi = await(await fetch(cita.cowo)).buffer()
-  await conn.sendFile(m.chat, cowi, '', 'cowok ♂️', m)
+  await conn.sendFile(m.chat, cowi, '', '♂️', m)
   let ciwi = await(await fetch(cita.cewe)).buffer()
-  await conn.sendFile(m.chat, ciwi, '', 'cewek ♀️', m)
+  await conn.sendFile(m.chat, ciwi, '', '♀️', m)
 }
-
-handler.help = ['ppcp']
+handler.help = ['ppcouple', 'ppcp']
 handler.tags = ['internet']
-handler.command = /^ppcp$/i
-handler.limit = false
-handler.register = true
+handler.command = /^(pp(cp|couple))$/i
+handler.limit = true
 
-export default handler
+export default handler 

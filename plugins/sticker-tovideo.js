@@ -11,14 +11,12 @@ let handler = async (m, { conn }) => {
 		await conn.sendMessage(m.chat, { video: out, gifPlayback: /gif/i.test(m.text), gifAttribution: ~~(Math.random() * 2) }, { quoted: m })
 	} else throw 'Reply a sticker!'
 }
-
-handler.help = ['tovideo']
-handler.tags = ['sticker']
-
-handler.command = ['tovideo', 'tomp4']
-
-handler.register = true
-handler.limit = 2
+handler.help = ['togif', 'tovideo']
+handler.tags = ['tools']
+handler.command = /^(to(gif|video|vid))$/i
+handler.register = false
+handler.premium = false
+handler.limit = true
 
 export default handler
 

@@ -1,228 +1,215 @@
 import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
-import moment from 'moment-timezone'
-import { group } from 'console'
-import PhoneNumber from 'awesome-phonenumber'
 
-/*============= WAKTU =============*/
-let wibh = moment.tz('Asia/Jakarta').format('HH')
-    let wibm = moment.tz('Asia/Jakarta').format('mm')
-    let wibs = moment.tz('Asia/Jakarta').format('ss')
-    let wktuwib = `${wibh} H ${wibm} M ${wibs} S`
-    let wktugeneral = `${wibh}:${wibm}:${wibs}`
-    
-    let d = new Date(new Date + 3600000)
-    let locale = 'id'
-    let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-    let week = d.toLocaleDateString(locale, { weekday: 'long' })
-    let date = d.toLocaleDateString(locale, {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric'
-    })
-    const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
 
-/*============= MAIN INFO =============*/
-global.owner = [['6283897390164', 'Npc', true]]
-global.mods = []
-global.prems = []
-global.nomorbot = '6283895099347'
-global.nomorown = '6283897390164'
+/*========= GLOBAL APIKEY =========*/
+// ISI APIKEY KALIAN DI BAGIAN 'ENTER YOUR APIKEY' SIMBOL JANGAN DI HAPUS
+global.btc = 'Enter your apikey' // apikey Botchax
+global.rose = 'Enter your apikey' // apikey Rose
+global.lann = 'Enter your apikey' // apikey Beta
 
-/*============= WATERMARK =============*/
-global.readMore = readMore
-global.author = 'Npc'
-global.namebot = 'Linucx-MD ESM'
-global.wm = '© Linucx-MD By Npc'
-global.watermark = wm
-global.botdate = `⫹⫺ DATE: ${week} ${date}\n⫹⫺ 𝗧𝗶𝗺𝗲: ${wktuwib}`
-global.bottime = `T I M E : ${wktuwib}`
-global.stickpack = `Sticker Dibuat dengan ${namebot}\nNeastooID Industries Ltd\n+${nomorbot}`
-global.stickauth = `© Linucx-MD By Npc`
-global.week = `${week} ${date}`
-global.wibb = `${wktuwib}`
 
-//*============= SOSMED =============*/
-global.sig = 'https://www.instagram.com/yusupk._'
-global.sgh = 'https://github.com/NeofetchNpc'
-global.sgc = 'https://whatsapp.com/channel/'
-global.sgw = 'https://saweria.co/YUSUP909'
-global.sdc = '-'
-global.sfb = 'https://www.facebook.com/'
-global.snh = 'https://www.instagram.com/yusupk._'
-
-/*============= DONASI =============*/
-global.pdana = '083897390164'
-global.povo = '083897390164'
-global.pgopay = '083897390164'
-global.plinkaja = '083897390164'
-global.ppulsa = '083897390164'
-global.ppulsa2 = '083895099347'
-global.psaweria = 'https://saweria.co/YUSUP909'
-global.bank1 = '-'
-global.bank2 = '-'
-
-/*============= TAMPILAN =============*/
-global.dmenut = 'ଓ═┅═━–〈' //top
-global.dmenub = '┊↬' //body
-global.dmenub2 = '┊' //body for info cmd on Default menu
-global.dmenuf = '┗––––––––––✦' //footer
-global.dashmenu = '┅═┅═❏ *DASHBOARD* ❏═┅═┅'
-global.cmenut = '❏––––––『' //top
-global.cmenuh = '』––––––' //header
-global.cmenub = '┊✦ ' //body
-global.cmenuf = '┗━═┅═━––––––๑\n' //footer
-global.cmenua = '\n⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕\n     '
-global.pmenus = '✦'
-global.htki = '––––––『' // Hiasan Titile (KIRI)
-global.htka = '』––––––' // Hiasan Title  (KANAN)
-global.lopr = 'Ⓟ' //LOGO PREMIUM ON MENU.JS
-global.lolm = 'Ⓛ' //LOGO LIMIT/FREE ON MENU.JS
-global.htjava = '⫹⫺'    //hiasan Doang :v
-global.hsquere = ['⛶','❏','⫹⫺']
-
-/*============= RESPON =============*/
-global.wait = 'Please Wait...'
-global.eror = 'Error!'
-
-/*============= WEB API KEY =============*/
-global.openai = 'Npnpicyy'  //api key bisa didapatkan dari https://openai.com/api/
-global.org = 'Npnpicyy'  //openAI Organization name
-global.xzn = 'Npnpicyy'
-
+/*============== API ==============*/
+// ISI APIKEY KALIAN DI BAGIAN 'ENTER YOUR APIKEY' SIMBOL JANGAN DI HAPUS
 global.APIs = {
-  // name: 'https://website'
-  xzn : 'https://skizo.tech/',
+  rose: 'https://api.itsrose.rest',
+  TioXD: 'https://api.botcahx.eu.org',
+  lann: 'https://api.betabotz.org',
+} 
+
+global.APIKeys = {
+  'https://api.betabotz.eu.org': 'Enter your apikey',
+  'https://api.botcahx.eu.org': 'Enter your apikey',
+  'https://api.itsrose.rest': 'Enter your apikey',
 }
 
-global.APIKeys = { // APIKey Here
-  // 'https://website': 'apikey'
 
-  'https://skizo.tech/' : '',
+/*============ NOMOR ============*/
+// BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
+global.info = {
+	nomorbot: '62882257504889',
+	nomorown: '6281283516246',
+	namebot: 'Assisten YuLa',
+	nameown: 'Maximus Store',
+	channel: '120363241570452835@newsletter',
+	namechannel: 'YULA | Whatsapp Bots'
 }
 
-/*============= OTHER =============*/
-global.dpptx = 'application/vnd.openxmlformats-officedocument.presentationml.presentation'
-global.ddocx = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-global.dxlsx = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
-global.dpdf = 'application/pdf'
-global.drtf = 'text/rtf'
 
-global.thumb = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg' //Main Thumbnail
-global.imagebot = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
-global.giflogo = 'https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg'
-global.thumbs = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
-global.thumbnailUrl = [
-  'https://telegra.ph/file/ef4b742d47e6a9115e2ff.jpg'
-]
-global.fotonya1 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ganti jadi foto bot mu
-global.fotonya2 = 'https://telegra.ph/file/6e45318d7c76f57e4a8bd.jpg' //ini juga ganti 
-global.flaaa2 = [
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=",
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=",
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=amped-logo&doScale=true&scaleWidth=800&scaleHeight=500&text=",
- "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=",
- "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text="
-]
-global.fla = [
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=",
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=",
- "https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=amped-logo&doScale=true&scaleWidth=800&scaleHeight=500&text=",
- "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=",
- "https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text="
-]
-global.hwaifu = ['https://telegra.ph/file/a7ac2b46f82ef7ea083f9.jpg']
-global.thumblvlup = [
-  'https://i.pinimg.com/originals/a0/34/8a/a0348ae908d8ac4ced76df289eb41e1a.jpg',
-  'https://i.pinimg.com/originals/be/3b/47/be3b477371cc249e49fd0bb3284de7d7.jpg',
-  'https://i.pinimg.com/originals/63/c3/37/63c337596b3391df0e72a9729ceca7b6.jpg',
-  'https://i.pinimg.com/originals/db/ed/5a/dbed5afac55d266602d0ca0c67622bb9.jpg'
+/*============ OWNER ============*/
+// BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
+global.owner = [
+['6281283516246', 'Maximus', 'true'], // Boleh di ganti
+['6281283516246', 'Maximus', 'true'] // Jangan di ganti 
 ]
 
+global.mods = ['6288225750488'] // Opsional boleh ganti atau tidak 
+global.prems = ['6281283516246', '6288225750488'] // Opsional boleh ganti atau tidak 
+
+
+/*=========== WATERMARK ===========*/
+// BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
+global.wm = 'ᴀꜱꜱɪꜱᴛᴇɴ ʏᴜʟᴀ 🌐' // Opsional boleh ganti atau tidak 
+global.author = 'XM4ZE' // Opsional boleh ganti atau tidak 
+global.stickpack = 'ᴀꜱꜱɪꜱᴛᴇɴ ʏᴜʟᴀ 🌐' // Opsional boleh ganti atau tidak 
+global.stickauth = 'XM4ZE' // Opsional boleh ganti atau tidak 
+
+
+/*=========== TEXT & IMAGE ===========*/
+// BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
+global.nameown = 'Maximus Store' // Ganti jadi nama kalian
+global.waown = 'wa.me/6281283516246' // ganti nomor tanpa menghilangkan wa.me/
+global.mail = 'maximusstoreindonesia@gmail.com' // boleh taruh email kalian
+global.fb = 'https://facebook.com/maximusstoreindonesia' // boleh taruh link fb kalian
+global.ig = 'https://instagram.com/maximusstore.id' // boleh taruh link ig kalian
+global.gcbot = 'https://whatsapp.com/channel/0029VaL28ZqFSAtCdSU5EX0M' // boleh taruh link group kalian
+global.qris = 'https://telegra.ph/file/f11ccd2ca8a5136aacfb3.jpg' // Wajib isi untuk pembayaran. isi dengan qris
+global.welcome = 'https://telegra.ph/file/6922e4375c183c8d1cfcb.jpg' // Welcome Group 
+global.leave = 'https://telegra.ph/file/8c7792e78ed015a7d0a59.jpg' // Leave Group
+global.vn = 'https://github.com/XM4ZE/DATABASE/raw/master/wallpaper/KARA.mp3?raw=true' // Allmenu Voice
+global.thumvid = 'https://github.com/XM4ZE/DATABASE/raw/master/wallpaper/Vid_20240220_073653.mp4?raw=true' // Allmenu Video thumbnail
+global.maximus = '' // [OPSIONAL] isi dengan link thumbnail kalian. link ini akan muncul di semua menu dan taruh di tengah-tengah simbol itu
+
+
+/*===================DO NOT EDIT=====================*/
+
+
+// DI BAWAH INI JANGAN DI EDIT
+/*============== NO EDIT ==============*/
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
+global.xmenus = 'https://raw.githubusercontent.com/XM4ZE/DATABASE/master/wallpaper/publicmenus.json'
+global.multiplier = 38
+global.wait = '*Starting Processing . . .*'
+global.eror = '*Failed to process . . .*'
+global.maxwarn = '2'
+global.pricelist = '*LIMIT* kamu habis. kamu bisa order akses premium\n\n*PREMIUM USER PRICE LIST*\n\n*3 Day premium*\n- Harga: Rp. 5.000 IDR\n- ID Pesanan: 3day\n\n*7 Day premium*\n- Harga: Rp. 10.000 IDR\n- ID Pesanan: 7day\n\n*30 Day premium*\n- Harga: Rp. 15.000 IDR\n- ID Pesanan: 30day\n\n*60 Day premium*\n- Harga: Rp. 30.000 IDR\n- ID Pesanan: 60day\n\n\n*Example:* .premium <ID Pembayaran>\n*Example:* .premium 30day'
+
+
+/*========== TYPE DOCUMENT ==========*/
+global.doc = {
+    pptx: 'application/vnd.openxmlformats-officedocument.presentationml.presentation',
+    docx: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    xlsx: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    pdf: 'application/pdf',
+    rtf: 'text/rtf'
+}
+
+
+// DI BAWAH INI JANGAN DI EDIT LAGI PULA GAK DI PAKAI
+/*============= HIASAN ==============*/
+global.decor = {
+	menut: '❏═┅═━–〈',
+	menub: '┊•',
+	menub2: '┊',
+	menuf: '┗––––––––––✦',
+	hiasan: '꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷',
+
+	menut: '––––––『',
+    menuh: '』––––––',
+    menub: '┊☃︎ ',
+    menuf: '┗━═┅═━––––––๑\n',
+	menua: '',
+	menus: '☃︎',
+
+	htki: '––––––『',
+	htka: '』––––––',
+	haki: '┅━━━═┅═❏',
+	haka: '❏═┅═━━━┅',
+	lopr: 'Ⓟ',
+	lolm: 'Ⓛ',
+	htjava: '❃'
+}
+
+global.elainajpg = [
+    'https://telegra.ph/file/3e43fcfaea6dc1ba95617.jpg',
+    'https://telegra.ph/file/c738a9fc0722a59825cbb.mp4',
+    'https://telegra.ph/file/4018167852aef19651f46.jpg'
+]
+global.flaaa = [
+    //'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=water-logo&script=water-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextColor=%23000&shadowGlowColor=%23000&backgroundColor=%23000&text=',
+    //'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=crafts-logo&fontsize=90&doScale=true&scaleWidth=800&scaleHeight=500&text=',
+    //'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=amped-logo&doScale=true&scaleWidth=800&scaleHeight=500&text=',
+    'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text=',
+    'https://flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&fillColor1Color=%23f2aa4c&fillColor2Color=%23f2aa4c&fillColor3Color=%23f2aa4c&fillColor4Color=%23f2aa4c&fillColor5Color=%23f2aa4c&fillColor6Color=%23f2aa4c&fillColor7Color=%23f2aa4c&fillColor8Color=%23f2aa4c&fillColor9Color=%23f2aa4c&fillColor10Color=%23f2aa4c&fillOutlineColor=%23f2aa4c&fillOutline2Color=%23f2aa4c&backgroundColor=%23101820&text='
+]
+global.hwaifu = [
+    'https://i.pinimg.com/originals/ed/34/f8/ed34f88af161e6278993e1598c29a621.jpg',
+    'https://i.pinimg.com/originals/85/4d/bb/854dbbd30304cd69f305352f0183fad0.jpg'
+]
+
+
+// DI BAWAH INI JANGAN DI EDIT!!!
+/*============== EMOJI ==============*/
+global.rpg = {
+    emoticon(string) {
+        string = string.toLowerCase()
+        let emot = {
+            level: '📊',
+            limit: '🎫',
+            health: '❤️',
+            exp: '✨',
+            atm: '💳',
+            money: '💰',
+            bank: '🏦',
+            potion: '🥤',
+            diamond: '💎',
+            common: '📦',
+            uncommon: '🛍️',
+            mythic: '🎁',
+            legendary: '🗃️',
+            superior: '💼',
+            pet: '🔖',
+            trash: '🗑',
+            armor: '🥼',
+            sword: '⚔️',
+            pickaxe: '⛏️',
+            fishingrod: '🎣',
+            wood: '🪵',
+            rock: '🪨',
+            string: '🕸️',
+            horse: '🐴',
+            cat: '🐱',
+            dog: '🐶',
+            fox: '🦊',
+            robo: '🤖',
+            petfood: '🍖',
+            iron: '⛓️',
+            gold: '🪙',
+            emerald: '❇️',
+            upgrader: '🧰',
+            bibitanggur: '🌱',
+            bibitjeruk: '🌿',
+            bibitapel: '☘️',
+            bibitmangga: '🍀',
+            bibitpisang: '🌴',
+            anggur: '🍇',
+            jeruk: '🍊',
+            apel: '🍎',
+            mangga: '🥭',
+            pisang: '🍌',
+            botol: '🍾',
+            kardus: '📦',
+            kaleng: '🏮',
+            plastik: '📜',
+            gelas: '🧋',
+            chip: '♋',
+            umpan: '🪱',
+            skata: '🧩'
+        }
+        let results = Object.keys(emot).map(v => [v, new RegExp(v, 'gi')]).filter(v => v[1].test(string))
+        if (!results.length) return ''
+        else return emot[results[0][0]]
+    }
+}
+
+
+//------ JANGAN DIUBAH -----
 let file = fileURLToPath(import.meta.url)
 watchFile(file, () => {
-  unwatchFile(file)
-  console.log(chalk.redBright("Update 'config.js'"))
-  import(`${file}?update=${Date.now()}`)
+    unwatchFile(file)
+    console.log(chalk.redBright("Update 'config.js'"))
+    import(`${file}?update=${Date.now()}`)
 })
-
-/*============= RESPON GAME =============*/
-global.benar = 'Good Job! ◕◡◕'
-global.salah = 'Not Bad! ◕◠◕'
-global.dikit = "Dikit Lagi, Semangat!!"
-
-
-/*============= RPG GAME =============*/
-global.multiplier = 69 // The higher, The harder levelup
-global.rpg = {
-  emoticon(string) {
-    string = string.toLowerCase()
-    let emot = {
-      agility: '🤸‍♂️',
-      arc: '🏹',
-      armor: '🥼',
-      bank: '🏦',
-      bibitanggur: '🍇',
-      bibitapel: '🍎',
-      bibitjeruk: '🍊',
-      bibitmangga: '🥭',
-      bibitpisang: '🍌',
-      bow: '🏹',
-      bull: '🐃',
-      cat: '🐈',
-      chicken: '🐓',
-      common: '📦',
-      cow: '🐄',
-      crystal: '🔮',
-      darkcrystal: '♠️',
-      diamond: '💎',
-      dog: '🐕',
-      dragon: '🐉',
-      elephant: '🐘',
-      emerald: '💚',
-      exp: '✉️',
-      fishingrod: '🎣',
-      fox: '🦊',
-      gems: '🍀',
-      giraffe: '🦒',
-      gold: '👑',
-      health: '❤️',
-      horse: '🐎',
-      intelligence: '🧠',
-      iron: '⛓️',
-      keygold: '🔑',
-      keyiron: '🗝️',
-      knife: '🔪',
-      legendary: '🗃️',
-      level: '🧬',
-      limit: '🌌',
-      lion: '🦁',
-      magicwand: '⚕️',
-      mana: '🪄',
-      money: '💵',
-      mythic: '🗳️',
-      pet: '🎁',
-      petFood: '🍖',
-      pickaxe: '⛏️',
-      pointxp: '📧',
-      potion: '🥤',
-      rock: '🪨',
-      snake: '🐍',
-      stamina: '⚡',
-      strength: '🦹‍♀️',
-      string: '🕸️',
-      superior: '💼',
-      sword: '⚔️',
-      tiger: '🐅',
-      trash: '🗑',
-      uncommon: '🎁',
-      upgrader: '🧰',
-      wood: '🪵'
-    }
-    let results = Object.keys(emot).map(v => [v, new RegExp(v, 'gi')]).filter(v => v[1].test(string))
-    if (!results.length) return ''
-    else return emot[results[0][0]]
-  }
-}

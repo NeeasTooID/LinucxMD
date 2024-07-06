@@ -12,12 +12,10 @@ handler.help = ['jadwaltv']
 handler.tags = ['tools']
 handler.command = /^jadwaltv$/i
 
-handler.register = true
-
 export default handler
 
 async function jadwalTV(name) {
-	let list = JSON.parse(fs.readFileSync('./src/jadwaltv.json', 'utf-8'))
+	let list = JSON.parse(fs.readFileSync('./json/jadwaltv.json', 'utf-8'))
 	let data = list.find((v) => (new RegExp(name, 'gi')).test(v.channel)), result = []
 	if (!data) throw 'List Channel Yg Tersedia:\n\n' + list.map(v => v.channel).sort().join('\n')
 	let html = (await axios.get(`https://www.jadwaltv.net/${data.isPay ? 'jadwal-pay-tv/' : ''}${data.value}`)).data

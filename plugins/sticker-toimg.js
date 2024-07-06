@@ -1,4 +1,4 @@
-import sharp from 'sharp'
+import sharp from 'sharp';
 
 const TIMEOUT = 10000; // 10 detik
 
@@ -17,31 +17,27 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     const media = await q.download();
 
     // Dekoding WebP tanpa webp-js
-    const decodedBuffer = await sharp(media).toFormat('png')
-      .png({ quality: 100, progressive: true, compressionLevel: 9 })
-      .toBuffer();
-      
+    const decodedBuffer = await sharp(media).toFormat('png').toBuffer();
+
     // Send PNG image
     if (decodedBuffer.length > 0) {
-      await conn.sendFile(m.chat, decodedBuffer, 'out.png', '*DONE (≧ω≦)ゞ*', m);
+      await conn.sendFile(m.chat, decodedBuffer, 'out.png', wm, m);
     } else {
-      throw 'Gagal mengonversi stiker menjadi gambar.';
+      throw `${global.eror}`;
     }
   } catch (error) {
     console.error(error);
     if (error.message === 'Timeout of 10000ms exceeded') {
       m.reply('Proses konversi terlalu lama. Silakan coba lagi.');
     } else {
-      m.reply(`Terjadi kesalahan: ${error.message}`);
+      m.reply(global.eror);
     }
   }
 };
 
-handler.help = ['toimg (reply)']
-handler.tags = ['sticker']
-handler.command = ['toimg']
+handler.help = ['toimg'];
+handler.tags = ['sticker'];
+handler.command = ['toimg', 'toimage'];
+handler.limit = true;
 
-handler.register = true
-handler.limit = true
-
-export default handler
+export default handler;
