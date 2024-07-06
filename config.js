@@ -16,6 +16,7 @@ global.APIs = {
   rose: 'https://api.itsrose.rest',
   TioXD: 'https://api.botcahx.eu.org',
   lann: 'https://api.betabotz.org',
+  ness: 'https://api.neastooid.xyz',
 } 
 
 global.APIKeys = {
@@ -28,10 +29,10 @@ global.APIKeys = {
 /*============ NOMOR ============*/
 // BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
 global.info = {
-	nomorbot: '62882257504889',
-	nomorown: '6281283516246',
-	namebot: 'Assisten YuLa',
-	nameown: 'Maximus Store',
+	nomorbot: '6283895099347',
+	nomorown: '6283897390164',
+	namebot: 'LinucxMD',
+	nameown: 'Npc',
 	channel: '120363241570452835@newsletter',
 	namechannel: 'YULA | Whatsapp Bots'
 }
