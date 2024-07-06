@@ -34,37 +34,37 @@ global.info = {
 	namebot: 'LinucxMD',
 	nameown: 'Npc',
 	channel: '120363241570452835@newsletter',
-	namechannel: 'YULA | Whatsapp Bots'
+	namechannel: 'LinucxMD - UNEMPLOYMENT BOTZ'
 }
 
 
 /*============ OWNER ============*/
 // BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
 global.owner = [
-['6281283516246', 'Maximus', 'true'], // Boleh di ganti
-['6281283516246', 'Maximus', 'true'] // Jangan di ganti 
+['6283897390164', 'Npc', 'true'], // Boleh di ganti
+['6283895099347', 'LinucxMD', 'true'] // Jangan di ganti 
 ]
 
-global.mods = ['6288225750488'] // Opsional boleh ganti atau tidak 
-global.prems = ['6281283516246', '6288225750488'] // Opsional boleh ganti atau tidak 
+global.mods = ['62'] // Opsional boleh ganti atau tidak 
+global.prems = ['62'] // Opsional boleh ganti atau tidak 
 
 
 /*=========== WATERMARK ===========*/
 // BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
-global.wm = 'ᴀꜱꜱɪꜱᴛᴇɴ ʏᴜʟᴀ 🌐' // Opsional boleh ganti atau tidak 
-global.author = 'XM4ZE' // Opsional boleh ganti atau tidak 
-global.stickpack = 'ᴀꜱꜱɪꜱᴛᴇɴ ʏᴜʟᴀ 🌐' // Opsional boleh ganti atau tidak 
-global.stickauth = 'XM4ZE' // Opsional boleh ganti atau tidak 
+global.wm = 'NEASTOOID 🌐' // Opsional boleh ganti atau tidak 
+global.author = 'NPC' // Opsional boleh ganti atau tidak 
+global.stickpack = 'LINUCXMD 🌐' // Opsional boleh ganti atau tidak 
+global.stickauth = 'NPC' // Opsional boleh ganti atau tidak 
 
 
 /*=========== TEXT & IMAGE ===========*/
 // BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
-global.nameown = 'Maximus Store' // Ganti jadi nama kalian
-global.waown = 'wa.me/6281283516246' // ganti nomor tanpa menghilangkan wa.me/
-global.mail = 'maximusstoreindonesia@gmail.com' // boleh taruh email kalian
-global.fb = 'https://facebook.com/maximusstoreindonesia' // boleh taruh link fb kalian
-global.ig = 'https://instagram.com/maximusstore.id' // boleh taruh link ig kalian
-global.gcbot = 'https://whatsapp.com/channel/0029VaL28ZqFSAtCdSU5EX0M' // boleh taruh link group kalian
+global.nameown = 'Npc' // Ganti jadi nama kalian
+global.waown = 'wa.me/6283897390164' // ganti nomor tanpa menghilangkan wa.me/
+global.mail = 'neastooid@gmail.com' // boleh taruh email kalian
+global.fb = 'https://facebook.com/' // boleh taruh link fb kalian
+global.ig = 'https://instagram.com/yusupk._' // boleh taruh link ig kalian
+global.gcbot = 'https://whatsapp.com/channel/0029VaEK2Vc9mrGbK9s0Iv3p' // boleh taruh link group kalian
 global.qris = 'https://telegra.ph/file/f11ccd2ca8a5136aacfb3.jpg' // Wajib isi untuk pembayaran. isi dengan qris
 global.welcome = 'https://telegra.ph/file/6922e4375c183c8d1cfcb.jpg' // Welcome Group 
 global.leave = 'https://telegra.ph/file/8c7792e78ed015a7d0a59.jpg' // Leave Group
