@@ -31,6 +31,7 @@
 ### Thanks To ( ideas and sources )
 [![WhiskeySockets](https://github.com/WhiskeySockets.png?size=100)](https://github.com/WhiskeySockets)
 [![ShirokamiRyzen](https://github.com/ShirokamiRyzen.png?size=100)](https://github.com/ShirokamiRyzen)
+[![XM4ZE](https://github.com/XM4ZE.png?size=100)](https://github.com/XM4ZE)
 
 #### Recoder
 [![NeofetchNpc](https://github.com/NeofetchNpc.png?size=100)](https://github.com/NeofetchNpc)
