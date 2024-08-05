@@ -11,6 +11,6 @@ handler.help = ['afk <alasan>']
 handler.tags = ['group']
 handler.command = /^afk$/i
 handler.group = true
-handler.admin = true
+handler.admin = false
 
 export default handler

@@ -148,29 +148,35 @@ let handler = async (m, { conn, usedPrefix, __dirname }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-conn.sendFile(m.chat, vn, "ehee.mp3", null, m, true, {
-type: "audioMessage",
-ptt: false,
-});
-conn.sendMessage(m.chat, { video:
-            { url: thumvid },
-            gifPlayback: true,
-            gifAttribution: null,
-            seconds: 1,
-            fileLength: 10,
-            caption: text,
+    
+ let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
+
+ let xm4ze = await( await fetch(xmenus)).json()
+ let thum = xm4ze[Math.floor(Math.random() * xm4ze.length)]
+
+conn.sendMessage(m.chat, {
+            text: text,
             contextInfo: {
-              mentionedJid: [m.sender],
-              forwardingScore: 1,
-              isForwarded: true,
-            forwardedNewsletterMessageInfo: {
-            newsletterJid: global.info.channel,
-            serverMessageId: null,
-            newsletterName: global.info.namechannel,
-            },
-           },
-          }, { quoted: m })
+                forwardingScore: 1,
+                isForwarded: true,
+                   forwardedNewsletterMessageInfo: {
+                   newsletterJid: global.info.channel,
+                   serverMessageId: null,
+                   newsletterName: global.info.namechannel,
+                   },
+                   externalAdReply: {
+                   title: global.info.namebot + `© 2024`,
+                   body: 'Powered By Npc',
+                   thumbnailUrl: thumfoto,
+                   sourceUrl: 'https://chat.whatsapp.com/Bpaxfv3a1tLIx0gaGZTQpN',
+                   mediaType: 1,
+                   renderLargerThumbnail: true
+                   },
+                },
+            }, { quoted: m })
+
   } catch (e) {
+    conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
   }
 }

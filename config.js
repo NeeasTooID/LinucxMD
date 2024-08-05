@@ -47,12 +47,11 @@ global.waown = 'wa.me/6283897390164' // ganti nomor tanpa menghilangkan wa.me/
 global.mail = 'neastooid@gmail.com' // boleh taruh email kalian
 global.fb = 'https://facebook.com/' // boleh taruh link fb kalian
 global.ig = 'https://instagram.com/yusupk._' // boleh taruh link ig kalian
-global.gcbot = 'https://whatsapp.com/channel/0029VaEK2Vc9mrGbK9s0Iv3p' // boleh taruh link group kalian
+global.gcbot = 'https://chat.whatsapp.com/Bpaxfv3a1tLIx0gaGZTQpN' // boleh taruh link group kalian
 global.qris = 'https://telegra.ph/file/3fb4f4761afbe86bd6096.jpg' // Wajib isi untuk pembayaran. isi dengan qris
 global.welcome = 'https://telegra.ph/file/1137b9d30efa85bcaf08c.jpg' // Welcome Group 
 global.leave = 'https://telegra.ph/file/60621687679589a5474e6.jpg' // Leave Group
-global.vn = '' // Allmenu Voice
-global.thumvid = 'https://telegra.ph/file/24284b3e71c4a818d42f2.mp4' // Allmenu Video thumbnail
+global.thumfoto = 'https://telegra.ph/file/fe1be0d0d00c94c175403.jpg' // Allmenu Video thumbnail
 
 
 /*===================DO NOT EDIT=====================*/
@@ -63,11 +62,11 @@ global.thumvid = 'https://telegra.ph/file/24284b3e71c4a818d42f2.mp4' // Allmenu 
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
 }
-global.xmenus = 'https://raw.githubusercontent.com/XM4ZE/DATABASE/master/wallpaper/publicmenus.json'
+global.xmenus = 'https://raw.githubusercontent.com/NeofetchNpc/DATABASE/main/thum.json'
 global.multiplier = 38
 global.wait = '*Starting Processing . . .*'
 global.eror = '*Failed to process . . .*'
-global.maxwarn = '2'
+global.maxwarn = '5'
 global.pricelist = '*LIMIT* kamu habis. kamu bisa order akses premium\n\n*PREMIUM USER PRICE LIST*\n\n*3 Day premium*\n- Harga: Rp. 5.000 IDR\n- ID Pesanan: 3day\n\n*7 Day premium*\n- Harga: Rp. 10.000 IDR\n- ID Pesanan: 7day\n\n*30 Day premium*\n- Harga: Rp. 15.000 IDR\n- ID Pesanan: 30day\n\n*60 Day premium*\n- Harga: Rp. 30.000 IDR\n- ID Pesanan: 60day\n\n\n*Example:* .premium <ID Pembayaran>\n*Example:* .premium 30day'
 
 

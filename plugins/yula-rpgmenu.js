@@ -197,9 +197,9 @@ conn.sendMessage(m.chat, {
                    },
                    externalAdReply: {
                    title: global.info.namebot + `© 2024`,
-                   body: 'Powered By Maximus',
+                   body: 'Powered By Npc',
                    thumbnailUrl: global.maximus ? global.maximus : thum,
-                   sourceUrl: pickRandom(["https://chat.whatsapp.com/LZCnnSQFPkF3C6zrDcH5n8","https://chat.whatsapp.com/EWxOwlaJXTsIhj706JsfmZ"]),
+                   sourceUrl: 'https://chat.whatsapp.com/Bpaxfv3a1tLIx0gaGZTQpN',
                    mediaType: 1,
                    renderLargerThumbnail: true
                    },

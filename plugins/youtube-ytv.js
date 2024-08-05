@@ -1,154 +1,48 @@
-/*let fs = require("fs");
-let ytdl = require("distube/ytdl-core");
+import ytdl from 'ytdl-core';
+import { youtubedl } from '@bochilteam/scraper-sosmed';
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-	conn["youtube_mp4"] = conn["youtube_mp4"] ? conn["youtube_mp4"] : {};
-	if (m.sender in conn["youtube_mp4"]) {
-		return;
-	}
-
-	if (!args[0]) {
-		return m.reply(
-			`example: *${
-				usedPrefix + command
-			}* https://www.youtube.com/watch?v=K9_VFxzCuQ0`
-		);
-	}
-	const isValid = await ytdl.validateURL(args[0]);
-	if (!isValid) {
-		return m.reply("*your link not suported.*");
-	}
-	conn.sendMessage(m.chat, {
-		react: {
-			text: '⏳',
-			key: m.key,
-		}
-	});
-
-	const _filename = `./tmp/${Math.random().toString(36).substring(2, 7)}.mp4`;
-	const writer = fs.createWriteStream(_filename);
-
-	conn["youtube_mp4"][m.sender] = true;
+	if (!(args[0] || '').match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))) return m.reply(`Example: *${usedPrefix}${command}* https://www.youtube.com/watch?v=K9_VFxzCuQ0`)
+	await m.reply(wait);
 	try {
-		const { formats, videoDetails } = await ytdl.getInfo(args[0]);
-		const { title, description, publishDate, author, isFamilySafe } =
-			videoDetails;
-		const { user } = author;
-		return new Promise(async (resolve, reject) => {
-			ytdl(args[0], {
-				quality: "lowest",
-			}).pipe(writer);
-			writer.on("error", () => {
-				m.reply("Failed sending video");
-				delete conn["youtube_mp4"][m.sender];
-				resolve();
-			});
-			writer.on("close", async () => {
-				try {
-					await conn.sendMessage(
-						m.chat,
-						{
-							video: {
-								stream: fs.createReadStream(_filename),
-							},
-							caption: `  ◦ *Title*: ${title}\n  ◦ *Published*: ${publishDate}\n  ◦ *Author*: ${user}\n\nYTdl By https://github.com/fent/node-ytdl-core\nSearch By https://github.com/talmobi/yt-search\nSent By Assistant Yula💕`,
-						},
-						{ quoted: m }
-					);
-				} catch {
-					await conn.sendMessage(
-						m.chat,
-						{
-							document: {
-								stream: fs.createReadStream(_filename),
-							},
-							fileName: `${title}.mp4`,
-							mimetype: "video/mp4",
-							caption: `  ◦ *Title*: ${title}\n  ◦ *Published*: ${publishDate}\n  ◦ *Author*: ${user}\n\nYTdl By https://github.com/fent/node-ytdl-core\nSearch By https://github.com/talmobi/yt-search\nSent By Assistant Yula💕`,
-						},
-						{ quoted: m }
-					);
-				}
-				fs.unlinkSync(_filename);
-				delete conn["youtube_mp4"][m.sender];
-				resolve();
-			});
-		});
-	} catch {
-		m.reply("*Failed get a video:(*");
+		let anu = await youtubedl(args[0]);
+		let list = Object.keys(anu.video).toString()
+		let data = anu.video[`${list.includes('36') ? '360p' : list.includes('24') ? '240p' : '144p'}`]
+		let url = await data.download()
+		if (data.fileSize > 50000) return m.reply(`Filesize: ${data.fileSizeH}\nTidak dapat mengirim, maksimal file 50 MB`)
+		let txt = `*${anu.title}*\n\n`
+		+ `⌲ Resolution : ${data.quality}\n`
+		+ `⌲ Size : ${data.fileSizeH}`
+		await conn.sendFile(m.chat, url, `${anu.title}.mp4`, txt, m)
+	} catch (e) {
+		console.log(e)
+		try {
+			let res = await ytdl.getURLVideoID(args[0]);
+			let anu = await ytdl.getInfo(res)
+			let data, det = anu.videoDetails
+			for (let x of ['360','480','240']) {
+				if (!data) data = anu.formats.find(v => v.mimeType.includes('video') && v.audioBitrate !== null && (v.qualityLabel || '').includes(x))
+			}
+			if (!data) throw Error()
+			let size = parseInt(data.bitrate)
+			let buffer = Buffer.from(await (await fetch(data.url)).arrayBuffer())
+			let buffl = Buffer.byteLength(buffer)
+			if (size > 50000000) return m.reply(`Tidak dapat mengirim, maksimal file 50 MB`)
+			let txt = `*${det.title}*\n\n`
+			+ `⌲ Resolution : ${data.width} x ${data.height}\n`
+			+ `⌲ Watch : ${args[0]}\n`
+			await conn.sendFile(m.chat, buffer, `${det.title}.mp4`, txt, m)
+		} catch (e) {
+			console.log(e)
+			throw global.eror
+		}
 	}
 };
 
-const { youtubedlv2, youtubedl } = require('@bochilteam/scraper')
+handler.menudownload = ['ytvideo <url>']
+handler.tagsdownload = ['downloader']
+handler.command = /^(yt(v(ideo)?|mp4))$/i
 
-const handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `example: *${usedPrefix}${command}* https://www.youtube.com/watch?v=K9_VFxzCuQ0`
-  const v = args[0]
-
-  const resolutions = ["144p", "240p", "360p"]
-  let qu = args[1] && resolutions.includes(args[1]) ? args[1] : "240p"
-  let q = qu.replace('p', '')
-
-  let thumb = {}
-  try {
-    const thumb2 = yt.thumbnails[0].url
-    thumb = { jpegThumbnail: thumb2 }
-  } catch (e) {}
-
-  let yt
-  try {
-    yt = await youtubedl(v)
-  } catch {
-    yt = await youtubedlv2(v)
-  }
-
-  const title = await yt.title
-
-  let size = ''
-  let dlUrl = ''
-  let selectedResolution = ''
-  let selectedQuality = ''
-  for (let i = resolutions.length - 1; i >= 0; i--) {
-    const res = resolutions[i]
-    if (yt.video[res]) {
-      selectedResolution = res
-      selectedQuality = res.replace('p', '')
-      size = await yt.video[res].fileSizeH
-      dlUrl = await yt.video[res].download()
-      break
-    }
-  }
-
-  if (dlUrl) {
-    await m.reply(`YuLa Mengambil Data . . . .`)
-
-    await conn.sendMessage(m.chat, { video: { url: dlUrl, caption: title, ...thumb } }, { quoted: m })
-
-  } else {
-    await m.reply(`Video Tidak Dapat Di Unduh.`)
-  }
-}*/
-import api from 'api-dylux';
-
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-  
-if (!args[0]) throw `example: *${usedPrefix}${command}* https://www.youtube.com/watch?v=K9_VFxzCuQ0`
-if (!args[0].match(/youtu/)) throw `URL Yang Tuan Berikan *Salah!!!*`
-m.reply(wait)
-    try {
-    let data = await api.ytmp4(args[0])
-    
-      conn.sendFile(m.chat, data.dl_url, "mtype.mp4", null, m)
-      } catch (e) {
-		console.log(e)
-		m.reply(eror)
-	}
-}
-handler.help = ["ytmp4 <url>"]
-handler.tags = ["downloader"];
-handler.command = /^(yt(v|mp4))$/i;
-
-handler.register = false
 handler.premium = false
 handler.limit = true
 

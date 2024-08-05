@@ -3,7 +3,7 @@ const rewards = {
   money: 4999,
   potion: 5,
 }
-const cooldown = 79200000
+const cooldown = 300000
 let handler = async (m, {usedPrefix}) => {
   
   let user = global.db.data.users[m.sender]

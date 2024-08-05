@@ -2,7 +2,7 @@ import fs from "fs"
 const items = {
     buy: {
         limit: {
-            exp: 9999
+            money: 100000
         },
         chip: {
         	money: 1000000
@@ -91,7 +91,7 @@ const items = {
     },
     sell: {
         limit: {
-            exp: 999
+            exp: 9999
         },
         exp: {
         	money: 1
@@ -103,7 +103,7 @@ const items = {
             money: 625
         },
         trash: {
-            money: 20
+            money: 2000
         },
         wood: {
             money: 350
@@ -176,6 +176,22 @@ const items = {
         },
         umpan: {
         	money: 2500
+        },
+        kardus: {
+            money: 10000
+        },
+        botol: {
+            money: 1000
+        },
+        kaleng: {
+            money: 1000
+        },
+        gelas: {
+            money: 1000,
+            chip: 1
+        },
+        plastik: {
+            money: 1000
         }
     }
 }

@@ -63,7 +63,7 @@ Sent By Assistant ${global.info.namebot}`;
 /*await conn.relayMessage(msg.key.remoteJid, msg.message, {
         messageId: msg.key.id
         })*/
-      if (!args[0].match(/yout/gi)) throw 
+    //  if (!args[0].match(/yout/gi)) throw 
       if (!/all/.test(command) && await getDevice(m.key.id) == 'android') {
   conn.sendButton(m.chat, infoText, global.wm, thumbnailUrl, [['🎵 AUDIO', `.ytmp3 ${args [0]}`],['📹 VIDEO', `.ytmp4 ${args[0]}`]], m)
   } else conn.reply(m.chat, `*Silahkan tulis ini untuk mendownload audio:*\n> .ytmp3 linkYt\n\n*Silahkan tulis ini untuk mendownload Video:*\n> .ytmp4 linkYt`, m)

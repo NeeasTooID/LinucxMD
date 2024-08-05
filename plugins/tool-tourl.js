@@ -16,10 +16,17 @@ ${global.wm}`
          conn.sendMessage(m.chat, {
                 text: max,
                 contextInfo: {
+                	forwardingScore: 1,
+                isForwarded: true,
+                   forwardedNewsletterMessageInfo: {
+                   newsletterJid: global.info.channel,
+                   serverMessageId: null,
+                   newsletterName: global.info.namechannel,
+                   },
                     externalAdReply: {
                         title: "File-Uploader",
-                        body: "",
-                        thumbnailUrl: global.thum,
+                        body: "Uploader LinucxMD",
+                        thumbnailUrl: "https://telegra.ph/file/859c5320e30a065037e19.jpg",
                         sourceUrl: link,
                         mediaType: 1,
                         showAdAttribution: true,

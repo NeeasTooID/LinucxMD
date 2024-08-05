@@ -8,11 +8,12 @@ let handler = async(m, { conn, text, usedPrefix, command}) => {
 				[
 					'— LINUCXMD JOIN GROUP', [
 						['Harga: Rp. 25.000 IDR', '.sewa GP1', 'Permanent Joind Group'],
-						['Harga: Rp. 15.000 IDR', '.sewa G30', '30 Day join the group']
+						['Harga: Rp. 15.000 IDR', '.sewa G30', '30 Day join the group'],
+						['Harga: Rp. 5.000 IDR', '.sewa G7', '7 Day join the group']
 				]], [
 					'— PREMIUM USER', [
 						['Harga: Rp. 5.000 IDR', '.sewa 7day', '7 Day Premium'],
-						['Harga: Rp. 15.000 IDR', '.sewa 7day', '30 Day Premium'],
+						['Harga: Rp. 15.000 IDR', '.sewa 30day', '30 Day Premium'],
 				]],
 			]
     if (!/all/.test(command) && await getDevice(m.key.id) == 'android') {
@@ -26,6 +27,9 @@ let handler = async(m, { conn, text, usedPrefix, command}) => {
       break;
       case 'G30':
       orderID = '15.000 IDR';
+      break;
+      case 'G7':
+      orderID = '5.000 IDR';
       break;
       case '7day':
       orderID = '5.000 IDR';
@@ -46,6 +50,10 @@ let handler = async(m, { conn, text, usedPrefix, command}) => {
 - Harga: Rp. 15.000 IDR
 - ID Pesanan: G30
 
+*7 Day join the group*
+- Harga: Rp. 5.000 IDR
+- ID Pesanan: G7
+
 *— PREMIUM USER*
 
 *7 Day premium*
@@ -60,7 +68,7 @@ let handler = async(m, { conn, text, usedPrefix, command}) => {
 *Example:* ${usedPrefix + command} 30day
 `;
   };
-    let maximus = `*LinucxMD Payment Order*\n\n*• Status:* _🟡 Pending_\n*• ID Pembelian:* ${text}\n*• Nominal:* ${orderID}\n*• Payment:* QRIS\n\n\n*TAHAP-TAHAP Pembayaran*\n*1.* Silahkan SCAN QRIS ini dengan M-Banking/E-Wallet kamu\n*2.* Masukan Nominal: ${orderID}\n*3.* Silahkan Kirim bukti pembayaran ke nomor ini wa.me/${global.info.nomorown}`
+    let maximus = `*LinucxMD Payment Order*\n\n*• Status:* _🟡 Pending_\n*• ID Pembelian:* ${text}\n*• Nominal:* ${orderID}\n*• Payment:* QRIS\n\n\n*TAHAP-TAHAP Pembayaran*\n*1.* Silahkan SCAN QRIS ini dengan M-Banking/E-Wallet kamu\n*2.* Masukan Nominal: ${orderID}\n*3.* Silahkan Kirim bukti pembayaran ke nomor ini wa.me/${global.info.nomorown}\n\nJikalau Qris Di Atas Invalid Gunakan Payment Dari *hotelmurah.com* atau *Dana/Ovo/Gopay/Pulsa : 6283897390164*`
     conn.sendFile(m.sender, global.qris, 'maxim.jpg', maximus, m)
     conn.reply(m.chat, '✔️ *PESANANMU TELAH DI BUAT*\n\nSaya telah mengirim pembayarannya melalu private chat silahkan di baca dan ikuti tahap-tahap pembayaran. Terimakasih', m)
     conn.reply(global.info.nomorown + '@s.whatsapp.net', `@${m.sender.split('@')[0]} Sedang dalam pembayaran nominal ${orderID}`, m, { contextInfo: { mentionedJid: [m.sender] }})
