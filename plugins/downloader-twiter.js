@@ -1,4 +1,4 @@
-import api from 'api-dylux';
+import fetch from 'node-fetch'
 
 var handler = async (m, {
 	conn,
@@ -6,26 +6,29 @@ var handler = async (m, {
 	usedPrefix,
 	command
 }) => {
-if (!args[0]) throw `Masukan URL!\n\ncontoh:\n${usedPrefix + command} https://twitter.com/ketchupnude/status/1713239814533955723`
+if (!args[0]) throw `Masukkan URL!`;
+if (!args[0].match(/https?:\/\/(www\.)?(twitter\.com|x\.com)/gi)) throw "URL Tidak Ditemukan!";
+    m.reply(wait);
     try {
-         const data = await api.twitter(args[0])
-         conn.sendFile(m.chat, data.HD, null, 'HD', m)
-         conn.sendFile(m.chat, data.SD, null, 'SD', m)
-        
-     } catch (e) {
+         const data = await( await fetch(`https://api.botcahx.eu.org/api/download/twitter2?url=${args[0]}&apikey=${btc}`)).json()
+         let x = data.result.mediaURLs;
+         for(const maze of x) {
+         await new Promise((resolve) => {
+            setTimeout(async () => {
+               conn.sendFile(m.chat, maze, null, wm, m)
+            resolve();
+            }, 5000);
+         }
+    );
+         }        
+    } catch (e) {
         console.log(e)
-        m.reply(eror)
+        m.reply(`Creator account is private`);
     }
 };
-handler.command = /^(twitterdl|twitter)$/i
+handler.command = /^(twitterdl|twitter|xdl|x)$/i
 handler.help = ['twitter'].map(v => v + ' <url>');
 handler.tags = ['downloader'];
-handler.register = false;
-handler.group = false;
 handler.limit = true;
-handler.owner = false;
-handler.admin = false;
-handler.botAdmin = false;
-handler.fail = null;
-handler.private = false;
+
 export default handler;

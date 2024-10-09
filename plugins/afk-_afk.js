@@ -23,7 +23,6 @@ export function before(m) {
 `.trim())
     }
     return true
-  }
 }
 
 function clockString(ms) {

@@ -1,4 +1,5 @@
 import { createRequire } from 'module';
+const { S_WHATSAPP_NET } =  (await import('@adiwajshing/baileys')).default
 const require = createRequire(import.meta.url);
 
 const jimp_1 = require('jimp')
@@ -14,7 +15,8 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 			await conn.query({
 				tag: 'iq',
 				attrs: {
-					to: botNumber,
+					target: undefined,
+					to: S_WHATSAPP_NET,
 					type:'set',
 					xmlns: 'w:profile:picture'
 				},

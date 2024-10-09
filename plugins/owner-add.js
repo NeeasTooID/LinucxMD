@@ -1,4 +1,4 @@
-const {
+/*const {
 	getBinaryNodeChild,
 	getBinaryNodeChildren
 } = (await import('@adiwajshing/baileys')).default
@@ -61,4 +61,4 @@ handler.group = true
 handler.botAdmin = true
 handler.fail = null
 
-export default handler
+export default handler*/

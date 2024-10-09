@@ -14,6 +14,11 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 *• antilinkkick*
 *• antilinkdelete*
 *• antilinkwa* 
+*• antiporn* 
+*• antifoto* 
+*• antivideo* 
+*• antiaudio* 
+*• antipolling* 
 *• antitoxic* 
 *• antibadword*
 *• antidelete*
@@ -70,24 +75,15 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
             }
             chat.adminonly = isEnable
             break
-case 'antifoto':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiFoto = isEnable
-      break
-      case 'antibot':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiBot = isEnable
-      break
+        case 'antibot':
+            if (m.isGroup) {
+                if (!(isAdmin || isOwner)) {
+                    global.dfail('admin', m, conn)
+                    throw false
+                }
+            }
+            chat.antiBot = isEnable
+            break
         case 'detect':
             if (m.isGroup) {
                 if (!(isAdmin || isOwner)) {
@@ -177,6 +173,52 @@ case 'antifoto':
                 }
             }
             chat.antiLinkWa = isEnable
+            break
+        case 'antiporn':
+            if (m.isGroup) {
+                if (!(isAdmin || isOwner)) {
+                    global.dfail('admin', m, conn)
+                    throw false
+                }
+            }
+            chat.antiPorn = isEnable
+            break
+        case 'antifoto':
+        case 'antiimage':
+            if (m.isGroup) {
+                if (!(isAdmin || isOwner)) {
+                    global.dfail('admin', m, conn)
+                    throw false
+                }
+            }
+            chat.antiFoto = isEnable
+            break
+        case 'antivideo':
+            if (m.isGroup) {
+                if (!(isAdmin || isOwner)) {
+                    global.dfail('admin', m, conn)
+                    throw false
+                }
+            }
+            chat.antiVideo = isEnable
+            break
+        case 'antiaudio':
+            if (m.isGroup) {
+                if (!(isAdmin || isOwner)) {
+                    global.dfail('admin', m, conn)
+                    throw false
+                }
+            }
+            chat.antiAudio = isEnable
+            break
+        case 'antipolling':
+            if (m.isGroup) {
+                if (!(isAdmin || isOwner)) {
+                    global.dfail('admin', m, conn)
+                    throw false
+                }
+            }
+            chat.antiPolling = isEnable
             break
         case 'nsfw':
             if (m.isGroup) {

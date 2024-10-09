@@ -3,9 +3,9 @@ let handler = async (m, { conn, command, text }) => {
 	try {
 	if (!text) return conn.reply(m.chat, 'Masukan Teksnya', m)
 	let teks = text ? text : m.quoted && m.quoted.text ? m.quoted.text : m.text
-	let res = API('https://api.lolhuman.xyz', '/api/attp', { text: teks }, 'apikey')
+	let res = `https://widipe.com/attp?text=${encodeURIComponent(text.substring(0, 151))}`
 	let stiker = await createSticker(res, false, stickpack, stickauth)
-	conn.sendFile(m.chat, stiker, 'RyHar.webp', '', m, false)
+	conn.sendFile(m.chat, stiker, 'maze.webp', '', m, false)
 	} catch (e) {
 		m.reply(eror)
 		}
@@ -13,10 +13,11 @@ let handler = async (m, { conn, command, text }) => {
 handler.command = /^(attp)$/i
 handler.tags = ['sticker']
 handler.help = ['attp']
+handler.limit = true;
+handler.register = true;
 
-handler.limit = true
+export default handler;
 
-export default handler
 async function createSticker(res, url, packName, authorName, quality) {
 	let stickerMetadata = {
 		type: 'full',

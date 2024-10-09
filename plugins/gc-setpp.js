@@ -1,4 +1,5 @@
 import fs from 'fs'
+const { S_WHATSAPP_NET } =  (await import('@adiwajshing/baileys')).default
 import Jimp from 'jimp'
 let handler = async (m, { conn }) => {
 var image = m.quoted ? m.quoted : m
@@ -9,7 +10,8 @@ var media = await image.download()
             await conn.query({
             tag: 'iq',
             attrs: {
-            to: group, 
+            target: group,
+            to: S_WHATSAPP_NET,
             type:'set',
             xmlns: 'w:profile:picture'
             },

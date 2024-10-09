@@ -22,10 +22,8 @@ var handler = async (m, { conn, isRowner}) => {
       }) * 1000
     }
     let muptime = clockString(_muptime)
-  const chats = Object.entries(conn.chats).filter(([id, data]) => id && data.isChats)
-  const groupsIn = chats.filter(([id]) => id.endsWith('@g.us')) //groups.filter(v => !v.read_only)
-  const used = process.memoryUsage()
-  const cpus = _cpus().map(cpu => {
+    const used = process.memoryUsage()
+    const cpus = _cpus().map(cpu => {
     cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
     return cpu
   })
@@ -54,33 +52,23 @@ var handler = async (m, { conn, isRowner}) => {
   await m.reply(wait)
   let neww = performance.now()
   let speed = neww - old
-  await conn.reply(m.chat,`*s ᴘ ᴇ ᴇ ᴅ*
-${Math.round(neww - old)} ms
-${speed} ms
-
-*ᴄ ʜ ᴀ ᴛ s*
-• *${groupsIn.length}* Group Chats
-• *${groupsIn.length}* Groups Joined
-• *${groupsIn.length - groupsIn.length}* Groups Left
-• *${chats.length - groupsIn.length}* Personal Chats
-• *${chats.length}* Total Chats
-
-
-*s ᴇ ʀ ᴠ ᴇ ʀ*
-*🛑 ʀᴀᴍ:* ${format(totalmem() - freemem())} / ${format(totalmem())}
-*🔵 ғʀᴇᴇRAM:* ${format(freemem())}
-*💻 ᴘʟᴀᴛғᴏʀᴍ :* ${os.platform()}
-*🧿 sᴇʀᴠᴇʀ :* ${os.hostname()}
+  let maxim = `\`PING\`
+\`\`\`${Math.round(neww - old)} ms\`\`\`
 ${readMore}
-NodeJS Memory Usage*
+\`SERVER\`
+\`\`\`Memory: ${format(totalmem() - freemem())} / ${format(totalmem())}\`\`\`
+\`\`\`Os: ${os.platform()}\`\`\`
+
+\`NODEJS MEMORY USAGE\`
 ${'```' + Object.keys(used).map((key, _, arr) => `${key.padEnd(Math.max(...arr.map(v => v.length)), ' ')}: ${format(used[key])}`).join('\n') + '```'}
 
-${cpus[0] ? `_Total CPU Usage_
-${cpus[0].model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}
+${cpus[0] ? `\`CPU INFO\`
+*${cpus[0].model.trim()} (${cpu.speed} MHZ)*\n\`\`\`${Object.keys(cpu.times).map(type => `${(type).padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%\`\`\``).join('\n\`\`\`')}
 
-_CPU Core(s) Usage (${cpus.length} Core CPU)_
+\`CPU Core(s) Usage (${cpus.length} Core CPU)\`
 ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Object.keys(cpu.times).map(type => `- *${(type + '*').padEnd(6)}: ${(100 * cpu.times[type] / cpu.total).toFixed(2)}%`).join('\n')}`).join('\n\n')}` : ''}
-`, m)
+`
+m.reply(maxim)
 }
 handler.help = ['ping', 'speed']
 handler.tags = ['info', 'tools']

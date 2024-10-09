@@ -27,7 +27,7 @@ let handler = async function (m, { text, usedPrefix, command }) {
     let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://i.ibb.co/2WzLyGk/profile.jpg')
     let user = global.db.data.users[m.sender]
     if (user.registered === true) throw `[💬] You are already registered\nWant to re-register? *${usedPrefix}unreg <SERIAL NUMBER>*`
-    if (!Reg.test(text)) return m.reply(`Please Type:\n${usedPrefix + command} Name.Age\n\nExample:\n${usedPrefix + command} Npc.19`)
+    if (!Reg.test(text)) return m.reply(`Please Type:\n${usedPrefix + command} Name.Age\n\nExample:\n${usedPrefix + command} Maximus.19`)
     let [_, name, splitter, age] = text.match(Reg)
     if (!name) return m.reply('Your name cannot be empty. Please enter your name')
     if (!age) return m.reply('Your age cannot be empty. Please enter your age')

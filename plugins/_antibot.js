@@ -1,4 +1,4 @@
-export async function before(m, { isAdmin, isBotAdmin, conn }) {
+/*export async function before(m, { isAdmin, isBotAdmin, conn }) {
   if (m.isBaileys && m.fromMe) {
     return true;
   }
@@ -13,4 +13,4 @@ export async function before(m, { isAdmin, isBotAdmin, conn }) {
     }
   }
   return true;
-}
+}*/

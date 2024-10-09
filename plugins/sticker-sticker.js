@@ -18,7 +18,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 			//m.reply(wait)
 			stiker = await createSticker(img, false, stickpack, stickauth)
 		} else if (/video/g.test(mime)) {
-			if ((q.msg || q).seconds > 10) throw 'Max 10 seconds!'
+			if ((q.msg || q).seconds > 7) throw 'Max 7 seconds!'
 			let img = await q.download?.()
 			//m.reply(wait)
 			stiker = await mp4ToWebp(img, { pack: stickpack, author: stickauth })
@@ -37,8 +37,10 @@ handler.help = ['stiker','s']
 handler.tags = ['sticker']
 handler.alias = ['stiker', 'sticker', 'sgif', 'stikergif', 'stickergif']
 handler.command = /^s(tic?ker)?(gif)?$/i
+handler.limit = true;
+handler.register = true;
 
-export default handler
+export default handler;
 
 const isUrl = (text) => text.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)(jpe?g|gif|png)/, 'gi'))
 
@@ -66,7 +68,7 @@ async function mp4ToWebp(file, stickerMetadata) {
 		processOptions: {
 			crop: stickerMetadata?.crop,
 			startTime: '00:00:00.0',
-			endTime: '00:00:7.0',
+			endTime: '00:00:10.0',
 			loop: 0
 		},
 		stickerMetadata: {

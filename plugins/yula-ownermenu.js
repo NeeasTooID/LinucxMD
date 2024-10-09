@@ -21,7 +21,7 @@ const defaultMenu = {
   header: '*┌ •「 %category  」*',
   body: '*│ •* %cmd',
   footer: '*└* ',
-  after: 'LinucxMD - NEASTOOID CO 2024',
+  after: 'ɢᴇɴꜱʜɪɴ ɪᴍᴘᴀᴄᴛ ᴅɪꜱᴄᴜꜱꜱɪᴏɴ',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
 let tags = {
@@ -193,9 +193,9 @@ conn.sendMessage(m.chat, {
                    },
                    externalAdReply: {
                    title: global.info.namebot + `© 2024`,
-                   body: 'Powered By Npc',
+                   body: 'Powered By YusupKakuu',
                    thumbnailUrl: global.maximus ? global.maximus : thum,
-                   sourceUrl: 'https://chat.whatsapp.com/Bpaxfv3a1tLIx0gaGZTQpN',
+                   sourceUrl: pickRandom(["https://chat.whatsapp.com/CjgkxnajTPXAivDPUZgzjy","https://chat.whatsapp.com/Bpaxfv3a1tLIx0gaGZTQpN"]),
                    mediaType: 1,
                    renderLargerThumbnail: true
                    },
@@ -209,7 +209,7 @@ conn.sendMessage(m.chat, {
 }
 handler.help = ['ownermenu']
 handler.tags = ['maximus']
-handler.command = /^(ownermenu|ownerhelp|omenu)$/i
+handler.command = /^(ownermenu|ownerhelp)$/i
 
 handler.register = false
 handler.exp = 3

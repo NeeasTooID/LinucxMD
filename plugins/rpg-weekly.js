@@ -3,7 +3,7 @@ const rewards = {
   money: 35999,
   potion: 9,
 }
-const cooldown = 3600000
+const cooldown = 604800000
 let handler = async (m, { usedPrefix }) => {
   
   let user = global.db.data.users[m.sender]
@@ -20,7 +20,7 @@ let handler = async (m, { usedPrefix }) => {
 }
 handler.help = ['weekly']
 handler.tags = ['rpg']
-handler.command = /^(weekly|mingguan)$/i
+handler.command = /^(weekly)$/i
 handler.register = true
 handler.group = true
 handler.cooldown = cooldown

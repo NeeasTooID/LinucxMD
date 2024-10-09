@@ -44,27 +44,20 @@ let handler = async(m, { conn, command, usedPrefix, DevMode }) => {
                 netsOut = NotDetect
         })
         await Promise.all([p1, p2, p3, p4])
-        conn.sendMessage(m.chat, {
-		react: {
-			text: '⏳',
-			key: m.key,
-		}
-	})
         let _ramTotal = (ramTotal + ' MB')
         let neww = performance.now()
         
 
-var txt = `
-*「 Status 」*
-OS : *${OS}*
-CPU Model : *${cpuModel}*
-CPU Core : *${cpuCore} Core*
-CPU : *${cpuPer}%*
-Ram : *${ramUsed} / ${_ramTotal}(${/[0-9.+/]/g.test(ramUsed) &&  /[0-9.+/]/g.test(ramTotal) ? Math.round(100 * (ramUsed / ramTotal)) + '%' : NotDetect})*
-Drive : *${driveUsed} / ${driveTotal} (${drivePer})*
-Ping : *${Math.round(neww - old)} ms*
+var txt = `\`\`\`OS : ${OS}\`\`\`
+\`\`\`CPU Model : ${cpuModel}\`\`\`
+\`\`\`CPU Core : ${cpuCore} Core\`\`\`
+\`\`\`CPU : ${cpuPer}%\`\`\`
+\`\`\`Ram : ${ramUsed} / ${_ramTotal} ${/[0-9.+/]/g.test(ramUsed) &&  /[0-9.+/]/g.test(ramTotal) ? Math.round(100 * (ramUsed / ramTotal)) + '%' : NotDetect}\`\`\`
+\`\`\`Drive : ${driveUsed} / ${driveTotal} ${drivePer}\`\`\`
+\`\`\`Ping : ${Math.round(neww - old)} ms\`\`\`
 `
- conn.sendMessage(m.chat, {
+ m.reply(txt)
+ /*conn.sendMessage(m.chat, {
 text: txt,
 contextInfo: {
 externalAdReply: {
@@ -74,7 +67,7 @@ thumbnailUrl: "https://telegra.ph/file/ec8cf04e3a2890d3dce9c.jpg",
 sourceUrl: "",
 mediaType: 1,
 renderLargerThumbnail: true
-}}})
+}}})*/
         console.log(OS)
     } catch (e) {
         console.log(e)

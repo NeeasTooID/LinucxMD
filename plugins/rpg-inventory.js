@@ -191,11 +191,12 @@ await conn.reply(m.chat, caption, m, {
         externalAdReply : {
             showAdAttribution: true,
             mediaType: 1,
-            title: 'Inventory User ' + user.name,
-            body: 'Powered By LinucxMD',
+            title: '',
             thumbnail: await(await fetch(imgr + 'inventory')).buffer(),
             renderLargerThumbnail: true,
-            sourceUrl: 'https://chat.whatsapp.com/Bpaxfv3a1tLIx0gaGZTQpN'
+            mediaUrl: elainajpg.getRandom(),
+            sourceId: wm,
+            sourceUrl: ''
    	 }
  	}
    })  
