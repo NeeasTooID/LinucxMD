@@ -3,16 +3,14 @@
     <img src="https://raw.githubusercontent.com/NeeasTooID/.github/main/Proyek%20Baru%20138%20%5B80913B9%5D.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 
-### PENTING
-
-> **Warning** : Jangan Memperjual Belikan Script Ini!.
-
-<h1 align="center">Npnpicy - MD</h1>
+<h1 align="center">LinucxMD - WhatsBotz</h1>
 
 <p align="center">
 <a href="https://github.com/NeeasTooID"><img title="Author" src="https://img.shields.io/badge/AUTHOR-YUSUPKAKUU-green.svg?style=for-the-badge&logo=github"></a>
 
-### FOR VPS USER
+---------
+    
+### INSTALLATION
 * apt update && apt upgrade -y
 * apt install nodejs imagemagick ffmpeg -y
 * node -v 
@@ -36,3 +34,5 @@
 #### Recoder
 [![NeofetchNpc](https://github.com/NeofetchNpc.png?size=100)](https://github.com/NeofetchNpc)
 [![NeeasTooID](https://github.com/NeeasTooID.png?size=100)](https://github.com/NeeasTooID)
+
+---------
