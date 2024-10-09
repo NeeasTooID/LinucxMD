@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 
 /*========= GLOBAL APIKEY =========*/
 // ISI APIKEY KALIAN DI BAGIAN 'ENTER YOUR APIKEY' SIMBOL JANGAN DI HAPUS
-global.btc = 'luthfidesu' // 'tMNbXw3t' // apikey Botchax
+global.btc = 'tMNbXw3t' // 'tMNbXw3t' // apikey Botchax
 global.lann = 'T8BMmE6n' // apikey Beta
 
 
