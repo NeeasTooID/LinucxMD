@@ -1,6 +1,6 @@
 [![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/colored.png)](#table-of-contents)
 <p align="center">
-    <img src="https://raw.githubusercontent.com/NeeasTooID/.github/main/Proyek%20Baru%20138%20%5B80913B9%5D.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
+    <img src="https://raw.githubusercontent.com/NeofetchNpc/Archive-TMP/refs/heads/main/img-mp4/thumenu.png" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 
 <h1 align="center">LinucxMD - WhatsBotz</h1>
