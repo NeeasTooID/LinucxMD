@@ -16,14 +16,14 @@ ${isTele ? '(Tidak Ada Tanggal Kedaluwarsa)' : '(Tidak diketahui)'}
 `
 
   if (!/all/.test(command) && await getDevice(m.key.id) == 'android') {
-  await conn.sendButton(m.chat, max, wm, 'https://files.catbox.moe/nz6pwc.jpg', [['Salin / Copy',link,'cta_copy']], m)
+  await conn.sendButton(m.chat, max, wm, 'https://pomf2.lain.la/f/7q9459vu.jpg', [['Salin / Copy',link,'cta_copy']], m)
    } else conn.sendMessage(m.chat, {
                 text: max,
                 contextInfo: {
                     externalAdReply: {
                         title: "File-Uploader",
                         body: "",
-                        thumbnailUrl: "https://raw.githubusercontent.com/XM4ZE/DATABASE/master/wallpaper/wallpaperbot/tourl.png",
+                        thumbnailUrl: "https://raw.githubusercontent.com/NeofetchNpc/ArchiveTMP/main/img-mp4/thumenu.png",
                         sourceUrl: link,
                         mediaType: 1,
                         showAdAttribution: true,

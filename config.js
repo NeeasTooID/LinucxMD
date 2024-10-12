@@ -4,8 +4,8 @@ import { fileURLToPath } from 'url'
 
 /*========= GLOBAL APIKEY =========*/
 // ISI APIKEY KALIAN DI BAGIAN 'ENTER YOUR APIKEY' SIMBOL JANGAN DI HAPUS
-global.btc = 'tMNbXw33t' // apikey Botchax
-global.lann = 'T8BMmE66n' // apikey Beta
+global.btc = 'tMNbXw3t' // apikey Botchax
+global.lann = 'T8BMmE6n' // apikey Beta
 
 /*============== API ==============*/
 // ISI APIKEY KALIAN DI BAGIAN 'ENTER YOUR APIKEY' SIMBOL JANGAN DI HAPUS
@@ -15,8 +15,8 @@ global.APIs = {
 } 
 
 global.APIKeys = {
-  'https://api.betabotz.eu.org': 'T8BMmE66n',
-  'https://api.botcahx.eu.org': 'tMNbXw33t'
+  'https://api.betabotz.eu.org': 'T8BMmE6n',
+  'https://api.botcahx.eu.org': 'tMNbXw3t'
 }
 
 /*============ NOMOR ============*/
