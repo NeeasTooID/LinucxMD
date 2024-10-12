@@ -37,14 +37,9 @@ let handler = async (m, {
   ◦ *Views*: ${views}
   
 YT-DL By 
-- api.betabotz.eu.org
-- api.botcahx.eu.org
 - github:fent/node-ytdl-core
 - github:bochilteam/scraper
 - npm:btch-downloader 
-
-SEARCH By 
-- github.com/talmobi/yt-search
 
 SENT By 
 - ${global.info.namebot}`;

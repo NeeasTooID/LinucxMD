@@ -20,9 +20,6 @@ let handler = async (m, { conn, text, args, command }) => {
   ◦ *Source*: ${source}
   
 YTdl By ${global.info.namebot}
-GetInfo By: 
-- api.betabotz.eu.org
-- api.botcahx.eu.org
 Sent By Assistant ${global.info.namebot}`;
 
       if (!/all/.test(command) && await getDevice(m.key.id) == 'android') {
