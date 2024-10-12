@@ -59,7 +59,7 @@ global.qris = 'https://raw.githubusercontent.com/NeofetchNpc/Archive-TMP/refs/he
 global.thumvid = 'https://github.com/NeofetchNpc/Archive-TMP/raw/main/img-mp4/thumvid.mp4?raw=true' // Allmenu Video thumbnail
 global.welcome = '' // [OPSIONAL] isi dengan link thumbnail welcome kalian
 global.leave = '' // [OPSIONAL] isi dengan link thumbnail leave kalian
-global.maximus = '' // [OPSIONAL] isi dengan link thumbnail kalian. link ini akan muncul di semua menu dan taruh di tengah-tengah simbol itu
+global.maximus = 'https://pomf2.lain.la/f/7q9459vu.jpg' // [OPSIONAL] isi dengan link thumbnail kalian. link ini akan muncul di semua menu dan taruh di tengah-tengah simbol itu
 
 
 /*===================DO NOT EDIT=====================*/
