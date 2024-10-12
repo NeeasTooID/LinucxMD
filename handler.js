@@ -348,7 +348,7 @@ export async function handler(chatUpdate) {
 				if (!isNumber(user.lelebakar)) user.lelebakar = 0
 				if (!isNumber(user.leleg)) user.leleg = 0
 				if (!isNumber(user.level)) user.level = 0
-				if (!isNumber(user.limit)) user.limit = 100
+				if (!isNumber(user.limit)) user.limit = 1000
 				if (!isNumber(user.limitjoinfree)) user.limitjoinfree = 0
 				if (!isNumber(user.lion)) user.lion = 0
 				if (!isNumber(user.lionexp)) user.lionexp = 0
@@ -741,7 +741,7 @@ export async function handler(chatUpdate) {
 					lelebakar: 0,
 					leleg: 0,
 					level: 0,
-					limit: 100,
+					limit: 1000,
 					limitjoinfree: 0,
 					lion: 0,
 					lionexp: 0,

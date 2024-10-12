@@ -1,5 +1,5 @@
 const items = [
-    'money', 'bank', 'potion', 'trash', 'wood',
+    'chip', 'money', 'bank', 'potion', 'trash', 'wood',
     'rock', 'string', 'petFood', 'emerald',
     'diamond', 'gold', 'iron', 'common',
     'uncommon', 'mythic', 'legendary', 'pet', 'chip', 

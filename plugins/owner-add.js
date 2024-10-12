@@ -1,4 +1,4 @@
-/*const {
+const {
 	getBinaryNodeChild,
 	getBinaryNodeChildren
 } = (await import('@adiwajshing/baileys')).default
@@ -47,8 +47,8 @@ let handler = async (m, { conn, text, participants, usedPrefix, command }) => {
     	await m.reply(txt, null, {
     		mentions: await conn.parseMention(txt)
     	})
-    	//await conn.delay(100)
-    	//conn.sendButton(m.chat, txt, wm, 'menu', '.m', m)
+    	await conn.delay(60)
+    	conn.sendButton(m.chat, txt, wm, 'menu', '.m', m)
     	await conn.sendGroupV4Invite(m.chat, jid, invite_code, invite_code_exp, await conn.getName(m.chat), 'Undangan untuk bergabung ke grup WhatsApp saya', jpegThumbnail)
     }
 }
@@ -56,9 +56,9 @@ handler.help = ['add', '+'].map(v => v + ' @user')
 handler.tags = ['owner']
 handler.command = /^(add|\+)$/i
 
-handler.admin = true
+handler.owner = true
 handler.group = true
 handler.botAdmin = true
 handler.fail = null
 
-export default handler*/
+export default handler

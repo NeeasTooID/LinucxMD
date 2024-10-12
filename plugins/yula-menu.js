@@ -8,7 +8,8 @@ import fetch from 'node-fetch'
 const { generateWAMessageFromContent, proto } = (await import('@adiwajshing/baileys')).default
 
 const defaultMenu = {
-  before: `
+  before: `Hi %name.\nMy name is ${global.info.namebot}. I am the Assistant for this Group. I'm here to help you with tasks like searching for information online, retrieving data, etc. By utilizing innovative features, I will help you to move more quickly and productively in completing your work.
+
 *「 I N F O  B O T 」*
  •  *Your Premium :* %prems
  •  *Your Limits :* %limit
@@ -21,17 +22,19 @@ const defaultMenu = {
   header: '*┌ •「 %category  」*',
   body: '*│ •* %cmd',
   footer: '*└* ',
-  after: 'ɢᴇɴꜱʜɪɴ ɪᴍᴘᴀᴄᴛ ᴅɪꜱᴄᴜꜱꜱɪᴏɴ',
+  after: 'NeastooID/LinucxxMD 2024/2025',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
 let tags = {
-'info': '𝙸𝙽𝙵𝙾 𝙵𝙴𝙰𝚃𝚄𝚁𝙴',
+'maximus': '𝚂𝙸𝙼𝙿𝙻𝙴 𝙼𝙴𝙽𝚄',
+'adminry': '𝙰𝙳𝙼𝙸𝙽 𝙼𝙴𝙽𝚄',
+'store': '𝚂𝚃𝙾𝚁𝙴 𝙼𝙴𝙽𝚄',
 }
-
+ 
   try {
   	// DEFAULT MENU
       let dash = global.dashmenu
-  	let m1 = global.dmenut
+   	  let m1 = global.dmenut
       let m2 = global.dmenub
       let m3 = global.dmenuf
       let m4 = global.dmenub2
@@ -108,7 +111,7 @@ let tags = {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
     let { age, exp, limit, level, role, registered, eris} = global.db.data.users[m.sender]
     let { min, xp, max } = xpRange(level, global.multiplier)
-    let name = await conn.getName(m.sender)
+    let name = `@${m.sender.split`@`[0]}`
     let premium = global.db.data.users[m.sender].premiumTime
     let prems = `${premium > 0 ? 'Yes': 'No'}`
     let platform = os.platform()
@@ -184,6 +187,7 @@ let tags = {
 conn.sendMessage(m.chat, {
             text: text,
             contextInfo: {
+                mentionedJid: [m.sender],
                 forwardingScore: 1,
                 isForwarded: true,
                    forwardedNewsletterMessageInfo: {
@@ -195,22 +199,24 @@ conn.sendMessage(m.chat, {
                    title: global.info.namebot + `© 2024`,
                    body: 'Powered By YusupKakuu',
                    thumbnailUrl: global.maximus ? global.maximus : thum,
-                   sourceUrl: pickRandom(["https://chat.whatsapp.com/CjgkxnajTPXAivDPUZgzjy", "https://chat.whatsapp.com/Bpaxfv3a1tLIx0gaGZTQpN"]),
+                   sourceUrl: pickRandom(["https://chat.whatsapp.com/Bpaxfv3a1tLIx0gaGZTQpN","https://chat.whatsapp.com/CjgkxnajTPXAivDPUZgzjy"]),
                    mediaType: 1,
                    renderLargerThumbnail: true
                    },
                 },
-            }, { quoted: m })
+            })
 
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
   }
 }
+handler.help = ['menu']
+handler.tags = ['main']
+handler.command = /^(menu|help)$/i
 
-handler.help = ['infomenu']
-handler.tags = ['maximus']
-handler.command = /^(infomenu|infohelp)$/i
+handler.register = false
+handler.exp = 3
 
 export default handler
 

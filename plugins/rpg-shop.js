@@ -176,6 +176,21 @@ const items = {
         },
         umpan: {
         	money: 2500
+        },
+        botol: {
+            money: 2500
+        },
+        kaleng: {
+            money: 3000
+        },
+        kardus: {
+            money: 3500
+        },
+        gelas: {
+            money: 3500
+        },
+        plastik: {
+            money: 4000
         }
     }
 }

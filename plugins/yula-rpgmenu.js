@@ -25,7 +25,7 @@ const defaultMenu = {
   header: '*┌ •「 %category  」*',
   body: '*│ •* %cmd',
   footer: '*└* ',
-  after: 'ɢᴇɴꜱʜɪɴ ɪᴍᴘᴀᴄᴛ ᴅɪꜱᴄᴜꜱꜱɪᴏɴ',
+  after: 'NeastooID/LinucxxMD 2024/2025',
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args, command}) => {
 let tags = {

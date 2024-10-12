@@ -136,10 +136,10 @@ ${news.map(v => `*Name:* ${v.title}\n*Link:* ${v.url}\n======================`).
 };
 
 handler.help = ['nekopoiupdate', 'nekopoidetail <url>'];
-handler.tags = ['anime', 'search', 'nsfw', 'downloader'];
+handler.tags = ['premium'];
 handler.command = /^(nekopoi|nekopoiupdate|nekopoi detail|nekopoidl)$/i;
 handler.limit = true;
 handler.register = true;
-handler.nsfw = true;
+handler.premium = true;
 
 export default handler;

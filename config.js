@@ -2,13 +2,10 @@ import { watchFile, unwatchFile } from 'fs'
 import chalk from 'chalk'
 import { fileURLToPath } from 'url'
 
-
 /*========= GLOBAL APIKEY =========*/
 // ISI APIKEY KALIAN DI BAGIAN 'ENTER YOUR APIKEY' SIMBOL JANGAN DI HAPUS
-global.btc = 'tMNbXw3t' // 'tMNbXw3t' // apikey Botchax
-global.lann = 'T8BMmE6n' // apikey Beta
-
-
+global.btc = 'tMNbXw33t' // apikey Botchax
+global.lann = 'T8BMmE66n' // apikey Beta
 
 /*============== API ==============*/
 // ISI APIKEY KALIAN DI BAGIAN 'ENTER YOUR APIKEY' SIMBOL JANGAN DI HAPUS
@@ -18,11 +15,9 @@ global.APIs = {
 } 
 
 global.APIKeys = {
-  'https://api.betabotz.eu.org': 'T8BMmE6n',
-  'https://api.botcahx.eu.org': 'tMNbXw3t'
+  'https://api.betabotz.eu.org': 'T8BMmE66n',
+  'https://api.botcahx.eu.org': 'tMNbXw33t'
 }
-
-
 
 /*============ NOMOR ============*/
 // BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
@@ -35,8 +30,6 @@ global.info = {
 	namechannel: 'LinucxMD 2024 - NeastooID'
 }
 
-
-
 /*============ OWNER ============*/
 // BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
 global.owner = ['6283897390164'] // Ganti pakai nomor kalian
@@ -45,16 +38,12 @@ global.xmaze = ['6283897390164'] // Ganti pakai nomor kalian
 global.mods = ['6283897390164'] // Opsional boleh ganti atau tidak 
 global.prems = ['6283897390164'] // Opsional boleh ganti atau tidak 
 
-
-
 /*=========== WATERMARK ===========*/
 // BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
 global.wm = 'LinucxMD' // Opsional boleh ganti atau tidak 
 global.author = 'YusupKakuu' // Opsional boleh ganti atau tidak 
 global.stickpack = 'NeastooID' // Opsional boleh ganti atau tidak 
 global.stickauth = 'YusupKakuu' // Opsional boleh ganti atau tidak 
-
-
 
 /*=========== TEXT & IMAGE ===========*/
 // BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
@@ -64,30 +53,16 @@ global.mail = 'support@neastooid.xyz' // boleh taruh email kalian
 global.fb = 'https://facebook.com/' // boleh taruh link fb kalian
 global.ig = 'https://instagram.com/yusupk._' // boleh taruh link ig kalian
 global.gcbot = 'https://whatsapp.com/channel/0029Val1cKp4SpkEzc2jyL3y' // boleh taruh link group kalian
-global.qris = 'https://raw.githubusercontent.com/NeofetchNpc/DATABASE/refs/heads/main/Proyek%20Baru%20216%20%5B2F4E1E2%5D.png' // Wajib isi untuk pembayaran. isi dengan qris
-global.vn = 'https://github.com/XM4ZE/DATABASE/raw/master/wallpaper/KARA.mp3?raw=true' // Allmenu Voice
-
-
+global.qris = 'https://raw.githubusercontent.com/NeofetchNpc/Archive-TMP/refs/heads/main/img-mp4/donate.png' // Wajib isi untuk pembayaran. isi dengan qris
 
 /*=========== THUMBNAIL ===========*/
-global.thumvid = 'https://github.com/NeofetchNpc/DATABASE/raw/main/Proyek%20Baru%20215%20%5B4DE8C5A%5D.mp4?raw=true' // Allmenu Video thumbnail
+global.thumvid = 'https://github.com/NeofetchNpc/Archive-TMP/raw/main/img-mp4/thumvid.mp4?raw=true' // Allmenu Video thumbnail
 global.welcome = '' // [OPSIONAL] isi dengan link thumbnail welcome kalian
 global.leave = '' // [OPSIONAL] isi dengan link thumbnail leave kalian
 global.maximus = '' // [OPSIONAL] isi dengan link thumbnail kalian. link ini akan muncul di semua menu dan taruh di tengah-tengah simbol itu
 
 
-
-
-
-
-
 /*===================DO NOT EDIT=====================*/
-
-
-
-
-
-
 
 
 // DI BAWAH INI JANGAN DI EDIT
@@ -95,16 +70,13 @@ global.maximus = '' // [OPSIONAL] isi dengan link thumbnail kalian. link ini aka
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
 }
-global.xmenus = 'https://raw.githubusercontent.com/XM4ZE/DATABASE/master/wallpaper/publicmenus.json'
+global.xmenus = 'https://raw.githubusercontent.com/NeofetchNpc/Archive-TMP/refs/heads/main/json/mainthum.json'
 global.multiplier = 38
 global.wait = '*Starting Processing . . .*'
 global.eror = '*Failed to process . . .*'
 global.maxwarn = '5'
 global.xmbrowsers = ["Ubuntu", "Chrome", "20.0.04"]
-global.tutorjb = 'https://pomf2.lain.la/f/acdva5pa.jpg'
 global.pricelist = '*LIMIT* kamu habis. kamu bisa order akses premium\n\n*PREMIUM USER PRICE LIST*\n\n*3 Day premium*\n- Harga: Rp. 5.000 IDR\n- ID Pesanan: 3day\n\n*7 Day premium*\n- Harga: Rp. 10.000 IDR\n- ID Pesanan: 7day\n\n*30 Day premium*\n- Harga: Rp. 15.000 IDR\n- ID Pesanan: 30day\n\n*60 Day premium*\n- Harga: Rp. 30.000 IDR\n- ID Pesanan: 60day\n\n\n*Example:* .premium <ID Pembayaran>\n*Example:* .premium 30day'
-
-
 
 /*========== TYPE DOCUMENT ==========*/
 global.doc = {

@@ -12,7 +12,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 handler.help = ['gimage <query>'];
 handler.tags = ['internet'];
-handler.command = /^(gimage)$/i;
+handler.command = /^(gimage|image)$/i;
 
 export default handler;
 
