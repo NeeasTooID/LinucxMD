@@ -26,17 +26,6 @@
         "MD",
         "baileys-md"
     ],
-    "homepage": "https://github.com/XM4ZE/XMYULA-MD",
-    "author": {
-        "name": "XM4ZE"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/XM4ZE/XMYULA-MD.git"
-    },
-    "bugs": {
-        "url": "https://github.com/XM4ZE/XMYULA-MD/issues"
-    },
     "license": "MIT",
     "dependencies": {
         "@adiwajshing/baileys": "github:Akkun3704/Baileys",
