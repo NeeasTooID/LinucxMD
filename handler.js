@@ -1412,7 +1412,7 @@ export async function participantsUpdate({
 									title: await this.getName(id),
 									body: '𝙶𝚛𝚘𝚞𝚙 𝙽𝚘𝚝𝚒𝚏𝚒𝚌𝚊𝚝𝚒𝚘𝚗',
 									thumbnailUrl: action === 'add' ? wel : lea,
-									sourceUrl: '',
+									sourceUrl: 'https://whatsapp.com/channel/0029Val1cKp4SpkEzc2jyL3y',
 									mediaType: 1,
 									renderLargerThumbnail: true
 								}
@@ -1507,7 +1507,7 @@ global.dfail = (type, m, conn) => {
 		game: 'This Command Has Not Been Activated In This Group.\n\n> Enable This Feature By Writing *.enable game*',
 		xmaze: 'This group does not allow this feature to be used. please join this group:\nhttps://chat.whatsapp.com/FJRtTzRKxP8A2wT6fcCW3s\n\n disable this feature by writing .enable allfitur',
 		restrict: '*FEATURES TURNED OFF BY OWNERS*',
-		unreg: '*Indonesian*\nSilahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Maximus.19*\n══════════════════════\n*English*\nPlease register to use this feature by typing:\n\n*#register name.age*\n\nExample: *#register Maximus.19*'
+		unreg: '*Indonesian*\nSilahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*.daftar nama.umur*\n\nContoh: *.daftar Npc.19*\n══════════════════════\n*English*\nPlease register to use this feature by typing:\n\n*.register name.age*\n\nExample: *.register Npc.19*'
 	} [type]
 
 	if (msg) return conn.sendMessage(m.chat, {
@@ -1522,9 +1522,9 @@ global.dfail = (type, m, conn) => {
 			},
 			externalAdReply: {
 				title: global.info.namebot + ` © 2024`,
-				body: 'Powered By XM4ZE',
-				thumbnailUrl: 'https://telegra.ph/file/8ddbb1905c4f3357bf82c.jpg',
-				sourceUrl: "",
+				body: 'Powered By YusupKakuu',
+				thumbnailUrl: 'https://files.catbox.moe/pjyt29.jpg',
+				sourceUrl: "https://whatsapp.com/channel/0029Val1cKp4SpkEzc2jyL3y",
 				mediaType: 1,
 				renderLargerThumbnail: true
 			},
