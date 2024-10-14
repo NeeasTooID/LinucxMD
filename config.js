@@ -4,7 +4,7 @@ import { fileURLToPath } from 'url'
 
 /*========= GLOBAL APIKEY =========*/
 // ISI APIKEY KALIAN DI BAGIAN 'ENTER YOUR APIKEY' SIMBOL JANGAN DI HAPUS
-global.btc = 'beta' // apikey Botchax
+global.btc = 'tMNbXw3t' // apikey Botchax
 global.lann = 'beta' // apikey Beta
 
 /*============== API ==============*/
@@ -16,7 +16,7 @@ global.APIs = {
 
 global.APIKeys = {
   'https://api.betabotz.eu.org': 'beta',
-  'https://api.botcahx.eu.org': 'beta'
+  'https://api.botcahx.eu.org': 'tMNbXw3t'
 }
 
 /*============ NOMOR ============*/
@@ -33,7 +33,7 @@ global.info = {
 /*============ OWNER ============*/
 // BOLEH DI EDIT ASALKAN JANGAN ADA SIMBOL YANG DI HAPUS
 global.owner = ['6283897390164'] // Ganti pakai nomor kalian
-global.xmaze = ['6283897390164'] // Ganti pakai nomor kalian
+global.xmaze = ['6283897390164', '62'] // Ganti pakai nomor kalian
 
 global.mods = ['6283897390164'] // Opsional boleh ganti atau tidak 
 global.prems = ['6283897390164'] // Opsional boleh ganti atau tidak 

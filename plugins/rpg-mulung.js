@@ -10,9 +10,9 @@ let handler = async (m, { conn, usedPrefix, text }) => {
 	
 	user.botol += botol * 1
 	user.kaleng += kaleng * 2
-	user.kardus += kardus * 3
-	user.gelas += gelas * 3
-	user.plastik += plastik * 2
+	user.kardus += kardus * 2
+	user.gelas += gelas * 2
+	user.plastik += plastik * 1
 	user.lastmulung = new Date * 1
     m.reply(`Selamat kamu mendapatkan : \n+${botol} Botol\n+${kaleng} Kaleng\n+${kardus} Kardus\n+${gelas} Gelas\n+${plastik} Plastik`)
 }

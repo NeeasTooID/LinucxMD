@@ -1,31 +1,30 @@
 import fetch from 'node-fetch';
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `*🚩 Masukkan URL lagu!*\n\nExample:\n${usedPrefix + command} https://open.spotify.com/track/2LKOHdMsL0K9KwcPRlJK2v`;
+  if (!args[0]) throw `* Masukkan URL lagu!*\n\nExample:\n${usedPrefix + command} https://open.spotify.com/track/5nfF7E8fvLHfrNULjd8jel`;
   if (args[0].match(/https:\/\/open.spotify.com/gi)) {
     m.reply(wait);
     try {
-      const res = await fetch(`https://api.botcahx.eu.org/api/download/spotify?url=${args[0]}&apikey=${btc}`);
+      const res = await fetch(`https://api.ryzendesu.vip/api/downloader/spotify?url=${args[0]}`);
       let jsons = await res.json();
       const {
-        thumbnail,
         title,
-        name,
-        duration,
-        url
-      } = jsons.result.data;
-      const {
-        id,
-        type
-      } = jsons.result.data.artist;
-      let captionvid = `> Title: ${title}\n> ID: \`${id}\`\n> Duration: ${duration}\n> Type: ${type}`;
+        artists,
+        album,
+        cover,
+        releaseDate
+      } = jsons.metadata;
+      const url = jsons.link;
+
+      let captionvid = `> Title: ${title}\n> Artist: ${artists}\n> Album: ${album}\n> Release Date: ${releaseDate}`;
+      
       let pesan = await conn.sendMessage(m.chat, {
         text: captionvid,
         contextInfo: {
           externalAdReply: {
             title: "Spotify Downloader",
-            body: "",
-            thumbnailUrl: thumbnail,
+            body: "By NeeastooID - LinucxMD",
+            thumbnailUrl: cover,
             sourceUrl: args[0],
             mediaType: 1,
             showAdAttribution: true,
@@ -33,21 +32,24 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
           }
         }
       });
+      
       await conn.sendMessage(m.chat, {
-             document: { url: url }, 
-             mimetype: 'audio/mpeg', 
-             fileName: `${title}.mp3`,
-             caption: ''
-             }, {quoted: m})
+        document: { url: url }, 
+        mimetype: 'audio/mpeg', 
+        fileName: `${title}.mp3`,
+        caption: ''
+      }, { quoted: m });
+
     } catch (e) {
-      throw `🚩 ${eror}`;
+      throw ` Terjadi kesalahan: ${e}`;
     }
   }
 };
 
-handler.help = ['spotify'].map(v => v + ' <url>')
-handler.tags = ['downloader']
-handler.command = /^(spotify(a(audio)?|mp3)?)$/i
-handler.premium = true;
+handler.help = ['spotify'].map(v => v + ' <url>');
+handler.tags = ['downloader'];
+handler.command = /^(spotify(a(audio)?|mp3)?)$/i;
+handler.premium = false;
+handler.limit = 500;
 
-export default handler
+export default handler;

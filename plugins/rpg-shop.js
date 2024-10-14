@@ -87,7 +87,22 @@ const items = {
         },
         umpan: {
         	money: 5000
-        }     
+        },
+        botol: {
+            money: 10000
+        },
+        kaleng: {
+            money: 10000
+        },
+        kardus: {
+            money: 10000
+        },
+        gelas: {
+            money: 10000
+        },
+        plastik: {
+            money: 10000
+        }
     },
     sell: {
         limit: {
@@ -97,7 +112,7 @@ const items = {
         	money: 1
         },
         chip: {
-        	money: 1000000
+        	money: 10000000
         },
         potion: {
             money: 625
@@ -187,7 +202,7 @@ const items = {
             money: 3500
         },
         gelas: {
-            money: 3500
+            money: 1000
         },
         plastik: {
             money: 4000

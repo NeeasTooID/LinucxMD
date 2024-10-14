@@ -26,7 +26,7 @@ await conn.sendMessage(m.chat, { document: imagepdf, jpegThumbnail, fileName: da
      m.reply(eror)
   }
 } 
-handler.command = /^(nhentaidl)$/i
+handler.command = /^(nhentaidl|nhentai|nnn)$/i
 handler.tags = ['premium']
 handler.help = ['nhentaidl <code> ']
 handler.premium = true
